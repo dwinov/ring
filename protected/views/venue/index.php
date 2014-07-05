@@ -1,5 +1,5 @@
 <div class="heading-buttons">
-    <h2 class="glyphicons check"><i></i>Manage Event Organizer</h2>
+    <h2 class="glyphicons check"><i></i>Manage Venue</h2>
     <div class="buttons pull-right">
         <a href="<?php echo Yii::app()->createUrl('venue/create'); ?>" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> Add New EO</a>
     </div>
@@ -29,7 +29,7 @@
 
 <div class="widget widget-2">
     <div class="widget-head">
-        <h4 class="heading glyphicons calendar"><i></i>Lists Event Organizer</h4>
+        <h4 class="heading glyphicons calendar"><i></i>Lists of Venues</h4>
     </div>
     <div class="widget-body">
 
@@ -48,7 +48,7 @@
 </div>
 
 <!-- dialog box -->
-<div id="dialog" title="Delete Event Organizer" style="display: none;">
+<div id="dialog" title="Delete Venue" style="display: none;">
     <p>Are you sure?</p>
 </div>
 
@@ -68,30 +68,30 @@
             },
             aoColumns: [
                 {
-                    mData: "eo_name",
+                    mData: "vn_name",
                     sWidth: "10%",
                     bSortable: true
                 },
                 {
-                    mData: "eo_address",
-                    sWidth: "10%",
-                    sClass: "center",
-                    bSortable: true
-                },
-                {
-                    mData: "eo_email",
+                    mData: "vn_address",
                     sWidth: "10%",
                     sClass: "center",
                     bSortable: true
                 },
                 {
-                    mData: 'eo_id',
+                    mData: "vn_email",
+                    sWidth: "10%",
+                    sClass: "center",
+                    bSortable: true
+                },
+                {
+                    mData: 'vn_id',
                     sWidth: "8%",
                     sClass: "center",
                     mRender: function(data, type, all) {
                         var btns = new Array();
-                        btns.push("<a class='btn-action glyphicons pencil btn-success' href='<?php echo Yii::app()->createUrl('eo/update'); ?>/id/" + all.eo_id + "' title='Edit'><i></i></a> ");
-                        btns.push("<a class='btn-action glyphicons remove_2 btn-danger' data-delete href='<?php echo Yii::app()->createUrl('eo/delete'); ?>/id/" + all.eo_id + "' title='Delete'><i></i></a>");
+                        btns.push("<a class='btn-action glyphicons pencil btn-success' href='<?php echo Yii::app()->createUrl('venue/update'); ?>/id/" + all.vn_id + "' title='Edit'><i></i></a> ");
+                        btns.push("<a class='btn-action glyphicons remove_2 btn-danger' data-delete href='<?php echo Yii::app()->createUrl('venue/delete'); ?>/id/" + all.vn_id + "' title='Delete'><i></i></a>");
                         return  btns.join("&nbsp;");
 
                     }
