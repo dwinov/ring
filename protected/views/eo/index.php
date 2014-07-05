@@ -1,7 +1,7 @@
 <div class="heading-buttons">
     <h2 class="glyphicons check"><i></i>Manage Event Organizer</h2>
     <div class="buttons pull-right">
-        <a href="<?php echo Yii::app()->createUrl('venue/create'); ?>" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> Add New EO</a>
+        <a href="<?php echo Yii::app()->createUrl('eo/create'); ?>" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> Add New EO</a>
     </div>
 </div>
 <div class="separator"></div>

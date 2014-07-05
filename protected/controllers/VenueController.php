@@ -10,6 +10,32 @@ class VenueController extends Controller
 {
     public $layout = '//layouts/ring';
 
+    /**
+     * @return array action filters
+     */
+    public function filters()
+    {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+        );
+    }
+
+    public function accessRules()
+    {
+        return array(
+            array(
+                'allow',
+                'actions' => array('index','create', 'update', 'delete'),
+                'users' => array('@'),
+                'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 3'
+            ),
+            array(
+                'deny',
+                'users' => array('*')
+            ),
+        );
+    }
+
     public function actionIndex()
     {
 
