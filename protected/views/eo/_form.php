@@ -7,7 +7,7 @@
  */
 ?>
 
-<?php echo CHtml::beginForm($action, 'post', array('id'=>'event-form', 'class'=>'form-horizontal', 'enctype'=>'multipart/form-data')); ?>
+<?php echo CHtml::beginForm($action, 'post', array('id'=>'eo-form', 'class'=>'form-horizontal', 'enctype'=>'multipart/form-data')); ?>
 
 <?php echo (isset($model)) ? Chtml::hiddenField('Eo[eo_id]', $model->eo_id) : null; ?>
 
