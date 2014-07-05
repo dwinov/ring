@@ -29,7 +29,8 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+//		$this->render('index');
+        $this->redirect(Yii::app()->createUrl('site/login'));
 	}
 
 	/**
@@ -77,6 +78,7 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
+        $this->layout = false;
 		$model=new LoginForm;
 
 		// if it is ajax validation request
@@ -91,8 +93,8 @@ class SiteController extends Controller
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+			if($model->validate($model->attributes) && $model->login())
+				$this->redirect(Yii::app()->createUrl('eo/index'));
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));

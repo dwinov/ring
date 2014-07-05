@@ -680,3 +680,157 @@ Stack trace:
 REQUEST_URI=/ring/index.php?r=event/update/id/1
 HTTP_REFERER=http://localhost/ring/index.php?r=event/index
 ---
+2014/07/05 16:44:23 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbActiveForm" is invalid. Make sure it points to an existing directory or file.' in E:\project\yii\framework\YiiBase.php:347
+Stack trace:
+#0 E:\project\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\project\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\project\yii\framework\web\CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\project\ring\protected\views\site\login.php(152): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\project\yii\framework\web\CBaseController.php(126): require('E:\project\ring...')
+#5 E:\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\project\ring...', Array, true)
+#6 E:\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\project\ring...', Array, true)
+#7 E:\project\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\project\ring\protected\controllers\SiteController.php(99): CController->render('login', Array)
+#9 E:\project\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\project\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\project\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\project\ring\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ring/index.php?r=site/login
+---
+2014/07/05 16:47:11 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbActiveForm" is invalid. Make sure it points to an existing directory or file.' in E:\project\yii\framework\YiiBase.php:347
+Stack trace:
+#0 E:\project\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\project\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\project\yii\framework\web\CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\project\ring\protected\views\site\login.php(152): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\project\yii\framework\web\CBaseController.php(126): require('E:\project\ring...')
+#5 E:\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\project\ring...', Array, true)
+#6 E:\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\project\ring...', Array, true)
+#7 E:\project\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\project\ring\protected\controllers\SiteController.php(99): CController->render('login', Array)
+#9 E:\project\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\project\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\project\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\project\ring\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ring/index.php?r=site/login
+---
+2014/07/05 16:47:12 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbActiveForm" is invalid. Make sure it points to an existing directory or file.' in E:\project\yii\framework\YiiBase.php:347
+Stack trace:
+#0 E:\project\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\project\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\project\yii\framework\web\CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\project\ring\protected\views\site\login.php(152): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\project\yii\framework\web\CBaseController.php(126): require('E:\project\ring...')
+#5 E:\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\project\ring...', Array, true)
+#6 E:\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\project\ring...', Array, true)
+#7 E:\project\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\project\ring\protected\controllers\SiteController.php(99): CController->render('login', Array)
+#9 E:\project\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\project\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\project\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\project\ring\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ring/index.php?r=site/login
+---
+2014/07/05 16:47:12 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbActiveForm" is invalid. Make sure it points to an existing directory or file.' in E:\project\yii\framework\YiiBase.php:347
+Stack trace:
+#0 E:\project\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\project\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\project\yii\framework\web\CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\project\ring\protected\views\site\login.php(152): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\project\yii\framework\web\CBaseController.php(126): require('E:\project\ring...')
+#5 E:\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\project\ring...', Array, true)
+#6 E:\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\project\ring...', Array, true)
+#7 E:\project\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\project\ring\protected\controllers\SiteController.php(99): CController->render('login', Array)
+#9 E:\project\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\project\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\project\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\project\ring\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ring/index.php?r=site/login
+---
+2014/07/05 16:47:13 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbActiveForm" is invalid. Make sure it points to an existing directory or file.' in E:\project\yii\framework\YiiBase.php:347
+Stack trace:
+#0 E:\project\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\project\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\project\yii\framework\web\CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\project\ring\protected\views\site\login.php(152): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\project\yii\framework\web\CBaseController.php(126): require('E:\project\ring...')
+#5 E:\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\project\ring...', Array, true)
+#6 E:\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\project\ring...', Array, true)
+#7 E:\project\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\project\ring\protected\controllers\SiteController.php(99): CController->render('login', Array)
+#9 E:\project\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\project\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\project\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\project\ring\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ring/index.php?r=site/login
+---
+2014/07/05 16:47:13 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbActiveForm" is invalid. Make sure it points to an existing directory or file.' in E:\project\yii\framework\YiiBase.php:347
+Stack trace:
+#0 E:\project\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\project\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\project\yii\framework\web\CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\project\ring\protected\views\site\login.php(152): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\project\yii\framework\web\CBaseController.php(126): require('E:\project\ring...')
+#5 E:\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\project\ring...', Array, true)
+#6 E:\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\project\ring...', Array, true)
+#7 E:\project\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\project\ring\protected\controllers\SiteController.php(99): CController->render('login', Array)
+#9 E:\project\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\project\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\project\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\project\ring\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ring/index.php?r=site/login
+---
+2014/07/05 16:49:24 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbActiveForm" is invalid. Make sure it points to an existing directory or file.' in E:\project\yii\framework\YiiBase.php:347
+Stack trace:
+#0 E:\project\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\project\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\project\yii\framework\web\CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\project\ring\protected\views\site\login.php(152): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\project\yii\framework\web\CBaseController.php(126): require('E:\project\ring...')
+#5 E:\project\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\project\ring...', Array, true)
+#6 E:\project\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\project\ring...', Array, true)
+#7 E:\project\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\project\ring\protected\controllers\SiteController.php(99): CController->render('login', Array)
+#9 E:\project\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\project\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\project\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\project\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\project\ring\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ring/index.php?r=site/login
+---
