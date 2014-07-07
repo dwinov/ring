@@ -8,7 +8,7 @@
 
 class EoController extends Controller
 {
-    public $layout = '//layouts/ring';
+    public $layout = '//layouts/main';
 
     /**
      * @return array action filters

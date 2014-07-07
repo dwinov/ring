@@ -1273,3 +1273,99 @@ Stack trace:
 REQUEST_URI=/ring/index.php?r=eo/index
 HTTP_REFERER=http://localhost/ring/index.php?r=site/login
 ---
+2014/07/07 10:09:59 [error] [php] Undefined index: iDisplayStart (E:\project\ring\protected\models\Eo.php:79)
+Stack trace:
+#0 E:\project\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\project\yii\framework\web\filters\CFilterChain.php(133): EoController->runAction()
+#2 E:\project\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\project\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\project\yii\framework\web\filters\CInlineFilter.php(58): EoController->filterAccessControl()
+#5 E:\project\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\project\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\project\yii\framework\web\CController.php(265): EoController->runActionWithFilters()
+#8 E:\project\yii\framework\web\CWebApplication.php(282): EoController->run()
+#9 E:\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/index.php?r=eo/index&date=&time=&_=1404720598359
+in E:\project\ring\protected\models\Eo.php (79)
+in E:\project\ring\protected\controllers\EoController.php (44)
+in E:\project\ring\index.php (13)
+2014/07/07 10:54:21 [warning] [application] Failed to set unsafe attribute "eo_name" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:54:21 [warning] [application] Failed to set unsafe attribute "eo_address" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:54:21 [warning] [application] Failed to set unsafe attribute "eo_phone" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:54:21 [warning] [application] Failed to set unsafe attribute "eo_fax" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:54:21 [warning] [application] Failed to set unsafe attribute "eo_email" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:54:21 [warning] [application] Failed to set unsafe attribute "eo_website" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:54:21 [warning] [application] Failed to set unsafe attribute "eo_description" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:54:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist!.' in E:\project\ring\protected\models\Eo.php:93
+Stack trace:
+#0 E:\project\ring\protected\controllers\EoController.php(93): Eo->getEoById('2')
+#1 [internal function]: EoController->actionDelete('2')
+#2 E:\project\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(EoController), Array)
+#3 E:\project\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(EoController), Object(ReflectionMethod), Array)
+#4 E:\project\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\project\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 E:\project\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\project\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 E:\project\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\project\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\project\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\project\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\project\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#13 E:\project\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('eo/delete/id/2')
+#14 E:\project\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\project\ring\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ring/index.php?r=eo/delete/id/2
+HTTP_REFERER=http://localhost/ring/index.php?r=eo/index
+---
+2014/07/07 10:57:00 [warning] [application] Failed to set unsafe attribute "eo_name" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:57:00 [warning] [application] Failed to set unsafe attribute "eo_address" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:57:00 [warning] [application] Failed to set unsafe attribute "eo_phone" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:57:00 [warning] [application] Failed to set unsafe attribute "eo_fax" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:57:00 [warning] [application] Failed to set unsafe attribute "eo_email" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:57:00 [warning] [application] Failed to set unsafe attribute "eo_website" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
+2014/07/07 10:57:00 [warning] [application] Failed to set unsafe attribute "eo_description" of "Eo".
+in E:\project\ring\protected\models\Eo.php (100)
+in E:\project\ring\protected\controllers\EoController.php (58)
+in E:\project\ring\index.php (13)
