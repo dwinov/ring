@@ -1476,3 +1476,196 @@ in E:\project\ring\index.php (13)
 in E:\project\ring\protected\models\Member.php (60)
 in E:\project\ring\protected\controllers\MemberController.php (29)
 in E:\project\ring\index.php (13)
+2014/07/08 10:28:32 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.userid" is not defined.' in E:\project\ring\yii\base\CComponent.php:130
+Stack trace:
+#0 E:\project\ring\yii\web\auth\CWebUser.php(146): CComponent->__get('userid')
+#1 E:\project\ring\protected\controllers\MemberController.php(15): CWebUser->__get('userid')
+#2 E:\project\ring\yii\web\actions\CInlineAction.php(49): MemberController->actionIndex()
+#3 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\project\ring\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\project\ring\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('index')
+#7 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('member/index')
+#8 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\project\ring\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/ring/index.php?r=member/index
+---
+2014/07/08 10:28:43 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.usrid" is not defined.' in E:\project\ring\yii\base\CComponent.php:130
+Stack trace:
+#0 E:\project\ring\yii\web\auth\CWebUser.php(146): CComponent->__get('usrid')
+#1 E:\project\ring\protected\controllers\MemberController.php(15): CWebUser->__get('usrid')
+#2 E:\project\ring\yii\web\actions\CInlineAction.php(49): MemberController->actionIndex()
+#3 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\project\ring\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\project\ring\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('index')
+#7 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('member/index')
+#8 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\project\ring\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/ring/index.php?r=member/index
+---
+2014/07/08 10:42:07 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.usrid" is not defined.' in E:\project\ring\yii\base\CComponent.php:130
+Stack trace:
+#0 E:\project\ring\yii\web\auth\CWebUser.php(146): CComponent->__get('usrid')
+#1 E:\project\ring\protected\controllers\MemberController.php(15): CWebUser->__get('usrid')
+#2 E:\project\ring\yii\web\actions\CInlineAction.php(49): MemberController->actionIndex()
+#3 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\project\ring\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\project\ring\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('index')
+#7 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('member/index')
+#8 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\project\ring\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/ring/index.php?r=member/index
+---
+2014/07/08 10:42:40 [warning] [application] Failed to set unsafe attribute "usr_type_id" of "User".
+in E:\project\ring\protected\models\User.php (76)
+in E:\project\ring\protected\controllers\MemberController.php (28)
+in E:\project\ring\index.php (13)
+2014/07/08 10:42:40 [warning] [application] Failed to set unsafe attribute "usr_email" of "User".
+in E:\project\ring\protected\models\User.php (76)
+in E:\project\ring\protected\controllers\MemberController.php (28)
+in E:\project\ring\index.php (13)
+2014/07/08 10:42:40 [warning] [application] Failed to set unsafe attribute "usr_password" of "User".
+in E:\project\ring\protected\models\User.php (76)
+in E:\project\ring\protected\controllers\MemberController.php (28)
+in E:\project\ring\index.php (13)
+2014/07/08 10:42:40 [warning] [application] Failed to set unsafe attribute "usr_rpassword" of "User".
+in E:\project\ring\protected\models\User.php (76)
+in E:\project\ring\protected\controllers\MemberController.php (28)
+in E:\project\ring\index.php (13)
+2014/07/08 10:42:40 [warning] [application] Failed to set unsafe attribute "User" of "Member".
+in E:\project\ring\protected\models\Member.php (60)
+in E:\project\ring\protected\controllers\MemberController.php (32)
+in E:\project\ring\index.php (13)
+2014/07/08 10:42:40 [warning] [application] Failed to set unsafe attribute "Member" of "Member".
+in E:\project\ring\protected\models\Member.php (60)
+in E:\project\ring\protected\controllers\MemberController.php (32)
+in E:\project\ring\index.php (13)
+2014/07/08 10:42:40 [warning] [application] Failed to set unsafe attribute "tnc" of "Member".
+in E:\project\ring\protected\models\Member.php (60)
+in E:\project\ring\protected\controllers\MemberController.php (32)
+in E:\project\ring\index.php (13)
+2014/07/08 11:25:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('update')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('update')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('member/update')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/index.php?r=member/update
+HTTP_REFERER=http://localhost/ring/index.php?r=member/index
+---
+2014/07/08 11:34:32 [error] [php] Undefined index: mem_id (E:\project\ring\protected\models\Member.php:80)
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\project\ring\yii\web\CController.php(286): MemberController->runAction()
+#2 E:\project\ring\yii\web\CController.php(265): MemberController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): MemberController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/index.php?r=member/update
+in E:\project\ring\protected\models\Member.php (80)
+in E:\project\ring\protected\controllers\MemberController.php (70)
+in E:\project\ring\index.php (13)
+2014/07/08 11:35:15 [warning] [application] Failed to set unsafe attribute "mem_id" of "Member".
+in E:\project\ring\protected\models\Member.php (82)
+in E:\project\ring\protected\controllers\MemberController.php (70)
+in E:\project\ring\index.php (13)
+2014/07/08 11:35:15 [warning] [application] Failed to set unsafe attribute "mem_first_name" of "Member".
+in E:\project\ring\protected\models\Member.php (82)
+in E:\project\ring\protected\controllers\MemberController.php (70)
+in E:\project\ring\index.php (13)
+2014/07/08 11:35:15 [warning] [application] Failed to set unsafe attribute "mem_last_name" of "Member".
+in E:\project\ring\protected\models\Member.php (82)
+in E:\project\ring\protected\controllers\MemberController.php (70)
+in E:\project\ring\index.php (13)
+2014/07/08 11:35:15 [warning] [application] Failed to set unsafe attribute "mem_phone" of "Member".
+in E:\project\ring\protected\models\Member.php (82)
+in E:\project\ring\protected\controllers\MemberController.php (70)
+in E:\project\ring\index.php (13)
+2014/07/08 11:35:15 [warning] [application] Failed to set unsafe attribute "mem_email" of "Member".
+in E:\project\ring\protected\models\Member.php (82)
+in E:\project\ring\protected\controllers\MemberController.php (70)
+in E:\project\ring\index.php (13)
+2014/07/08 11:35:15 [warning] [application] Failed to set unsafe attribute "mem_gender" of "Member".
+in E:\project\ring\protected\models\Member.php (82)
+in E:\project\ring\protected\controllers\MemberController.php (70)
+in E:\project\ring\index.php (13)
+2014/07/08 11:35:15 [warning] [application] Failed to set unsafe attribute "mem_about_me" of "Member".
+in E:\project\ring\protected\models\Member.php (82)
+in E:\project\ring\protected\controllers\MemberController.php (70)
+in E:\project\ring\index.php (13)
+2014/07/08 11:43:21 [error] [exception.CException] exception 'CException' with message 'Property "Member.mem_about" is not defined.' in E:\project\ring\yii\base\CComponent.php:130
+Stack trace:
+#0 E:\project\ring\yii\db\ar\CActiveRecord.php(145): CComponent->__get('mem_about')
+#1 E:\project\ring\protected\views\member\index.php(96): CActiveRecord->__get('mem_about')
+#2 E:\project\ring\yii\web\CBaseController.php(126): require('E:\project\ring...')
+#3 E:\project\ring\yii\web\CBaseController.php(95): CBaseController->renderInternal('E:\project\ring...', Array, true)
+#4 E:\project\ring\yii\web\CController.php(869): CBaseController->renderFile('E:\project\ring...', Array, true)
+#5 E:\project\ring\yii\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 E:\project\ring\protected\controllers\MemberController.php(18): CController->render('index', Array)
+#7 E:\project\ring\yii\web\actions\CInlineAction.php(49): MemberController->actionIndex()
+#8 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\project\ring\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\project\ring\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('index')
+#12 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('member/index')
+#13 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#14 E:\project\ring\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ring/index.php?r=member/index
+HTTP_REFERER=http://localhost/ring/index.php?r=member/index
+---
+2014/07/08 12:30:16 [error] [exception.CException] exception 'CException' with message 'Property "Member.eo_id" is not defined.' in E:\project\ring\yii\base\CComponent.php:130
+Stack trace:
+#0 E:\project\ring\yii\db\ar\CActiveRecord.php(145): CComponent->__get('eo_id')
+#1 E:\project\ring\protected\views\member\index.php(946): CActiveRecord->__get('eo_id')
+#2 E:\project\ring\yii\web\CBaseController.php(126): require('E:\project\ring...')
+#3 E:\project\ring\yii\web\CBaseController.php(95): CBaseController->renderInternal('E:\project\ring...', Array, true)
+#4 E:\project\ring\yii\web\CController.php(869): CBaseController->renderFile('E:\project\ring...', Array, true)
+#5 E:\project\ring\yii\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 E:\project\ring\protected\controllers\MemberController.php(18): CController->render('index', Array)
+#7 E:\project\ring\yii\web\actions\CInlineAction.php(49): MemberController->actionIndex()
+#8 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\project\ring\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\project\ring\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('index')
+#12 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('member/index')
+#13 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#14 E:\project\ring\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ring/index.php?r=member/index
+HTTP_REFERER=http://localhost/ring/index.php?r=member/index
+---
+2014/07/08 16:07:28 [error] [php] Undefined property: stdClass::$username (E:\project\ring\protected\controllers\ApiController.php:79)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/index.php?r=api/login
+in E:\project\ring\protected\controllers\ApiController.php (79)
+in E:\project\ring\index.php (13)
+2014/07/08 16:31:29 [error] [php] Argument 1 passed to ApiController::sendAjaxResponse() must implement interface AjaxResponseInterface, array given, called in E:\project\ring\protected\controllers\ApiController.php on line 86 and defined (E:\project\ring\protected\controllers\ApiController.php:101)
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#2 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#3 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#4 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#5 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#7 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/index.php?r=api/login
+in E:\project\ring\protected\controllers\ApiController.php (101)
+in E:\project\ring\protected\controllers\ApiController.php (86)
+in E:\project\ring\index.php (13)

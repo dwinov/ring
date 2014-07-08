@@ -12,7 +12,14 @@ class MemberController extends Controller
 
     public function actionIndex()
     {
-        $this->render('index');
+        $model = Member::model()->find('mem_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
+        $eo = Eo::model()->find('eo_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
+        $venue = Venue::model()->find('vn_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
+        $this->render('index', array(
+            'model' => $model,
+            'eo' => $eo,
+            'venue' => $venue
+        ));
     }
 
     public function actionRegister()
@@ -35,7 +42,7 @@ class MemberController extends Controller
 
                     if($login->validate($login->attributes) && $login->login())
                     {
-                        $this->redirect(Yii::app()->createUrl('eo/index'));
+                        $this->redirect(Yii::app()->createUrl('member/index'));
                     }
                     else
                     {
@@ -55,6 +62,17 @@ class MemberController extends Controller
         else
         {
             $this->redirect(Yii::app()->createUrl('site/login'));
+        }
+    }
+
+    public function actionUpdate()
+    {
+        if(isset($_POST['Member']))
+        {
+            $model = new Member();
+
+            if($model->updateMember($_POST))
+                $this->redirect(Yii::app()->createUrl('member/index'));
         }
     }
 }

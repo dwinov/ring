@@ -6,7 +6,7 @@
  * Time: 11:12 PM
  */
 
-class User extends CActiveRecord
+class User extends CActiveRecord implements AjaxResponseInterface
 {
     /**
      * Returns the static model of the specified AR class.
@@ -80,5 +80,10 @@ class User extends CActiveRecord
         $model->usr_type_id = $data['usr_type_id'];
 
         return ($model->save()) ? $model->usr_id : null;
+    }
+
+    public function getResponseData()
+    {
+        return $this->attributes;
     }
 }

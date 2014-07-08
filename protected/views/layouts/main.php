@@ -33,6 +33,7 @@
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/ring/pages/tasks.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/ring/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/ring/print.css" rel="stylesheet" type="text/css" media="print"/>
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/ring/pages/profile.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/ring/custom.css" rel="stylesheet" type="text/css"/>
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico"/>
@@ -467,43 +468,20 @@
     </a>
     <ul class="dropdown-menu">
         <li>
-            <a href="extra_profile.html">
+            <a href="<?php echo Yii::app()->createUrl('member/index'); ?>">
                 <i class="fa fa-user"></i> My Profile
             </a>
         </li>
         <li>
-            <a href="page_calendar.html">
-                <i class="fa fa-calendar"></i> My Calendar
-            </a>
+            <a href="page_calendar.html"><i class="fa fa-calendar"></i> My Calendar</a>
         </li>
         <li>
-            <a href="inbox.html">
-                <i class="fa fa-envelope"></i> My Inbox
-							<span class="badge badge-danger">
-								 3
-							</span>
-            </a>
+            <a href="inbox.html"><i class="fa fa-envelope"></i> My Inbox<span class="badge badge-danger">3</span></a>
         </li>
         <li>
-            <a href="#">
-                <i class="fa fa-tasks"></i> My Tasks
-							<span class="badge badge-success">
-								 7
-							</span>
-            </a>
+            <a href="#"><i class="fa fa-tasks"></i> My Tasks<span class="badge badge-success">7</span></a>
         </li>
-        <li class="divider">
-        </li>
-        <li>
-            <a href="javascript:;" id="trigger_fullscreen">
-                <i class="fa fa-arrows"></i> Full Screen
-            </a>
-        </li>
-        <li>
-            <a href="extra_lock.html">
-                <i class="fa fa-lock"></i> Lock Screen
-            </a>
-        </li>
+        <li class="divider"></li>
         <li>
             <a href="<?php echo Yii::app()->createUrl('site/logout'); ?>">
                 <i class="fa fa-key"></i> Log Out

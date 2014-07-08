@@ -66,4 +66,26 @@ class Member extends CActiveRecord
 
         return ($model->save()) ? true : false;
     }
+
+    public function getMemberById($id)
+    {
+        $model = Member::model()->findByPk($id);
+        if($model === null)
+            throw new CHttpException(404,'The requested page does not exist!.');
+        return $model;
+    }
+
+    public function updateMember($data)
+    {
+        $model = $this->getMemberById($data['Member']['mem_id']);
+
+        $model->attributes = $data['Member'];
+        $model->mem_first_name = $data['Member']['mem_first_name'];
+        $model->mem_last_name = $data['Member']['mem_last_name'];
+        $model->mem_phone = $data['Member']['mem_phone'];
+        $model->mem_gender = $data['Member']['mem_gender'];
+        $model->mem_about_me = $data['Member']['mem_about_me'];
+
+        return ($model->save()) ? true : false;
+    }
 }
