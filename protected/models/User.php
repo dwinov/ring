@@ -68,4 +68,17 @@ class User extends CActiveRecord
         $level=array('1'=>'Admin','2'=>'EO','3'=>'Venue');
         return $level[$id];
     }
+
+    public function insertUser($data)
+    {
+        $model = new User;
+
+        $model->attributes = $data;
+        $model->usr_password = md5($data['usr_password']);
+        $model->usr_username = $data['usr_email'];
+        $model->usr_email = $data['usr_email'];
+        $model->usr_type_id = $data['usr_type_id'];
+
+        return ($model->save()) ? $model->usr_id : null;
+    }
 }
