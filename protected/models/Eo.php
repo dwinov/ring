@@ -98,6 +98,7 @@ class Eo extends CActiveRecord
     {
         $model = new Eo;
         $model->attributes = $input['Eo'];
+        $model->eo_user_id = (isset($input['Eo']['eo_user_id'])) ? $input['Eo']['eo_user_id'] : Yii::app()->user->usrid;
         $model->eo_name = $input['Eo']['eo_name'];
         $model->eo_address = $input['Eo']['eo_address'];
         $model->eo_phone = $input['Eo']['eo_phone'];

@@ -7,7 +7,7 @@
  */
 ?>
 
-<?php echo CHtml::beginForm(Yii::app()->createUrl('eo/update'), 'post', array('role' => 'form')); ?>
+<?php echo CHtml::beginForm(Yii::app()->createUrl('eo/client'), 'post', array('role' => 'form')); ?>
     <?php echo (isset($eo)) ? Chtml::hiddenField('Eo[eo_id]', $eo->eo_id) : null; ?>
     <div class="form-group">
         <label class="control-label">Event Organizer Name</label>

@@ -25,7 +25,7 @@ class EoController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete'),
+                'actions' => array('index','create', 'update', 'delete', 'client'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 2'
             ),
@@ -85,6 +85,33 @@ class EoController extends Controller
         $this->render('update', array(
             'model' => $data,
         ));
+    }
+
+    public function actionClient()
+    {
+        $model = new Eo();
+
+        if(isset($_POST['Eo']))
+        {
+            if(!isset($_POST['Eo']['eo_id']))
+            {
+                if($model->insertData($_POST))
+                {
+                    $this->redirect(array('member/index'));
+                }else{
+                    $this->redirect(array('member/index'));
+                }
+            }else{
+                if($model->updateData($_POST))
+                {
+                    $this->redirect(array('member/index'));
+                }else{
+                    $this->redirect(array('member/index'));
+                }
+            }
+        }else{
+            $this->redirect(array('member/index'));
+        }
     }
 
     public function actionDelete($id)
