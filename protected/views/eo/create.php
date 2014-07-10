@@ -7,55 +7,18 @@
  */
 ?>
 
-<!-- BEGIN PAGE HEADER-->
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-        <h3 class="page-title">Event Organizer</h3>
-        <ul class="page-breadcrumb breadcrumb">
-            <li>
-                <i class="fa fa-home"></i><a href="index.html">Home</a><i class="fa fa-angle-right"></i>
-            </li>
-            <li>
-                <a href="index.html">Event Organizer</a><i class="fa fa-angle-right"></i>
-            </li>
-            <li>
-                <a href="#">Create</a>
-            </li>
-        </ul>
-        <!-- END PAGE TITLE & BREADCRUMB-->
-    </div>
-</div>
-<!-- END PAGE HEADER-->
+<ul class="breadcrumb">
+    <li><a href="index.html?lang=en" class="glyphicons home"><i></i> BootAdmin</a></li>
+    <li class="divider"></li>
+    <li>Add New EO</li>
+</ul>
+<div class="separator"></div>
 
-<div class="clearfix">
-</div>
+<h2 class="glyphicons user"><i></i> Create Event Organizer</h2>
+<div class="separator"></div>
 
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN VALIDATION STATES-->
-        <div class="portlet box blue">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-reorder"></i>Form Event Organizer
-                </div>
-                <div class="tools">
-                    <a href="javascript:;" class="collapse">
-                    </a>
-                    <a href="#portlet-config" data-toggle="modal" class="config">
-                    </a>
-                    <a href="javascript:;" class="reload">
-                    </a>
-                    <a href="javascript:;" class="remove">
-                    </a>
-                </div>
-            </div>
-            <div class="portlet-body form">
-                <!-- BEGIN FORM-->
-                <?php echo $this->renderPartial('_form', array('action' => Yii::app()->createUrl('eo/create'))); ?>
-                <!-- END FORM-->
-            </div>
-        </div>
-        <!-- END VALIDATION STATES-->
-    </div>
+<div class="row-fluid">
+
+        <?php echo $this->renderPartial('_form', array('action' => Yii::app()->createUrl('eo/create'))); ?>
+
 </div>

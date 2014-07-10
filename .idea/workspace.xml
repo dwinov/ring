@@ -2,10 +2,465 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e8e509d-b021-43ea-8313-ae2ae2526bdf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Eo.php" afterPath="$PROJECT_DIR$/protected/models/Eo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/views/layouts/layout.php" />
+      <change type="DELETED" beforePath="E:\project\ring\images\accordion-plusminus.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\ajax-loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\ajax-modal-loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\arrow-down.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\avatar.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\avatar1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\avatar1_small.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\avatar2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\avatar3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\avatar3_small.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\bg-opacity.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\bg-white-lock.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\bg-white.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\bg\1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\bg\2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\bg\3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\bg\4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\14.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\15.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\18.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\19.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\20.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\blog\Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\datatable-row-openclose.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\article.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\iphone.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\iphone_left.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\iphone_right.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\photo1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\photo2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\photo3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\photo4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\photo5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\photo6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\social_facebook.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\social_googleplus.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\social_linkedin.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\social_rss.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\email\social_twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ad.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ae.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\af.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ag.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ai.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\al.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\am.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\an.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ao.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ar.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\as.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\at.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\au.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\aw.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ax.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\az.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ba.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bb.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bd.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\be.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bf.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bh.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bi.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bj.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\br.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bs.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bt.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bv.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bw.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\by.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\bz.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ca.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\catalonia.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cc.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cd.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cf.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ch.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ci.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ck.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cl.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\co.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cs.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cu.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cv.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cx.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cy.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\cz.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\de.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\dj.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\dk.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\dm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\do.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\dz.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ec.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ee.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\eg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\eh.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\england.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\er.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\es.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\et.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\europeanunion.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\fam.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\fi.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\fj.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\fk.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\fm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\fo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\fr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ga.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gb.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gd.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ge.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gf.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gh.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gi.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gl.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gp.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gq.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gs.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gt.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gu.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gw.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\gy.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\hk.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\hm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\hn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\hr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ht.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\hu.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\id.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ie.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\il.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\in.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\io.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\iq.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ir.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\is.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\it.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\jm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\jo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\jp.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ke.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\kg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\kh.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ki.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\km.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\kn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\kp.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\kr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\kw.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ky.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\kz.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\la.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\lb.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\lc.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\li.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\lk.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\lr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ls.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\lt.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\lu.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\lv.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ly.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ma.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mc.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\md.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\me.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mh.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mk.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ml.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mp.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mq.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ms.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mt.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mu.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mv.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mw.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mx.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\my.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\mz.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\na.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\nc.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ne.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\nf.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ng.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ni.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\nl.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\no.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\np.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\nr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\nu.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\nz.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\om.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pa.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pe.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pf.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ph.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pk.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pl.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ps.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pt.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\pw.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\py.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\qa.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\re.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ro.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\rs.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ru.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\rw.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sa.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sb.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sc.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\scotland.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sd.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\se.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sh.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\si.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sj.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sk.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sl.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\so.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\st.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sv.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sy.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\sz.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tc.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\td.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tf.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\th.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tj.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tk.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tl.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\to.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tt.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tv.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tw.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\tz.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ua.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ug.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\um.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\us.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\uy.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\uz.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\va.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\vc.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ve.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\vg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\vi.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\vn.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\vu.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\wales.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\wf.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ws.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\ye.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\yt.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\za.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\zm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\flags\zw.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\image1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\image2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\image3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\image4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\image5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\item_img.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\item_img1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_02.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_03.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_04.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_05.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_06.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_07.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_08.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_09.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_10.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_11.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_12.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_13.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_14.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_15.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_16.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_17.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\gallery\preview_18.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\hor-menu-red-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\hor-menu-search-close-white.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\hor-menu-search-close.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\hor-menu-search.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\hor-menu-search.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\icon-color-close.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\icon-color.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\icon-img-down.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\icon-img-up.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\inbox-nav-arrow-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\input-spinner.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\invoice\walmart.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\loading-spinner-blue.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\loading-spinner-default.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\loading-spinner-grey.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\logo-big.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\menu-toggler.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\overlay-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\earth.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\img.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\img1.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\img1_2.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\img2.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\img3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\img3.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\pages\img4.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\photo1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\photo2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-collapse-icon-white.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-collapse-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-config-icon-white.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-config-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-expand-icon-white.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-expand-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-reload-icon-white.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-reload-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-remove-icon-white.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\portlet-remove-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\profile\NO-IMAGE-AVAILABLE.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\profile\portfolio\logo_azteca.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\profile\portfolio\logo_conquer.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\profile\portfolio\logo_metronic.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\profile\profile-img.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\profile\profile-img.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\profile\profile.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\remove-icon-small.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search-icon-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search-icon-brown.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search-icon-light.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search-icon-purple.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search-icon-red.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search-icon-white.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search\1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search\2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search\img1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search\img2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\search\img3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\select-caret.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-menu-arrow-green-reverse.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-menu-arrow-green.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-menu-arrow-reverse.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-menu-arrow-right.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-menu-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-search-close-blue.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-search-close-brown.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-search-close-light.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-search-close-purple.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-search-close.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-toggler-blue.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-toggler-brown.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-toggler-light.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-toggler-purple.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-toggler.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\sidebar-toggler.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\aboutme.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\amazon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\behance.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\blogger.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\deviantart.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\dribbble.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\dropbox.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\evernote.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\facebook.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\flickr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\forrst.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\foursquare.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\github.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\googleplus.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\gravatar.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\instagram.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\jolicloud.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\klout.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\last-fm.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\linkedin.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\myspace.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\picasa.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\pintrest.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\quora.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\reddit.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\rss.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\skype.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\spotify.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\stumbleupon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\tumblr.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\vimeo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\vk.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\wordpress.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\xing.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\yahoo.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\social\youtube.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\syncfusion-icons-white.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\syncfusion-icons.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\works\img1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\works\img2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\works\img3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\works\img4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\works\img5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\project\ring\images\works\img6.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/EoController.php" afterPath="$PROJECT_DIR$/protected/controllers/EoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/member/_eo.php" afterPath="$PROJECT_DIR$/protected/views/member/_eo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/application.log" afterPath="$PROJECT_DIR$/protected/runtime/application.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/eo/_form.php" afterPath="$PROJECT_DIR$/protected/views/eo/_form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/eo/create.php" afterPath="$PROJECT_DIR$/protected/views/eo/create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/eo/index.php" afterPath="$PROJECT_DIR$/protected/views/eo/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/eo/update.php" afterPath="$PROJECT_DIR$/protected/views/eo/update.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ring.iws" />
@@ -29,28 +484,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Helper.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/Helper.php">
+      <file leaf-file-name="layout.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/layouts/layout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="33" selection-start="462" selection-end="462" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="357">
-              <folding />
+            <state line="289" column="52" selection-start="13622" selection-end="13622" vertical-scroll-proportion="-38.03846" vertical-offset="3924" max-vertical-offset="5304">
+              <folding>
+                <element signature="e#6#87#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/member/index.php">
+        <entry file="file://$PROJECT_DIR$/protected/views/eo/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="743" column="96" selection-start="20836" selection-end="20836" vertical-scroll-proportion="119.57692" vertical-offset="15655" max-vertical-offset="26894">
-              <folding />
+            <state line="71" column="200" selection-start="2809" selection-end="2809" vertical-scroll-proportion="-9.269231" vertical-offset="966" max-vertical-offset="1938">
+              <folding>
+                <element signature="e#1293#1315#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_eo.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/member/_eo.php">
+      <file leaf-file-name="create.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/eo/create.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="53" selection-start="143" selection-end="143" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="850">
+            <state line="9" column="0" selection-start="90" selection-end="528" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="493">
+              <folding>
+                <element signature="e#6#85#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/views/eo/_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="48" selection-start="995" selection-end="995" vertical-scroll-proportion="-1.5154471" vertical-offset="1391" max-vertical-offset="2006">
+              <folding>
+                <element signature="e#6#85#0" expanded="true" />
+                <element signature="e#275#294#0" expanded="true" />
+                <element signature="e#701#727#0" expanded="true" />
+                <element signature="e#4441#4459#0" expanded="true" />
+                <element signature="e#5275#5299#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/eo/update.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="6" selection-start="573" selection-end="573" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="408">
               <folding />
             </state>
           </provider>
@@ -59,43 +544,7 @@
       <file leaf-file-name="EoController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/controllers/EoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="32" selection-start="2142" selection-end="2142" vertical-scroll-proportion="-6.769231" vertical-offset="1388" max-vertical-offset="2074">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Eo.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/models/Eo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="64" selection-start="2846" selection-end="2846" vertical-scroll-proportion="0.4410828" vertical-offset="1423" max-vertical-offset="2244">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_venue.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/member/_venue.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="63" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="969">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="0" selection-start="1938" selection-end="1938" vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="1598">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Member.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/Member.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="47" selection-start="2746" selection-end="2746" vertical-scroll-proportion="0.0" vertical-offset="1496" max-vertical-offset="1632">
+            <state line="10" column="38" selection-start="166" selection-end="166" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="2074">
               <folding />
             </state>
           </provider>
@@ -125,10 +574,6 @@
         <option value="$PROJECT_DIR$/js/map.custom.js" />
         <option value="$PROJECT_DIR$/protected/views/layouts/ring.php" />
         <option value="$PROJECT_DIR$/css/ring/themes/default.css" />
-        <option value="$PROJECT_DIR$/protected/views/eo/create.php" />
-        <option value="$PROJECT_DIR$/protected/views/eo/update.php" />
-        <option value="$PROJECT_DIR$/protected/views/eo/_form.php" />
-        <option value="$PROJECT_DIR$/protected/views/eo/index.php" />
         <option value="$PROJECT_DIR$/protected/controllers/VenueController.php" />
         <option value="$PROJECT_DIR$/protected/views/venue/index.php" />
         <option value="$PROJECT_DIR$/protected/views/venue/update.php" />
@@ -151,8 +596,15 @@
         <option value="$PROJECT_DIR$/protected/models/Helper.php" />
         <option value="$PROJECT_DIR$/protected/controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/protected/views/member/_eo.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/EoController.php" />
         <option value="$PROJECT_DIR$/protected/models/Eo.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/EoController.php" />
+        <option value="$PROJECT_DIR$/js/load.js" />
+        <option value="$PROJECT_DIR$/css/new/glyphicons.css" />
+        <option value="$PROJECT_DIR$/protected/views/layouts/layout.php" />
+        <option value="$PROJECT_DIR$/protected/views/eo/create.php" />
+        <option value="$PROJECT_DIR$/protected/views/eo/index.php" />
+        <option value="$PROJECT_DIR$/protected/views/eo/update.php" />
+        <option value="$PROJECT_DIR$/protected/views/eo/_form.php" />
       </list>
     </option>
   </component>
@@ -189,6 +641,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,13 +706,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -314,11 +770,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -338,21 +794,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/views/eo/create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="476" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/eo/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="21" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="4369" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/eo/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="25" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="2312" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Eo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="44" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="1581" />
@@ -463,11 +904,6 @@
         <state line="10" column="36" selection-start="166" selection-end="166" vertical-scroll-proportion="0.13535032" vertical-offset="0" max-vertical-offset="1751" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/eo/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="181" selection-start="3573" selection-end="3592" vertical-scroll-proportion="-16.346153" vertical-offset="1275" max-vertical-offset="2431" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/event/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="131" column="0" selection-start="4824" selection-end="4824" vertical-scroll-proportion="2.2715447" vertical-offset="745" max-vertical-offset="2686" />
@@ -476,11 +912,6 @@
     <entry file="file://$PROJECT_DIR$/protected/views/event/create.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="36" selection-start="244" selection-end="244" vertical-scroll-proportion="0.21656051" vertical-offset="0" max-vertical-offset="1088" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/eo/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="6" selection-start="91" selection-end="1881" vertical-scroll-proportion="0.8341463" vertical-offset="422" max-vertical-offset="1037" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/event/update.php">
@@ -508,31 +939,9 @@
         <state line="220" column="31" selection-start="10560" selection-end="10560" vertical-scroll-proportion="-59.615383" vertical-offset="2190" max-vertical-offset="4080" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/eo/create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="22" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.60828024" vertical-offset="383" max-vertical-offset="1037" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Venue.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="0" selection-start="2687" selection-end="2687" vertical-scroll-proportion="0.5143312" vertical-offset="1224" max-vertical-offset="2159" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Member.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="47" selection-start="2746" selection-end="2746" vertical-scroll-proportion="0.0" vertical-offset="1496" max-vertical-offset="1632">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="488" column="13" selection-start="17086" selection-end="17086" vertical-scroll-proportion="0.74634147" vertical-offset="7837" max-vertical-offset="11373" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/eo/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="18" selection-start="3583" selection-end="3583" vertical-scroll-proportion="0.4894309" vertical-offset="1025" max-vertical-offset="1802" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/venue/create.php">
@@ -540,23 +949,9 @@
         <state line="54" column="16" selection-start="1579" selection-end="1681" vertical-scroll-proportion="0.6985173" vertical-offset="409" max-vertical-offset="1037" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/member/_venue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="63" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="969">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/components/AjaxResponseInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="10" selection-start="98" selection-end="98" vertical-scroll-proportion="0.08121019" vertical-offset="0" max-vertical-offset="628" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="1938" selection-end="1938" vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="1598">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/ApiController.php">
@@ -566,50 +961,135 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/venue/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="22" selection-start="3111" selection-end="3111" vertical-scroll-proportion="-43.807693" vertical-offset="0" max-vertical-offset="1785">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/member/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="743" column="96" selection-start="20836" selection-end="20836" vertical-scroll-proportion="119.57692" vertical-offset="15655" max-vertical-offset="26894">
-          <folding />
-        </state>
+        <state line="72" column="22" selection-start="3111" selection-end="3111" vertical-scroll-proportion="-43.807693" vertical-offset="0" max-vertical-offset="1785" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="30" selection-start="600" selection-end="600" vertical-scroll-proportion="0.36408567" vertical-offset="0" max-vertical-offset="1326">
-          <folding />
-        </state>
+        <state line="18" column="30" selection-start="600" selection-end="600" vertical-scroll-proportion="0.36408567" vertical-offset="0" max-vertical-offset="1326" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Helper.php">
+    <entry file="file://$PROJECT_DIR$/protected/models/Eo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="33" selection-start="462" selection-end="462" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="357">
+        <state line="101" column="50" selection-start="2953" selection-end="2953" vertical-scroll-proportion="0.46815288" vertical-offset="1423" max-vertical-offset="2244">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/member/_eo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="53" selection-start="143" selection-end="143" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="850">
+        <state line="9" column="53" selection-start="143" selection-end="143" vertical-scroll-proportion="-0.13535032" vertical-offset="153" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/member/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="743" column="96" selection-start="20836" selection-end="20836" vertical-scroll-proportion="-0.13821138" vertical-offset="12631" max-vertical-offset="26894">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="33" selection-start="462" selection-end="462" vertical-scroll-proportion="0.35191083" vertical-offset="0" max-vertical-offset="628">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/member/_venue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="63" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.5127388" vertical-offset="256" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="0" selection-start="1938" selection-end="1938" vertical-scroll-proportion="0.35031846" vertical-offset="885" max-vertical-offset="1513">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Member.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="47" selection-start="2746" selection-end="2746" vertical-scroll-proportion="0.7834395" vertical-offset="919" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/load.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="9" selection-start="2273" selection-end="2273" vertical-scroll-proportion="0.5725429" vertical-offset="1010" max-vertical-offset="18530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/new/glyphicons.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="158" column="28" selection-start="3066" selection-end="3066" vertical-scroll-proportion="0.9469579" vertical-offset="2079" max-vertical-offset="22151">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/EoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="32" selection-start="2142" selection-end="2142" vertical-scroll-proportion="-6.769231" vertical-offset="1388" max-vertical-offset="2074">
+        <state line="10" column="38" selection-start="166" selection-end="166" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="2074">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Eo.php">
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="64" selection-start="2846" selection-end="2846" vertical-scroll-proportion="0.4410828" vertical-offset="1423" max-vertical-offset="2244">
+        <state line="482" column="13" selection-start="16883" selection-end="16883" vertical-scroll-proportion="0.43414634" vertical-offset="7927" max-vertical-offset="11373">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="289" column="52" selection-start="13622" selection-end="13622" vertical-scroll-proportion="-38.03846" vertical-offset="3924" max-vertical-offset="5304">
+          <folding>
+            <element signature="e#6#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/eo/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="200" selection-start="2809" selection-end="2809" vertical-scroll-proportion="-9.269231" vertical-offset="966" max-vertical-offset="1938">
+          <folding>
+            <element signature="e#1293#1315#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/eo/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="90" selection-end="528" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="493">
+          <folding>
+            <element signature="e#6#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/eo/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="6" selection-start="573" selection-end="573" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/eo/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="48" selection-start="995" selection-end="995" vertical-scroll-proportion="-1.5154471" vertical-offset="1391" max-vertical-offset="2006">
+          <folding>
+            <element signature="e#6#85#0" expanded="true" />
+            <element signature="e#275#294#0" expanded="true" />
+            <element signature="e#701#727#0" expanded="true" />
+            <element signature="e#4441#4459#0" expanded="true" />
+            <element signature="e#5275#5299#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

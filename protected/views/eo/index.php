@@ -1,50 +1,34 @@
-<!-- BEGIN PAGE HEADER-->
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-        <h3 class="page-title">Event Organizer</h3>
-        <ul class="page-breadcrumb breadcrumb">
-            <li>
-                <i class="fa fa-home"></i><a href="index.html">Home</a><i class="fa fa-angle-right"></i>
-            </li>
-            <li>
-                <a href="#">Event Organizer</a>
-            </li>
-        </ul>
-        <!-- END PAGE TITLE & BREADCRUMB-->
+<ul class="breadcrumb">
+    <li><a href="<?php echo Yii::app()->createUrl('dashboard/index'); ?>" class="glyphicons home"><i></i> Dashboard</a></li>
+    <li class="divider"></li>
+    <li>Event Organizer</li>
+</ul><br/>
+
+<div class="heading-buttons">
+    <h2 class="glyphicons sort"><i></i> Event Organizer</h2>
+    <div class="buttons pull-right">
+        <a href="<?php echo Yii::app()->createUrl('eo/create'); ?>" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> Add New EO</a>
     </div>
 </div>
-<!-- END PAGE HEADER-->
+<div class="separator"></div>
 
-<div class="clearfix">
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <!-- BEGIN EXAMPLE TABLE PORTLET-->
-        <div class="portlet box purple">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-cogs"></i>Table
-                </div>
-                <div class="actions">
-                    <a href="<?php echo Yii::app()->createUrl('eo/create'); ?>" class="btn green"><i class="fa fa-plus"></i> Add New EO</a>
-                </div>
-            </div>
-            <div class="portlet-body">
-                <table id="basic-datatabel" class="table table-striped table-bordered table-hover" id="sample_3">
-                    <thead>
+<div class="relativeWrap">
+    <div class="widget widget-gray widget-gray-white">
+        <div class="widget-head">
+            <h4 class="heading">List Organizer</h4>
+        </div>
+        <div class="widget-body">
+            <table id="basic-datatabel" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-primary table-condensed">
+                <thead>
                     <tr>
                         <th>Name</th>
                         <th>Address</th>
                         <th>Email</th>
                         <th></th>
                     </tr>
-                    </thead>
-                </table>
-            </div>
+                </thead>
+            </table>
         </div>
-        <!-- END EXAMPLE TABLE PORTLET-->
     </div>
 </div>
 
@@ -59,20 +43,7 @@
         var $dataTable = $("#basic-datatabel").dataTable({
             bServerSide: true,
             sAjaxSource: document.location.href,
-            "aLengthMenu": [
-                [5, 15, 20, -1],
-                [5, 15, 20, "All"] // change per page values here
-            ],
-            // set the initial value
-            "iDisplayLength": 5,
             "sPaginationType": "bootstrap",
-            "oLanguage": {
-                "sLengthMenu": "_MENU_ records",
-                "oPaginate": {
-                    "sPrevious": "Prev",
-                    "sNext": "Next"
-                }
-            },
             aoColumns: [
                 {
                     mData: "eo_name",
@@ -97,8 +68,8 @@
                     sClass: "center",
                     mRender: function(data, type, all) {
                         var btns = new Array();
-                        btns.push("<a class='btn blue' href='<?php echo Yii::app()->createUrl('eo/update'); ?>/id/" + all.eo_id + "' title='Edit'><i class='fa fa-edit'></i></a> ");
-                        btns.push("<a class='btn red' data-delete href='<?php echo Yii::app()->createUrl('eo/delete'); ?>/id/" + all.eo_id + "' title='Delete'><i class='fa fa-times'></i></a>");
+                        btns.push("<a class='btn-action glyphicons pencil btn-success' href='<?php echo Yii::app()->createUrl('eo/update'); ?>/id/" + all.eo_id + "' title='Edit'><i></i></a> ");
+                        btns.push("<a class='btn-action glyphicons remove_2 btn-danger' data-delete href='<?php echo Yii::app()->createUrl('eo/delete'); ?>/id/" + all.eo_id + "' title='Delete'><i></i></a>");
                         return  btns.join("&nbsp;");
 
                     }
