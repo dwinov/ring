@@ -7,54 +7,39 @@
  */
 ?>
 
-    <div class="row">
-        <div class="col-md-12">
-            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-            <h3 class="page-title">Event</h3>
-            <ul class="page-breadcrumb breadcrumb">
-                <li>
-                    <i class="fa fa-home"></i><a href="index.html">Home</a><i class="fa fa-angle-right"></i>
-                </li>
-                <li>
-                    <a href="#">Event</a>
-                </li>
-            </ul>
-            <!-- END PAGE TITLE & BREADCRUMB-->
+    <ul class="breadcrumb">
+        <li><a href="<?php echo Yii::app()->createUrl('dashboard/index'); ?>" class="glyphicons home"><i></i> Dashboard</a></li>
+        <li class="divider"></li>
+        <li>Event</li>
+    </ul><br/>
+
+    <div class="heading-buttons">
+        <h2 class="glyphicons sort"><i></i> Event</h2>
+        <div class="buttons pull-right">
+            <a href="<?php echo Yii::app()->createUrl('event/create'); ?>" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> Add New Event</a>
         </div>
     </div>
-    <!-- END PAGE HEADER-->
+    <div class="separator"></div>
 
-    <div class="clearfix">
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <!-- BEGIN EXAMPLE TABLE PORTLET-->
-            <div class="portlet box green">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-cogs"></i>Table Events
-                    </div>
-                    <div class="actions">
-                        <a href="<?php echo Yii::app()->createUrl('event/create'); ?>" class="btn yellow"><i class="fa fa-plus"></i> Add New Event</a>
-                    </div>
-                </div>
-                <div class="portlet-body">
-                    <table id="basic-datatabel" class="table table-striped table-bordered table-hover" id="sample_3">
-                        <thead>
-                        <tr>
-                            <th>Event</th>
-                            <th>EO</th>
-                            <th>Venue</th>
-                            <th>Tiket</th>
-                            <th>Date</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                    </table>
-                </div>
+    <div class="relativeWrap">
+        <div class="widget widget-gray widget-gray-white">
+            <div class="widget-head">
+                <h4 class="heading">List Event</h4>
             </div>
-            <!-- END EXAMPLE TABLE PORTLET-->
+            <div class="widget-body">
+                <table id="basic-datatabel" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-primary table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>EO</th>
+                        <th>Venue</th>
+                        <th>Tiket</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -69,20 +54,7 @@
             $dataTable = $("#basic-datatabel").dataTable({
                 bServerSide: true,
                 sAjaxSource: document.location.href,
-                "aLengthMenu": [
-                    [5, 15, 20, -1],
-                    [5, 15, 20, "All"] // change per page values here
-                ],
-                // set the initial value
-                "iDisplayLength": 5,
                 "sPaginationType": "bootstrap",
-                "oLanguage": {
-                    "sLengthMenu": "_MENU_ records",
-                    "oPaginate": {
-                        "sPrevious": "Prev",
-                        "sNext": "Next"
-                    }
-                },
                 aoColumns: [
                     {
                         mData: "evt_name",
