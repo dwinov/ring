@@ -8,7 +8,7 @@
 
 class VenueController extends Controller
 {
-    public $layout = '//layouts/main';
+    public $layout = '//layouts/layout';
 
     /**
      * @return array action filters
