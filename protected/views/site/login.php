@@ -78,8 +78,7 @@
             <div class="positionWrapper">
                 <span class="line"></span>
                 <div class="profile heading">
-                    <h1>RING</h1>
-                    <em>A Ring of People</em>
+                    <?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/logologin.png', 'Logo', array('width' => 90)); ?>
                 </div>
             </div>
         </div>

@@ -83,11 +83,11 @@
         <div class="positionWrapper">
             <span class="line"></span>
             <div class="profile">
-                <img src="http://www.placehold.it/38x38/232323" class="avatar" alt="Profile" />
-						<span class="info hidden-phone">
-							<strong>Adrian Demian</strong>
-							<em>Content Manager</em>
-						</span>
+                <?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/HisHerImage.jpg', 'Profile', array('class' => 'avatar')); ?>
+                <span class="info hidden-phone">
+                    <strong>Adrian Demian</strong>
+                    <em>Content Manager</em>
+                </span>
             </div>
             <ul class="topnav hidden-phone">
                 <li>
@@ -104,11 +104,11 @@
 <div class="span2 col main-left hide hidden-phone menu-large">
     <div class="rrow scroll-y-left">
         <div class="iScrollWrapper">
-            <ul>
-                <li class="glyphicons home"><a href="index.html?lang=en"><i></i><span>Dashboard</span></a></li>
-                <li class="glyphicons home active"><a href="index.html?lang=en"><i></i><span>Event Organizer</span></a></li>
-                <li class="glyphicons coins"><a href="finances.html?lang=en"><i></i><span>Venue</span></a></li>
-                <li class="glyphicons calendar"><a href="calendar.html?lang=en"><i></i><span>Event</span></a></li>
+            <ul class="navigasi">
+                <li class="glyphicons home"><a href="<?php echo Yii::app()->createUrl('dashboard/index'); ?>"><i></i><span>Dashboard</span></a></li>
+                <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/index'); ?>"><i></i><span>Event Organizer</span></a></li>
+                <li class="glyphicons globe_af"><a href="<?php echo Yii::app()->createUrl('venue/index'); ?>"><i></i><span>Venue</span></a></li>
+                <li class="glyphicons calendar"><a href="<?php echo Yii::app()->createUrl('event/index'); ?>"><i></i><span>Event</span></a></li>
             </ul>
         </div>
         <span class="navarrow hide">
@@ -293,6 +293,28 @@
 
     // Set a callback to run when the Google Visualization API is loaded.
 //    google.setOnLoadCallback(charts.traffic_sources_dataTables.init);
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        window.onload = function(){
+            setNavigation();
+        }
+
+        function setNavigation()
+        {
+            var path = window.location.pathname;
+            path = path.replace(/\/$/, "");
+            path = decodeURIComponent(path);
+
+            $(".navigasi a").each(function () {
+                var href = $(this).attr('href');
+                if(path.substring(0, href.length) === href){
+                    $(this).closest('li').addClass('active');
+                }
+            });
+        }
+    });
 </script>
 
 <?php $this->renderClip('js-page-end'); ?>

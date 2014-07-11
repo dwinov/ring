@@ -5,7 +5,7 @@
 </ul><br/>
 
 <div class="heading-buttons">
-    <h2 class="glyphicons sort"><i></i> Venue</h2>
+    <h2 class="glyphicons globe_af"><i></i> Venue</h2>
     <div class="buttons pull-right">
         <a href="<?php echo Yii::app()->createUrl('venue/create'); ?>" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> Add New Venue</a>
     </div>
