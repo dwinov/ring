@@ -8,17 +8,20 @@
 
 class MemberController extends Controller
 {
-    public $layout = '//layouts/main';
+    public $layout = '//layouts/layout';
 
     public function actionIndex()
     {
         $model = Member::model()->find('mem_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
         $eo = Eo::model()->find('eo_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
         $venue = Venue::model()->find('vn_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
+        $list_venue = Venue::model()->findAll();
+
         $this->render('index', array(
             'model' => $model,
             'eo' => $eo,
-            'venue' => $venue
+            'venue' => $venue,
+            'list_venue' => CHtml::listData($list_venue, 'vn_id', 'vn_name')
         ));
     }
 

@@ -89,12 +89,6 @@
 							<em>Content Manager</em>
 						</span>
             </div>
-            <ul class="notif">
-                <li><a href="" class="glyphicons chat btn" rel="tooltip" data-placement="bottom" data-original-title="7 new chat message(s)"><i></i><span>7</span></a></li>
-                <li><a href="" class="glyphicons shopping_cart btn" rel="tooltip" data-placement="bottom" data-original-title="1 new product(s)"><i></i><span>1</span></a></li>
-                <li><a href="" class="glyphicons user_add btn" rel="tooltip" data-placement="bottom" data-original-title="4 new member(s)"><i></i><span>4</span></a></li>
-                <li><a href="" class="glyphicons envelope btn" rel="tooltip" data-placement="bottom" data-original-title="3 new email(s)"><i></i><span>3</span></a></li>
-            </ul>
             <ul class="topnav hidden-phone">
                 <li>
                     <a href="<?php echo Yii::app()->createUrl('site/logout'); ?>" class="logout glyphicons lock"><i></i><span>Logout</span></a>
