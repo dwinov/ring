@@ -3622,3 +3622,33 @@ Stack trace:
 REQUEST_URI=/ring/images/sidebar-toggler.jpg
 HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
 ---
+2014/07/13 06:58:42 [error] [php] include(DefaultController.php): failed to open stream: No such file or directory (E:\project\ring\yii\YiiBase.php:427)
+Stack trace:
+#0 E:\project\ring\protected\modules\apis\controllers\LoginController.php(10): spl_autoload_call()
+#1 E:\project\ring\yii\web\CWebApplication.php(354): require()
+#2 E:\project\ring\yii\web\CWebApplication.php(338): CWebApplication->createController()
+#3 E:\project\ring\yii\web\CWebApplication.php(276): CWebApplication->createController()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/apis/login
+in E:\project\ring\protected\modules\apis\controllers\LoginController.php (10)
+in E:\project\ring\index.php (13)
+2014/07/13 07:01:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 07:01:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---

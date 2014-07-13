@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: roger
- * Date: 6/29/14
- * Time: 3:34 PM
- */
 
 class ActiveDataProvider extends CActiveDataProvider implements AjaxResponseInterface
 {
@@ -24,4 +18,4 @@ class ActiveDataProvider extends CActiveDataProvider implements AjaxResponseInte
     {
         return [];
     }
-} 
+}

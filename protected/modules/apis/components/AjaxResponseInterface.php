@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: roger
- * Date: 6/29/14
- * Time: 3:30 PM
+ * Date: 7/13/14
+ * Time: 2:31 PM
  */
 
 interface AjaxResponseInterface{
