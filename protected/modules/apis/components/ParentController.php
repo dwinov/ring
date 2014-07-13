@@ -8,8 +8,6 @@
 
 class ParentController extends Controller
 {
-    public $layout = "";
-
     public function filters()
     {
         return array(
