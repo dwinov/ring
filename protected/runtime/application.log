@@ -2147,3 +2147,1478 @@ Stack trace:
 REQUEST_URI=/ring/css/images/pattern2.png
 HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
 ---
+2014/07/11 13:55:36 [error] [php] Trying to get property of non-object (E:\project\ring\protected\controllers\ApiController.php:79)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api/login
+in E:\project\ring\protected\controllers\ApiController.php (79)
+in E:\project\ring\index.php (13)
+2014/07/11 13:57:25 [error] [php] Trying to get property of non-object (E:\project\ring\protected\controllers\ApiController.php:79)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api/login
+in E:\project\ring\protected\controllers\ApiController.php (79)
+in E:\project\ring\index.php (13)
+2014/07/11 13:57:26 [error] [php] Trying to get property of non-object (E:\project\ring\protected\controllers\ApiController.php:79)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api/login
+in E:\project\ring\protected\controllers\ApiController.php (79)
+in E:\project\ring\index.php (13)
+2014/07/11 13:57:29 [error] [php] Trying to get property of non-object (E:\project\ring\protected\controllers\ApiController.php:79)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api/login
+in E:\project\ring\protected\controllers\ApiController.php (79)
+in E:\project\ring\index.php (13)
+2014/07/11 13:57:34 [error] [php] Trying to get property of non-object (E:\project\ring\protected\controllers\ApiController.php:79)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api/login
+in E:\project\ring\protected\controllers\ApiController.php (79)
+in E:\project\ring\index.php (13)
+2014/07/11 13:58:08 [error] [php] Trying to get property of non-object (E:\project\ring\protected\controllers\ApiController.php:79)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api/login
+in E:\project\ring\protected\controllers\ApiController.php (79)
+in E:\project\ring\index.php (13)
+2014/07/11 13:58:08 [error] [php] Trying to get property of non-object (E:\project\ring\protected\controllers\ApiController.php:79)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api/login
+in E:\project\ring\protected\controllers\ApiController.php (79)
+in E:\project\ring\index.php (13)
+2014/07/11 13:58:11 [error] [php] Trying to get property of non-object (E:\project\ring\protected\controllers\ApiController.php:79)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api/login
+in E:\project\ring\protected\controllers\ApiController.php (79)
+in E:\project\ring\index.php (13)
+2014/07/13 05:22:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/gii
+---
+2014/07/13 05:22:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/favicon.ico
+---
+2014/07/13 05:22:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/favicon.ico
+---
+2014/07/13 05:22:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:22:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:22:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:22:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:22:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:22:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:22:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 05:22:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:23:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:23:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "giic".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('giic')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/giic
+---
+2014/07/13 05:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/giic
+---
+2014/07/13 05:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/giic
+---
+2014/07/13 05:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/giic
+---
+2014/07/13 05:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/giic
+---
+2014/07/13 05:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/giic
+---
+2014/07/13 05:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/giic
+---
+2014/07/13 05:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 05:23:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/img/syncfusion-icons.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/img/syncfus...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/img/syncfusion-icons.png
+HTTP_REFERER=http://localhost/ring/css/ring/style-metronic.css
+---
+2014/07/13 05:23:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 05:23:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 05:23:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/gii
+---
+2014/07/13 05:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/gii
+---
+2014/07/13 05:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 05:23:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 05:23:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 05:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 05:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 05:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/
+---
+2014/07/13 05:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/api/site/
+---
+2014/07/13 05:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/api/site/
+---
+2014/07/13 05:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/api/site/
+---
+2014/07/13 05:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/api/site/
+---
+2014/07/13 05:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/api/site/
+---
+2014/07/13 05:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/api/site/
+---
+2014/07/13 05:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/favico...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/favicon.ico
+---
+2014/07/13 05:37:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 05:37:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/favico...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/favicon.ico
+---
+2014/07/13 05:38:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/index')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/index
+---
+2014/07/13 05:38:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 05:38:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/index')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/index
+---
+2014/07/13 05:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('site')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('site')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/site/assets...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/site/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/api/site/index
+---
+2014/07/13 05:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 05:54:24 [error] [php] include(Girl.php): failed to open stream: No such file or directory (E:\project\ring\yii\YiiBase.php:427)
+Stack trace:
+#0 E:\project\ring\yii\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 E:\project\ring\yii\web\CActiveDataProvider.php(165): model()
+#2 E:\project\ring\yii\web\CActiveDataProvider.php(87): ActiveDataProvider->getModel()
+#3 E:\project\ring\protected\controllers\ApiController.php(25): ActiveDataProvider->__construct()
+#4 E:\project\ring\yii\web\actions\CInlineAction.php(49): ApiController->actionIndex()
+#5 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams()
+#6 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#7 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#8 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#9 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#10 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#12 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api
+in E:\project\ring\protected\controllers\ApiController.php (25)
+in E:\project\ring\index.php (13)
+2014/07/13 05:54:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('default')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('default')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/default/ind...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/default/index
+---
+2014/07/13 05:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/api/default/index
+---
+2014/07/13 05:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('default')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('default')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/default/ass...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/default/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/api/default/index
+---
+2014/07/13 05:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('default')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('default')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/default/ass...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/default/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/api/default/index
+---
+2014/07/13 05:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/api/default/index
+---
+2014/07/13 05:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('default')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('default')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/default/ass...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/default/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/api/default/index
+---
+2014/07/13 05:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('default')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('default')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/default/ass...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/default/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/api/default/index
+---
+2014/07/13 05:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('default')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('default')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/default/fav...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/default/favicon.ico
+---
+2014/07/13 05:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 05:54:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('default')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('default')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/default/fav...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/default/favicon.ico
+---
+2014/07/13 05:55:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 05:55:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 05:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/api".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/api')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/api
+---
+2014/07/13 05:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/assets/i...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/module/api
+---
+2014/07/13 05:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/module/api
+---
+2014/07/13 05:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/module/api
+---
+2014/07/13 05:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/assets/i...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/module/api
+---
+2014/07/13 05:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/assets/i...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/module/api
+---
+2014/07/13 05:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/assets/i...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/module/api
+---
+2014/07/13 05:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/favicon.ico".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/favicon....')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/favicon.ico
+---
+2014/07/13 05:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 05:56:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/favicon.ico".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/favicon....')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/favicon.ico
+---
+2014/07/13 05:56:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/
+---
+2014/07/13 05:56:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/module/
+---
+2014/07/13 05:56:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/module/
+---
+2014/07/13 05:56:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/assets/i...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/module/
+---
+2014/07/13 05:56:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/assets/i...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/module/
+---
+2014/07/13 05:56:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/assets/i...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/module/
+---
+2014/07/13 05:56:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "module/assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('module/assets/i...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/module/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/module/
+---
+2014/07/13 05:56:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 06:02:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/img/syncfusion-icons.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/img/syncfus...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/img/syncfusion-icons.png
+HTTP_REFERER=http://localhost/ring/css/ring/style-metronic.css
+---
+2014/07/13 06:02:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 06:02:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
+---
+2014/07/13 06:04:37 [error] [php] include(Girl.php): failed to open stream: No such file or directory (E:\project\ring\yii\YiiBase.php:427)
+Stack trace:
+#0 E:\project\ring\yii\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 E:\project\ring\yii\web\CActiveDataProvider.php(165): model()
+#2 E:\project\ring\yii\web\CActiveDataProvider.php(87): ActiveDataProvider->getModel()
+#3 E:\project\ring\protected\controllers\ApiController.php(25): ActiveDataProvider->__construct()
+#4 E:\project\ring\yii\web\actions\CInlineAction.php(49): ApiController->actionIndex()
+#5 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams()
+#6 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#7 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#8 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#9 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#10 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#12 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api
+in E:\project\ring\protected\controllers\ApiController.php (25)
+in E:\project\ring\index.php (13)
+2014/07/13 06:04:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "default".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('default')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('default')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/default')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/default
+---
+2014/07/13 06:04:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:04:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('assets')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('assets')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/assets/img/...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:04:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('assets')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('assets')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/assets/img/...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:04:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('assets')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('assets')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/assets/img/...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:04:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:04:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assets".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('assets')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('assets')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/assets/img/...')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:04:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/favicon.ico')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/favicon.ico
+---
+2014/07/13 06:04:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 06:04:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "favicon.ico".' in E:\project\ring\yii\web\CController.php:483
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(270): CController->missingAction('favicon.ico')
+#1 E:\project\ring\yii\web\CWebApplication.php(282): CController->run('favicon.ico')
+#2 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/favicon.ico')
+#3 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\project\ring\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ring/api/favicon.ico
+---
+2014/07/13 06:05:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/default".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/default')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/api/default
+---
+2014/07/13 06:05:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:05:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:05:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/assets/img/...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/api/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:05:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/assets/img/...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/api/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:05:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/assets/img/...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/api/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:05:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api/assets/img/...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/api/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/api/default
+---
+2014/07/13 06:05:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 06:05:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/api
+---
+2014/07/13 06:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 06:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('api')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/api
+---
+2014/07/13 06:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/api
+---
+2014/07/13 06:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 06:23:13 [error] [php] include(Girl.php): failed to open stream: No such file or directory (E:\project\ring\yii\YiiBase.php:427)
+Stack trace:
+#0 E:\project\ring\yii\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 E:\project\ring\yii\web\CActiveDataProvider.php(165): model()
+#2 E:\project\ring\yii\web\CActiveDataProvider.php(87): ActiveDataProvider->getModel()
+#3 E:\project\ring\protected\controllers\ApiController.php(25): ActiveDataProvider->__construct()
+#4 E:\project\ring\yii\web\actions\CInlineAction.php(49): ApiController->actionIndex()
+#5 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams()
+#6 E:\project\ring\yii\web\filters\CFilterChain.php(133): ApiController->runAction()
+#7 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#8 E:\project\ring\yii\web\CController.php(265): ApiController->runActionWithFilters()
+#9 E:\project\ring\yii\web\CWebApplication.php(282): ApiController->run()
+#10 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#12 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/api
+in E:\project\ring\protected\controllers\ApiController.php (25)
+in E:\project\ring\index.php (13)
+2014/07/13 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "apis".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('apis')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/apis
+---
+2014/07/13 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:29:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
+2014/07/13 06:37:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/menu-toggler.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/menu-tog...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/menu-toggler.png
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:37:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1_small.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1_small.jpg
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:37:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar1.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar1.jpg
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:37:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar2.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar2.jpg
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:37:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/avatar3.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('assets/img/avat...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/assets/img/avatar3.jpg
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:37:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/logo.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/logo.png')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/logo.png
+HTTP_REFERER=http://localhost/ring/apis
+---
+2014/07/13 06:37:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/sidebar-toggler.jpg".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('images/sidebar-...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/images/sidebar-toggler.jpg
+HTTP_REFERER=http://localhost/ring/css/ring/themes/default.css
+---
