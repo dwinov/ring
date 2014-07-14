@@ -18,7 +18,7 @@ class VenueController extends ParentController
 
     public function actionIndex()
     {
-        $result = $this->model->getAllVenue();
+        $result = new ActiveDataProvider('Venue');
         $this->sendAjaxResponse($result);
     }
 

@@ -4260,3 +4260,17 @@ Stack trace:
 REQUEST_URI=/ring/css/images/pattern2.png
 HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
 ---
+2014/07/14 11:30:21 [error] [php] Argument 1 passed to ParentController::sendAjaxResponse() must implement interface AjaxResponseInterface, array given, called in E:\project\ring\protected\modules\apis\controllers\VenueController.php on line 22 and defined (E:\project\ring\protected\modules\apis\components\ParentController.php:20)
+Stack trace:
+#0 E:\project\ring\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\project\ring\yii\web\filters\CFilterChain.php(133): VenueController->runAction()
+#2 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#3 E:\project\ring\yii\web\CController.php(265): VenueController->runActionWithFilters()
+#4 E:\project\ring\yii\web\CWebApplication.php(282): VenueController->run()
+#5 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#7 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/apis/venue
+in E:\project\ring\protected\modules\apis\components\ParentController.php (20)
+in E:\project\ring\protected\modules\apis\controllers\VenueController.php (22)
+in E:\project\ring\index.php (13)

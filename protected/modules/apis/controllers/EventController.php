@@ -18,7 +18,7 @@ class EventController extends ParentController
 
     public function actionIndex()
     {
-        $result = $this->model->getAllEvent();
+        $result = new ActiveDataProvider('Event');
         $this->sendAjaxResponse($result);
     }
 
