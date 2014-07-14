@@ -6,32 +6,26 @@ class DefaultController extends ParentController
 
 	public function actionIndex()
 	{
-        $json = file_get_contents('php://input');
-        $obj = json_decode($json);
-
-        $user = User::model()->find('usr_email=:email', array(':email' => $obj->username));
-        if($user != null && $user->validate($obj->password))
+        $user = User::model()->find('usr_email=:email', array(':email' => $_POST['username']));
+        if($user != null && md5($_POST['password']) == $user->usr_password)
         {
             $token = Helper::generateToken();
             $user->usr_token = $token;
             $user->save();
             $result = array('result' => true, 'value' => $token);
-            $this->sendAjaxResponse(null, $result);
+            $this->sendAjaxResponseString($result);
         }else{
-            $result = array('result' => true, 'value' => "Login Butut");
-            $this->sendAjaxResponse(null, $result);
+            $result = array('result' => false, 'value' => "Login Butut");
+            $this->sendAjaxResponseString($result);
         }
 	}
 
     public function actionLogout()
     {
-        $json = file_get_contents('php://input');
-        $obj = json_decode($json);
-
-        $model = User::model()->find('usr_token=:token', array(':token' => $obj->token));
+        $model = User::model()->find('usr_token=:token', array(':token' => $_POST['token']));
         $model->usr_token = null;
         $model->save();
-        $result = array('result' => false, 'value' => null);
-        $this->sendAjaxResponse(null, $result);
+        $result = array('result' => true, 'value' => null);
+        $this->sendAjaxResponseString($result);
     }
 }

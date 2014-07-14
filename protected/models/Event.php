@@ -6,7 +6,7 @@
  * Time: 2:52 PM
  */
 
-class Event extends CActiveRecord implements AjaxResponseInterface
+class Event extends CActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.
@@ -107,10 +107,23 @@ class Event extends CActiveRecord implements AjaxResponseInterface
 
     public function getAllEvent()
     {
-        $model = Event::model()->findAll();
-        if($model === null)
-            throw new CHttpException(404,'The requested page does not exist!.');
-        return $model;
+        $data = Yii::app()->db->createCommand()->from('tbl_event');
+
+        $result = $data->queryAll();
+        return $result;
+    }
+
+    public function getEventByIdAPI($id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_event')
+            ->where('evt_id=:id', array(':id' => $id))
+        ;
+
+        $result = $data->queryRow();
+        $result['evt_date'] = date('d-m-Y', $result['evt_date']);
+
+        return $result;
     }
 
     public function insertData($input)
@@ -119,8 +132,8 @@ class Event extends CActiveRecord implements AjaxResponseInterface
         $model->attributes = $input['Event'];
         $model->evt_name = $input['Event']['evt_name'];
         $model->evt_venue_id = $input['Event']['evt_venue_id'];
-        $model->evt_date = $input['Event']['evt_date'];
-        $model->evt_time = $input['Event']['evt_time'];
+        $model->evt_date = strtotime($input['Event']['evt_date']);
+        $model->evt_time = strtotime($input['Event']['evt_time']);
         $model->evt_tiket_price = $input['Event']['evt_tiket_price'];
         $model->evt_total_tiket = $input['Event']['evt_total_tiket'];
         $model->evt_description = $input['Event']['evt_description'];
@@ -134,17 +147,12 @@ class Event extends CActiveRecord implements AjaxResponseInterface
 
         $model->evt_name = $input['Event']['evt_name'];
         $model->evt_venue_id = $input['Event']['evt_venue_id'];
-        $model->evt_date = $input['Event']['evt_date'];
-        $model->evt_time = $input['Event']['evt_time'];
+        $model->evt_date = strtotime($input['Event']['evt_date']);
+        $model->evt_time = strtotime($input['Event']['evt_time']);
         $model->evt_tiket_price = $input['Event']['evt_tiket_price'];
         $model->evt_total_tiket = $input['Event']['evt_total_tiket'];
         $model->evt_description = $input['Event']['evt_description'];
 
         return ($model->save()) ? true : false;
-    }
-
-    public function getResponseData()
-    {
-        return $this->attributes;
     }
 }

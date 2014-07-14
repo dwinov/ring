@@ -17,20 +17,22 @@ class ParentController extends Controller
         );
     }
 
-    public function sendAjaxResponse(AjaxResponseInterface $model = null, $result = null)
+    public function sendAjaxResponse($model)
     {
         header('Content-type: application/json', true, 200);
 
-        if($model != null && $result == null)
-        {
-            echo json_encode([
-                'data' => $model->getResponseData(),
-                'error' => $model->getErrors()
-            ]);
-        }elseif($model == null && $result != null)
-        {
-            echo json_encode($result);
-        }
+        echo json_encode([
+            'result' => (is_array($model) != 0) ? true : false,
+            'value' => $model
+        ]);
+        Yii::app()->end();
+    }
+
+    public function sendAjaxResponseString($result)
+    {
+        header('Content-type: application/json', true, 200);
+
+        echo json_encode($result);
         Yii::app()->end();
     }
 }

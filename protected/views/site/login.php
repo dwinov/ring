@@ -175,8 +175,8 @@
                                                 <?php echo CHtml::passwordField('User[usr_password]', '', array('placeholder' => 'Password')) ?>
                                                 <?php echo CHtml::passwordField('User[repassword]', '', array('placeholder' => 'Re-type Password')); ?>
                                                 <div class="toggle-button" data-toggleButton-width="220"
-                                                     data-toggleButton-label-enabled="Man"
-                                                     data-toggleButton-label-disabled="Woman"
+                                                     data-toggleButton-label-enabled="Male"
+                                                     data-toggleButton-label-disabled="Female"
                                                      data-toggleButton-height="35"
                                                      data-toggleButton-font-lineHeight="35px">
                                                     <input type="checkbox" checked="checked" name="Member[mem_gender]" />

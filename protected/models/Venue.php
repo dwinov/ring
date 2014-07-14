@@ -6,7 +6,7 @@
  * Time: 1:55 PM
  */
 
-class Venue extends CActiveRecord implements AjaxResponseInterface
+class Venue extends CActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.
@@ -131,10 +131,5 @@ class Venue extends CActiveRecord implements AjaxResponseInterface
         $model->vn_description = $input['Venue']['vn_description'];
 
         return ($model->save()) ? true : false;
-    }
-
-    public function getResponseData()
-    {
-        return $this->attributes;
     }
 }

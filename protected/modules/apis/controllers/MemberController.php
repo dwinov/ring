@@ -12,61 +12,50 @@ class MemberController extends ParentController
 
     public function actionIndex()
     {
-        $json = file_get_contents('php://input');
-        $obj = json_decode($json);
-        $objArr = (array)$obj;
-
         $user = new User();
         $member = new Member();
 
-        $user_id = $user->insertUser($objArr['User']);
+        $user_id = $user->insertUser($_POST['User']);
 
         if($user_id != null)
         {
-            if($member->insertMember($objArr, $user_id))
+            if($member->insertMember($_POST, $user_id))
             {
-                $login = new LoginForm();
+                $user = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
 
-                $login->username = $objArr['User']['usr_email'];
-                $login->password = $objArr['User']['usr_password'];
-
-                if($login->validate($login->attributes) && $login->login())
+                if($user != null && md5($_POST['User']['usr_password']) == $user->usr_password)
                 {
                     $token = Helper::generateToken();
                     $user->usr_token = $token;
                     $user->save();
                     $result = array('result' => true, 'value' => $token);
-                    $this->sendAjaxResponse(null, $result);
+                    $this->sendAjaxResponseString($result);
                 }
                 else
                 {
-                    $result = array('result' => false, 'value' => null);
-                    $this->sendAjaxResponse(null, $result);
+                    $result = array('result' => false, 'value' => "Failed to Auto Login.");
+                    $this->sendAjaxResponseString($result);
                 }
             }
             else
             {
-                $result = array('result' => false, 'value' => null);
-                $this->sendAjaxResponse(null, $result);
+                $result = array('result' => false, 'value' => "Failed to save data member.");
+                $this->sendAjaxResponseString($result);
             }
         }
         else
         {
-            $result = array('result' => false, 'value' => null);
-            $this->sendAjaxResponse(null, $result);
+            $result = array('result' => false, 'value' => "Failed to save data user.");
+            $this->sendAjaxResponseString($result);
         }
 
     }
 
     public function actionUpdate()
     {
-        $json = file_get_contents('php://input');
-        $obj = json_decode($json);
-        $objArr = (array)$obj;
-
         $model = new Member();
 
-        if($model->updateMember($objArr))
+        if($model->updateMember($_POST))
         {
             $result = array('result' => true);
             $this->sendAjaxResponse(null, $result);

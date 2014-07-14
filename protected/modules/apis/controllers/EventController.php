@@ -18,16 +18,25 @@ class EventController extends ParentController
 
     public function actionIndex()
     {
-        $result = new ActiveDataProvider('Event');
-        $this->sendAjaxResponse($result);
+        if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
+        {
+            $result = $this->model->getAllEvent();
+            $this->sendAjaxResponse($result);
+        }else{
+            $result = array('result' => false, 'value' => "Token is lost");
+            $this->sendAjaxResponseString($result);
+        }
     }
 
     public function actionView()
     {
-        $json = file_get_contents('php://input');
-        $obj = json_decode($json);
-
-        $result = $this->model->getEventById($obj->id);
-        $this->sendAjaxResponse($result);
+        if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
+        {
+            $result = $this->model->getEventByIdAPI($_POST['evt_id']);
+            $this->sendAjaxResponse($result);
+        }else{
+            $result = array('result' => false, 'value' => "Token is lost");
+            $this->sendAjaxResponseString($result);
+        }
     }
 }
