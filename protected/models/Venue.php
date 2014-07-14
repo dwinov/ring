@@ -6,7 +6,7 @@
  * Time: 1:55 PM
  */
 
-class Venue extends CActiveRecord
+class Venue extends CActiveRecord implements AjaxResponseInterface
 {
     /**
      * Returns the static model of the specified AR class.
@@ -95,6 +95,14 @@ class Venue extends CActiveRecord
         return $model;
     }
 
+    public function getAllVenue()
+    {
+        $model = Venue::model()->findAll();
+        if($model === null)
+            throw new CHttpException(404,'The requested page does not exist!.');
+        return $model;
+    }
+
     public function insertData($input)
     {
         $model = new Venue;
@@ -123,5 +131,10 @@ class Venue extends CActiveRecord
         $model->vn_description = $input['Venue']['vn_description'];
 
         return ($model->save()) ? true : false;
+    }
+
+    public function getResponseData()
+    {
+        return $this->attributes;
     }
 }

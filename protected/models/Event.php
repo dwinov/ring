@@ -6,7 +6,7 @@
  * Time: 2:52 PM
  */
 
-class Event extends CActiveRecord
+class Event extends CActiveRecord implements AjaxResponseInterface
 {
     /**
      * Returns the static model of the specified AR class.
@@ -105,6 +105,14 @@ class Event extends CActiveRecord
         return $model;
     }
 
+    public function getAllEvent()
+    {
+        $model = Event::model()->findAll();
+        if($model === null)
+            throw new CHttpException(404,'The requested page does not exist!.');
+        return $model;
+    }
+
     public function insertData($input)
     {
         $model = new Event;
@@ -133,5 +141,10 @@ class Event extends CActiveRecord
         $model->evt_description = $input['Event']['evt_description'];
 
         return ($model->save()) ? true : false;
+    }
+
+    public function getResponseData()
+    {
+        return $this->attributes;
     }
 }
