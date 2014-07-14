@@ -57,12 +57,25 @@ class Member extends CActiveRecord
     {
         $model = new Member;
 
+        if(isset($data['Member']['mem_gender'])){
+            if($data['Member']['mem_gender'] == 'on')
+            {
+                $data['Member']['mem_gender'] = 1;
+            }else{
+                $data['Member']['mem_gender'] = $data['Member']['mem_gender'];
+            }
+        }else{
+            $data['Member']['mem_gender'] = 0;
+        }
+
         $model->attributes = $data;
         $model->mem_user_id = $user_id;
         $model->mem_first_name = $data['Member']['mem_first_name'];
         $model->mem_last_name = $data['Member']['mem_last_name'];
         $model->mem_screen_name = $data['Member']['mem_first_name'] . " " . $data['Member']['mem_last_name'];
         $model->mem_email = $data['User']['usr_email'];
+        $model->mem_birthdate = date('d-m-Y', strtotime($data['Member']['mem_birthdate']));
+        $model->mem_gender = $data['Member']['mem_gender'];
 
         return ($model->save()) ? true : false;
     }

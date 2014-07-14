@@ -168,11 +168,27 @@
                                     <span class="line"></span>
                                     <div class="box-1 registerbox">
                                         <div class="inner">
-                                            <form action="index.html?lang=en" method="post" class="fts">
-                                                <input type="text" name="" placeholder="Username" />
-                                                <input type="password" name="" placeholder="Password" />
+                                            <?php echo CHtml::beginForm(Yii::app()->createUrl('member/register'), 'post', array('class' => 'fts')); ?>
+                                                <?php echo CHtml::textField('Member[mem_first_name]', '', array('placeholder' => 'First Name')); ?>
+                                                <?php echo CHtml::textField('Member[mem_last_name]', '', array('placeholder' => 'Last Name')); ?>
+                                                <?php echo CHtml::textField('User[usr_email]', '', array('placeholder' => 'Email')); ?>
+                                                <?php echo CHtml::passwordField('User[usr_password]', '', array('placeholder' => 'Password')) ?>
+                                                <?php echo CHtml::passwordField('User[repassword]', '', array('placeholder' => 'Re-type Password')); ?>
+                                                <div class="toggle-button" data-toggleButton-width="220"
+                                                     data-toggleButton-label-enabled="Man"
+                                                     data-toggleButton-label-disabled="Woman"
+                                                     data-toggleButton-height="35"
+                                                     data-toggleButton-font-lineHeight="35px">
+                                                    <input type="checkbox" checked="checked" name="Member[mem_gender]" />
+                                                </div>
+                                                <?php echo CHtml::textField('Member[mem_phone]', '', array('placeholder' => 'Phone Number')); ?>
+                                                <?php echo CHtml::textField('Member[mem_birthdate]', '', array('placeholder' => 'Birthdate')); ?>
+<!--                                                <label class="checkbox">-->
+                                                    <input name="tnc" type="checkbox" class="checkbox" value="1" />
+                                                    term and condition
+<!--                                                </label>-->
                                                 <button type="submit" class="btn btn-icon btn-block glyphicons right edit btn-success">Register<i></i></button>
-                                            </form>
+                                            <?php echo CHtml::endForm(); ?>
                                         </div>
                                     </div>
                                     <div class="btn-login">
