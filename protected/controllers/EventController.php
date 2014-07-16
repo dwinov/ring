@@ -50,7 +50,7 @@ class EventController extends Controller
         $this->render('index');
     }
 
-    public function actionCreate()
+    public function actionCreate($id)
     {
         if(isset($_POST['Event']))
         {
@@ -68,7 +68,8 @@ class EventController extends Controller
         $venue = Venue::model()->findAll();
 
         $this->render('create', array(
-            'venue_list' => CHtml::listData($venue, 'vn_id', 'vn_name')
+            'venue_list' => CHtml::listData($venue, 'vn_id', 'vn_name'),
+            'eo_id' => $id
         ));
     }
 

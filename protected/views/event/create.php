@@ -23,7 +23,8 @@
 
     <?php echo $this->renderPartial('_form', array(
         'action' => Yii::app()->createUrl('event/create'),
-        'venue_list' => $venue_list
+        'venue_list' => $venue_list,
+        'eo_id' => $eo_id
     )); ?>
 
 </div>

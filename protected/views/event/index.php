@@ -15,9 +15,9 @@
 
     <div class="heading-buttons">
         <h2 class="glyphicons sort"><i></i> Event</h2>
-        <div class="buttons pull-right">
-            <a href="<?php echo Yii::app()->createUrl('event/create'); ?>" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> Add New Event</a>
-        </div>
+<!--        <div class="buttons pull-right">-->
+<!--            <a href="--><?php //echo Yii::app()->createUrl('event/create'); ?><!--" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> Add New Event</a>-->
+<!--        </div>-->
     </div>
     <div class="separator"></div>
 

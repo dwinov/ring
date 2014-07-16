@@ -20,7 +20,7 @@
 
                     <?php echo (isset($model)) ? Chtml::hiddenField('Event[evt_id]', $model->evt_id) : null; ?>
 
-                    <?php $eo = (isset($model)) ? $model->evt_owner_id : ""; ?>
+                    <?php $eo = (isset($model)) ? $model->evt_owner_id : $eo_id; ?>
                     <?php echo CHtml::hiddenField('Event[evt_owner_id]', $eo); ?>
 
                     <div class="widget-body" style="padding-bottom: 0;">
