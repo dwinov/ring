@@ -96,4 +96,28 @@
             </div>
         </div>
     </div>
+
+    <div class="span3">
+        <div class="widget widget-2 primary widget-body-white">
+            <div class="widget-head">
+                <h4 class="heading glyphicons picture"><i></i>Profile image</h4>
+            </div>
+            <div class="widget-body center">
+                <div class="fileupload fileupload-new" data-provides="fileupload" data-name="myimage">
+
+                    <?php if(!empty($model->evt_photo)){ ?>
+                        <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . $model->evt_photo; ?>" width="202" height="188" /></div>
+                    <?php }else{ ?>
+                        <div class="fileupload-new thumbnail"><img src="http://www.placehold.it/202x188/232323" /></div>
+                    <?php } ?>
+
+                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 100%;"></div>
+                    <div>
+                        <span class="btn btn-file btn-inverse btn-icon glyphicons picture"><i></i><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php echo CHtml::endForm(); ?>

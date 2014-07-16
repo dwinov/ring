@@ -56,7 +56,7 @@ class VenueController extends Controller
         {
             $model = new Venue();
 
-            if($model->insertData($_POST))
+            if($model->insertData($_POST, $_FILES))
             {
                 $this->redirect(array('venue/index'));
             }else{
@@ -73,7 +73,7 @@ class VenueController extends Controller
 
         if(isset($_POST['Venue']))
         {
-            if($model->updateData($_POST))
+            if($model->updateData($_POST, $_FILES))
             {
                 $this->redirect(array('venue/index'));
             }else{

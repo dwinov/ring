@@ -56,7 +56,7 @@ class EventController extends Controller
         {
             $model = new Event();
 
-            if($model->insertData($_POST))
+            if($model->insertData($_POST, $_FILES))
             {
                 $this->redirect(array('event/index'));
             }else{
@@ -79,7 +79,7 @@ class EventController extends Controller
 
         if(isset($_POST['Event']))
         {
-            if($model->updateData($_POST))
+            if($model->updateData($_POST, $_FILES))
             {
                 $this->redirect(array('event/index'));
             }else{

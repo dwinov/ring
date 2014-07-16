@@ -94,7 +94,7 @@ class Eo extends CActiveRecord
         return $model;
     }
 
-    public function insertData($input)
+    public function insertData($input, $file)
     {
         $model = new Eo;
         $model->attributes = $input['Eo'];
@@ -106,11 +106,12 @@ class Eo extends CActiveRecord
         $model->eo_email = $input['Eo']['eo_email'];
         $model->eo_website = $input['Eo']['eo_website'];
         $model->eo_description = $input['Eo']['eo_description'];
+        $model->eo_photo = Helper::uploadImage($file, 'eo');
 
         return ($model->save()) ? true : false;
     }
 
-    public function updateData($input)
+    public function updateData($input, $file)
     {
         $model = $this->getEoById($input['Eo']['eo_id']);
 
@@ -121,6 +122,7 @@ class Eo extends CActiveRecord
         $model->eo_email = $input['Eo']['eo_email'];
         $model->eo_website = $input['Eo']['eo_website'];
         $model->eo_description = $input['Eo']['eo_description'];
+        $model->eo_photo = Helper::updateImage('eo', $model->eo_photo);
 
         return ($model->save()) ? true : false;
     }

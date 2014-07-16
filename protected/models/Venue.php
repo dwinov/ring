@@ -103,7 +103,7 @@ class Venue extends CActiveRecord
         return $model;
     }
 
-    public function insertData($input)
+    public function insertData($input, $file)
     {
         $model = new Venue;
         $model->attributes = $input['Venue'];
@@ -114,11 +114,12 @@ class Venue extends CActiveRecord
         $model->vn_email = $input['Venue']['vn_email'];
         $model->vn_website = $input['Venue']['vn_website'];
         $model->vn_description = $input['Venue']['vn_description'];
+        $model->vn_photo = Helper::uploadImage($file, 'venue');
 
         return ($model->save()) ? true : false;
     }
 
-    public function updateData($input)
+    public function updateData($input, $file)
     {
         $model = $this->getVenueById($input['Venue']['vn_id']);
 
@@ -129,6 +130,7 @@ class Venue extends CActiveRecord
         $model->vn_email = $input['Venue']['vn_email'];
         $model->vn_website = $input['Venue']['vn_website'];
         $model->vn_description = $input['Venue']['vn_description'];
+        $model->vn_photo = Helper::updateImage('venue', $model->vn_photo);
 
         return ($model->save()) ? true : false;
     }

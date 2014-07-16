@@ -55,7 +55,7 @@ class EoController extends Controller
         {
             $model = new Eo();
 
-            if($model->insertData($_POST))
+            if($model->insertData($_POST, $_FILES))
             {
                 $this->redirect(array('eo/index'));
             }else{
@@ -72,7 +72,7 @@ class EoController extends Controller
 
         if(isset($_POST['Eo']))
         {
-            if($model->updateData($_POST))
+            if($model->updateData($_POST, $_FILES))
             {
                 $this->redirect(array('eo/index'));
             }else{

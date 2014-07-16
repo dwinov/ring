@@ -6,7 +6,7 @@
  * Time: 11:36 AM
  */
 
-class Member extends CActiveRecord implements AjaxResponseInterface
+class Member extends CActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.
@@ -100,10 +100,5 @@ class Member extends CActiveRecord implements AjaxResponseInterface
         $model->mem_about_me = $data['Member']['mem_about_me'];
 
         return ($model->save()) ? true : false;
-    }
-
-    public function getResponseData()
-    {
-        return $this->attributes;
     }
 }

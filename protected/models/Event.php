@@ -126,7 +126,7 @@ class Event extends CActiveRecord
         return $result;
     }
 
-    public function insertData($input)
+    public function insertData($input, $file)
     {
         $model = new Event;
         $model->attributes = $input['Event'];
@@ -137,6 +137,7 @@ class Event extends CActiveRecord
         $model->evt_tiket_price = $input['Event']['evt_tiket_price'];
         $model->evt_total_tiket = $input['Event']['evt_total_tiket'];
         $model->evt_description = $input['Event']['evt_description'];
+        $model->evt_photo = Helper::uploadImage($file, 'event');
 
         return ($model->save()) ? true : false;
     }
@@ -152,6 +153,7 @@ class Event extends CActiveRecord
         $model->evt_tiket_price = $input['Event']['evt_tiket_price'];
         $model->evt_total_tiket = $input['Event']['evt_total_tiket'];
         $model->evt_description = $input['Event']['evt_description'];
+        $model->evt_photo = Helper::updateImage('event', $model->evt_photo);
 
         return ($model->save()) ? true : false;
     }
