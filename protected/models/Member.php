@@ -76,6 +76,7 @@ class Member extends CActiveRecord
         $model->mem_email = $data['User']['usr_email'];
         $model->mem_birthdate = date('d-m-Y', strtotime($data['Member']['mem_birthdate']));
         $model->mem_gender = $data['Member']['mem_gender'];
+        $model->mem_phone = $data['Member']['mem_phone'];
 
         return ($model->save()) ? true : false;
     }

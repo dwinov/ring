@@ -32,7 +32,7 @@
                 <li><a href="#event" data-toggle="tab" class="glyphicons calendar"><i></i>Create Event</a></li>
                 <li><a href="#listevent" data-toggle="tab" class="glyphicons justify"><i></i>Events</a></li>
             <?php }elseif(Yii::app()->user->roleid == 3){ ?>
-                <?php echo $this->renderPartial('_venue', array('model' => $venue)); ?>
+                <li><a href="#eovenue" data-toggle="tab" class="glyphicons group"><i></i>Venue</a></li>
             <?php } ?>
 <!--            <li><a href="#productAttributesTab" data-toggle="tab" class="glyphicons adjust_alt"><i></i>Custom Attributes</a></li>-->
 <!--            <li><a href="#productPriceTab" data-toggle="tab" class="glyphicons table"><i></i>Qty & Price</a></li>-->

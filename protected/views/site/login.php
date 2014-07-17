@@ -169,6 +169,11 @@
                                     <div class="box-1 registerbox">
                                         <div class="inner">
                                             <?php echo CHtml::beginForm(Yii::app()->createUrl('member/register'), 'post', array('class' => 'fts')); ?>
+                                                <?php echo CHtml::dropDownList('User[usr_type_id]', '', array(
+                                                    '' => '- Choose Account Type -',
+                                                    '2' => 'Event Organizer',
+                                                    '3' => 'Venue'
+                                                )); ?>
                                                 <?php echo CHtml::textField('Member[mem_first_name]', '', array('placeholder' => 'First Name')); ?>
                                                 <?php echo CHtml::textField('Member[mem_last_name]', '', array('placeholder' => 'Last Name')); ?>
                                                 <?php echo CHtml::textField('User[usr_email]', '', array('placeholder' => 'Email')); ?>
