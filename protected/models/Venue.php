@@ -97,10 +97,21 @@ class Venue extends CActiveRecord
 
     public function getAllVenue()
     {
-        $model = Venue::model()->findAll();
-        if($model === null)
-            throw new CHttpException(404,'The requested page does not exist!.');
-        return $model;
+        $data = Yii::app()->db->createCommand()->from('tbl_venue');
+
+        $result = $data->queryAll();
+        return $result;
+    }
+
+    public function getEventByIdAPI($id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_venue')
+            ->where('vn_id=:id', array(':id' => $id))
+        ;
+
+        $result = $data->queryRow();
+        return $result;
     }
 
     public function insertData($input, $file)

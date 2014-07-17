@@ -15,7 +15,7 @@ class DefaultController extends ParentController
             $result = array('result' => true, 'value' => $token);
             $this->sendAjaxResponseString($result);
         }else{
-            $result = array('result' => false, 'value' => "Login Butut");
+            $result = array('result' => false, 'value' => "Login Failed");
             $this->sendAjaxResponseString($result);
         }
 	}

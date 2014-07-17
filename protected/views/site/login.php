@@ -187,7 +187,7 @@
                                                     <input type="checkbox" checked="checked" name="Member[mem_gender]" />
                                                 </div>
                                                 <?php echo CHtml::textField('Member[mem_phone]', '', array('placeholder' => 'Phone Number')); ?>
-                                                <?php echo CHtml::textField('Member[mem_birthdate]', '', array('placeholder' => 'Birthdate')); ?>
+                                                <?php echo CHtml::textField('Member[mem_birthdate]', '', array('class' => 'datepicker', 'placeholder' => 'Birthdate')); ?>
 <!--                                                <label class="checkbox">-->
                                                     <input name="tnc" type="checkbox" class="checkbox" value="1" />
                                                     term and condition

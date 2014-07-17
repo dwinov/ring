@@ -105,9 +105,29 @@ class Event extends CActiveRecord
         return $model;
     }
 
-    public function getAllEvent()
+    public function getAllEvent($ringPro = false, $token = null)
     {
-        $data = Yii::app()->db->createCommand()->from('tbl_event');
+        if($ringPro == false && $token == null)
+        {
+            $data = Yii::app()->db->createCommand()->from('tbl_event');
+        }else{
+            $user = User::model()->find('usr_token=:token', array(':token' => $token));
+            $eo = Eo::model()->find('eo_user_id=:usr_id', array(':usr_id' => $user->usr_id));
+            $data = Yii::app()->db->createCommand()
+                ->select('e.evt_id,
+                        e.evt_name,
+                        v.vn_name,
+                        FROM_UNIXTIME(e.evt_date, "%a") as evt_day,
+                        FROM_UNIXTIME(e.evt_date, "%d") as evt_date,
+                        FROM_UNIXTIME(e.evt_date, "%b") as evt_month,
+                        FROM_UNIXTIME(e.evt_date, "%Y") as evt_year,
+                        FROM_UNIXTIME(e.evt_date, "%H:%i") as evt_hour,
+                        e.evt_description')
+                ->from('tbl_event e')
+                ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+                ->where('evt_owner_id=:eo_id', array(':eo_id' => $eo->eo_id))
+            ;
+        }
 
         $result = $data->queryAll();
         return $result;
@@ -131,6 +151,7 @@ class Event extends CActiveRecord
         $model = new Event;
         $model->attributes = $input['Event'];
         $model->evt_name = $input['Event']['evt_name'];
+        $model->evt_owner_id = $input['Event']['evt_owner_id'];
         $model->evt_venue_id = $input['Event']['evt_venue_id'];
         $model->evt_date = strtotime($input['Event']['evt_date']);
         $model->evt_time = strtotime($input['Event']['evt_time']);

@@ -46,7 +46,7 @@
                                     <label class="control-label">Event Date</label>
                                     <div class="controls">
                                         <?php $date = (isset($model)) ? date('d-m-Y H:i', $model->evt_date) : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_date]', $date, array('class' => 'datetimepicker form-control')); ?>
+                                        <?php echo CHtml::textField('Event[evt_date]', $date, array('class' => 'datepicker form-control')); ?>
                                     </div>
                                 </div>
 
