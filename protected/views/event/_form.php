@@ -13,7 +13,7 @@
         <div class="tab-content" style="padding: 0;">
             <div class="tab-pane active" id="account-details">
 
-                <div class="widget widget-2">
+                <div class="widget widget-2 primary widget-body-white">
                     <div class="widget-head">
                         <h4 class="heading glyphicons edit"><i></i>Event Organizer details</h4>
                     </div>
@@ -45,8 +45,8 @@
                                 <div class="control-group">
                                     <label class="control-label">Event Date</label>
                                     <div class="controls">
-                                        <?php $date = (isset($model)) ? $model->evt_date : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_date]', $date, array('class' => 'form-control')); ?>
+                                        <?php $date = (isset($model)) ? date('d-m-Y H:i', $model->evt_date) : ""; ?>
+                                        <?php echo CHtml::textField('Event[evt_date]', $date, array('class' => 'datetimepicker form-control')); ?>
                                     </div>
                                 </div>
 

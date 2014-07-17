@@ -34,7 +34,7 @@
             <strong>Date</strong>
         </div>
         <div class="span9">
-            <?php echo CHtml::textField('Event[evt_date]', '', array('class' => 'form-control')); ?>
+            <?php echo CHtml::textField('Event[evt_date]', '', array('class' => 'datepicker form-control')); ?>
             <div class="separator"></div>
         </div>
     </div>

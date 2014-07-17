@@ -920,10 +920,19 @@ $(function()
 	{
 		$('#colorpicker').farbtastic('#colorpickerColor');
 	}
+
+    // datetimepicker
+    if($('.datetimepicker').length)
+    {
+        $('.datetimepicker').datetimepicker({
+            timeFormat: "hh:mm"
+        });
+    }
+
 	// datepicker
-	if ($('#datepicker').length) 
+	if ($('.datepicker').length)
 	{
-		$("#datepicker").datepicker({
+		$(".datepicker").datepicker({
 			showOtherMonths:true
 		});
 	}

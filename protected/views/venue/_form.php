@@ -13,7 +13,7 @@
         <div class="tab-content" style="padding: 0;">
             <div class="tab-pane active" id="account-details">
 
-                <div class="widget widget-2">
+                <div class="widget widget-2 primary widget-body-white">
                     <div class="widget-head">
                         <h4 class="heading glyphicons edit"><i></i>Event Organizer details</h4>
                     </div>

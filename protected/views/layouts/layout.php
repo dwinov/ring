@@ -25,7 +25,7 @@
     <!-- Bootstrap Extended -->
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet">
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet">
 
     <!-- JQueryUI v1.9.2 -->
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-1.9.2.custom/css/smoothness/jquery-ui-1.9.2.custom.min.css" />
@@ -283,6 +283,7 @@
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/extend/bootbox.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/extend/bootstrap-wysihtml5/js/wysihtml5-0.3.0_rc2.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/extend/bootstrap-wysihtml5/js/bootstrap-wysihtml5-0.0.2.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
 
 <!-- Custom Onload Script -->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/load.js"></script>
