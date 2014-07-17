@@ -76,6 +76,29 @@
         </div>
     </div>
 
+    <div class="row-fluid">
+        <div class="span3">
+            <strong>Picture</strong>
+        </div>
+        <div class="span9">
+            <div class="fileupload fileupload-new" data-provides="fileupload" data-name="myimage">
+
+                <?php if(!empty($eo->eo_photo)){ ?>
+                    <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . $eo->eo_photo; ?>" width="202" height="188" /></div>
+                <?php }else{ ?>
+                    <div class="fileupload-new thumbnail"><img src="http://www.placehold.it/202x188/232323" /></div>
+                <?php } ?>
+
+                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 100%;"></div>
+                <div>
+                    <span class="btn btn-file btn-inverse btn-icon glyphicons picture"><i></i><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                </div>
+            </div>
+            <div class="separator"></div>
+        </div>
+    </div>
+
     <hr class="separator bottom" />
     <div class="row-fluid">
         <div class="span3">

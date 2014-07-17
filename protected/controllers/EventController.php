@@ -96,6 +96,22 @@ class EventController extends Controller
         ));
     }
 
+    public function actionClient()
+    {
+        if(isset($_POST['Event']))
+        {
+            $model = new Event();
+
+            if($model->insertData($_POST, $_FILES))
+            {
+                $this->redirect(array('member/index'));
+            }else{
+                $this->redirect(array('member/index'));
+            }
+
+        }
+    }
+
     public function actionDelete($id)
     {
         $model = new Event();

@@ -28,8 +28,8 @@
         <ul>
             <li class="active"><a href="#profile" data-toggle="tab" class="glyphicons font"><i></i>Profile</a></li>
             <?php if(Yii::app()->user->roleid == 2){ ?>
-                <li><a href="#eovenue" data-toggle="tab" class="glyphicons picture"><i></i>Event Organizer</a></li>
-                <li><a href="#event" data-toggle="tab" class="glyphicons picture"><i></i>Event</a></li>
+                <li><a href="#eovenue" data-toggle="tab" class="glyphicons group"><i></i>Event Organizer</a></li>
+                <li><a href="#event" data-toggle="tab" class="glyphicons calendar"><i></i>Create Event</a></li>
             <?php }elseif(Yii::app()->user->roleid == 3){ ?>
                 <?php echo $this->renderPartial('_venue', array('model' => $venue)); ?>
             <?php } ?>

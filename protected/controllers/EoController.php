@@ -95,14 +95,14 @@ class EoController extends Controller
         {
             if(!isset($_POST['Eo']['eo_id']))
             {
-                if($model->insertData($_POST))
+                if($model->insertData($_POST, $_FILES))
                 {
                     $this->redirect(array('member/index'));
                 }else{
                     $this->redirect(array('member/index'));
                 }
             }else{
-                if($model->updateData($_POST))
+                if($model->updateData($_POST, $_FILES))
                 {
                     $this->redirect(array('member/index'));
                 }else{
