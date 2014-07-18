@@ -7,7 +7,9 @@
  */
 ?>
 
-<?php echo CHtml::beginForm(Yii::app()->createUrl('venue/update'), 'post', array('role' => 'form')); ?>
+<?php $action = (!isset($model)) ? Yii::app()->createUrl('venue/create') : Yii::app()->createUrl('venue/update'); ?>
+
+<?php echo CHtml::beginForm($action, 'post', array('role' => 'form', 'enctype'=>'multipart/form-data')); ?>
 
     <div class="row-fluid">
         <div class="span3">
@@ -15,6 +17,7 @@
         </div>
         <div class="span9">
             <?php echo (isset($model)) ? Chtml::hiddenField('Venue[vn_id]', $model->vn_id) : null; ?>
+            <?php echo CHtml::hiddenField('Venue[vn_user_id]', Yii::app()->user->usrid); ?>
             <?php $name = (isset($model)) ? $model->vn_name : ""; ?>
             <?php echo CHtml::textField('Venue[vn_name]', $name, array('class' => 'form-control')); ?>
             <div class="separator"></div>
@@ -89,7 +92,7 @@
                     <div class="fileupload-new thumbnail"><img src="http://www.placehold.it/202x188/232323" /></div>
                 <?php } ?>
 
-                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 100%;"></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="width: 202px; height: 188px;"></div>
                 <div>
                     <span class="btn btn-file btn-inverse btn-icon glyphicons picture"><i></i><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
                     <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>

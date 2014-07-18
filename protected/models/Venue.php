@@ -118,6 +118,7 @@ class Venue extends CActiveRecord
     {
         $model = new Venue;
         $model->attributes = $input['Venue'];
+        $model->vn_user_id = $input['Venue']['vn_user_id'];
         $model->vn_name = $input['Venue']['vn_name'];
         $model->vn_address = $input['Venue']['vn_address'];
         $model->vn_phone = $input['Venue']['vn_phone'];
@@ -125,7 +126,7 @@ class Venue extends CActiveRecord
         $model->vn_email = $input['Venue']['vn_email'];
         $model->vn_website = $input['Venue']['vn_website'];
         $model->vn_description = $input['Venue']['vn_description'];
-        $model->vn_photo = Helper::uploadImage($file, 'venue');
+        $model->vn_photo = (count($file) != 0) ? Helper::uploadImage($file, 'venue') : null;
 
         return ($model->save()) ? true : false;
     }
@@ -141,7 +142,7 @@ class Venue extends CActiveRecord
         $model->vn_email = $input['Venue']['vn_email'];
         $model->vn_website = $input['Venue']['vn_website'];
         $model->vn_description = $input['Venue']['vn_description'];
-        $model->vn_photo = Helper::updateImage('venue', $model->vn_photo);
+        $model->vn_photo = (count($file) != 0) ? Helper::updateImage('venue', $model->vn_photo) : $model->vn_photo;
 
         return ($model->save()) ? true : false;
     }

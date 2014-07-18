@@ -30,7 +30,6 @@
             <?php if(Yii::app()->user->roleid == 2){ ?>
                 <li><a href="#eovenue" data-toggle="tab" class="glyphicons group"><i></i>Event Organizer</a></li>
                 <li><a href="#event" data-toggle="tab" class="glyphicons calendar"><i></i>Create Event</a></li>
-                <li><a href="#listevent" data-toggle="tab" class="glyphicons justify"><i></i>Events</a></li>
             <?php }elseif(Yii::app()->user->roleid == 3){ ?>
                 <li><a href="#eovenue" data-toggle="tab" class="glyphicons group"><i></i>Venue</a></li>
             <?php } ?>
@@ -148,45 +147,13 @@
             </div>
             <!-- EO or Venue END -->
 
-            <!-- Event and List Events -->
+            <!-- Event -->
             <?php if(Yii::app()->user->roleid == 2){ ?>
                 <div class="tab-pane" id="event">
                     <?php echo $this->renderPartial('_event', array('list_venue' => $list_venue)); ?>
                 </div>
-                <div class="tab-pane" id="listevent">
-                    <div class="well">
-                        <h4>List Events</h4>
-                        <div class="separator"></div>
-                        <div class="accordion" id="accordion2" style="margin-bottom: 0;">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                                        Collapsible Group Item #1
-                                    </a>
-                                </div>
-                                <div id="collapseOne" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                                        Collapsible Group Item #2
-                                    </a>
-                                </div>
-                                <div id="collapseTwo" class="accordion-body collapse in">
-                                    <div class="accordion-inner">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             <?php } ?>
-            <!-- Event and List Events END -->
+            <!-- Event END -->
 
             <!-- Attributes -->
 <!--            <div class="tab-pane" id="productAttributesTab">-->

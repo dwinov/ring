@@ -58,16 +58,26 @@ class VenueController extends Controller
 
             if($model->insertData($_POST, $_FILES))
             {
-                $this->redirect(array('venue/index'));
+                if(Yii::app()->user->roleid == 3)
+                {
+                    $this->redirect(array('member/index'));
+                }else{
+                    $this->redirect(array('venue/index'));
+                }
             }else{
-                $this->redirect(array('venue/index'));
+                if(Yii::app()->user->roleid == 3)
+                {
+                    $this->redirect(array('member/index'));
+                }else{
+                    $this->redirect(array('venue/index'));
+                }
             }
 
         }
         $this->render('create');
     }
 
-    public function actionUpdate($id)
+    public function actionUpdate()
     {
         $model = new Venue();
 
@@ -75,13 +85,23 @@ class VenueController extends Controller
         {
             if($model->updateData($_POST, $_FILES))
             {
-                $this->redirect(array('venue/index'));
+                if(Yii::app()->user->roleid == 3)
+                {
+                    $this->redirect(array('member/index'));
+                }else{
+                    $this->redirect(array('venue/index'));
+                }
             }else{
-                $this->redirect(array('venue/index'));
+                if(Yii::app()->user->roleid == 3)
+                {
+                    $this->redirect(array('member/index'));
+                }else{
+                    $this->redirect(array('venue/index'));
+                }
             }
         }
 
-        $data = $model->getVenueById($id);
+        $data = $model->getVenueById($_REQUEST['id']);
 
         $this->render('update', array(
             'model' => $data,
