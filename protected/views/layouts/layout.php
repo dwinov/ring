@@ -49,6 +49,9 @@
     <!-- MiniColors -->
     <link rel="stylesheet" media="screen" href="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-miniColors/jquery.miniColors.css" />
 
+    <!-- plupload -->
+    <style type="text/css">@import url(<?php echo Yii::app()->request->baseUrl; ?>/js/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css);</style>
+
     <!-- Theme -->
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/new/style.min.css?1358876495" />
 
@@ -287,6 +290,13 @@
 
 <!-- Custom Onload Script -->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/load.js"></script>
+
+<!-- Third party script for BrowserPlus runtime (Google Gears included in Gears runtime now) -->
+<script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+
+<!-- Load plupload and all it's runtimes and finally the jQuery queue widget -->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/plupload/js/plupload.full.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
 
 <script>
     //Load the Visualization API and the piechart package.

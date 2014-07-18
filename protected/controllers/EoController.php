@@ -25,7 +25,7 @@ class EoController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete', 'client'),
+                'actions' => array('index','create', 'update', 'delete', 'client', 'uploader'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 2'
             ),
@@ -118,5 +118,14 @@ class EoController extends Controller
     {
         $model = new Eo();
         $model->getEoById($id)->delete();
+    }
+
+    public function actionUploader()
+    {
+        if(Yii::app()->request->isAjaxRequest){
+            print_r($_FILES);exit;
+        }
+
+        $this->render('uploader');
     }
 }
