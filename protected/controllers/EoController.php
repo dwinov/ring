@@ -25,7 +25,7 @@ class EoController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete', 'client', 'uploader'),
+                'actions' => array('index','create', 'update', 'delete', 'client', 'uploader', 'delgal'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 2'
             ),
@@ -122,10 +122,22 @@ class EoController extends Controller
 
     public function actionUploader()
     {
-        if(Yii::app()->request->isAjaxRequest){
-            print_r($_FILES);exit;
+        $model = new GalleryEO();
+
+        if(count($_FILES) != 0)
+        {
+            $model->insertData($_GET['id'], $_FILES);
+            Yii::app()->end();
         }
 
-        $this->render('uploader');
+        $this->render('uploader', array(
+            'model' => $model->getAllData($_GET['id'])
+        ));
+    }
+
+    public function actionDelgal()
+    {
+        $model = new GalleryEO();
+        $model->getById($_POST['id'])->delete();
     }
 }

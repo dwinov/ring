@@ -43,16 +43,18 @@
 <div class="well">
     <div class="row-fluid gallery paper">
         <ul>
+            <?php foreach($model as $gallery){ ?>
             <li class="span3">
                 <span class="thumb view">
                     <span class="back">
-                        <span class="btn btn-mini btn-primary">edit</span>
-                        <a href="" class="arr">&rarr;</a>
+                        <span id="<?php echo $gallery['glr_id']; ?>" class="btn btn-mini btn-primary delete">Delete</span>
+<!--                        <a href=""  class="arr">&times;</a>-->
                     </span>
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/gallery/rs/1.jpg" alt="Album" />
+                    <img src="<?php echo Yii::app()->request->baseUrl . $gallery['glr_name']; ?>" alt="Album" />
                 </span>
                 <span class="name"></span>
             </li>
+            <?php } ?>
         </ul>
     </div>
 </div>
@@ -92,6 +94,7 @@
     </script>
 
     <script type="text/javascript">
+
         $(function() {
             $("#pluploadUploader").pluploadQueue({
                 // General settings
@@ -103,7 +106,7 @@
                 file_data_name : 'myimage',
 
                 // Resize images on clientside if we can
-                resize : {width : 320, height : 240, quality : 90},
+                // resize : {width : 320, height : 240, quality : 90},
 
                 // Specify what files to browse for
                 filters : [
@@ -116,6 +119,19 @@
 
                 // Silverlight settings
                 silverlight_xap_url : '<?php echo Yii::app()->request->baseUrl; ?>/js/plupload/js/plupload.silverlight.xap'
+            });
+
+            var uploader = $("#pluploadUploader").pluploadQueue();
+            uploader.bind('FileUploaded', function(){
+                if (uploader.files.length == (uploader.total.uploaded + uploader.total.failed)) {
+                    location.reload();
+                }
+            });
+
+            $('.delete').click(function(){
+                $.post('<?php echo Yii::app()->createUrl('eo/delgal'); ?>', {id : $(this).attr('id')}, function(){
+                    location.reload();
+                })
             });
         });
     </script>

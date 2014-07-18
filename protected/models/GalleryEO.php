@@ -53,47 +53,31 @@ class GalleryEO extends CActiveRecord
         );
     }
 
-    public function getAllData($filter)
+    public function getAllData($id)
     {
-        $eo = Eo::model()->find('eo_user_id=:user_id', array('user_id' => Yii::app()->user->usrid));
         $data = Yii::app()->db->createCommand()
             ->from('tbl_gallery_eo')
-            ->where('glr_owner_id=:eo_id', array('eo_id' => $eo->eo_id))
+            ->where('glr_owner_id=:eo_id', array('eo_id' => $id))
         ;
 
         return $data->queryAll();
     }
 
-    public function insertData($input, $file)
+    public function insertData($id, $file)
     {
-        $model = new Eo;
-        $model->attributes = $input['Eo'];
-        $model->eo_user_id = (isset($input['Eo']['eo_user_id'])) ? $input['Eo']['eo_user_id'] : Yii::app()->user->usrid;
-        $model->eo_name = $input['Eo']['eo_name'];
-        $model->eo_address = $input['Eo']['eo_address'];
-        $model->eo_phone = $input['Eo']['eo_phone'];
-        $model->eo_fax = $input['Eo']['eo_fax'];
-        $model->eo_email = $input['Eo']['eo_email'];
-        $model->eo_website = $input['Eo']['eo_website'];
-        $model->eo_description = $input['Eo']['eo_description'];
-        $model->eo_photo = Helper::uploadImage($file, 'eo');
+        $model = new GalleryEO;
+        $model->glr_owner_id = $id;
+        $model->glr_name = Helper::uploadImage($file, 'gallery_eo');
+        $model->glr_date = strtotime(date("d-m-Y H:i:s"));
 
         return ($model->save()) ? true : false;
     }
 
-    public function updateData($input, $file)
+    public function getById($id)
     {
-        $model = $this->getEoById($input['Eo']['eo_id']);
-
-        $model->eo_name = $input['Eo']['eo_name'];
-        $model->eo_address = $input['Eo']['eo_address'];
-        $model->eo_phone = $input['Eo']['eo_phone'];
-        $model->eo_fax = $input['Eo']['eo_fax'];
-        $model->eo_email = $input['Eo']['eo_email'];
-        $model->eo_website = $input['Eo']['eo_website'];
-        $model->eo_description = $input['Eo']['eo_description'];
-        $model->eo_photo = Helper::updateImage('eo', $model->eo_photo);
-
-        return ($model->save()) ? true : false;
+        $model = GalleryEO::model()->findByPk($id);
+        if($model === null)
+            throw new CHttpException(404,'The requested page does not exist!.');
+        return $model;
     }
 }
