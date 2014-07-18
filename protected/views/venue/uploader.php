@@ -2,62 +2,61 @@
 /**
  * Created by PhpStorm.
  * User: roger
- * Date: 7/18/14
- * Time: 5:10 PM
+ * Date: 7/19/14
+ * Time: 1:10 AM
  */
 ?>
 
-<ul class="breadcrumb">
-	<li><a href="index.html?lang=en" class="glyphicons home"><i></i> BootAdmin</a></li>
-	<li class="divider"></li>
-	<li>Forms</li>
-	<li class="divider"></li>
-	<li>File Managers</li>
-</ul>
-<div class="separator"></div>
+    <ul class="breadcrumb">
+        <li><a href="index.html?lang=en" class="glyphicons home"><i></i> BootAdmin</a></li>
+        <li class="divider"></li>
+        <li>Forms</li>
+        <li class="divider"></li>
+        <li>File Managers</li>
+    </ul>
+    <div class="separator"></div>
 
-<h2 class="glyphicons suitcase"><i></i> Event Organizer Photo Managers</h2>
-<div class="separator"></div>
+    <h2 class="glyphicons suitcase"><i></i> Venue Photo Managers</h2>
+    <div class="separator"></div>
 
-<div class="relativeWrap">
-	<div class="widget widget-2 primary widget-body-white">
-		<div class="widget-head">
-			<h4 class="heading glyphicons file_import"><i></i>Photo Manager</h4>
-		</div>
-		<div class="widget-body">
-			<form id="pluploadForm">
-				<div id="pluploadUploader">
-					<p>You browser doesn't have Flash, Silverlight, Gears, BrowserPlus or HTML5 support.</p>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<br/>
-
-<div class="separator"></div>
-
-<h2 class="glyphicons picture"><i></i> Event Organizer Photo Gallery</h2>
-<div class="separator"></div>
-
-<div class="well">
-    <div class="row-fluid gallery paper">
-        <ul>
-            <?php foreach($model as $gallery){ ?>
-            <li class="span3">
-                <span class="thumb view">
-                    <span class="back">
-                        <span id="<?php echo $gallery['glr_id']; ?>" class="btn btn-mini btn-primary delete">Delete</span>
-<!--                        <a href=""  class="arr">&times;</a>-->
-                    </span>
-                    <img src="<?php echo Yii::app()->request->baseUrl . $gallery['glr_name']; ?>" alt="Album" />
-                </span>
-                <span class="name"></span>
-            </li>
-            <?php } ?>
-        </ul>
+    <div class="relativeWrap">
+        <div class="widget widget-2 primary widget-body-white">
+            <div class="widget-head">
+                <h4 class="heading glyphicons file_import"><i></i>Photo Manager</h4>
+            </div>
+            <div class="widget-body">
+                <form id="pluploadForm">
+                    <div id="pluploadUploader">
+                        <p>You browser doesn't have Flash, Silverlight, Gears, BrowserPlus or HTML5 support.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
+    <br/>
+
+    <div class="separator"></div>
+
+    <h2 class="glyphicons picture"><i></i> Venue Photo Gallery</h2>
+    <div class="separator"></div>
+
+    <div class="well">
+        <div class="row-fluid gallery paper">
+            <ul>
+                <?php foreach($model as $gallery){ ?>
+                    <li class="span3">
+                        <span class="thumb view">
+                            <span class="back">
+                                <span id="<?php echo $gallery['glr_vn_id']; ?>" class="btn btn-mini btn-primary delete">Delete</span>
+                            </span>
+                            <img src="<?php echo Yii::app()->request->baseUrl . $gallery['glr_vn_name']; ?>" alt="Album" />
+                        </span>
+                        <span class="name"></span>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
 
 <?php $this->beginClip('js-page-end'); ?>
 
@@ -129,7 +128,7 @@
             });
 
             $('.delete').click(function(){
-                $.post('<?php echo Yii::app()->createUrl('eo/delgal'); ?>', {id : $(this).attr('id')}, function(){
+                $.post('<?php echo Yii::app()->createUrl('venue/delgal'); ?>', {id : $(this).attr('id')}, function(){
                     location.reload();
                 })
             });

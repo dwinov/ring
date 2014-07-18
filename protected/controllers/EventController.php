@@ -25,7 +25,7 @@ class EventController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete'),
+                'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 2'
             ),
@@ -116,5 +116,26 @@ class EventController extends Controller
     {
         $model = new Event();
         $model->getEventById($id)->delete();
+    }
+
+    public function actionUploader()
+    {
+        $model = new GalleryEvent();
+
+        if(count($_FILES) != 0)
+        {
+            $model->insertData($_GET['id'], $_FILES);
+            Yii::app()->end();
+        }
+
+        $this->render('uploader', array(
+            'model' => $model->getAllData($_GET['id'])
+        ));
+    }
+
+    public function actionDelgal()
+    {
+        $model = new GalleryEvent();
+        $model->getById($_POST['id'])->delete();
     }
 }

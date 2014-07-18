@@ -89,6 +89,7 @@
                         sClass: "center",
                         mRender: function(data, type, all) {
                             var btns = new Array();
+                            btns.push("<a class='btn-action glyphicons picture btn-warning' href='<?php echo Yii::app()->createUrl('event/uploader'); ?>/id/" + all.evt_id + "' title='Gallery Pictures'><i></i></a> ");
                             btns.push("<a class='btn-action glyphicons pencil btn-success' href='<?php echo Yii::app()->createUrl('event/update'); ?>/id/" + all.evt_id + "' title='Edit'><i></i></a> ");
                             btns.push("<a class='btn-action glyphicons remove_2 btn-danger' data-delete href='<?php echo Yii::app()->createUrl('event/delete'); ?>/id/" + all.evt_id + "' title='Delete'><i></i></a>");
                             return  btns.join("&nbsp;");

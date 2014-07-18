@@ -25,7 +25,7 @@ class VenueController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete'),
+                'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 3'
             ),
@@ -112,5 +112,26 @@ class VenueController extends Controller
     {
         $model = new Venue();
         $model->getVenueById($id)->delete();
+    }
+
+    public function actionUploader()
+    {
+        $model = new GalleryVenue();
+
+        if(count($_FILES) != 0)
+        {
+            $model->insertData($_GET['id'], $_FILES);
+            Yii::app()->end();
+        }
+
+        $this->render('uploader', array(
+            'model' => $model->getAllData($_GET['id'])
+        ));
+    }
+
+    public function actionDelgal()
+    {
+        $model = new GalleryVenue();
+        $model->getById($_POST['id'])->delete();
     }
 }

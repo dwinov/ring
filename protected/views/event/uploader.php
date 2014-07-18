@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: roger
- * Date: 7/18/14
- * Time: 5:10 PM
+ * Date: 7/19/14
+ * Time: 12:59 AM
  */
 ?>
 
@@ -16,7 +16,7 @@
 </ul>
 <div class="separator"></div>
 
-<h2 class="glyphicons suitcase"><i></i> Event Organizer Photo Managers</h2>
+<h2 class="glyphicons suitcase"><i></i> Event Photo Managers</h2>
 <div class="separator"></div>
 
 <div class="relativeWrap">
@@ -37,7 +37,7 @@
 
 <div class="separator"></div>
 
-<h2 class="glyphicons picture"><i></i> Event Organizer Photo Gallery</h2>
+<h2 class="glyphicons picture"><i></i> Event Photo Gallery</h2>
 <div class="separator"></div>
 
 <div class="well">
@@ -47,10 +47,10 @@
             <li class="span3">
                 <span class="thumb view">
                     <span class="back">
-                        <span id="<?php echo $gallery['glr_id']; ?>" class="btn btn-mini btn-primary delete">Delete</span>
+                        <span id="<?php echo $gallery['glr_evt_id']; ?>" class="btn btn-mini btn-primary delete">Delete</span>
 <!--                        <a href=""  class="arr">&times;</a>-->
                     </span>
-                    <img src="<?php echo Yii::app()->request->baseUrl . $gallery['glr_name']; ?>" alt="Album" />
+                    <img src="<?php echo Yii::app()->request->baseUrl . $gallery['glr_evt_name']; ?>" alt="Album" />
                 </span>
                 <span class="name"></span>
             </li>
@@ -129,7 +129,7 @@
             });
 
             $('.delete').click(function(){
-                $.post('<?php echo Yii::app()->createUrl('eo/delgal'); ?>', {id : $(this).attr('id')}, function(){
+                $.post('<?php echo Yii::app()->createUrl('event/delgal'); ?>', {id : $(this).attr('id')}, function(){
                     location.reload();
                 })
             });
