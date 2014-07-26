@@ -65,6 +65,13 @@ class Event extends CActiveRecord
         $attr = array();
         $where = array('and');
 
+        if(Yii::app()->user->roleid ==2)
+        {
+            $eo = Eo::model()->find('eo_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
+            $where[] = 'evt_owner_id=:eo_id';
+            $attr[':eo_id'] = $eo->eo_id;
+        }
+
         $allData = count($data->queryAll());
 
         //search specific record

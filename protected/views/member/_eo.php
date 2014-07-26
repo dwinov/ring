@@ -116,6 +116,17 @@
 
     <hr class="separator bottom" />
     <div class="row-fluid">
+        <div class="span3">
+            <strong></strong>
+        </div>
+        <div class="span9">
+            <a href="<?php echo Yii::app()->createUrl('eo/uploader') . '/id/' . $eo->eo_id; ?>">Add Gallery Photos EO</a>&nbsp;&nbsp;
+            <a href="<?php echo Yii::app()->createUrl('event/index'); ?>">  Add Gallery Photos Event</a>
+        </div>
+    </div>
+
+    <hr class="separator bottom" />
+    <div class="row-fluid">
         <div class="span9">
             <?php echo CHtml::submitButton('Save Change', array('class' => 'btn btn-primary btn-icon glyphicons ok_2')); ?>
         </div>
