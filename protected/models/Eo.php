@@ -86,12 +86,29 @@ class Eo extends CActiveRecord
         );
     }
 
+    public function getAllEo()
+    {
+        $data = Yii::app()->db->createCommand()->from('tbl_eo')->queryAll();
+        return ($data === null) ? null : $data;
+    }
+
     public function getEoById($id)
     {
         $model = Eo::model()->findByPk($id);
         if($model === null)
             throw new CHttpException(404,'The requested page does not exist!.');
         return $model;
+    }
+
+    public function getEoByIdAPI($id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_eo')
+            ->where('eo_id=:id', array(':id' => $id))
+        ;
+
+        $result = $data->queryRow();
+        return $result;
     }
 
     public function insertData($input, $file)

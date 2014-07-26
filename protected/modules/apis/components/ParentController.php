@@ -12,7 +12,7 @@ class ParentController extends Controller
     {
         return array(
             'postOnly + create',
-            'putOnly + update',
+            'postOnly + update',
             'deleteOnly + delete',
         );
     }

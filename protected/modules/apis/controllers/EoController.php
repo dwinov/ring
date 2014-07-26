@@ -2,22 +2,22 @@
 /**
  * Created by PhpStorm.
  * User: roger
- * Date: 7/14/14
- * Time: 3:00 PM
+ * Date: 7/26/14
+ * Time: 12:30 PM
  */
 
-class EventController extends ParentController
+class EoController extends ParentController
 {
-    public $layout = false;
+    public $layout = "";
     public $model;
 
     public function __construct()
     {
-        $this->model = new Event();
+        $this->model = new Eo();
     }
 
     /**
-     * this is for ring
+     * this apis for get all venue
      */
     public function actionIndex()
     {
@@ -25,8 +25,38 @@ class EventController extends ParentController
         {
             if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
             {
-                $result = $this->model->getAllEvent();
-                $this->sendAjaxResponse($result);
+                $result = $this->model->getAllEo();
+                if($result != null)
+                {
+                    $this->sendAjaxResponse($result);
+                }else{
+                    $result = array('result' => true, 'value' => "No Data");
+                    $this->sendAjaxResponseString($result);
+                }
+            }else{
+                $result = array('result' => false, 'value' => "Token is expaired");
+                $this->sendAjaxResponseString($result);
+            }
+        }else{
+            $result = array('result' => false, 'value' => "Token is lost");
+            $this->sendAjaxResponseString($result);
+        }
+    }
+
+    public function actionUpdate()
+    {
+        if(isset($_SERVER['HTTP_TOKEN']))
+        {
+            if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
+            {
+                if($this->model->updateData($_POST, $_FILES) == true)
+                {
+                    $result = array('result' => true, 'value' => "EO has been updated");
+                    $this->sendAjaxResponseString($result);
+                }else{
+                    $result = array('result' => true, 'value' => "failed to update EO");
+                    $this->sendAjaxResponseString($result);
+                }
             }else{
                 $result = array('result' => false, 'value' => "Token is expaired");
                 $this->sendAjaxResponseString($result);
@@ -38,60 +68,15 @@ class EventController extends ParentController
     }
 
     /**
-     * this is for ring pro
+     * this apis for get Eo for see the detail
      */
-    public function actionList()
-    {
-        if(isset($_SERVER['HTTP_TOKEN']))
-        {
-            if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
-            {
-                $result = $this->model->getAllEvent(true, $_SERVER['HTTP_TOKEN']);
-                $this->sendAjaxResponse($result);
-            }else{
-                $result = array('result' => false, 'value' => "Token is expaired");
-                $this->sendAjaxResponseString($result);
-            }
-        }else{
-            $result = array('result' => false, 'value' => "Token is lost");
-            $this->sendAjaxResponseString($result);
-        }
-    }
-
-    public function actionCreate()
-    {
-        if(isset($_SERVER['HTTP_TOKEN']))
-        {
-            if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
-            {
-                $user = User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN']));
-                $eo = Eo::model()->find('eo_user_id=:usr_id', array(':usr_id' => $user->usr_id));
-                $_POST['Event']['evt_owner_id'] = $eo->eo_id;
-                if($this->model->insertData($_POST, $_FILES) == true)
-                {
-                    $result = array('result' => true, 'value' => "Event has been saved.");
-                    $this->sendAjaxResponseString($result);
-                }else{
-                    $result = array('result' => false, 'value' => "Saving Failed");
-                    $this->sendAjaxResponseString($result);
-                }
-            }else{
-                $result = array('result' => false, 'value' => "The token is expaired");
-                $this->sendAjaxResponseString($result);
-            }
-        }else{
-            $result = array('result' => false, 'value' => "The token is lost");
-            $this->sendAjaxResponseString($result);
-        }
-    }
-
     public function actionView()
     {
         if(isset($_SERVER['HTTP_TOKEN']))
         {
             if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
             {
-                $result = $this->model->getEventByIdAPI($_POST['evt_id']);
+                $result = $this->model->getEoByIdAPI($_POST['id']);
                 $this->sendAjaxResponse($result);
             }else{
                 $result = array('result' => false, 'value' => "Token is expaired");

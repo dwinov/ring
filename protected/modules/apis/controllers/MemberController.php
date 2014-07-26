@@ -53,15 +53,27 @@ class MemberController extends ParentController
 
     public function actionUpdate()
     {
-        $model = new Member();
-
-        if($model->updateMember($_POST))
+        if(isset($_SERVER['HTTP_TOKEN']))
         {
-            $result = array('result' => true);
-            $this->sendAjaxResponse(null, $result);
+            if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
+            {
+                $model = new Member();
+
+                if($model->updateMember($_POST))
+                {
+                    $result = array('result' => true);
+                    $this->sendAjaxResponse(null, $result);
+                }else{
+                    $result = array('result' => false, 'value' => "update data failed");
+                    $this->sendAjaxResponseString($result);
+                }
+            }else{
+                $result = array('result' => false, 'value' => "Token is expaired");
+                $this->sendAjaxResponseString($result);
+            }
         }else{
-            $result = array('result' => false);
-            $this->sendAjaxResponse(null, $result);
+            $result = array('result' => false, 'value' => "Token is lost");
+            $this->sendAjaxResponseString($result);
         }
     }
 }
