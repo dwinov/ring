@@ -185,4 +185,20 @@ class Event extends CActiveRecord
 
         return ($model->save()) ? true : false;
     }
+
+    public function getEventsByEo($eo_id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('e.evt_id,
+                        e.evt_name,
+                        v.vn_name,
+                        FROM_UNIXTIME(e.evt_date, "%d-%b-%Y") as evt_date,
+                        FROM_UNIXTIME(e.evt_date, "%H:%i") as evt_hour')
+            ->from('tbl_event e')
+            ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+            ->where('evt_owner_id=:eo_id', array(':eo_id' => $eo_id))
+        ;
+
+        return $data->queryAll();
+    }
 }

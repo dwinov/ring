@@ -71,7 +71,7 @@
                         var roleId = '<?php echo Yii::app()->user->roleid; ?>';
                         if(roleId != 1)
                         {
-                            btns.push("<a class='btn-action glyphicons book_open btn-info' href='<?php echo Yii::app()->createUrl('eo/detail'); ?>' title='Detail'><i></i></a> ");
+                            btns.push("<a class='btn-action glyphicons book_open btn-info' href='<?php echo Yii::app()->createUrl('eo/detail'); ?>/id/" + all.eo_id + "' title='Detail'><i></i></a> ");
                         }else{
                             btns.push("<a class='btn-action glyphicons calendar btn-info' href='<?php echo Yii::app()->createUrl('event/create'); ?>/id/" + all.eo_id + "' title='Create Event'><i></i></a> ");
                             btns.push("<a class='btn-action glyphicons picture btn-warning' href='<?php echo Yii::app()->createUrl('eo/uploader'); ?>/id/" + all.eo_id + "' title='Gallery Pictures'><i></i></a> ");

@@ -25,9 +25,15 @@ class VenueController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal'),
+                'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal', 'detail'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 3'
+            ),
+            array(
+                'allow',
+                'actions' => array('index', 'detail'),
+                'users' => array('@'),
+                'expression' => 'Yii::app()->user->roleid == 2'
             ),
             array(
                 'deny',
@@ -133,5 +139,20 @@ class VenueController extends Controller
     {
         $model = new GalleryVenue();
         $model->getById($_POST['id'])->delete();
+    }
+
+    public function actionDetail()
+    {
+        $model = new Venue();
+        $model_glr_venue = new GalleryVenue();
+
+        $venue = $model->getVenueById($_GET['id']);
+        $glr = $model_glr_venue->getAllData($venue->vn_id);
+
+        $this->render('detail', array(
+            'model' => $venue,
+            'glr_venue' => $glr,
+        ));
+
     }
 }

@@ -25,9 +25,15 @@ class EoController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete', 'client', 'uploader', 'delgal'),
+                'actions' => array('index','create', 'update', 'delete', 'client', 'uploader', 'delgal', 'detail'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 2'
+            ),
+            array(
+                'allow',
+                'actions' => array('index', 'detail'),
+                'users' => array('@'),
+                'expression' => 'Yii::app()->user->roleid == 3'
             ),
             array(
                 'deny',
@@ -139,5 +145,23 @@ class EoController extends Controller
     {
         $model = new GalleryEO();
         $model->getById($_POST['id'])->delete();
+    }
+
+    public function actionDetail()
+    {
+        $model = new Eo();
+        $model_glr_eo = new GalleryEO();
+        $event = new Event();
+
+        $eo = $model->getEoById($_GET['id']);
+        $glr = $model_glr_eo->getAllData($eo->eo_id);
+        $evt = $event->getEventsByEo($eo->eo_id);
+
+        $this->render('detail', array(
+            'model' => $eo,
+            'glr_eo' => $glr,
+            'event' => $evt
+        ));
+
     }
 }
