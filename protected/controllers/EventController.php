@@ -25,9 +25,15 @@ class EventController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal'),
+                'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal', 'detail'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 2'
+            ),
+            array(
+                'allow',
+                'actions' => array('index', 'detail'),
+                'users' => array('@'),
+                'expression' => 'Yii::app()->user->roleid == 3'
             ),
             array(
                 'deny',
@@ -137,5 +143,25 @@ class EventController extends Controller
     {
         $model = new GalleryEvent();
         $model->getById($_POST['id'])->delete();
+    }
+
+    public function actionDetail()
+    {
+        $model = new Event();
+        $model_eo = new Eo();
+        $model_venue = new Venue();
+        $model_glr_event = new GalleryEvent();
+
+        $event = $model->getEventById($_GET['id']);
+        $eo = $model_eo->getEoById($event->evt_owner_id);
+        $venue = $model_venue->getVenueById($event->evt_venue_id);
+        $glr = $model_glr_event->getAllData($event->evt_id);
+
+        $this->render('detail', array(
+            'model' => $event,
+            'eo' => $eo,
+            'venue' => $venue,
+            'glr_event' => $glr,
+        ));
     }
 }
