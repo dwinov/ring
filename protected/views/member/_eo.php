@@ -120,7 +120,9 @@
             <strong></strong>
         </div>
         <div class="span9">
-            <a href="<?php echo Yii::app()->createUrl('eo/uploader') . '/id/' . $eo->eo_id; ?>">Add Gallery Photos EO</a>&nbsp;&nbsp;
+            <?php if(isset($eo)){ ?>
+                <a href="<?php echo Yii::app()->createUrl('eo/uploader') . '/id/' . $eo->eo_id; ?>">Add Gallery Photos EO</a>&nbsp;&nbsp;
+            <?php } ?>
             <a href="<?php echo Yii::app()->createUrl('event/index'); ?>">  Add Gallery Photos Event</a>
         </div>
     </div>

@@ -120,7 +120,7 @@
                     <div class="span9">
                         <?php echo CHtml::textArea('Member[mem_about_me]', $model->mem_about_me,
                             array(
-                                'id' => 'mustHaveId',
+//                                'id' => 'mustHaveId',
                                 'class' => 'wysihtml5 span12',
                                 'rows' => '5'
                             )); ?>

@@ -187,12 +187,12 @@
                                                     <input type="checkbox" checked="checked" name="Member[mem_gender]" />
                                                 </div>
                                                 <?php echo CHtml::textField('Member[mem_phone]', '', array('placeholder' => 'Phone Number')); ?>
-                                                <?php echo CHtml::textField('Member[mem_birthdate]', '', array('class' => 'datepicker', 'placeholder' => 'Birthdate')); ?>
+                                                <?php echo CHtml::textField('Member[mem_birthdate]', '', array('class' => 'datepickerold', 'placeholder' => 'Birthdate')); ?>
 <!--                                                <label class="checkbox">-->
-                                                    <input name="tnc" type="checkbox" class="checkbox" value="1" />
-                                                    term and condition
+                                                    <input name="tnc" type="checkbox" id="termcon" class="checkbox" value="1" style="margin:0 -117px 0 -114px !important;" />
+                                                    I AGREE WITH THE TERM AND CONDITIONS
 <!--                                                </label>-->
-                                                <button type="submit" class="btn btn-icon btn-block glyphicons right edit btn-success">Register<i></i></button>
+                                                <button type="submit" id="btn-register" class="btn btn-icon btn-block glyphicons right edit btn-success" disabled>Register<i></i></button>
                                             <?php echo CHtml::endForm(); ?>
                                         </div>
                                     </div>
@@ -376,6 +376,19 @@
 
 <!-- Custom Onload Script -->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/load.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#termcon').click(function(){
+            if($('#btn-register').prop('disabled') == true)
+            {
+                $('#btn-register').prop('disabled', false);
+            }else{
+                $('#btn-register').prop('disabled', true);
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

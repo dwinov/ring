@@ -933,14 +933,27 @@ $(function()
 	if ($('.datepicker').length)
 	{
 		$(".datepicker").datepicker({
-			showOtherMonths:true
+			showOtherMonths:true,
 		});
 	}
+
+    if ($('.datepickerold').length)
+    {
+        $(".datepickerold").datepicker({
+            showOtherMonths:true,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: '1950:+0'
+        });
+    }
+
 	if ($('#datepicker-inline').length)
 	{
 		$('#datepicker-inline').datepicker({
 	        inline: true,
-			showOtherMonths:true
+			showOtherMonths:true,
+            changeMonth: true,
+            changeYear: true,
 	    });
 	}
 	
