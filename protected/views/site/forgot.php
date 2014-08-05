@@ -1,10 +1,18 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: roger
+ * Date: 8/5/14
+ * Time: 6:01 PM
+ */ ?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
 <head>
-    <title>Ring - Login</title>
+    <title>Ring - Forgot Password</title>
 
     <!-- Meta -->
     <meta charset="UTF-8" />
@@ -137,71 +145,26 @@
                     <div class="rrow scroll-y" id="mainYScroller">
                         <div class="inner topRight">
                             <div class="positionWrapper loginWrapper hide">
-                                <span class="line"></span>
+<!--                                <span class="line"></span>-->
                                 <div class="box-1 loginbox">
                                     <div class="inner">
-                                        <?php echo CHtml::beginForm(Yii::app()->createUrl('site/login'), 'post', array('class' => 'fts')); ?>
+                                        <?php echo CHtml::beginForm(Yii::app()->createUrl('site/forgot'), 'post', array('class' => 'fts')); ?>
                                         <fieldset>
-                                            <legend>Login</legend>
+                                            <legend>Forgot Password</legend>
                                             <hr class="separator bottom" style="margin-bottom: 10px;" />
                                             <div class="input-prepend input-full">
                                                 <span class="add-on glyphicons user"><i></i></span>
-                                                <?php echo CHtml::textField('LoginForm[username]', '', array('placeholder' => 'Email')) ?>
+                                                <?php echo CHtml::textField('email', '', array('placeholder' => 'Email')) ?>
                                             </div>
-                                            <div class="input-prepend input-full">
-                                                <span class="add-on glyphicons lock"><i></i></span>
-                                                <?php echo CHtml::passwordField('LoginForm[password]', '', array('placeholder' => 'Password')) ?>
-                                            </div>
-                                            <a href="<?php echo Yii::app()->createUrl('site/forgot'); ?>" class="glyphicons circle_question_mark forgot">forgot password <i></i></a>
+                                            <a href="<?php echo Yii::app()->createUrl('site/login'); ?>" class="glyphicons circle_question_mark forgot">login ring pro</a>
                                             <hr class="separator bottom" style="margin-bottom: 10px;" />
-                                            <?php echo CHtml::submitButton('Login',array('class'=>'btn btn-icon btn-block glyphicons right flash btn-primary')); ?>
+                                            <?php echo CHtml::submitButton('Submit',array('class'=>'btn btn-icon btn-block glyphicons right flash btn-primary')); ?>
                                         </fieldset>
                                         <?php echo CHtml::endForm(); ?>
                                     </div>
                                 </div>
-                                <div class="btn-register">
-                                    <a href="#" class="btn btn-icon btn-success glyphicons edit"><i></i>Register</a>
-                                </div>
                             </div>
-
-                            <div>
-                                <div class="positionWrapper registerWrapper hide">
-                                    <span class="line"></span>
-                                    <div class="box-1 registerbox">
-                                        <div class="inner">
-                                            <?php echo CHtml::beginForm(Yii::app()->createUrl('member/register'), 'post', array('class' => 'fts')); ?>
-                                                <?php echo CHtml::dropDownList('User[usr_type_id]', '', array(
-                                                    '' => '- Choose Account Type -',
-                                                    '2' => 'Event Organizer',
-                                                    '3' => 'Venue'
-                                                )); ?>
-                                                <?php echo CHtml::textField('Member[mem_first_name]', '', array('placeholder' => 'First Name')); ?>
-                                                <?php echo CHtml::textField('Member[mem_last_name]', '', array('placeholder' => 'Last Name')); ?>
-                                                <?php echo CHtml::textField('User[usr_email]', '', array('placeholder' => 'Email')); ?>
-                                                <?php echo CHtml::passwordField('User[usr_password]', '', array('placeholder' => 'Password')) ?>
-                                                <?php echo CHtml::passwordField('User[repassword]', '', array('placeholder' => 'Re-type Password')); ?>
-                                                <div class="toggle-button" data-toggleButton-width="220"
-                                                     data-toggleButton-label-enabled="Male"
-                                                     data-toggleButton-label-disabled="Female"
-                                                     data-toggleButton-height="35"
-                                                     data-toggleButton-font-lineHeight="35px">
-                                                    <input type="checkbox" checked="checked" name="Member[mem_gender]" />
-                                                </div>
-                                                <?php echo CHtml::textField('Member[mem_phone]', '', array('placeholder' => 'Phone Number')); ?>
-                                                <?php echo CHtml::textField('Member[mem_birthdate]', '', array('class' => 'datepickerold', 'placeholder' => 'Birthdate')); ?>
-<!--                                                <label class="checkbox">-->
-                                                    <input name="tnc" type="checkbox" id="termcon" class="checkbox" value="1" style="margin:0 -117px 0 -114px !important;" />
-                                                    I AGREE WITH THE TERM AND CONDITIONS
-<!--                                                </label>-->
-                                                <button type="submit" id="btn-register" class="btn btn-icon btn-block glyphicons right edit btn-success" disabled>Register<i></i></button>
-                                            <?php echo CHtml::endForm(); ?>
-                                        </div>
-                                    </div>
-                                    <div class="btn-login">
-                                        <a href="#" class="btn btn-icon btn-primary glyphicons unlock"><i></i>Login</a>
-                                    </div>
-                                </div>
-                            </div>							</div>
+                        </div>
                     </div>
                 </div>
             </div>

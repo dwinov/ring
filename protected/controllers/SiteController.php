@@ -121,4 +121,17 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+    public function actionForgot()
+    {
+        $this->layout = false;
+
+        if(isset($_POST['email']))
+        {
+            echo "cau";exit;
+        }
+
+
+        $this->render('forgot');
+    }
 }
