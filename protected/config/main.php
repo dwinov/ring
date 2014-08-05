@@ -17,6 +17,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
         'application.extensions.*',
+        'application.extensions.yii-mail.*',
 	),
 
 	'modules'=>array(
@@ -50,6 +51,19 @@ return array(
                 '<module:\w+>/<controller:\w+>/<action:\w+>/<id:-?\d+>/<name:.*>'=>'<module>/<controller>/<action>',
 			),
 		),
+
+        'mail' => array(
+            'class' => 'YiiMail',
+            'transportType' => 'smtp',
+            'transportOptions' =>array(
+                'host' => 'smtp.googlemail.com',
+                'username' => 'web.ringpro@gmail.com',
+                'password' => 'mainmain',
+                'port' => '465',
+                'encryption' => 'ssl',
+            ),
+            'viewPath' => 'application.views.mail',
+        ),
 
         /*
 		'db'=>array(

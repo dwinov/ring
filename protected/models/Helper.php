@@ -100,6 +100,25 @@ class Helper
         }
     }
 
+    public static function sendEmail($view, $model, $subject)
+    {
+        $message = new YiiMailMessage;
+        $message->view = $view;
+        $sid = 1;
+        $criteria = new CDbCriteria();
+        $criteria->condition = "studentID=".$sid."";
+        $message->subject = $subject;
+        $message->setBody(array('data', $model), 'text/html');
+        $message->addTo($model->usr_email);
+        $message->from = 'web.ringpro@gmail.com';
+
+        if (Yii::app()->mail->send($message)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public static function decodeImage()
     {
 

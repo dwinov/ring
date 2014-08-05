@@ -128,10 +128,66 @@ class SiteController extends Controller
 
         if(isset($_POST['email']))
         {
-            echo "cau";exit;
+            $model = User::model()->findByAttributes(array('usr_email' => $_POST['email']));
+            if($model)
+            {
+                if (empty($model->usr_validation_key)) {
+                    $model->usr_validation_key=md5($model->usr_email);
+                    $model->save();
+                }
+
+                $_POST['validation_key'] = $model->usr_validation_key;
+
+                if(Helper::sendEmail('forgotpassword', $model, 'Forgot Password Ring Pro'))
+                {
+                    $this->redirect(Yii::app()->homeUrl);
+                }else{
+                    $this->redirect(Yii::app()->homeUrl);
+                }
+            }
         }
 
-
         $this->render('forgot');
+    }
+
+    public function actionResetPassword($v)
+    {
+        $this->layout=false;
+        $model=User::model()->findByAttributes(array('usr_validation_key'=>$v));
+        if($model){
+            $this->render('resetPassword',array('model'=>$model));
+        }else{
+            $this->redirect(array('site/login'));
+        }
+    }
+
+    public function actionChangePassword()
+    {
+        $this->layout=false;
+        if (isset($_POST['validation_key'])) {
+            if ($_POST['password_baru']===$_POST['password_baru_retype']) {
+                $model=User::model()->findByAttributes(array('usr_validation_key'=>$_POST['validation_key']));
+                if ($model) {
+                    $model->usr_password=md5($_POST['password_baru']);
+                    $model->usr_validation_key = "";
+                    if($model->save()){
+//                        Yii::app()->user->setFlash('success', "Password has been reset. Please use your new password to login!");
+                        $this->redirect(array('site/login'));
+                    }else{
+//                        Yii::app()->user->setFlash('error', "Failed password reset. Please try again!");
+                        $this->redirect(array('site/login'));
+                    }
+                } else {
+                    $result=0;
+//                    Yii::app()->user->setFlash('error', "Failed to reset your password!");
+                }
+            } else {
+//                Yii::app()->user->setFlash('error', "Retype new password doesnt match!");
+            }
+        } else {
+            $result=0;
+//            Yii::app()->user->setFlash('error', "Failed to reset your password!");
+        }
+        $this->render('resetpassword',array('model'=>$model));
     }
 }
