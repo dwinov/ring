@@ -69,7 +69,7 @@ class EventController extends ParentController
                 $_POST['Event']['evt_owner_id'] = $eo->eo_id;
                 if($this->model->insertData($_POST, $_FILES) == true)
                 {
-                    $result = array('result' => true, 'value' => "Event has been saved.");
+                    $result = array('result' => true, 'value' => Yii::app()->db->getLastInsertId());
                     $this->sendAjaxResponseString($result);
                 }else{
                     $result = array('result' => false, 'value' => "Saving Failed");
@@ -99,6 +99,37 @@ class EventController extends ParentController
             }
         }else{
             $result = array('result' => false, 'value' => "Token is lost");
+            $this->sendAjaxResponseString($result);
+        }
+    }
+
+    public function actionGallery()
+    {
+        if(isset($_SERVER['HTTP_TOKEN']))
+        {
+            if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
+            {
+                if(count($_FILES) != 0)
+                {
+                    $model_gallery = new GalleryEvent();
+                    if($model_gallery->insertData($_POST['event_id'], $_FILES))
+                    {
+                        $result = array('result' => true, 'value' => "Event has been saved.");
+                        $this->sendAjaxResponseString($result);
+                    }else{
+                        $result = array('result' => false, 'value' => "Saving Failed");
+                        $this->sendAjaxResponseString($result);
+                    }
+                }else{
+                    $result = array('result' => false, 'value' => "No Image has been sent.");
+                    $this->sendAjaxResponseString($result);
+                }
+            }else{
+                $result = array('result' => false, 'value' => "The token is expaired");
+                $this->sendAjaxResponseString($result);
+            }
+        }else{
+            $result = array('result' => false, 'value' => "The token is lost");
             $this->sendAjaxResponseString($result);
         }
     }

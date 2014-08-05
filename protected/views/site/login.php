@@ -135,7 +135,8 @@
                 </div>
                 <div class="span10 col main-right login">
                     <div class="rrow scroll-y" id="mainYScroller">
-                        <div class="inner topRight"><div class="positionWrapper loginWrapper hide">
+                        <div class="inner topRight">
+                            <div class="positionWrapper loginWrapper hide">
                                 <span class="line"></span>
                                 <div class="box-1 loginbox">
                                     <div class="inner">

@@ -99,4 +99,9 @@ class Helper
             }
         }
     }
+
+    public static function decodeImage()
+    {
+
+    }
 }

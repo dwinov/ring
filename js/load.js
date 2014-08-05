@@ -933,7 +933,7 @@ $(function()
 	if ($('.datepicker').length)
 	{
 		$(".datepicker").datepicker({
-			showOtherMonths:true,
+			showOtherMonths:true
 		});
 	}
 
@@ -953,7 +953,7 @@ $(function()
 	        inline: true,
 			showOtherMonths:true,
             changeMonth: true,
-            changeYear: true,
+            changeYear: true
 	    });
 	}
 	

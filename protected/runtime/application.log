@@ -21902,3 +21902,35 @@ Stack trace:
 REQUEST_URI=/ring/css/images/pattern2.png
 HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1359188708
 ---
+2014/08/04 08:33:20 [warning] [application] Failed to set unsafe attribute "evt_name" of "Event".
+in E:\project\ring\protected\models\Event.php (159)
+in E:\project\ring\protected\modules\apis\controllers\EventController.php (70)
+in E:\project\ring\index.php (13)
+2014/08/04 08:33:20 [warning] [application] Failed to set unsafe attribute "evt_venue_id" of "Event".
+in E:\project\ring\protected\models\Event.php (159)
+in E:\project\ring\protected\modules\apis\controllers\EventController.php (70)
+in E:\project\ring\index.php (13)
+2014/08/04 08:33:20 [warning] [application] Failed to set unsafe attribute "evt_date" of "Event".
+in E:\project\ring\protected\models\Event.php (159)
+in E:\project\ring\protected\modules\apis\controllers\EventController.php (70)
+in E:\project\ring\index.php (13)
+2014/08/04 08:33:20 [warning] [application] Failed to set unsafe attribute "evt_time" of "Event".
+in E:\project\ring\protected\models\Event.php (159)
+in E:\project\ring\protected\modules\apis\controllers\EventController.php (70)
+in E:\project\ring\index.php (13)
+2014/08/04 08:33:20 [warning] [application] Failed to set unsafe attribute "evt_tiket_price" of "Event".
+in E:\project\ring\protected\models\Event.php (159)
+in E:\project\ring\protected\modules\apis\controllers\EventController.php (70)
+in E:\project\ring\index.php (13)
+2014/08/04 08:33:20 [warning] [application] Failed to set unsafe attribute "evt_total_tiket" of "Event".
+in E:\project\ring\protected\models\Event.php (159)
+in E:\project\ring\protected\modules\apis\controllers\EventController.php (70)
+in E:\project\ring\index.php (13)
+2014/08/04 08:33:20 [warning] [application] Failed to set unsafe attribute "evt_description" of "Event".
+in E:\project\ring\protected\models\Event.php (159)
+in E:\project\ring\protected\modules\apis\controllers\EventController.php (70)
+in E:\project\ring\index.php (13)
+2014/08/04 08:33:20 [warning] [application] Failed to set unsafe attribute "evt_owner_id" of "Event".
+in E:\project\ring\protected\models\Event.php (159)
+in E:\project\ring\protected\modules\apis\controllers\EventController.php (70)
+in E:\project\ring\index.php (13)
