@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e8e509d-b021-43ea-8313-ae2ae2526bdf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/views/mail/forgotpassword.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/views/site/resetpassword.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Helper.php" afterPath="$PROJECT_DIR$/protected/models/Helper.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/SiteController.php" afterPath="$PROJECT_DIR$/protected/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/application.log" afterPath="$PROJECT_DIR$/protected/runtime/application.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/main.php" afterPath="$PROJECT_DIR$/protected/config/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ring.iws" />
@@ -31,79 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SiteController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SiteController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="52" selection-start="3826" selection-end="3826" vertical-scroll-proportion="-11.769231" vertical-offset="2074" max-vertical-offset="3366">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resetpassword.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/site/resetpassword.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="151" selection-start="10573" selection-end="10573" vertical-scroll-proportion="-17.076923" vertical-offset="2310" max-vertical-offset="6239">
-              <folding>
-                <element signature="e#6#85#0" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Helper.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/Helper.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="37" selection-start="3468" selection-end="3468" vertical-scroll-proportion="-12.846154" vertical-offset="1451" max-vertical-offset="2142">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/config/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="82" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.4398682" vertical-offset="549" max-vertical-offset="1972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forgotpassword.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/mail/forgotpassword.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="25" selection-start="487" selection-end="487" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="459">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="32" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1513">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forgot.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/site/forgot.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="337" column="80" selection-start="18580" selection-end="18580" vertical-scroll-proportion="-6.6538463" vertical-offset="5471" max-vertical-offset="6086">
-              <folding>
-                <element signature="n#style#0;n#hr#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#1;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/site/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="6800">
+            <state line="192" column="1" selection-start="5852" selection-end="5852" vertical-scroll-proportion="0.94471544" vertical-offset="2683" max-vertical-offset="3366">
               <folding />
             </state>
           </provider>
@@ -168,11 +94,11 @@
         <option value="$PROJECT_DIR$/protected/modules/apis/controllers/EventController.php" />
         <option value="$PROJECT_DIR$/protected/views/site/login.php" />
         <option value="$PROJECT_DIR$/protected/views/site/forgot.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/protected/config/main.php" />
         <option value="$PROJECT_DIR$/protected/models/Helper.php" />
         <option value="$PROJECT_DIR$/protected/views/mail/forgotpassword.php" />
         <option value="$PROJECT_DIR$/protected/views/site/resetpassword.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/SiteController.php" />
       </list>
     </option>
   </component>
@@ -256,87 +182,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -402,11 +248,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -641,27 +487,6 @@
         <state line="1106" column="3" selection-start="32342" selection-end="32342" vertical-scroll-proportion="0.9469579" vertical-offset="18195" max-vertical-offset="18904" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/site/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="6800">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1513">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="52" selection-start="3826" selection-end="3826" vertical-scroll-proportion="-11.769231" vertical-offset="2074" max-vertical-offset="3366">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Helper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="110" column="37" selection-start="3468" selection-end="3468" vertical-scroll-proportion="-12.846154" vertical-offset="1451" max-vertical-offset="2142">
@@ -669,36 +494,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/mail/forgotpassword.php">
+    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="25" selection-start="487" selection-end="487" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
+        <state line="59" column="54" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.72292995" vertical-offset="549" max-vertical-offset="1972" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/site/resetpassword.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="151" selection-start="10573" selection-end="10573" vertical-scroll-proportion="-17.076923" vertical-offset="2310" max-vertical-offset="6239">
-          <folding>
-            <element signature="e#6#85#0" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="162" column="151" selection-start="10573" selection-end="10573" vertical-scroll-proportion="0.72195125" vertical-offset="2310" max-vertical-offset="6239" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/mail/forgotpassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="25" selection-start="487" selection-end="487" vertical-scroll-proportion="0.43312103" vertical-offset="0" max-vertical-offset="628" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="32" selection-start="120" selection-end="120" vertical-scroll-proportion="-0.13535032" vertical-offset="136" max-vertical-offset="1428" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/site/forgot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="337" column="80" selection-start="18580" selection-end="18580" vertical-scroll-proportion="-6.6538463" vertical-offset="5471" max-vertical-offset="6086">
-          <folding>
-            <element signature="n#style#0;n#hr#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#1;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="337" column="80" selection-start="18580" selection-end="18580" vertical-scroll-proportion="0.2813008" vertical-offset="5471" max-vertical-offset="6086" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
+    <entry file="file://$PROJECT_DIR$/protected/views/site/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="82" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.4398682" vertical-offset="549" max-vertical-offset="1972">
+        <state line="7" column="0" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="6800" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="1" selection-start="5852" selection-end="5852" vertical-scroll-proportion="0.94471544" vertical-offset="2683" max-vertical-offset="3366">
           <folding />
         </state>
       </provider>

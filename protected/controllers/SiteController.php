@@ -155,7 +155,7 @@ class SiteController extends Controller
         $this->layout=false;
         $model=User::model()->findByAttributes(array('usr_validation_key'=>$v));
         if($model){
-            $this->render('resetPassword',array('model'=>$model));
+            $this->render('resetpassword',array('model'=>$model));
         }else{
             $this->redirect(array('site/login'));
         }
