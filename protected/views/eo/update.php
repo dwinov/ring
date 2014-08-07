@@ -19,6 +19,10 @@
 
 <div class="row-fluid">
 
-    <?php echo $this->renderPartial('_form', array('model' => $model, 'action' => Yii::app()->createUrl('eo/update', array('id' => $model->eo_id)))); ?>
+    <?php if(isset($user_id)){ ?>
+        <?php echo $this->renderPartial('_form', array('model' => $model, 'action' => Yii::app()->createUrl('eo/update/' . $model->eo_id . '?user_id=' . $user_id))); ?>
+    <?php }else{ ?>
+        <?php echo $this->renderPartial('_form', array('model' => $model, 'action' => Yii::app()->createUrl('eo/update', array('id' => $model->eo_id)))); ?>
+    <?php } ?>
 
 </div>

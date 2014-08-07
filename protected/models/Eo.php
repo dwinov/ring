@@ -100,6 +100,17 @@ class Eo extends CActiveRecord
         return $model;
     }
 
+    public function getEoByUserId($user_id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_eo')
+            ->where('eo_user_id=:user_id', array(':user_id' => $user_id))
+        ;
+
+        $result = $data->queryRow();
+        return $result;
+    }
+
     public function getEoByIdAPI($id)
     {
         $data = Yii::app()->db->createCommand()
@@ -139,7 +150,7 @@ class Eo extends CActiveRecord
         $model->eo_email = $input['Eo']['eo_email'];
         $model->eo_website = $input['Eo']['eo_website'];
         $model->eo_description = $input['Eo']['eo_description'];
-        $model->eo_photo = Helper::updateImage('eo', $model->eo_photo);
+        $model->eo_photo = (count($file) != 0) ? Helper::updateImage('eo', $model->eo_photo) : $model->eo_photo;
 
         return ($model->save()) ? true : false;
     }

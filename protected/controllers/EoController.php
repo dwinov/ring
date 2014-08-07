@@ -80,17 +80,36 @@ class EoController extends Controller
         {
             if($model->updateData($_POST, $_FILES))
             {
-                $this->redirect(array('eo/index'));
+                if(isset($_GET['user_id']))
+                {
+                    $this->redirect(array('eo/update/' . $id . '?user_id=' . $_GET['user_id']));
+                }else{
+                    $this->redirect(array('eo/index'));
+                }
             }else{
-                $this->redirect(array('eo/index'));
+                if(isset($_GET['user_id']))
+                {
+                    $this->redirect(array('eo/update/' . $id . '?user_id=' . $_GET['user_id']));
+                }else{
+                    $this->redirect(array('eo/index'));
+                }
             }
         }
 
-        $data = $model->getEoById($id);
-
-        $this->render('update', array(
-            'model' => $data,
-        ));
+        if(isset($_GET['user_id']))
+        {
+            $eo = $model->getEoByUserId($_GET['user_id']);
+            $data = $model->getEoById($eo['eo_id']);
+            $this->render('update', array(
+                'model' => $data,
+                'user_id' => $_GET['user_id']
+            ));
+        }else{
+            $data = $model->getEoById($id);
+            $this->render('update', array(
+                'model' => $data,
+            ));
+        }
     }
 
     public function actionClient()

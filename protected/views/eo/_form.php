@@ -84,16 +84,6 @@
                         </div>
                     </div>
 
-                    <hr class="separator bottom" />
-                    <div class="control-group">
-                        <label class="control-label">Gallery Picture</label>
-                        <div class="controls">
-                            <div id="pluploadUploader">
-                                <p>You browser doesn't have Flash, Silverlight, Gears, BrowserPlus or HTML5 support.</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="form-actions" style="margin: 0;">
                         <?php echo CHtml::submitButton( (isset($model)) ? 'Save changes' : 'Save',
                             array('class'=>'btn btn-icon btn-primary glyphicons circle_ok')); ?>
