@@ -56,7 +56,7 @@ class EventController extends Controller
         $this->render('index');
     }
 
-    public function actionCreate($id)
+    public function actionCreate()
     {
         if(isset($_POST['Event']))
         {
@@ -71,11 +71,23 @@ class EventController extends Controller
 
         }
 
+        if(Yii::app()->user->roleid == 2)
+        {
+            $eo = new Eo();
+            $data_eo = $eo->getEoByUserId(Yii::app()->user->usrid);
+            $owner_id = $data_eo['eo_id'];
+        }elseif(Yii::app()->user->roleid == 3)
+        {
+            $venue = new Venue();
+            $data_venue = $venue->getVenueByUserId(Yii::app()->user->usrid);
+            $owner_id = $data_venue['vn_id'];
+        }
+
         $venue = Venue::model()->findAll();
 
         $this->render('create', array(
             'venue_list' => CHtml::listData($venue, 'vn_id', 'vn_name'),
-            'eo_id' => $id
+            'owner_id' => $owner_id
         ));
     }
 

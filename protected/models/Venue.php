@@ -114,6 +114,17 @@ class Venue extends CActiveRecord
         return $result;
     }
 
+    public function getVenueByUserId($user_id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_venue')
+            ->where('vn_user_id=:user_id', array(':user_id' => $user_id))
+        ;
+
+        $result = $data->queryRow();
+        return $result;
+    }
+
     public function insertData($input, $file)
     {
         $model = new Venue;

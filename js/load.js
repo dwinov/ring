@@ -925,7 +925,7 @@ $(function()
     if($('.datetimepicker').length)
     {
         $('.datetimepicker').datetimepicker({
-            timeFormat: "hh:mm"
+            timeFormat: "HH:mm"
         });
     }
 

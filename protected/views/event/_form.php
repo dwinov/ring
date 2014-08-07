@@ -20,8 +20,11 @@
 
                     <?php echo (isset($model)) ? Chtml::hiddenField('Event[evt_id]', $model->evt_id) : null; ?>
 
-                    <?php $eo = (isset($model)) ? $model->evt_owner_id : $eo_id; ?>
-                    <?php echo CHtml::hiddenField('Event[evt_owner_id]', $eo); ?>
+                    <?php $role = (isset($model)) ? $model->evt_role_id : Yii::app()->user->roleid; ?>
+                    <?php echo CHtml::hiddenField('Event[evt_role_id]', $role); ?>
+
+                    <?php $owner = (isset($model)) ? $model->evt_owner_id : $owner_id; ?>
+                    <?php echo CHtml::hiddenField('Event[evt_owner_id]', $owner); ?>
 
                     <div class="widget-body" style="padding-bottom: 0;">
                         <div class="row-fluid">
@@ -34,27 +37,32 @@
                                     </div>
                                 </div>
 
-                                <div class="control-group">
-                                    <label class="control-label">Venue</label>
-                                    <div class="controls">
-                                        <?php $venue = (isset($model)) ? $model->evt_venue_id : ""; ?>
-                                        <?php echo CHtml::dropDownList('Event[evt_venue_id]', $venue, $venue_list) ?>
+                                <?php if(Yii::app()->user->roleid == 2){ ?>
+                                    <div class="control-group">
+                                        <label class="control-label">Venue</label>
+                                        <div class="controls">
+                                            <?php $venue = (isset($model)) ? $model->evt_venue_id : ""; ?>
+                                            <?php echo CHtml::dropDownList('Event[evt_venue_id]', $venue, $venue_list) ?>
+                                        </div>
                                     </div>
-                                </div>
+                                <?php }elseif(Yii::app()->user->roleid == 3){ ?>
+                                    <?php $venue = (isset($model)) ? $model->evt_venue_id : $owner; ?>
+                                    <?php echo CHtml::hiddenField('Event[evt_venue_id]', $venue); ?>
+                                <?php } ?>
 
                                 <div class="control-group">
-                                    <label class="control-label">Event Date</label>
+                                    <label class="control-label">Event Start Date & Time</label>
                                     <div class="controls">
                                         <?php $date = (isset($model)) ? date('d-m-Y H:i', $model->evt_date) : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_date]', $date, array('class' => 'datepicker form-control')); ?>
+                                        <?php echo CHtml::textField('Event[evt_date]', $date, array('class' => 'datetimepicker form-control')); ?>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label">Event Time</label>
+                                    <label class="control-label">Event End Date & Time</label>
                                     <div class="controls">
                                         <?php $time = (isset($model)) ? $model->evt_time : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_time]', $time, array('class' => 'form-control')); ?>
+                                        <?php echo CHtml::textField('Event[evt_time]', $time, array('class' => 'datetimepicker form-control')); ?>
                                     </div>
                                 </div>
 
@@ -108,7 +116,7 @@
                     <?php if(!empty($model->evt_photo)){ ?>
                         <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . $model->evt_photo; ?>" width="202" height="188" /></div>
                     <?php }else{ ?>
-                        <div class="fileupload-new thumbnail"><img src="http://www.placehold.it/202x188/232323" /></div>
+                        <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . '/images/232323.gif'; ?>" /></div>
                     <?php } ?>
 
                     <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 100%;"></div>

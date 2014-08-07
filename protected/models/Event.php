@@ -159,6 +159,7 @@ class Event extends CActiveRecord
         $model->attributes = $input['Event'];
         $model->evt_name = $input['Event']['evt_name'];
         $model->evt_owner_id = $input['Event']['evt_owner_id'];
+        $model->evt_role_id = $input['Event']['evt_role_id'];
         $model->evt_venue_id = $input['Event']['evt_venue_id'];
         $model->evt_date = strtotime($input['Event']['evt_date']);
         $model->evt_time = strtotime($input['Event']['evt_time']);
@@ -176,6 +177,7 @@ class Event extends CActiveRecord
 
         $model->evt_name = $input['Event']['evt_name'];
         $model->evt_venue_id = $input['Event']['evt_venue_id'];
+        $model->evt_role_id = $input['Event']['evt_role_id'];
         $model->evt_date = strtotime($input['Event']['evt_date']);
         $model->evt_time = strtotime($input['Event']['evt_time']);
         $model->evt_tiket_price = $input['Event']['evt_tiket_price'];
