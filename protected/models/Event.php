@@ -58,18 +58,26 @@ class Event extends CActiveRecord
         $data = Yii::app()->db->createCommand()
             ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
             ->from('tbl_event e')
-            ->join('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
-            ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+            ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
+            ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
         ;
 
         $attr = array();
         $where = array('and');
 
-        if(Yii::app()->user->roleid ==2)
+        if(Yii::app()->user->roleid == 2)
         {
             $eo = Eo::model()->find('eo_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
             $where[] = 'evt_owner_id=:eo_id';
             $attr[':eo_id'] = $eo->eo_id;
+            $where[] = 'evt_role_id=:role_id';
+            $attr[':role_id'] = Yii::app()->user->roleid;
+        }elseif(Yii::app()->user->roleid == 3){
+            $venue = Venue::model()->find('vn_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
+            $where[] = 'evt_owner_id=:vn_id';
+            $attr[':vn_id'] = $venue->vn_id;
+            $where[] = 'evt_role_id=:role_id';
+            $attr[':role_id'] = Yii::app()->user->roleid;
         }
 
         $allData = count($data->queryAll());
@@ -88,8 +96,8 @@ class Event extends CActiveRecord
         $data = Yii::app()->db->createCommand()
             ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
             ->from('tbl_event e')
-            ->join('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
-            ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+            ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
+            ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
             ->where($where, $attr)
         ;
 
@@ -161,8 +169,8 @@ class Event extends CActiveRecord
         $model->evt_owner_id = $input['Event']['evt_owner_id'];
         $model->evt_role_id = $input['Event']['evt_role_id'];
         $model->evt_venue_id = $input['Event']['evt_venue_id'];
-        $model->evt_date = strtotime($input['Event']['evt_date']);
-        $model->evt_time = strtotime($input['Event']['evt_time']);
+        $model->evt_start_date = strtotime($input['Event']['evt_start_date']);
+        $model->evt_end_date = strtotime($input['Event']['evt_end_date']);
         $model->evt_tiket_price = $input['Event']['evt_tiket_price'];
         $model->evt_total_tiket = $input['Event']['evt_total_tiket'];
         $model->evt_description = $input['Event']['evt_description'];
@@ -194,13 +202,68 @@ class Event extends CActiveRecord
             ->select('e.evt_id,
                         e.evt_name,
                         v.vn_name,
-                        FROM_UNIXTIME(e.evt_date, "%d-%b-%Y") as evt_date,
-                        FROM_UNIXTIME(e.evt_date, "%H:%i") as evt_hour')
+                        FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y") as evt_date,
+                        FROM_UNIXTIME(e.evt_start_date, "%H:%i") as evt_hour')
             ->from('tbl_event e')
             ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
             ->where('evt_owner_id=:eo_id', array(':eo_id' => $eo_id))
         ;
 
         return $data->queryAll();
+    }
+
+    public function getOtherEvents($filter)
+    {
+        if($filter['end'] == null || empty($filter['end']) || $filter['end'] == '')
+        {
+            $data = Yii::app()->db->createCommand()
+                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+                ->from('tbl_event e')
+                ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
+                ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+                ->where('FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")=:start', array(':start' => date("d-m-Y", $filter['start'])))
+            ;
+        }else{
+            $data = Yii::app()->db->createCommand()
+                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+                ->from('tbl_event e')
+                ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
+                ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+                ->where('FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")>=:start AND FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")<=:end',
+                    array(':start' => date("d-m-Y", $filter['start']), ':end' => date("d-m-Y", $filter['end'])))
+            ;
+        }
+
+        $allData = count($data->queryAll());
+
+        if($filter['end'] == null || empty($filter['end']) || $filter['end'] == '')
+        {
+            $data = Yii::app()->db->createCommand()
+                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+                ->from('tbl_event e')
+                ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
+                ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+                ->where('FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")=:start', array(':start' => date("d-m-Y", $filter['start'])))
+            ;
+        }else{
+            $data = Yii::app()->db->createCommand()
+                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+                ->from('tbl_event e')
+                ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
+                ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+                ->where('FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")>=:start AND FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")<=:end',
+                    array(':start' => date("d-m-Y", $filter['start']), ':end' => date("d-m-Y", $filter['end'])))
+            ;
+        }
+
+        $filteredData = count($data->queryAll());
+        $data = $data->offset($filter['iDisplayStart'])->limit($filter['iDisplayLength']);
+
+        return array(
+            "sEcho" => $filter['sEcho'],
+            'aaData' => $data->queryAll(),
+            'iTotalRecords' => $allData,
+            'iTotalDisplayRecords' => $filteredData
+        );
     }
 }

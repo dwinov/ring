@@ -44,9 +44,9 @@
                                     <div class="control-group">
                                         <label class="control-label">Date/Time Event</label>
                                         <div class="controls">
-                                            <?php $date = (isset($model)) ? $model->evt_date : ""; ?>
-                                            <?php $time = (isset($model)) ? $model->evt_time : ""; ?>
-                                            <?php echo $date . ' till ' . $time; ?>
+                                            <?php $date = (isset($model)) ? $model->evt_start_date : ""; ?>
+                                            <?php $time = (isset($model)) ? $model->evt_end_date : ""; ?>
+                                            <?php echo date('d-m-Y H:i', $date) . ' till ' . date('d-m-Y H:i', $time); ?>
                                         </div>
                                     </div>
 
@@ -100,6 +100,8 @@
                         </div>
                     </div>
                 </div>
+
+                <?php if(Yii::app()->user->roleid == 2){ ?>
                 <div class="tab-pane" id="eo">
                     <div class="widget widget-2">
                         <div class="widget-head">
@@ -168,6 +170,7 @@
                         </div>
                     </div>
                 </div>
+                <?php } ?>
                 <div class="tab-pane" id="venue">
                     <div class="widget widget-2">
                         <div class="widget-head">
@@ -236,6 +239,30 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="tab-pane" id="other">
+                    <div class="widget widget-2">
+                        <div class="widget-head">
+                            <h4 class="heading glyphicons edit"><i></i>Other Events</h4>
+                        </div>
+                        <div class="widget-body" style="padding-bottom: 0;">
+
+                            <table id="basic-datatabel" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-primary table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Event</th>
+                                    <th>EO</th>
+                                    <th>Venue</th>
+                                    <th>Tiket</th>
+                                    <th>Date</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
 
@@ -250,8 +277,11 @@
                 <ul>
                     <li class="active"><a class="glyphicons user" href="#account-details" data-toggle="tab"><i></i>Event Details</a></li>
                     <li><a class="glyphicons settings" href="#account-settings" data-toggle="tab"><i></i>Event Gallery Pictures</a></li>
+                    <?php if(Yii::app()->user->roleid == 2){ ?>
                     <li><a class="glyphicons settings" href="#eo" data-toggle="tab"><i></i>Event Organizer</a></li>
+                    <?php } ?>
                     <li><a class="glyphicons settings" href="#venue" data-toggle="tab"><i></i>Venue</a></li>
+                    <li><a class="glyphicons settings" href="#other" data-toggle="tab"><i></i>Other Events</a></li>
                 </ul>
             </div>
         </div>
@@ -274,3 +304,83 @@
     </div>
 </div>
 <br/>
+
+<?php $this->beginClip('js-page-end'); ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $dataTable = $("#basic-datatabel").dataTable({
+                bServerSide: true,
+                sAjaxSource: document.location.href,
+                "sPaginationType": "bootstrap",
+                aoColumns: [
+                    {
+                        mData: "evt_name",
+                        sWidth: "10%",
+                        bSortable: true
+                    },
+                    {
+                        mData: "eo_name",
+                        sWidth: "10%",
+                        bSortable: true
+                    },
+                    {
+                        mData: "vn_name",
+                        sWidth: "10%",
+                        bSortable: true
+                    },
+                    {
+                        mData: "evt_tiket_price",
+                        sWidth: "10%",
+                        sClass: "center",
+                        bSortable: true
+                    },
+                    {
+                        mData: "evt_start_date",
+                        sWidth: "10%",
+                        sClass: "center",
+                        bSortable: true
+                    },
+                    {
+                        mData: 'evt_id',
+                        sWidth: "8%",
+                        sClass: "center",
+                        mRender: function(data, type, all) {
+                            var btns = new Array();
+                            btns.push("<a class='btn-action glyphicons book_open btn-info' href='<?php echo Yii::app()->createUrl('event/detail'); ?>/id/" + all.evt_id + "' title='Detail'><i></i></a> ");
+                            return  btns.join("&nbsp;");
+
+                        }
+                    }
+                ],
+                fnServerParams: function(aoData) {
+                    aoData.push({name: "start", value: '<?php echo $model->evt_start_date; ?>'});
+                    aoData.push({name: "end", value: '<?php echo $model->evt_end_date; ?>'});
+                }
+            });
+
+            $dataTable.on('click', 'a[data-delete]', function(e) {
+                var delkodel = $(this);
+                $('#dialog').dialog({
+                    width: 500,
+                    modal: true,
+                    buttons: {
+                        "Delete" : function(){
+                            $.post(delkodel.attr('href'), {_method: 'delete'}, function(r) {
+                                $dataTable.fnReloadAjax();
+                            });
+                            $(this).dialog("close");
+                        },
+                        "Cancel" : function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+                e.preventDefault();
+            });
+
+            $("#date, #time").change(function() {
+                $dataTable.fnReloadAjax();
+            });
+        });
+    </script>
+<?php echo $this->endClip(); ?>

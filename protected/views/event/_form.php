@@ -53,16 +53,16 @@
                                 <div class="control-group">
                                     <label class="control-label">Event Start Date & Time</label>
                                     <div class="controls">
-                                        <?php $date = (isset($model)) ? date('d-m-Y H:i', $model->evt_date) : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_date]', $date, array('class' => 'datetimepicker form-control')); ?>
+                                        <?php $start = (isset($model)) ? date('d-m-Y H:i', $model->evt_start_date) : ""; ?>
+                                        <?php echo CHtml::textField('Event[evt_start_date]', $start, array('class' => 'datetimepicker form-control')); ?>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
                                     <label class="control-label">Event End Date & Time</label>
                                     <div class="controls">
-                                        <?php $time = (isset($model)) ? $model->evt_time : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_time]', $time, array('class' => 'datetimepicker form-control')); ?>
+                                        <?php $end = (isset($model)) ? $model->evt_end_date : ""; ?>
+                                        <?php echo CHtml::textField('Event[evt_end_date]', $end, array('class' => 'datetimepicker form-control')); ?>
                                     </div>
                                 </div>
 
