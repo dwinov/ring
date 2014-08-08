@@ -78,7 +78,7 @@
                         bSortable: true
                     },
                     {
-                        mData: "evt_date",
+                        mData: "evt_start_date",
                         sWidth: "10%",
                         sClass: "center",
                         bSortable: true

@@ -1,6 +1,3 @@
-/**
- * Created by roger on 7/7/14.
- */
 (function(root, factory) {
     if(typeof exports === 'object') {
         module.exports = factory();
@@ -14,7 +11,7 @@
 }(this, function() {
 
     /*!
-     * GMaps.js v0.4.13
+     * GMaps.js v0.4.14
      * http://hpneo.github.com/gmaps/
      *
      * Copyright 2014, Gustavo Leon
@@ -107,11 +104,13 @@
         var i;
 
         for (i = 0; i < coords.length; i++) {
-            if (coords[i].length > 0 && typeof(coords[i][0]) == "object") {
-                coords[i] = arrayToLatLng(coords[i], useGeoJSON);
-            }
-            else {
-                coords[i] = coordsToLatLngs(coords[i], useGeoJSON);
+            if (!(coords[i] instanceof google.maps.LatLng)) {
+                if (coords[i].length > 0 && typeof(coords[i][0]) == "object") {
+                    coords[i] = arrayToLatLng(coords[i], useGeoJSON);
+                }
+                else {
+                    coords[i] = coordsToLatLngs(coords[i], useGeoJSON);
+                }
             }
         }
 
@@ -376,6 +375,9 @@
                     self.hideContextMenu();
                 });
             };
+
+            //google.maps.event.addListener(this.map, 'idle', this.hideContextMenu);
+            google.maps.event.addListener(this.map, 'zoom_changed', this.hideContextMenu);
 
             for (var ev = 0; ev < events_that_hide_context_menu.length; ev++) {
                 var name = events_that_hide_context_menu[ev];

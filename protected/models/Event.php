@@ -56,7 +56,7 @@ class Event extends CActiveRecord
     public function getAllData($filter)
     {
         $data = Yii::app()->db->createCommand()
-            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_date, "%d-%m-%Y") as evt_date')
+            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
             ->from('tbl_event e')
             ->join('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
             ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
@@ -81,12 +81,12 @@ class Event extends CActiveRecord
                         eo_name LIEK :name OR
                         vn_name LIKE :name OR
                         evt_tiket_price = :name OR
-                        FROM_UNIXTIME(e.evt_date, "%d-%m-%Y") = :name';
+                        FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") = :name';
             $attr[':name'] = "'%$search%'";
         }
 
         $data = Yii::app()->db->createCommand()
-            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_date, "%d-%m-%Y") as evt_date')
+            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
             ->from('tbl_event e')
             ->join('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
             ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
@@ -124,11 +124,11 @@ class Event extends CActiveRecord
                 ->select('e.evt_id,
                         e.evt_name,
                         v.vn_name,
-                        FROM_UNIXTIME(e.evt_date, "%a") as evt_day,
-                        FROM_UNIXTIME(e.evt_date, "%d") as evt_date,
-                        FROM_UNIXTIME(e.evt_date, "%b") as evt_month,
-                        FROM_UNIXTIME(e.evt_date, "%Y") as evt_year,
-                        FROM_UNIXTIME(e.evt_date, "%H:%i") as evt_hour,
+                        FROM_UNIXTIME(e.evt_start_date, "%a") as evt_day,
+                        FROM_UNIXTIME(e.evt_start_date, "%d") as evt_date,
+                        FROM_UNIXTIME(e.evt_start_date, "%b") as evt_month,
+                        FROM_UNIXTIME(e.evt_start_date, "%Y") as evt_year,
+                        FROM_UNIXTIME(e.evt_start_date, "%H:%i") as evt_hour,
                         e.evt_description')
                 ->from('tbl_event e')
                 ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')

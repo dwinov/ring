@@ -72,6 +72,8 @@
                         if(roleId != 1)
                         {
                             btns.push("<a class='btn-action glyphicons book_open btn-info' href='<?php echo Yii::app()->createUrl('venue/detail'); ?>/id/" + all.vn_id + "' title='Detail'><i></i></a> ");
+                            btns.push("<a class='btn-action glyphicons pencil btn-success' href='<?php echo Yii::app()->createUrl('venue/update'); ?>/id/" + all.vn_id + "' title='Edit'><i></i></a> ");
+                            btns.push("<a class='btn-action glyphicons remove_2 btn-danger' data-delete href='<?php echo Yii::app()->createUrl('venue/delete'); ?>/id/" + all.vn_id + "' title='Delete'><i></i></a>");
                         }else{
                             btns.push("<a class='btn-action glyphicons picture btn-warning' href='<?php echo Yii::app()->createUrl('venue/uploader'); ?>/id/" + all.vn_id + "' title='Gallery Pictures'><i></i></a> ");
                             btns.push("<a class='btn-action glyphicons pencil btn-success' href='<?php echo Yii::app()->createUrl('venue/update'); ?>/id/" + all.vn_id + "' title='Edit'><i></i></a> ");

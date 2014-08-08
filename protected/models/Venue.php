@@ -55,19 +55,23 @@ class Venue extends CActiveRecord
 
     public function getAllData($filter)
     {
-        $data = Yii::app()->db->createCommand()
-            ->from('tbl_venue')
-        ;
-
         $attr = array();
         $where = array('and');
+
+        $where[] = 'vn_user_id=:user_id';
+        $attr[':user_id'] = Yii::app()->user->usrid;
+
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_venue')
+            ->where($where, $attr)
+        ;
 
         $allData = count($data->queryAll());
 
         //search specific record
         if(!empty($filter['sSearch'])){
             $search = $filter['sSearch'];
-            $where[] = 'vn_name LIKE :name OR vn_address LIEK :name OR vn_email LIKE :name';
+            $where[] = 'vn_name LIKE :name OR vn_address LIKE :name OR vn_email LIKE :name';
             $attr[':name'] = "'%$search%'";
         }
 
@@ -137,6 +141,8 @@ class Venue extends CActiveRecord
         $model->vn_email = $input['Venue']['vn_email'];
         $model->vn_website = $input['Venue']['vn_website'];
         $model->vn_description = $input['Venue']['vn_description'];
+        $model->vn_longitude = $input['Venue']['vn_longitude'];
+        $model->vn_latitude = $input['Venue']['vn_latitude'];
         $model->vn_photo = (count($file) != 0) ? Helper::uploadImage($file, 'venue') : null;
 
         return ($model->save()) ? true : false;
@@ -153,6 +159,8 @@ class Venue extends CActiveRecord
         $model->vn_email = $input['Venue']['vn_email'];
         $model->vn_website = $input['Venue']['vn_website'];
         $model->vn_description = $input['Venue']['vn_description'];
+        $model->vn_longitude = $input['Venue']['vn_longitude'];
+        $model->vn_latitude = $input['Venue']['vn_latitude'];
         $model->vn_photo = (count($file) != 0) ? Helper::updateImage('venue', $model->vn_photo) : $model->vn_photo;
 
         return ($model->save()) ? true : false;

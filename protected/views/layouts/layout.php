@@ -55,6 +55,21 @@
     <!-- Theme -->
     <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/new/style.min.css?1358876495" />
 
+    <!--  Css for maps  -->
+    <style type="text/css">
+        .popin {
+            background:#fff;
+            padding:15px;
+            box-shadow: 0 0 20px #999;
+            border-radius:2px;
+        }
+
+        #map {
+            height:300px;
+            background:#6699cc;
+        }
+    </style>
+
     <!-- Google Analytics -->
     <script type="text/javascript">
 
@@ -292,6 +307,8 @@
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/extend/bootstrap-wysihtml5/js/wysihtml5-0.3.0_rc2.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/extend/bootstrap-wysihtml5/js/bootstrap-wysihtml5-0.0.2.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/gmaps.js" type="text/javascript"></script>
 
 <!-- Custom Onload Script -->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/load.js"></script>
