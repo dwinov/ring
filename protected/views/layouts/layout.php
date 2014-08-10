@@ -71,19 +71,19 @@
     </style>
 
     <!-- Google Analytics -->
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-36057737-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
+<!--    <script type="text/javascript">-->
+<!---->
+<!--        var _gaq = _gaq || [];-->
+<!--        _gaq.push(['_setAccount', 'UA-36057737-1']);-->
+<!--        _gaq.push(['_trackPageview']);-->
+<!---->
+<!--        (function() {-->
+<!--            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;-->
+<!--            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';-->
+<!--            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);-->
+<!--        })();-->
+<!---->
+<!--    </script>-->
 
     <!-- LESS 2 CSS -->
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/less-1.3.3.min.js"></script>
@@ -322,7 +322,7 @@
 
 <script>
     //Load the Visualization API and the piechart package.
-    google.load('visualization', '1.0', {'packages':['table', 'corechart']});
+//    google.load('visualization', '1.0', {'packages':['table', 'corechart']});
 
     // Set a callback to run when the Google Visualization API is loaded.
 //    google.setOnLoadCallback(charts.traffic_sources_dataTables.init);

@@ -56,7 +56,7 @@ class Event extends CActiveRecord
     public function getAllData($filter)
     {
         $data = Yii::app()->db->createCommand()
-            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
             ->from('tbl_event e')
             ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
             ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
@@ -88,13 +88,12 @@ class Event extends CActiveRecord
             $where[] = 'evt_name LIKE :name OR
                         eo_name LIEK :name OR
                         vn_name LIKE :name OR
-                        evt_tiket_price = :name OR
                         FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") = :name';
             $attr[':name'] = "'%$search%'";
         }
 
         $data = Yii::app()->db->createCommand()
-            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
             ->from('tbl_event e')
             ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
             ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
@@ -171,12 +170,29 @@ class Event extends CActiveRecord
         $model->evt_venue_id = $input['Event']['evt_venue_id'];
         $model->evt_start_date = strtotime($input['Event']['evt_start_date']);
         $model->evt_end_date = strtotime($input['Event']['evt_end_date']);
-        $model->evt_tiket_price = $input['Event']['evt_tiket_price'];
-        $model->evt_total_tiket = $input['Event']['evt_total_tiket'];
+        $model->evt_ticketing = $input['Event']['evt_ticketing'];
         $model->evt_description = $input['Event']['evt_description'];
         $model->evt_photo = (count($file) != 0) ? Helper::uploadImage($file, 'event') : null;
 
-        return ($model->save()) ? true : false;
+        if($model->save())
+        {
+            if($input['Event']['evt_ticketing'] == true && count($input['tkt_type']) > 0)
+            {
+                $ticket = new Ticket();
+                for($x = 0; $x < count($input['tkt_type']); $x++)
+                {
+                    $result = $ticket->insertData($input['tkt_type'][$x], $input['tkt_price'][$x], $input['tkt_total'][$x], $model->evt_id);
+                    if($result == false)
+                        return false;
+                }
+
+                return true;
+            }else{
+                return true;
+            }
+        }else{
+            return false;
+        }
     }
 
     public function updateData($input, $file)

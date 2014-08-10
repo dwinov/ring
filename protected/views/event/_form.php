@@ -33,7 +33,7 @@
                                     <label class="control-label">Name</label>
                                     <div class="controls">
                                         <?php $name = (isset($model)) ? $model->evt_name : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_name]', $name, array('class' => 'form-control')); ?>
+                                        <?php echo CHtml::textField('Event[evt_name]', $name, array('class' => 'span12')); ?>
                                     </div>
                                 </div>
 
@@ -54,7 +54,7 @@
                                     <label class="control-label">Event Start Date & Time</label>
                                     <div class="controls">
                                         <?php $start = (isset($model)) ? date('d-m-Y H:i', $model->evt_start_date) : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_start_date]', $start, array('class' => 'datetimepicker form-control')); ?>
+                                        <?php echo CHtml::textField('Event[evt_start_date]', $start, array('class' => 'datetimepicker span12')); ?>
                                     </div>
                                 </div>
 
@@ -62,24 +62,26 @@
                                     <label class="control-label">Event End Date & Time</label>
                                     <div class="controls">
                                         <?php $end = (isset($model)) ? $model->evt_end_date : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_end_date]', $end, array('class' => 'datetimepicker form-control')); ?>
+                                        <?php echo CHtml::textField('Event[evt_end_date]', $end, array('class' => 'datetimepicker span12')); ?>
                                     </div>
                                 </div>
-
-                                <div class="control-group">
-                                    <label class="control-label">Tiket Price</label>
-                                    <div class="controls">
-                                        <?php $tiket = (isset($model)) ? $model->evt_tiket_price : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_tiket_price]', $tiket, array('class' => 'form-control')); ?>
-                                    </div>
-                                </div>
-
-                                <div class="control-group">
-                                    <label class="control-label">Total Tiket</label>
-                                    <div class="controls">
-                                        <?php $total = (isset($model)) ? $model->evt_total_tiket : ""; ?>
-                                        <?php echo CHtml::textField('Event[evt_total_tiket]', $total, array('class' => 'form-control')); ?>
-                                    </div>
+                            </div>
+                        </div>
+                        <hr class="separator bottom" />
+                        <div class="control-group">
+                            <label class="control-label">Ticketing</label>
+                            <div class="controls">
+                                <?php echo CHtml::checkBox('Event[evt_ticketing]', false, array('id' => 'ticket_toggle')); ?>
+                            </div>
+                        </div>
+                        <div id="tiket">
+                            <div class="control-group">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <?php echo CHtml::textField('tkt_type[]', '', array('class' => 'span4 input-type', 'placeholder' => 'Type Tickets')); ?>
+                                    <?php echo CHtml::textField('tkt_price[]', '', array('class' => 'span2 input-price', 'placeholder' => 'Price')); ?>
+                                    <?php echo CHtml::textField('tkt_total[]', '', array('class' => 'span2 input-total', 'placeholder' => 'Total')); ?>
+                                    <?php echo CHtml::button('Add', array('class' => 'btn btn-success btn_add')); ?>
                                 </div>
                             </div>
                         </div>
@@ -129,3 +131,36 @@
         </div>
     </div>
 <?php echo CHtml::endForm(); ?>
+
+<?php $this->beginClip('js-page-end'); ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            window.onload = function(){
+                $('#tiket').hide();
+            }
+
+            $('#ticket_toggle').click(function(){
+                if($(this).attr('checked'))
+                {
+                    $('#tiket').show();
+                }else{
+                    $('#tiket').hide();
+                }
+            });
+
+            $('.btn_add').live('click', function(){
+                $(this).parent('.controls').parent('.control-group').clone(true).appendTo($(this).parent('.controls').parent('.control-group').parent('#tiket'));
+                $(this).attr('value', 'Remove');
+                $(this).toggleClass('btn_remove btn_add');
+                $(this).toggleClass('btn-primary btn-success');
+                $('.input-type:last').val("");
+                $('.input-price:last').val("");
+                $('.input-total:last').val("");
+            });
+
+            $('.btn_remove').live('click', function(){
+                $(this).parent('.controls').parent('.control-group').remove();
+            });
+        });
+    </script>
+<?php echo $this->endClip(); ?>

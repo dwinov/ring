@@ -33,7 +33,7 @@
                         <th>Event</th>
                         <th>EO</th>
                         <th>Venue</th>
-                        <th>Tiket</th>
+<!--                        <th>Tiket</th>-->
                         <th>Date</th>
                         <th></th>
                     </tr>
@@ -71,12 +71,12 @@
                         sWidth: "10%",
                         bSortable: true
                     },
-                    {
-                        mData: "evt_tiket_price",
-                        sWidth: "10%",
-                        sClass: "center",
-                        bSortable: true
-                    },
+//                    {
+//                        mData: "evt_tiket_price",
+//                        sWidth: "10%",
+//                        sClass: "center",
+//                        bSortable: true
+//                    },
                     {
                         mData: "evt_start_date",
                         sWidth: "10%",

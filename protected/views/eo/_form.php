@@ -27,7 +27,7 @@
                                 <label class="control-label">Name</label>
                                 <div class="controls">
                                     <?php $name = (isset($model)) ? $model->eo_name : ""; ?>
-                                    <?php echo CHtml::textField('Eo[eo_name]', $name, array('class' => 'span10')); ?>
+                                    <?php echo CHtml::textField('Eo[eo_name]', $name, array('class' => 'span12')); ?>
                                 </div>
                             </div>
 
@@ -35,7 +35,7 @@
                                 <label class="control-label">Address</label>
                                 <div class="controls">
                                     <?php $address = (isset($model)) ? $model->eo_address : ""; ?>
-                                    <?php echo CHtml::textField('Eo[eo_address]', $address, array('class' => 'form-control')); ?>
+                                    <?php echo CHtml::textField('Eo[eo_address]', $address, array('class' => 'span12')); ?>
                                 </div>
                             </div>
 
@@ -43,7 +43,7 @@
                                 <label class="control-label">Phone</label>
                                 <div class="controls">
                                     <?php $phone = (isset($model)) ? $model->eo_phone : ""; ?>
-                                    <?php echo CHtml::textField('Eo[eo_phone]', $phone, array('class' => 'form-control')); ?>
+                                    <?php echo CHtml::textField('Eo[eo_phone]', $phone, array('class' => 'span12')); ?>
                                 </div>
                             </div>
 
@@ -51,7 +51,7 @@
                                 <label class="control-label">Fax</label>
                                 <div class="controls">
                                     <?php $fax = (isset($model)) ? $model->eo_fax : ""; ?>
-                                    <?php echo CHtml::textField('Eo[eo_fax]', $fax, array('class' => 'form-control')); ?>
+                                    <?php echo CHtml::textField('Eo[eo_fax]', $fax, array('class' => 'span12')); ?>
                                 </div>
                             </div>
 
@@ -59,7 +59,7 @@
                                 <label class="control-label">Email</label>
                                 <div class="controls">
                                     <?php $email = (isset($model)) ? $model->eo_email : ""; ?>
-                                    <?php echo CHtml::textField('Eo[eo_email]', $email, array('class' => 'form-control')); ?>
+                                    <?php echo CHtml::textField('Eo[eo_email]', $email, array('class' => 'span12')); ?>
                                 </div>
                             </div>
 
@@ -67,7 +67,7 @@
                                 <label class="control-label">Website</label>
                                 <div class="controls">
                                     <?php $website = (isset($model)) ? $model->eo_website : ""; ?>
-                                    <?php echo CHtml::textField('Eo[eo_website]', $website, array('class' => 'form-control')); ?>
+                                    <?php echo CHtml::textField('Eo[eo_website]', $website, array('class' => 'span12')); ?>
                                 </div>
                             </div>
                         </div>
