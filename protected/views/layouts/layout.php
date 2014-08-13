@@ -126,12 +126,21 @@
                 <li class="glyphicons home"><a href="<?php echo Yii::app()->createUrl('dashboard/index'); ?>"><i></i><span>Dashboard</span></a></li>
                 <li class="glyphicons user"><a href="<?php echo Yii::app()->createUrl('member/index'); ?>"><i></i><span>Profile</span></a></li>
                 <?php if(Yii::app()->user->roleid == 2){ ?>
-                    <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/update', array('id' => 1, 'user_id' => Yii::app()->user->usrid)); ?>"><i></i><span>Event Organizer</span></a></li>
-                <?php }else{ ?>
-                    <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/index'); ?>"><i></i><span>Event Organizer</span></a></li>
+                    <?php
+                    $model = new Eo();
+                    $eo_menu = $model->getEoByUserId(Yii::app()->user->usrid);
+                    ?>
+                    <?php if($eo_menu['eo_id'] != null){ ?>
+                        <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/update', array('id' => $eo_menu['eo_id'], 'user_id' => Yii::app()->user->usrid)); ?>"><i></i><span>Event Organizer</span></a></li>
+                    <?php }else{ ?>
+                        <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/create'); ?>"><i></i><span>Event Organizer</span></a></li>
+                    <?php } ?>
                 <?php } ?>
+                <?php if(Yii::app()->user->roleid == 3){ ?>
                 <li class="glyphicons globe_af"><a href="<?php echo Yii::app()->createUrl('venue/index'); ?>"><i></i><span>Venue</span></a></li>
+                <?php } ?>
                 <li class="glyphicons calendar"><a href="<?php echo Yii::app()->createUrl('event/index'); ?>"><i></i><span>Event</span></a></li>
+                <li class="glyphicons message_out"><a href="<?php echo Yii::app()->createUrl('broadcast/index'); ?>"><i></i><span>Broadcast</span></a></li>
             </ul>
         </div>
         <span class="navarrow hide">
@@ -176,80 +185,80 @@
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/cubiq-iscroll/src/iscroll.js"></script>
 
 <script type="text/javascript">
-    var scrollers = [];
-    var mainYScroller;
-
-    $(function()
-    {
-        //document.addEventListener('touchmove', function(e){ e.preventDefault(); });
-        var xScrollers = document.getElementsByClassName("scroll-x");
-        for (var i = 0; i < xScrollers.length; i++)
-            scrollers.push(new iScroll(xScrollers[i], {
-                vScroll: false,
-                hideScrollbar: true,
-                onBeforeScrollStart: function (e) {
-                    var target = e.target;
-                    while (target.nodeType != 1) target = target.parentNode;
-
-                    if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA')
-                        e.preventDefault();
-                }
-            }));
-
-        var yScrollers = $('.scroll-y').not('#mainYScroller');
-        $.each(yScrollers, function(i,v)
-        {
-            var scroller = new iScroll($(v).attr('id'),
-                {
-                    hScroll: false,
-                    hideScrollbar: true,
-                    onBeforeScrollStart: function (e)
-                    {
-                        var target = e.target;
-                        while (target.nodeType != 1) target = target.parentNode;
-
-                        if (target.tagName != 'SELECT' &&
-                            target.tagName != 'INPUT' &&
-                            target.tagName != 'TEXTAREA' &&
-                            $(target).parents('table-responsive').size() == 0)
-                            e.preventDefault();
-                    }
-                });
-            scrollers.push(scroller);
-        });
-
-        mainYScroller = new iScroll('mainYScroller',
-            {
-                zoom: true,
-                hScroll: false,
-                hideScrollbar: true,
-                onBeforeScrollStart: function (e)
-                {
-                    var target = e.target;
-                    while (target.nodeType != 1) target = target.parentNode;
-
-                    if ($('input:focus, textarea:focus').length) $('input:focus, textarea:focus').blur();
-
-                    if ($(target).parents('.table-responsive').size() > 0 ||
-                        $(target).parents('.google-visualization-table-table').size() > 0 ||
-                        $(target).parents('#calendar').size() > 0 ||
-                        $(target).is('.btn'))
-                    {
-                        return true;
-                    }
-
-                    if (target.tagName != 'SELECT' &&
-                        target.tagName != 'INPUT' &&
-                        target.tagName != 'TEXTAREA')
-                        e.preventDefault();
-                },
-                onScrollEnd: function()
-                {
-                    //if (mainYScroller.enabled == false) mainYScroller.enable();
-                }
-            });
-        scrollers['mainYScroller'] = mainYScroller;
-    });
+//    var scrollers = [];
+//    var mainYScroller;
+//
+//    $(function()
+//    {
+//        //document.addEventListener('touchmove', function(e){ e.preventDefault(); });
+//        var xScrollers = document.getElementsByClassName("scroll-x");
+//        for (var i = 0; i < xScrollers.length; i++)
+//            scrollers.push(new iScroll(xScrollers[i], {
+//                vScroll: false,
+//                hideScrollbar: true,
+//                onBeforeScrollStart: function (e) {
+//                    var target = e.target;
+//                    while (target.nodeType != 1) target = target.parentNode;
+//
+//                    if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA')
+//                        e.preventDefault();
+//                }
+//            }));
+//
+//        var yScrollers = $('.scroll-y').not('#mainYScroller');
+//        $.each(yScrollers, function(i,v)
+//        {
+//            var scroller = new iScroll($(v).attr('id'),
+//                {
+//                    hScroll: false,
+//                    hideScrollbar: true,
+//                    onBeforeScrollStart: function (e)
+//                    {
+//                        var target = e.target;
+//                        while (target.nodeType != 1) target = target.parentNode;
+//
+//                        if (target.tagName != 'SELECT' &&
+//                            target.tagName != 'INPUT' &&
+//                            target.tagName != 'TEXTAREA' &&
+//                            $(target).parents('table-responsive').size() == 0)
+//                            e.preventDefault();
+//                    }
+//                });
+//            scrollers.push(scroller);
+//        });
+//
+//        mainYScroller = new iScroll('mainYScroller',
+//            {
+//                zoom: true,
+//                hScroll: false,
+//                hideScrollbar: true,
+//                onBeforeScrollStart: function (e)
+//                {
+//                    var target = e.target;
+//                    while (target.nodeType != 1) target = target.parentNode;
+//
+//                    if ($('input:focus, textarea:focus').length) $('input:focus, textarea:focus').blur();
+//
+//                    if ($(target).parents('.table-responsive').size() > 0 ||
+//                        $(target).parents('.google-visualization-table-table').size() > 0 ||
+//                        $(target).parents('#calendar').size() > 0 ||
+//                        $(target).is('.btn'))
+//                    {
+//                        return true;
+//                    }
+//
+//                    if (target.tagName != 'SELECT' &&
+//                        target.tagName != 'INPUT' &&
+//                        target.tagName != 'TEXTAREA')
+//                        e.preventDefault();
+//                },
+//                onScrollEnd: function()
+//                {
+//                    //if (mainYScroller.enabled == false) mainYScroller.enable();
+//                }
+//            });
+//        scrollers['mainYScroller'] = mainYScroller;
+//    });
 </script>
 <!--<![endif]-->
 

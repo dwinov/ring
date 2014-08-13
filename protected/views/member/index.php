@@ -7,179 +7,130 @@
  */
 ?>
 
-<ul class="breadcrumb">
-    <li><a href="index.html?lang=en" class="glyphicons home"><i></i> Dashboard</a></li>
-    <li class="divider"></li>
-    <li>Profile</li>
-</ul>
-<div class="separator"></div>
+    <ul class="breadcrumb">
+        <li><a href="index.html?lang=en" class="glyphicons home"><i></i> BootAdmin</a></li>
+        <li class="divider"></li>
+        <li>Add New EO</li>
+    </ul>
+    <div class="separator"></div>
 
-<div class="heading-buttons">
-    <h2 class="glyphicons cart_in"><i></i> Manage Profile</h2>
-<!--    <div class="buttons pull-right">-->
-<!--        <a href="" class="btn btn-default btn-icon glyphicons share"><i></i> Preview</a>-->
-<!--        <a href="" class="btn btn-primary btn-icon glyphicons ok_2"><i></i> Save</a>-->
-<!--    </div>-->
-</div>
-<div class="separator"></div>
+    <h2 class="glyphicons user"><i></i> Create Event Organizer</h2>
+    <div class="separator"></div>
 
-<div class="widget widget-2 widget-tabs">
-    <div class="widget-head">
-        <ul>
-            <li class="active"><a href="#profile" data-toggle="tab" class="glyphicons font"><i></i>Profile</a></li>
-            <?php if(Yii::app()->user->roleid == 2){ ?>
-                <li><a href="#eovenue" data-toggle="tab" class="glyphicons group"><i></i>Event Organizer</a></li>
-                <li><a href="#event" data-toggle="tab" class="glyphicons calendar"><i></i>Create Event</a></li>
-            <?php }elseif(Yii::app()->user->roleid == 3){ ?>
-                <li><a href="#eovenue" data-toggle="tab" class="glyphicons group"><i></i>Venue</a></li>
-            <?php } ?>
-<!--            <li><a href="#productAttributesTab" data-toggle="tab" class="glyphicons adjust_alt"><i></i>Custom Attributes</a></li>-->
-<!--            <li><a href="#productPriceTab" data-toggle="tab" class="glyphicons table"><i></i>Qty & Price</a></li>-->
-<!--            <li><a href="#productSeoTab" data-toggle="tab" class="glyphicons podium"><i></i>SEO</a></li>-->
-        </ul>
-    </div>
-    <div class="widget-body large">
-        <div class="tab-content">
+    <div class="row-fluid">
 
-            <!-- Member Profile -->
-            <div class="tab-pane active" id="profile">
-                <?php echo CHtml::beginForm(Yii::app()->createUrl('member/update'), 'post', array()); ?>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <strong>First Name</strong>
-                    </div>
-                    <div class="span9">
-                        <?php echo CHtml::hiddenField('Member[mem_id]', $model->mem_id); ?>
-                        <?php echo CHtml::textField('Member[mem_first_name]', $model->mem_first_name, array('class' => 'span6')); ?>
-                        <div class="separator"></div>
-                    </div>
-                </div>
+        <?php echo CHtml::beginForm(Yii::app()->createUrl('member/update'), 'post', array()); ?>
+        <div class="span9">
+            <div class="tab-content" style="padding: 0;">
+                <div class="tab-pane active" id="account-details">
 
-                <div class="row-fluid">
-                    <div class="span3">
-                        <strong>Last Name Name</strong>
-                    </div>
-                    <div class="span9">
-                        <?php echo CHtml::textField('Member[mem_last_name]', $model->mem_first_name, array('class' => 'span6')); ?>
-                        <div class="separator"></div>
-                    </div>
-                </div>
+                    <div class="widget widget-2 primary widget-body-white">
+                        <div class="widget-head">
+                            <h4 class="heading glyphicons edit"><i></i>Memeber Profile</h4>
+                        </div>
 
-                <div class="row-fluid">
-                    <div class="span3">
-                        <strong>Mobile Number</strong>
-                    </div>
-                    <div class="span9">
-                        <?php echo CHtml::textField('Member[mem_phone]', $model->mem_phone, array('class' => 'span6')); ?>
-                        <div class="separator"></div>
-                    </div>
-                </div>
+                        <div class="widget-body" style="padding-bottom: 0;">
+                            <div class="row-fluid">
+                                <div class="span6">
+                                    <div class="control-group">
+                                        <label class="control-label">First Name</label>
+                                        <div class="controls">
+                                            <?php echo CHtml::hiddenField('Member[mem_id]', $model->mem_id); ?>
+                                            <?php echo CHtml::textField('Member[mem_first_name]', $model->mem_first_name, array('class' => 'span6')); ?>
+                                        </div>
+                                    </div>
 
-                <div class="row-fluid">
-                    <div class="span3">
-                        <strong>Email</strong>
-                    </div>
-                    <div class="span9">
-                        <?php echo CHtml::textField('Member[mem_email]', $model->mem_email, array('class' => 'span6')); ?>
-                        <div class="separator"></div>
-                    </div>
-                </div>
+                                    <div class="control-group">
+                                        <label class="control-label">Last Name</label>
+                                        <div class="controls">
+                                            <?php echo CHtml::textField('Member[mem_last_name]', $model->mem_first_name, array('class' => 'span6')); ?>
+                                        </div>
+                                    </div>
 
-                <div class="row-fluid">
-                    <div class="span3">
-                        <strong>Sex</strong>
-                    </div>
-                    <div class="span9">
-                        <?php
-                        $man = ($model->mem_gender == 1) ? true : false;
-                        $woman = ($model->mem_gender == 0) ? true : false;
-                        ?>
-                        <label class="radio-inline">
-                            <?php echo CHtml::radioButton('Member[mem_gender]', $man, array(
-                                'class' => 'radio',
-                                'value' => '1',
-                            )); ?>
-                            Man
-                        </label>
-                        <label class="radio-inline">
-                            <?php echo CHtml::radioButton('Member[mem_gender]', $woman, array(
-                                'class' => 'radio',
-                                'value' => '0',
-                            )); ?>
-                            Woman
-                        </label>
-                        <div class="separator"></div>
-                    </div>
-                </div>
+                                    <div class="control-group">
+                                        <label class="control-label">Mobile Number</label>
+                                        <div class="controls">
+                                            <?php echo CHtml::textField('Member[mem_phone]', $model->mem_phone, array('class' => 'span6')); ?>
+                                        </div>
+                                    </div>
 
-                <hr class="separator bottom" />
-                <div class="row-fluid">
-                    <div class="span3">
-                        <strong>About Me</strong>
-                    </div>
-                    <div class="span9">
-                        <?php echo CHtml::textArea('Member[mem_about_me]', $model->mem_about_me,
-                            array(
+                                    <div class="control-group">
+                                        <label class="control-label">Email</label>
+                                        <div class="controls">
+                                            <?php echo CHtml::textField('Member[mem_email]', $model->mem_email, array('class' => 'span6')); ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label">Gender</label>
+                                        <div class="controls">
+                                            <?php
+                                            $man = ($model->mem_gender == 1) ? true : false;
+                                            $woman = ($model->mem_gender == 0) ? true : false;
+                                            ?>
+                                            <label class="radio-inline">
+                                                <?php echo CHtml::radioButton('Member[mem_gender]', $man, array(
+                                                    'class' => 'radio',
+                                                    'value' => '1',
+                                                )); ?>
+                                                Man
+                                            </label>
+                                            <label class="radio-inline">
+                                                <?php echo CHtml::radioButton('Member[mem_gender]', $woman, array(
+                                                    'class' => 'radio',
+                                                    'value' => '0',
+                                                )); ?>
+                                                Woman
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="separator bottom" />
+                            <div class="control-group">
+                                <label class="control-label">About Me</label>
+                                <div class="controls">
+                                    <?php echo CHtml::textArea('Member[mem_about_me]', $model->mem_about_me,
+                                        array(
 //                                'id' => 'mustHaveId',
-                                'class' => 'wysihtml5 span12',
-                                'rows' => '5'
-                            )); ?>
+                                            'class' => 'wysihtml5 span12',
+                                            'rows' => '5'
+                                        )); ?>
+                                </div>
+                            </div>
+
+                            <div class="form-actions" style="margin: 0;">
+                                <?php echo CHtml::submitButton('Save Change', array('class' => 'btn btn-primary btn-icon glyphicons ok_2')); ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <hr class="separator bottom" />
-                <div class="row-fluid">
-                    <div class="span9">
-                        <?php echo CHtml::submitButton('Save Change', array('class' => 'btn btn-primary btn-icon glyphicons ok_2')); ?>
-                    </div>
-                </div>
-                <?php echo CHtml::endForm(); ?>
             </div>
-            <!-- Member Profile END -->
-
-            <!-- EO or Venue -->
-            <div class="tab-pane" id="eovenue">
-                <?php if(Yii::app()->user->roleid == 2){ ?>
-                    <?php echo $this->renderPartial('_eo', array('eo' => $eo)); ?>
-                <?php }elseif(Yii::app()->user->roleid == 3){ ?>
-                    <?php echo $this->renderPartial('_venue', array('model' => $venue)); ?>
-                <?php } ?>
-            </div>
-            <!-- EO or Venue END -->
-
-            <!-- Event -->
-            <?php if(Yii::app()->user->roleid == 2){ ?>
-                <div class="tab-pane" id="event">
-                    <?php echo $this->renderPartial('_event', array('list_venue' => $list_venue)); ?>
-                </div>
-            <?php } ?>
-            <!-- Event END -->
-
-            <!-- Attributes -->
-<!--            <div class="tab-pane" id="productAttributesTab">-->
-<!---->
-<!--            </div>-->
-            <!-- Attributes END -->
-
-            <!-- Price -->
-<!--            <div class="tab-pane" id="productPriceTab">-->
-<!---->
-<!--            </div>-->
-            <!-- Price END -->
-
-            <!-- SEO -->
-<!--            <div class="tab-pane" id="productSeoTab">-->
-<!---->
-<!--            </div>-->
-            <!-- SEO END -->
-
         </div>
+
+        <div class="span3">
+            <div class="widget widget-2 primary widget-body-white">
+                <div class="widget-head">
+                    <h4 class="heading glyphicons picture"><i></i>Profile image</h4>
+                </div>
+                <div class="widget-body center">
+                    <div class="fileupload fileupload-new" data-provides="fileupload" data-name="myimage">
+
+                        <?php if(!empty($model->eo_photo)){ ?>
+                            <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . $model->eo_photo; ?>" width="202" height="188" /></div>
+                        <?php }else{ ?>
+                            <div class="fileupload-new thumbnail"><img src="http://www.placehold.it/202x188/232323" /></div>
+                        <?php } ?>
+
+                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 100%;"></div>
+                        <div>
+                            <span class="btn btn-file btn-inverse btn-icon glyphicons picture"><i></i><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                            <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php echo CHtml::endForm(); ?>
+
     </div>
-</div>
-<!--<div class="heading-buttons">-->
-<!--    <div class="buttons pull-right" style="margin-top: 0;">-->
-<!--        <a href="" class="btn btn-default btn-icon glyphicons share"><i></i> Preview</a>-->
-<!--        <a href="" class="btn btn-primary btn-icon glyphicons ok_2"><i></i> Save</a>-->
-<!--    </div>-->
-<!--    <div class="clearfix"></div>-->
-<!--</div>-->

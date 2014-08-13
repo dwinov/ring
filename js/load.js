@@ -46,15 +46,15 @@ $(function()
 	// allow menu customization from browser
 	MENU_JS = $('#themer-menu-position').length || $('#themer-menu-size').length || $('[data-toggle="menu-position"]').length || $('[data-toggle="menu-size"]').length;
 	
-	refreshScrollers = function()
-	{
-		if (typeof iScroll == 'undefined') return false;
-		$.each(scrollers, function(k,v){
-			v.refresh();
-		});	
-		if (typeof scrollers.mainYScroller == 'object') scrollers.mainYScroller.refresh();
-		if (typeof scrollers.colMainLeftScroller == 'object') scrollers.colMainLeftScroller.refresh();
-	}
+//	refreshScrollers = function()
+//	{
+//		if (typeof iScroll == 'undefined') return false;
+//		$.each(scrollers, function(k,v){
+//			v.refresh();
+//		});
+//		if (typeof scrollers.mainYScroller == 'object') scrollers.mainYScroller.refresh();
+//		if (typeof scrollers.colMainLeftScroller == 'object') scrollers.colMainLeftScroller.refresh();
+//	}
 	
 	var colMainLeft = $('.col.main-left');
 	var colMainLeftWidth = '14.893617021276595%';
@@ -133,7 +133,7 @@ $(function()
 			colMainLeftScroller = null;
 			
 			// remove from public scrollers array
-			scrollers['colMainLeftScroller'] = null;
+//			scrollers['colMainLeftScroller'] = null;
 		}
 		colMainLeftScroller = new iScroll($('.col.main-left .scroll-y-left').get(0), { 
 			hScroll: false,
@@ -163,7 +163,7 @@ $(function()
 				}
 			}
 		});
-		scrollers['colMainLeftScroller'] = colMainLeftScroller;
+//		scrollers['colMainLeftScroller'] = colMainLeftScroller;
 	}
 	
 	/*
@@ -677,7 +677,7 @@ $(function()
 	
 	$(window).resize(function()
 	{
-		refreshScrollers();
+//		refreshScrollers();
 		
 		if (colMainLeft.is('.login'))
 		{
@@ -718,7 +718,7 @@ $(function()
 	
 	// make sure we can scroll
 	setTimeout(function(){
-		refreshScrollers();
+//		refreshScrollers();
 	},1000);
 	
 	// jump to active menu

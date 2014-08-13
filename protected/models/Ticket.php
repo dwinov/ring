@@ -53,6 +53,17 @@ class Ticket extends CActiveRecord
         );
     }
 
+    public function getTicketByEvtId($id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_ticket')
+            ->where('tkt_evt_id=:id', array(':id' => $id))
+        ;
+
+        $result = $data->queryAll();
+        return (count($result) > 0) ? $result : null;
+    }
+
     public function insertData($type, $price, $total, $evt_id)
     {
         $model = new Ticket;

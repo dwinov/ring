@@ -27,13 +27,7 @@ class EoController extends Controller
                 'allow',
                 'actions' => array('index','create', 'update', 'delete', 'client', 'uploader', 'delgal', 'detail'),
                 'users' => array('@'),
-                'expression' => 'Yii::app()->user->roleid == 1 || Yii::app()->user->roleid == 2'
-            ),
-            array(
-                'allow',
-                'actions' => array('index', 'detail'),
-                'users' => array('@'),
-                'expression' => 'Yii::app()->user->roleid == 3'
+                'expression' => 'Yii::app()->user->roleid == 2'
             ),
             array(
                 'deny',
@@ -63,9 +57,9 @@ class EoController extends Controller
 
             if($model->insertData($_POST, $_FILES))
             {
-                $this->redirect(array('eo/index'));
+                $this->redirect(array('eo/update/' . Yii::app()->db->getLastInsertId() . '?user_id=' . Yii::app()->user->usrid));
             }else{
-                $this->redirect(array('eo/index'));
+                $this->redirect(array('eo/create'));
             }
 
         }

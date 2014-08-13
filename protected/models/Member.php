@@ -102,4 +102,44 @@ class Member extends CActiveRecord
 
         return ($model->save()) ? true : false;
     }
+
+    public function getAllMember($filter)
+    {
+        $attr = array();
+        $where = array('and');
+
+        $where[] = 'u.usr_type_id=:type_id';
+        $attr[':type_id'] = 4;
+
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_member m')
+            ->leftJoin('tbl_user u', 'm.mem_user_id = u.usr_id')
+            ->where($where, $attr)
+        ;
+
+        $allData = count($data->queryAll());
+
+        //search specific record
+        if(!empty($filter['sSearch'])){
+            $search = $filter['sSearch'];
+            $where[] = 'm.mem_email LIKE :name';
+            $attr[':name'] = "'%$search%'";
+        }
+
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_member m')
+            ->leftJoin('tbl_user u', 'm.mem_user_id = u.usr_id')
+            ->where($where, $attr)
+        ;
+
+        $filteredData = count($data->queryAll());
+        $data = $data->offset($filter['iDisplayStart'])->limit($filter['iDisplayLength']);
+
+        return array(
+            "sEcho" => $filter['sEcho'],
+            'aaData' => $data->queryAll(),
+            'iTotalRecords' => $allData,
+            'iTotalDisplayRecords' => $filteredData
+        );
+    }
 }

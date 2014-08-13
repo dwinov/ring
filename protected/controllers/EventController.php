@@ -100,11 +100,19 @@ class EventController extends Controller
         }
 
         $data = $model->getEventById($id);
+        if($data->evt_ticketing == true)
+        {
+            $ticket = new Ticket();
+            $data_ticket = $ticket->getTicketByEvtId($data->evt_id);
+        }else{
+            $data_ticket = null;
+        }
         $venue = Venue::model()->findAll();
 
         $this->render('update', array(
             'model' => $data,
-            'venue_list' => CHtml::listData($venue, 'vn_id', 'vn_name')
+            'venue_list' => CHtml::listData($venue, 'vn_id', 'vn_name'),
+            'ticket' => $data_ticket
         ));
     }
 

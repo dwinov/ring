@@ -202,14 +202,37 @@ class Event extends CActiveRecord
         $model->evt_name = $input['Event']['evt_name'];
         $model->evt_venue_id = $input['Event']['evt_venue_id'];
         $model->evt_role_id = $input['Event']['evt_role_id'];
-        $model->evt_date = strtotime($input['Event']['evt_date']);
-        $model->evt_time = strtotime($input['Event']['evt_time']);
-        $model->evt_tiket_price = $input['Event']['evt_tiket_price'];
-        $model->evt_total_tiket = $input['Event']['evt_total_tiket'];
+        $model->evt_start_date = strtotime($input['Event']['evt_start_date']);
+        $model->evt_end_date = strtotime($input['Event']['evt_end_date']);
+        $model->evt_ticketing = $input['Event']['evt_ticketing'];
         $model->evt_description = $input['Event']['evt_description'];
         $model->evt_photo = (count($file) != 0) ? Helper::updateImage('event', $model->evt_photo) : $model->evt_photo;
 
-        return ($model->save()) ? true : false;
+        if($model->save())
+        {
+            if($input['Event']['evt_ticketing'] == true && count($input['tkt_type']) > 0)
+            {
+                $ticket = new Ticket();
+                Ticket::model()->deleteAll('tkt_evt_id=:evt_id', array(':evt_id' => $input['Event']['evt_id']));
+                for($x = 0; $x < count($input['tkt_type']); $x++)
+                {
+                    if($input['tkt_type'][$x] != null || $input['tkt_type'][$x] != '')
+                    {
+                        $result = $ticket->insertData($input['tkt_type'][$x], $input['tkt_price'][$x], $input['tkt_total'][$x], $model->evt_id);
+                        if($result == false)
+                            return false;
+                    }
+                }
+
+                return true;
+            }else{
+                return true;
+            }
+        }else{
+            return false;
+        }
+
+//        return ($model->save()) ? true : false;
     }
 
     public function getEventsByEo($eo_id)

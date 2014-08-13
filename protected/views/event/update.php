@@ -24,7 +24,8 @@
     <?php echo $this->renderPartial('_form', array(
         'model' => $model,
         'action' => Yii::app()->createUrl('event/update', array('id' => $model->evt_id)),
-        'venue_list' => $venue_list
+        'venue_list' => $venue_list,
+        'ticket' => $ticket
     )); ?>
 
 </div>
