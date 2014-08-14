@@ -301,6 +301,7 @@
 
 <!-- DataTables -->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/DataTables/media/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/DatatableReloadAjax.js"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/DataTables/media/js/DT_bootstrap.js"></script>
 
 <!-- Bootstrap Script -->

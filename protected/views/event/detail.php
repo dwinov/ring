@@ -51,18 +51,28 @@
                                     </div>
 
                                     <div class="control-group">
-                                        <label class="control-label">Ticket Price</label>
+                                        <label class="control-label">Ticket</label>
                                         <div class="controls">
-                                            <?php $fax = (isset($model)) ? $model->evt_tiket_price : ""; ?>
-                                            <?php echo $fax; ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label class="control-label">Total Ticket</label>
-                                        <div class="controls">
-                                            <?php $fax = (isset($model)) ? $model->evt_total_tiket : ""; ?>
-                                            <?php echo $fax; ?>
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th style="width: 100px;">Type</th>
+                                                    <th style="width: 100px;">Price</th>
+                                                    <th style="width: 100px;">Total</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php if(isset($ticket)){ ?>
+                                                    <?php foreach($ticket as $tiket){ ?>
+                                                        <tr>
+                                                            <td style="text-align: center;"><?php echo $tiket['tkt_type']; ?></td>
+                                                            <td style="text-align: center;"><?php echo $tiket['tkt_price']; ?></td>
+                                                            <td style="text-align: center;"><?php echo $tiket['tkt_total']; ?></td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                <?php } ?>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
@@ -253,7 +263,6 @@
                                     <th>Event</th>
                                     <th>EO</th>
                                     <th>Venue</th>
-                                    <th>Tiket</th>
                                     <th>Date</th>
                                     <th></th>
                                 </tr>
@@ -326,12 +335,6 @@
                     {
                         mData: "vn_name",
                         sWidth: "10%",
-                        bSortable: true
-                    },
-                    {
-                        mData: "evt_tiket_price",
-                        sWidth: "10%",
-                        sClass: "center",
                         bSortable: true
                     },
                     {

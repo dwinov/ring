@@ -71,12 +71,13 @@
                         <div class="control-group">
                             <label class="control-label">Ticketing</label>
                             <div class="controls">
-                                <?php echo CHtml::checkBox('Event[evt_ticketing]', $model->evt_ticketing, array('id' => 'ticket_toggle')); ?>
+                                <?php $ticketing = (isset($model)) ? $model->evt_ticketing : 0; ?>
+                                <?php echo CHtml::checkBox('Event[evt_ticketing]', $ticketing, array('id' => 'ticket_toggle')); ?>
                             </div>
                         </div>
 
                         <div id="tiket">
-                            <?php if($model->evt_ticketing == true){ ?>
+                            <?php if(isset($model->evt_ticketing) && $model->evt_ticketing == true){ ?>
                                 <?php foreach($ticket as $tiket){ ?>
                                     <div class="control-group">
                                         <label class="control-label"></label>
@@ -149,7 +150,7 @@
 <?php $this->beginClip('js-page-end'); ?>
     <script type="text/javascript">
         $(document).ready(function(){
-            var ticket = '<?php echo $model->evt_ticketing; ?>';
+            var ticket = '<?php echo (isset($model->evt_ticketing)) ? : 0; ?>';
             window.onload = function(){
                 if(ticket != '1'){
                     $('#tiket').hide();

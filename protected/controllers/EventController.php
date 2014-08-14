@@ -173,10 +173,12 @@ class EventController extends Controller
         $model_eo = new Eo();
         $model_venue = new Venue();
         $model_glr_event = new GalleryEvent();
+        $model_ticket = new Ticket();
 
         $event = $model->getEventById($_GET['id']);
         $venue = $model_venue->getVenueById($event->evt_venue_id);
         $glr = $model_glr_event->getAllData($event->evt_id);
+        $ticket = $model_ticket->getTicketByEvtId($event->evt_id);
 
         if(Yii::app()->user->roleid == 2){
             $eo = $model_eo->getEoById($event->evt_owner_id);
@@ -185,12 +187,14 @@ class EventController extends Controller
                 'eo' => $eo,
                 'venue' => $venue,
                 'glr_event' => $glr,
+                'ticket' => $ticket
             ));
         }elseif(Yii::app()->user->roleid == 3){
             $this->render('detail', array(
                 'model' => $event,
                 'venue' => $venue,
                 'glr_event' => $glr,
+                'ticket' => $ticket
             ));
         }
     }

@@ -136,7 +136,8 @@ class Event extends CActiveRecord
                         FROM_UNIXTIME(e.evt_start_date, "%b") as evt_month,
                         FROM_UNIXTIME(e.evt_start_date, "%Y") as evt_year,
                         FROM_UNIXTIME(e.evt_start_date, "%H:%i") as evt_hour,
-                        e.evt_description')
+                        e.evt_description,
+                        e.evt_photo')
                 ->from('tbl_event e')
                 ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
                 ->where('evt_owner_id=:eo_id', array(':eo_id' => $eo->eo_id))
@@ -155,7 +156,7 @@ class Event extends CActiveRecord
         ;
 
         $result = $data->queryRow();
-        $result['evt_date'] = date('d-m-Y', $result['evt_date']);
+        $result['evt_date'] = date('d-m-Y', $result['evt_start_date']);
 
         return $result;
     }
@@ -256,7 +257,7 @@ class Event extends CActiveRecord
         if($filter['end'] == null || empty($filter['end']) || $filter['end'] == '')
         {
             $data = Yii::app()->db->createCommand()
-                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
                 ->from('tbl_event e')
                 ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
                 ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
@@ -264,7 +265,7 @@ class Event extends CActiveRecord
             ;
         }else{
             $data = Yii::app()->db->createCommand()
-                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
                 ->from('tbl_event e')
                 ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
                 ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
@@ -278,7 +279,7 @@ class Event extends CActiveRecord
         if($filter['end'] == null || empty($filter['end']) || $filter['end'] == '')
         {
             $data = Yii::app()->db->createCommand()
-                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
                 ->from('tbl_event e')
                 ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
                 ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
@@ -286,7 +287,7 @@ class Event extends CActiveRecord
             ;
         }else{
             $data = Yii::app()->db->createCommand()
-                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, e.evt_tiket_price, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
                 ->from('tbl_event e')
                 ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
                 ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')

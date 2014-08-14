@@ -74,7 +74,7 @@ class Member extends CActiveRecord
         $model->mem_last_name = $data['Member']['mem_last_name'];
         $model->mem_screen_name = $data['Member']['mem_first_name'] . " " . $data['Member']['mem_last_name'];
         $model->mem_email = $data['User']['usr_email'];
-        $model->mem_birthdate = date('d-m-Y', strtotime($data['Member']['mem_birthdate']));
+        $model->mem_birthdate = strtotime($data['Member']['mem_birthdate']);
         $model->mem_gender = $data['Member']['mem_gender'];
         $model->mem_phone = $data['Member']['mem_phone'];
 
@@ -96,9 +96,11 @@ class Member extends CActiveRecord
         $model->attributes = $data['Member'];
         $model->mem_first_name = $data['Member']['mem_first_name'];
         $model->mem_last_name = $data['Member']['mem_last_name'];
-        $model->mem_phone = $data['Member']['mem_phone'];
+        $model->mem_screen_name = $data['Member']['mem_first_name'] . " " . $data['Member']['mem_last_name'];
+        $model->mem_email = $data['User']['usr_email'];
+        $model->mem_birthdate = strtotime($data['Member']['mem_birthdate']);
         $model->mem_gender = $data['Member']['mem_gender'];
-        $model->mem_about_me = $data['Member']['mem_about_me'];
+        $model->mem_phone = $data['Member']['mem_phone'];
 
         return ($model->save()) ? true : false;
     }
@@ -124,6 +126,19 @@ class Member extends CActiveRecord
             $search = $filter['sSearch'];
             $where[] = 'm.mem_email LIKE :name';
             $attr[':name'] = "'%$search%'";
+        }
+
+        if(!empty($filter['umur'])){
+            $umur = $filter['umur'];
+//            $str = 'YEAR(CURRENT_TIMESTAMP) - FROM_UNIXTIME(e.evt_start_date, "%Y") - (RIGHT(CURRENT_TIMESTAMP, 5) < FROM_UNIXTIME(e.evt_start_date, "%Y"))';
+            $where[] = 'm.mem_birthdate LIKE :umur';
+            $attr[':umur'] = "'%$umur%'";
+        }
+
+        if($filter['gender'] != 2){
+            $gender = $filter['gender'];
+            $where[] = 'm.mem_gender=:gender';
+            $attr[':gender'] = "'%$gender%'";
         }
 
         $data = Yii::app()->db->createCommand()

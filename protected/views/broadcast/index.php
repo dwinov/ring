@@ -32,7 +32,7 @@
                 <table id="basic-datatabel" class="table table-bordered table-condensed table-striped table-primary table-vertical-center checkboxs js-table-sortable">
                     <thead>
                     <tr>
-                        <th width="1%" class="uniformjs center"><input type="checkbox" /></th>
+                        <th width="1%" class="uniformjs center"><input type="checkbox" id="ceklis-semua" /></th>
                         <th width="1%" class="center">No.</th>
                         <th>Email</th>
                     </tr>
@@ -46,14 +46,32 @@
                 <h4 class="heading glyphicons edit"><i></i>Message</h4>
             </div>
 
-            <?php echo (isset($model)) ? Chtml::hiddenField('Eo[eo_id]', $model->eo_id) : null; ?>
+            <?php echo CHtml::beginForm(Yii::app()->createUrl('broadcast/send'), 'post', array('id'=>'broadcast-form')); ?>
 
             <div class="widget-body" style="padding-bottom: 0;">
+                <?php echo CHtml::hiddenField('list_member', '', array('id' => 'list_member')); ?>
+                <div class="control-group">
+<!--                    <label class="control-label">Type</label>-->
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            <input type="checkbox" name="type_email" class="checkbox" value="email" checked="checked" />
+                            Email
+                        </label>
+<!--                        <label class="checkbox inline">-->
+<!--                            <input type="checkbox" class="checkbox" value="sms" checked="checked" />-->
+<!--                            SMS-->
+<!--                        </label>-->
+                        <label class="checkbox inline">
+                            <input type="checkbox" name="type_inbox" class="checkbox" value="inbox" checked="checked" />
+                            Inbox
+                        </label>
+                    </div>
+                </div>
+                <hr class="separator bottom" />
                 <div class="control-group">
                     <label class="control-label"></label>
                     <div class="controls">
-                        <?php $desc = (isset($model)) ? $model->eo_description : ""; ?>
-                        <?php echo CHtml::textArea('Eo[eo_description]', $desc, array(
+                        <?php echo CHtml::textArea('message', '', array(
                             'id' => "mustHaveId",
                             'class' => "wysihtml5 span10",
                             'rows' => "5")); ?>
@@ -65,6 +83,7 @@
                         array('class'=>'btn btn-icon btn-primary glyphicons circle_ok')); ?>
                 </div>
             </div>
+            <?php echo CHtml::endForm(); ?>
         </div>
     </div>
 
@@ -79,7 +98,7 @@
                     <li class="right">
                         <label class="span4">Region:</label>
                         <div class="right">
-                            <select class="js-filter-category" name="category" style="width: 120px;">
+                            <select class="js-filter-category" id="region" name="category" style="width: 120px;">
                                 <option>Category</option>
                                 <option>Category</option>
                                 <option>Category</option>
@@ -96,10 +115,10 @@
                         <label>Gender:</label>
                         <div class="right">
                             <div class="input-append">
-                                <select class="js-filter-category" name="category" style="width: 120px;">
-                                    <option>Category</option>
-                                    <option>Category</option>
-                                    <option>Category</option>
+                                <select class="js-filter-category" id="gender" name="category" style="width: 120px;">
+                                    <option value="2">All</option>
+                                    <option value="1">Male</option>
+                                    <option value="0">Female</option>
                                 </select>
                             </div>
                         </div>
@@ -108,7 +127,7 @@
                         <label>Interest:</label>
                         <div class="right">
                             <div class="input-append">
-                                <select class="js-filter-category" name="category" style="width: 120px;">
+                                <select class="js-filter-category" id="interest" name="category" style="width: 120px;">
                                     <option>Category</option>
                                     <option>Category</option>
                                     <option>Category</option>
@@ -126,6 +145,7 @@
 <?php $this->beginClip('js-page-end'); ?>
     <script type="text/javascript">
         $(document).ready(function(){
+            var memList = [];
             var $dataTable = $("#basic-datatabel").dataTable({
                 bServerSide: true,
                 sAjaxSource: document.location.href,
@@ -136,7 +156,7 @@
                         sWidth: "1%",
                         sClass: "center uniformjs",
                         mRender: function(data, type, all) {
-                            return  '<input class="uniformjs" type="checkbox" />';
+                            return  '<input class="uniformjs ceklis" type="checkbox" value="' + all.mem_id + '" checked />';
                         }
                     },
                     {
@@ -150,20 +170,25 @@
                         sWidth: "10%",
                         sClass: "center",
                         bSortable: true
-                    },
+                    }
                 ],
                 fnServerParams: function(aoData) {
-                    aoData.push({name: "date", value: $("#date").val()});
-                    aoData.push({name: "time", value: $("#time").val()});
+                    aoData.push({name: "region", value: $("#region").val()});
+                    aoData.push({name: "umur", value: $("#umur").val()});
+                    aoData.push({name: "gender", value: $("#gender").val()});
+                    aoData.push({name: "interest", value: $("#interest").val()});
                 },
                 "fnDrawCallback": function ( oSettings ) {
                     /* Need to redo the counters if filtered or sorted */
                     if ( oSettings.bSorted || oSettings.bFiltered )
                     {
+                        memList = new Array();
                         for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ )
                         {
+                            memList.push($('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr).children('.ceklis').val());
                             $('td:eq(1)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );
                         }
+                        $('#list_member').val(memList.join(','));
                     }
                 }
             });
@@ -188,8 +213,24 @@
                 e.preventDefault();
             });
 
-            $("#date, #time").change(function() {
+            $("#region, #gender, #interest").change(function() {
                 $dataTable.fnReloadAjax();
+            });
+
+            $('#umur').keyup(function(){
+                $dataTable.fnReloadAjax();
+            });
+
+            $('.ceklis').live('click', function(){
+                if($(this).attr('checked') == 'checked')
+                {
+                    memList.push($(this).val());
+                    $('#list_member').val(memList.join(','));
+                }else{
+                    var indexArr = memList.indexOf($(this).val());
+                    memList.splice(indexArr, 1);
+                    $('#list_member').val(memList.join(','));
+                }
             });
         });
     </script>
