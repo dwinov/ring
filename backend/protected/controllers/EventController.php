@@ -75,6 +75,12 @@ class EventController extends Controller
             $venue = new Venue();
             $data_venue = $venue->getVenueByUserId(Yii::app()->user->usrid);
             $owner_id = $data_venue['vn_id'];
+        }elseif(Yii::app()->user->roleid == 1 && $_GET['role'] == 2)
+        {
+            $owner_id = $_GET['id'];
+        }elseif(Yii::app()->user->roleid == 1 && $_GET['role'] == 3)
+        {
+            $owner_id = $_GET['id'];
         }
 
         $venue = Venue::model()->findAll();

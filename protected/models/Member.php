@@ -126,16 +126,24 @@ class Member extends CActiveRecord
             $attr[':gender'] = $gender;
         }
 
-        if(isset($filter['region']) && !empty($filter['region']))
+        if(!empty($filter['region']))
         {
-            $region = $filter['region'];
-            $where[] = '';
-            $attr[':region'] = $region;
+            $regArr = explode(',', $filter['region']);
+            for($x = 0; $x < count($regArr); $x++)
+            {
+                $where[] = 'm.mem_reg_id=:region'.$x;
+                $attr[':region'.$x] = $regArr[$x];
+            }
         }
 
-        if(isset($filter['interest']) && !empty($filter['interest']))
+        if(!empty($filter['interest']))
         {
-
+            $intArr = explode(',', $filter['interest']);
+            for($x = 0; $x < count($intArr); $x++)
+            {
+                $where[] = 'm.mem_reg_id=:interest'.$x;
+                $attr[':interest'.$x] = $intArr[$x];
+            }
         }
 
         $data = Yii::app()->db->createCommand()

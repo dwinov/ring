@@ -3,10 +3,10 @@
  * Created by PhpStorm.
  * User: roger
  * Date: 8/15/14
- * Time: 1:41 PM
+ * Time: 4:43 PM
  */
 
-class Interest extends CActiveRecord
+class Region extends CActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.
@@ -23,7 +23,7 @@ class Interest extends CActiveRecord
      */
     public function tableName()
     {
-        return '{{interest}}';
+        return '{{region}}';
     }
 
     /**
@@ -56,7 +56,7 @@ class Interest extends CActiveRecord
     public function getAllData($filter)
     {
         $data = Yii::app()->db->createCommand()
-            ->from('tbl_interest')
+            ->from('tbl_region')
         ;
 
         $attr = array();
@@ -67,12 +67,12 @@ class Interest extends CActiveRecord
         //search specific record
         if(!empty($filter['sSearch'])){
             $search = $filter['sSearch'];
-            $where[] = 'int_name LIKE :name';
+            $where[] = 'reg_name LIKE :name';
             $attr[':name'] = "'%$search%'";
         }
 
         $data = Yii::app()->db->createCommand()
-            ->from('tbl_interest')
+            ->from('tbl_region')
             ->where($where, $attr)
         ;
 
@@ -89,25 +89,25 @@ class Interest extends CActiveRecord
 
     public function insertData($input)
     {
-        $model = new Interest;
-        $model->attributes = $input['Interest'];
-        $model->int_name = $input['Interest']['int_name'];
+        $model = new Region;
+        $model->attributes = $input['Region'];
+        $model->reg_name = $input['Region']['reg_name'];
 
         return ($model->save()) ? true : false;
     }
 
     public function updateData($input)
     {
-        $model = $this->getInterestById($input['Interest']['int_id']);
+        $model = $this->getRegionById($input['Region']['reg_id']);
 
-        $model->int_name = $input['Interest']['int_name'];
+        $model->reg_name = $input['Region']['reg_name'];
 
         return ($model->save()) ? true : false;
     }
 
-    public function getInterestById($id)
+    public function getRegionById($id)
     {
-        $model = Interest::model()->findByPk($id);
+        $model = Region::model()->findByPk($id);
         if($model === null)
             throw new CHttpException(404,'The requested page does not exist!.');
         return $model;

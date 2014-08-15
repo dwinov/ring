@@ -43774,3 +43774,303 @@ Stack trace:
 REQUEST_URI=/ring/css/images/pattern1.png
 HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
 ---
+2014/08/15 12:45:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 12:45:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 12:45:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 12:47:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 12:47:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 12:47:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:10:08 [error] [php] Undefined index: username (E:\project\ring\protected\modules\apis\controllers\DefaultController.php:9)
+Stack trace:
+#0 E:\project\ring\yii\web\filters\CFilterChain.php(133): DefaultController->runAction()
+#1 E:\project\ring\yii\web\CController.php(291): CFilterChain->run()
+#2 E:\project\ring\yii\web\CController.php(265): DefaultController->runActionWithFilters()
+#3 E:\project\ring\yii\web\CWebApplication.php(282): DefaultController->run()
+#4 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\project\ring\index.php(13): CWebApplication->run()
+REQUEST_URI=/ring/apis
+in E:\project\ring\protected\modules\apis\controllers\DefaultController.php (9)
+in E:\project\ring\index.php (13)
+2014/08/15 14:18:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:18:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:18:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:20:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:20:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:20:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:20:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:21:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:21:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:21:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:22:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:22:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:22:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:39:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:39:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:39:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:51:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:51:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:51:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 14:51:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 15:14:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 15:14:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern2.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern2.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---
+2014/08/15 15:14:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/images/pattern1.png".' in E:\project\ring\yii\web\CWebApplication.php:286
+Stack trace:
+#0 E:\project\ring\yii\web\CWebApplication.php(141): CWebApplication->runController('css/images/patt...')
+#1 E:\project\ring\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\project\ring\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ring/css/images/pattern1.png
+HTTP_REFERER=http://localhost/ring/css/new/style.min.css?1358876495
+---

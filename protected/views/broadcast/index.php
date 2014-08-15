@@ -81,9 +81,10 @@
                         <label class="span4">Region:</label>
                         <div class="right">
                             <select multiple class="span8" id="region" name="region" style="height: 60px;">
-                                <option value="2">All</option>
-                                <option value="1">Male</option>
-                                <option value="0">Female</option>
+                                <?php foreach($region as $reg){ ?>
+                                <option value="<?php echo $reg->reg_id; ?>"><?php echo $reg->reg_name; ?></option>
+                                <?php } ?>
+                                <?php echo CHtml::hiddenField('tamp_region', '', array('id' => 'tamp-region')); ?>
                             </select>
                         </div>
                     </li>
@@ -115,10 +116,11 @@
                     <li>
                         <label class="span4">Interest:</label>
                         <div class="right">
-                            <select multiple class="span8" id="region" name="region" style="height: 60px;">
-                                <option value="2">All</option>
-                                <option value="1">Male</option>
-                                <option value="0">Female</option>
+                            <select multiple class="span8" id="interest" name="interest" style="height: 60px;">
+                                <?php foreach($interest as $int){ ?>
+                                <option value="<?php echo $int->int_id ?>"><?php echo $int->int_name ?></option>
+                                <?php } ?>
+                                <?php echo CHtml::hiddenField('tamp_interest', '', array('id' => 'tamp-interest')); ?>
                             </select>
                         </div>
                     </li>
@@ -183,7 +185,7 @@
                     values: [ 18, 25 ],
                     slide: function( event, ui ) {
                         $( ".range-slider #umur" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                        getDataMember($('#region').val(), $('#gender').val(), $('#interest').val(), ui.values[ 0 ] + " - " + ui.values[ 1 ]);
+                        getDataMember($('#tamp-region').val(), $('#gender').val(), $('#tamp-interest').val(), ui.values[ 0 ] + " - " + ui.values[ 1 ]);
                     }
 //	        start: function() { if (typeof mainYScroller != 'undefined') mainYScroller.disable(); },
 //	        stop: function() { if (typeof mainYScroller != 'undefined') mainYScroller.enable(); }
@@ -192,14 +194,34 @@
                     " - " + $( ".range-slider .slider" ).slider( "values", 1 ) );
             }
 
-            $("#region, #gender-both, #gender-male, #gender-female, #interest").change(function() {
+            $("#gender-both, #gender-male, #gender-female, #interest").change(function() {
                 if($('#gender-both').attr('checked') == 'checked'){
-                    getDataMember($('#region').val(), $('#gender-both').val(), $('#interest').val(), $('#umur').val());
+                    getDataMember($('#tamp-region').val(), $('#gender-both').val(), $('#tamp-interest').val(), $('#umur').val());
                 }else if($('#gender-male').attr('checked') == 'checked'){
-                    getDataMember($('#region').val(), $('#gender-male').val(), $('#interest').val(), $('#umur').val());
+                    getDataMember($('#tamp-region').val(), $('#gender-male').val(), $('#tamp-interest').val(), $('#umur').val());
                 }else if($('#gender-female').attr('checked') == 'checked'){
-                    getDataMember($('#region').val(), $('#gender-female').val(), $('#interest').val(), $('#umur').val());
+                    getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
                 }
+            });
+
+            $('#region').change(function(){
+                var region = [];
+                $('#region option:selected').each(function(){
+                    region.push($(this).val());
+                });
+                var regStr = region.join(',');
+                $('#tamp-region').val(regStr);
+                getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
+            });
+
+            $('#interest').change(function(){
+                var interest = [];
+                $('#interest option:selected').each(function(){
+                    interest.push($(this).val());
+                });
+                var intStr = interest.join(',');
+                $('#tamp-interest').val(intStr);
+                getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
             });
 
             function getDataMember(reg, gen, int, age)

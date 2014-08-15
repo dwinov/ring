@@ -124,21 +124,9 @@
         <div class="iScrollWrapper">
             <ul class="navigasi">
                 <li class="glyphicons home"><a href="<?php echo Yii::app()->createUrl('dashboard/index'); ?>"><i></i><span>Dashboard</span></a></li>
-                <li class="glyphicons user"><a href="<?php echo Yii::app()->createUrl('member/index'); ?>"><i></i><span>Profile</span></a></li>
-                <?php if(Yii::app()->user->roleid == 2){ ?>
-                    <?php
-                    $model = new Eo();
-                    $eo_menu = $model->getEoByUserId(Yii::app()->user->usrid);
-                    ?>
-                    <?php if($eo_menu['eo_id'] != null){ ?>
-                        <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/update', array('id' => $eo_menu['eo_id'], 'user_id' => Yii::app()->user->usrid)); ?>"><i></i><span>Event Organizer</span></a></li>
-                    <?php }else{ ?>
-                        <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/create'); ?>"><i></i><span>Event Organizer</span></a></li>
-                    <?php } ?>
-                <?php } ?>
-                <?php if(Yii::app()->user->roleid == 3){ ?>
+<!--                <li class="glyphicons user"><a href="--><?php //echo Yii::app()->createUrl('member/index'); ?><!--"><i></i><span>Profile</span></a></li>-->
+                <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/index'); ?>"><i></i><span>Event Organizer</span></a></li>
                 <li class="glyphicons globe_af"><a href="<?php echo Yii::app()->createUrl('venue/index'); ?>"><i></i><span>Venue</span></a></li>
-                <?php } ?>
                 <li class="glyphicons calendar"><a href="<?php echo Yii::app()->createUrl('event/index'); ?>"><i></i><span>Event</span></a></li>
                 <li class="glyphicons message_out"><a href="<?php echo Yii::app()->createUrl('broadcast/index'); ?>"><i></i><span>Broadcast</span></a></li>
                 <li class="glyphicons message_out"><a href="<?php echo Yii::app()->createUrl('interest/index'); ?>"><i></i><span>Interest</span></a></li>

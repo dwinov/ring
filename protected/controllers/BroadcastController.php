@@ -20,7 +20,13 @@ class BroadcastController extends Controller
             Yii::app()->end();
         }
 
-        $this->render('index');
+        $list_interest = Interest::model()->findAll();
+        $list_region = Region::model()->findAll();
+
+        $this->render('index', array(
+            'interest' => $list_interest,
+            'region' => $list_region
+        ));
     }
 
     public function actionSend()
