@@ -25,9 +25,9 @@ class EoController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete', 'client', 'uploader', 'delgal', 'detail'),
+                'actions' => array('index','create', 'update', 'delete'),
                 'users' => array('@'),
-                'expression' => 'Yii::app()->user->roleid == 2'
+                'expression' => 'Yii::app()->user->roleid == 1'
             ),
             array(
                 'deny',

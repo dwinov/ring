@@ -80,45 +80,50 @@
                     <li class="right">
                         <label class="span4">Region:</label>
                         <div class="right">
-                            <select class="js-filter-category" id="region" name="category" style="width: 120px;">
-                                <option>Category</option>
-                                <option>Category</option>
-                                <option>Category</option>
+                            <select multiple class="span8" id="region" name="region" style="height: 60px;">
+                                <option value="2">All</option>
+                                <option value="1">Male</option>
+                                <option value="0">Female</option>
                             </select>
                         </div>
                     </li>
                     <li>
                         <label class="span4">Age:</label>
                         <div class="right">
-                            <input type="text" name="age" id="umur" class="input-mini" style="width: 85px;" />
-                        </div>
-                    </li>
-                    <li>
-                        <label>Gender:</label>
-                        <div class="right">
-                            <div class="input-append">
-                                <select class="js-filter-category" id="gender" name="category" style="width: 120px;">
-                                    <option value="2">All</option>
-                                    <option value="1">Male</option>
-                                    <option value="0">Female</option>
-                                </select>
+                            <div class="range-slider row-fluid">
+                                <input type="text" name="age" id="umur" class="input-mini" style="width: 85px;" />
+                                <div class="slider slider-primary"></div>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <label>Interest:</label>
                         <div class="right">
-                            <div class="input-append">
-                                <select class="js-filter-category" id="interest" name="category" style="width: 120px;">
-                                    <option>Category</option>
-                                    <option>Category</option>
-                                    <option>Category</option>
-                                </select>
-                            </div>
+                            <label class="radio">
+                                <input type="radio" class="radio" id="gender-both" name="radioInline" value="2" />
+                                Both
+                            </label>
+                            <label class="radio">
+                                <input type="radio" class="radio" id="gender-male" name="radioInline" value="1" />
+                                Male
+                            </label>
+                            <label class="radio">
+                                <input type="radio" class="radio" id="gender-female" name="radioInline" value="0" />
+                                Female
+                            </label>
                         </div>
                     </li>
                     <li>
-                        <label>Own Data:</label>
+                        <label class="span4">Interest:</label>
+                        <div class="right">
+                            <select multiple class="span8" id="region" name="region" style="height: 60px;">
+                                <option value="2">All</option>
+                                <option value="1">Male</option>
+                                <option value="0">Female</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <label>Own Database:</label>
                         <div class="right">
                             <div class="input-append">
                                 <input type="checkbox">
@@ -129,7 +134,7 @@
                         <label>Total Target Group:</label>
                         <div class="right">
                             <div class="input-append">
-                                <label>100</label>
+                                <label id="total-group">100</label>
                             </div>
                         </div>
                     </li>
@@ -159,13 +164,50 @@
 <?php $this->beginClip('js-page-end'); ?>
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#region, #gender, #interest").change(function() {
-                $dataTable.fnReloadAjax();
+            function JQSliderCreate()
+            {
+                $(this)
+                    .removeClass('ui-corner-all ui-widget-content')
+                    .wrap('<span class="ui-slider-wrap"></span>')
+                    .find('.ui-slider-handle')
+                    .removeClass('ui-corner-all ui-state-default');
+            }
+
+            if ($('.range-slider').size() > 0)
+            {
+                $( ".range-slider .slider" ).slider({
+                    create: JQSliderCreate,
+                    range: true,
+                    min: 18,
+                    max: 80,
+                    values: [ 18, 25 ],
+                    slide: function( event, ui ) {
+                        $( ".range-slider #umur" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                        getDataMember($('#region').val(), $('#gender').val(), $('#interest').val(), ui.values[ 0 ] + " - " + ui.values[ 1 ]);
+                    }
+//	        start: function() { if (typeof mainYScroller != 'undefined') mainYScroller.disable(); },
+//	        stop: function() { if (typeof mainYScroller != 'undefined') mainYScroller.enable(); }
+                });
+                $( ".range-slider #umur" ).val( $( ".range-slider .slider" ).slider( "values", 0 ) +
+                    " - " + $( ".range-slider .slider" ).slider( "values", 1 ) );
+            }
+
+            $("#region, #gender-both, #gender-male, #gender-female, #interest").change(function() {
+                if($('#gender-both').attr('checked') == 'checked'){
+                    getDataMember($('#region').val(), $('#gender-both').val(), $('#interest').val(), $('#umur').val());
+                }else if($('#gender-male').attr('checked') == 'checked'){
+                    getDataMember($('#region').val(), $('#gender-male').val(), $('#interest').val(), $('#umur').val());
+                }else if($('#gender-female').attr('checked') == 'checked'){
+                    getDataMember($('#region').val(), $('#gender-female').val(), $('#interest').val(), $('#umur').val());
+                }
             });
 
-            $('#umur').keyup(function(){
-                $dataTable.fnReloadAjax();
-            });
+            function getDataMember(reg, gen, int, age)
+            {
+                $.post(document.location.href, { region: reg, gender: gen, interest: int, umur: age }, function(data){
+                    $('#total-group').html(data.total_target);
+                }, "json");
+            }
         });
     </script>
 <?php echo $this->endClip(); ?>

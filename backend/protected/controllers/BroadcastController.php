@@ -15,7 +15,7 @@ class BroadcastController extends Controller
         if(Yii::app()->request->isAjaxRequest)
         {
             $model = new Member();
-            $data = $model->getAllMember($_GET);
+            $data = $model->getAllMember($_POST);
             echo CJavaScript::jsonEncode($data);
             Yii::app()->end();
         }

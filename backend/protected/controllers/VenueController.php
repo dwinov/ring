@@ -25,16 +25,10 @@ class VenueController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal', 'detail'),
+                'actions' => array('index','create', 'update', 'delete'),
                 'users' => array('@'),
-                'expression' => 'Yii::app()->user->roleid == 3'
+                'expression' => 'Yii::app()->user->roleid == 1'
             ),
-//            array(
-//                'allow',
-//                'actions' => array('index', 'detail'),
-//                'users' => array('@'),
-//                'expression' => 'Yii::app()->user->roleid == 2'
-//            ),
             array(
                 'deny',
                 'users' => array('*')
