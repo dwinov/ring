@@ -141,6 +141,8 @@
                 <?php } ?>
                 <li class="glyphicons calendar"><a href="<?php echo Yii::app()->createUrl('event/index'); ?>"><i></i><span>Event</span></a></li>
                 <li class="glyphicons message_out"><a href="<?php echo Yii::app()->createUrl('broadcast/index'); ?>"><i></i><span>Broadcast</span></a></li>
+                <li class="glyphicons message_out"><a href="<?php echo Yii::app()->createUrl('interest/index'); ?>"><i></i><span>Interest</span></a></li>
+                <li class="glyphicons message_out"><a href="<?php echo Yii::app()->createUrl('region/index'); ?>"><i></i><span>Region</span></a></li>
             </ul>
         </div>
         <span class="navarrow hide">

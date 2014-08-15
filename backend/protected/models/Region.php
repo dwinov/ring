@@ -3,10 +3,10 @@
  * Created by PhpStorm.
  * User: roger
  * Date: 8/15/14
- * Time: 1:41 PM
+ * Time: 4:43 PM
  */
 
-class Eo extends CActiveRecord
+class Region extends CActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.
@@ -23,7 +23,7 @@ class Eo extends CActiveRecord
      */
     public function tableName()
     {
-        return '{{interest}}';
+        return '{{region}}';
     }
 
     /**
@@ -56,7 +56,7 @@ class Eo extends CActiveRecord
     public function getAllData($filter)
     {
         $data = Yii::app()->db->createCommand()
-            ->from('tbl_interest')
+            ->from('tbl_region')
         ;
 
         $attr = array();
@@ -67,12 +67,12 @@ class Eo extends CActiveRecord
         //search specific record
         if(!empty($filter['sSearch'])){
             $search = $filter['sSearch'];
-            $where[] = 'int_name LIKE :name';
+            $where[] = 'reg_name LIKE :name';
             $attr[':name'] = "'%$search%'";
         }
 
         $data = Yii::app()->db->createCommand()
-            ->from('tbl_interest')
+            ->from('tbl_region')
             ->where($where, $attr)
         ;
 
@@ -87,36 +87,29 @@ class Eo extends CActiveRecord
         );
     }
 
-    public function insertData($input, $file)
+    public function insertData($input)
     {
-        $model = new Eo;
-        $model->attributes = $input['Eo'];
-        $model->eo_user_id = (isset($input['Eo']['eo_user_id'])) ? $input['Eo']['eo_user_id'] : Yii::app()->user->usrid;
-        $model->eo_name = $input['Eo']['eo_name'];
-        $model->eo_address = $input['Eo']['eo_address'];
-        $model->eo_phone = $input['Eo']['eo_phone'];
-        $model->eo_fax = $input['Eo']['eo_fax'];
-        $model->eo_email = $input['Eo']['eo_email'];
-        $model->eo_website = $input['Eo']['eo_website'];
-        $model->eo_description = $input['Eo']['eo_description'];
-        $model->eo_photo = (count($file) != 0) ? Helper::uploadImage($file, 'eo') : null;
+        $model = new Region;
+        $model->attributes = $input['Region'];
+        $model->reg_name = $input['Region']['reg_name'];
 
         return ($model->save()) ? true : false;
     }
 
-    public function updateData($input, $file)
+    public function updateData($input)
     {
-        $model = $this->getEoById($input['Eo']['eo_id']);
+        $model = $this->getRegionById($input['Region']['reg_id']);
 
-        $model->eo_name = $input['Eo']['eo_name'];
-        $model->eo_address = $input['Eo']['eo_address'];
-        $model->eo_phone = $input['Eo']['eo_phone'];
-        $model->eo_fax = $input['Eo']['eo_fax'];
-        $model->eo_email = $input['Eo']['eo_email'];
-        $model->eo_website = $input['Eo']['eo_website'];
-        $model->eo_description = $input['Eo']['eo_description'];
-        $model->eo_photo = (count($file) != 0) ? Helper::updateImage('eo', $model->eo_photo) : $model->eo_photo;
+        $model->reg_name = $input['Region']['reg_name'];
 
         return ($model->save()) ? true : false;
+    }
+
+    public function getRegionById($id)
+    {
+        $model = Region::model()->findByPk($id);
+        if($model === null)
+            throw new CHttpException(404,'The requested page does not exist!.');
+        return $model;
     }
 }
