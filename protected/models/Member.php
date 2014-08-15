@@ -113,48 +113,39 @@ class Member extends CActiveRecord
         $where[] = 'u.usr_type_id=:type_id';
         $attr[':type_id'] = 4;
 
-        $data = Yii::app()->db->createCommand()
-            ->from('tbl_member m')
-            ->leftJoin('tbl_user u', 'm.mem_user_id = u.usr_id')
-            ->where($where, $attr)
-        ;
-
-        $allData = count($data->queryAll());
-
-        //search specific record
-        if(!empty($filter['sSearch'])){
-            $search = $filter['sSearch'];
-            $where[] = 'm.mem_email LIKE :name';
-            $attr[':name'] = "'%$search%'";
-        }
-
         if(!empty($filter['umur'])){
-            $umur = $filter['umur'];
-//            $str = 'YEAR(CURRENT_TIMESTAMP) - FROM_UNIXTIME(e.evt_start_date, "%Y") - (RIGHT(CURRENT_TIMESTAMP, 5) < FROM_UNIXTIME(e.evt_start_date, "%Y"))';
-            $where[] = 'm.mem_birthdate LIKE :umur';
-            $attr[':umur'] = "'%$umur%'";
+            $umurArr = explode(' - ', $filter['umur']);
+            $where[] = "DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), FROM_UNIXTIME(m.mem_birthdate))), '%Y')+0 BETWEEN :start AND :end";
+            $attr[':start'] = $umurArr[0];
+            $attr[':end'] = $umurArr[1];
         }
 
-        if($filter['gender'] != 2){
+        if(isset($filter['gender']) &&  $filter['gender'] != 2){
             $gender = $filter['gender'];
             $where[] = 'm.mem_gender=:gender';
-            $attr[':gender'] = "'%$gender%'";
+            $attr[':gender'] = $gender;
+        }
+
+        if(isset($filter['region']) && !empty($filter['region']))
+        {
+            $region = $filter['region'];
+            $where[] = '';
+            $attr[':region'] = $region;
+        }
+
+        if(isset($filter['interest']) && !empty($filter['interest']))
+        {
+
         }
 
         $data = Yii::app()->db->createCommand()
-            ->from('tbl_member m')
-            ->leftJoin('tbl_user u', 'm.mem_user_id = u.usr_id')
+            ->from('tbl_member AS m')
+            ->leftJoin('tbl_user AS u', 'm.mem_user_id = u.usr_id')
             ->where($where, $attr)
         ;
 
-        $filteredData = count($data->queryAll());
-        $data = $data->offset($filter['iDisplayStart'])->limit($filter['iDisplayLength']);
-
         return array(
-            "sEcho" => $filter['sEcho'],
-            'aaData' => $data->queryAll(),
-            'iTotalRecords' => $allData,
-            'iTotalDisplayRecords' => $filteredData
+            'total_target' => count($data->queryAll()),
         );
     }
 }

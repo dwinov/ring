@@ -798,23 +798,23 @@ $(function()
 	/*
 	 * JQueryUI Slider: Range Slider
 	 */
-	if ($('.range-slider').size() > 0)
-    {
-		$( ".range-slider .slider" ).slider({
-			create: JQSliderCreate,
-	        range: true,
-	        min: 0,
-	        max: 500,
-	        values: [ 75, 300 ],
-	        slide: function( event, ui ) {
-	            $( ".range-slider #amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-	        },
-	        start: function() { if (typeof mainYScroller != 'undefined') mainYScroller.disable(); },
-	        stop: function() { if (typeof mainYScroller != 'undefined') mainYScroller.enable(); }
-	    });
-    	$( ".range-slider #amount" ).val( "$" + $( ".range-slider .slider" ).slider( "values", 0 ) +
-    			" - $" + $( ".range-slider .slider" ).slider( "values", 1 ) );
-    }
+//	if ($('.range-slider').size() > 0)
+//    {
+//		$( ".range-slider .slider" ).slider({
+//			create: JQSliderCreate,
+//	        range: true,
+//	        min: 18,
+//	        max: 80,
+//	        values: [ 18, 25 ],
+//	        slide: function( event, ui ) {
+//	            $( ".range-slider #umur" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+//	        },
+////	        start: function() { if (typeof mainYScroller != 'undefined') mainYScroller.disable(); },
+////	        stop: function() { if (typeof mainYScroller != 'undefined') mainYScroller.enable(); }
+//	    });
+//    	$( ".range-slider #umur" ).val( $( ".range-slider .slider" ).slider( "values", 0 ) +
+//    			" - " + $( ".range-slider .slider" ).slider( "values", 1 ) );
+//    }
 	
 	/*
 	 * JQueryUI Slider: Snap to Increments

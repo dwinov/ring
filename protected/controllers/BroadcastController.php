@@ -15,7 +15,7 @@ class BroadcastController extends Controller
         if(Yii::app()->request->isAjaxRequest)
         {
             $model = new Member();
-            $data = $model->getAllMember($_GET);
+            $data = $model->getAllMember($_POST);
             echo CJavaScript::jsonEncode($data);
             Yii::app()->end();
         }
@@ -26,7 +26,19 @@ class BroadcastController extends Controller
     public function actionSend()
     {
         if(isset($_POST['type_email']) && isset($_POST['type_inbox'])){
+            if(isset($_POST['list_member']))
+            {
+                if(count($_POST['list_member']) > 0 && count($_POST['list_member']) == 1)
+                {
 
+                }elseif(count($_POST['list_member']) > 0 && count($_POST['list_member']) > 1){
+                    $memArr = explode(',', $_POST['list_member']);
+                    for($i = 0; $i < count($memArr); $i++)
+                    {
+
+                    }
+                }
+            }
         }elseif(isset($_POST['type_email'])){
             if(isset($_POST['list_member']))
             {
@@ -44,7 +56,19 @@ class BroadcastController extends Controller
                 }
             }
         }elseif(isset($_POST['type_inbox'])){
+            if(isset($_POST['list_member']))
+            {
+                if(count($_POST['list_member']) > 0 && count($_POST['list_member']) == 1)
+                {
 
+                }elseif(count($_POST['list_member']) > 0 && count($_POST['list_member']) > 1){
+                    $memArr = explode(',', $_POST['list_member']);
+                    for($i = 0; $i < count($memArr); $i++)
+                    {
+
+                    }
+                }
+            }
         }
 
         $this->redirect(array('broadcast/index'));
