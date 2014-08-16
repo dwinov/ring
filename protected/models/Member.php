@@ -160,9 +160,13 @@ class Member extends CActiveRecord
             array_push($members, $res['mem_id']);
         }
 
+        $cb = CreditBroadcast::model()->findByPk(1);
+
+
         return array(
             'members_id' => implode(',', $members),
             'total_target' => count($result),
+            'credit_cb' => $cb->cb_value
         );
     }
 }

@@ -145,7 +145,7 @@
                         <label>Credits For This Broadcast:</label>
                         <div class="right">
                             <div class="input-append">
-                                <label>100</label>
+                                <label id="credit-pay">100</label>
                             </div>
                         </div>
                     </li>
@@ -230,6 +230,7 @@
                 $.post(document.location.href, { region: reg, gender: gen, interest: int, umur: age }, function(data){
                     $('#total-group').html(data.total_target);
                     $('#list_member').val(data.members_id);
+                    $('#credit-pay').html(data.total_target * data.credit_cb);
                 }, "json");
             }
         });
