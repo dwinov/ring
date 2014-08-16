@@ -125,6 +125,7 @@
             <ul class="navigasi">
                 <li class="glyphicons home"><a href="<?php echo Yii::app()->createUrl('dashboard/index'); ?>"><i></i><span>Dashboard</span></a></li>
                 <li class="glyphicons user"><a href="<?php echo Yii::app()->createUrl('member/index'); ?>"><i></i><span>Profile</span></a></li>
+                <li class="glyphicons user"><a href="<?php echo Yii::app()->createUrl('credit/index'); ?>"><i></i><span>Credit</span></a></li>
                 <?php if(Yii::app()->user->roleid == 2){ ?>
                     <?php
                     $model = new Eo();

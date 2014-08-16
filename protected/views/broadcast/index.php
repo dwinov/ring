@@ -153,7 +153,7 @@
                         <label>Your Total Credits:</label>
                         <div class="right">
                             <div class="input-append">
-                                <label>100</label>
+                                <label><?php echo $credit['crt_credit']; ?></label>
                             </div>
                         </div>
                     </li>

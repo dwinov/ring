@@ -21,14 +21,17 @@ class BroadcastController extends Controller
         }
 
         $model_eo = new Eo();
+        $model_credit = new Credit();
         $eo = $model_eo->getEoByUserId(Yii::app()->user->usrid);
         $list_interest = Interest::model()->findAll();
         $list_region = Region::model()->findAll();
+        $credit = $model_credit->getCreditByEoId($eo['eo_id']);
 
         $this->render('index', array(
             'interest' => $list_interest,
             'region' => $list_region,
-            'eo_id' => $eo['eo_id']
+            'eo_id' => $eo['eo_id'],
+            'credit' => $credit
         ));
     }
 
