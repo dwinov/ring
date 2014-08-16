@@ -111,7 +111,7 @@
                     </div>
                 </div>
 
-                <?php if(Yii::app()->user->roleid == 2){ ?>
+                <?php if(Yii::app()->user->roleid == 2 || Yii::app()->user->roleid == 1){ ?>
                 <div class="tab-pane" id="eo">
                     <div class="widget widget-2">
                         <div class="widget-head">

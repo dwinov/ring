@@ -25,7 +25,7 @@ class EventController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete'),
+                'actions' => array('index','create', 'update', 'delete', 'uploader', 'detail'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 1'
             ),
@@ -198,6 +198,15 @@ class EventController extends Controller
         }elseif(Yii::app()->user->roleid == 3){
             $this->render('detail', array(
                 'model' => $event,
+                'venue' => $venue,
+                'glr_event' => $glr,
+                'ticket' => $ticket
+            ));
+        }elseif(Yii::app()->user->roleid == 1){
+            $eo = $model_eo->getEoById($event->evt_owner_id);
+            $this->render('detail', array(
+                'model' => $event,
+                'eo' => $eo,
                 'venue' => $venue,
                 'glr_event' => $glr,
                 'ticket' => $ticket
