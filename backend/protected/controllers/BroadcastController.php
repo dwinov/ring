@@ -20,7 +20,12 @@ class BroadcastController extends Controller
             Yii::app()->end();
         }
 
-        $this->render('index');
+        $model_eo = new Eo();
+        $eo = $model_eo->getEoByUserId(Yii::app()->user->usrid);
+
+        $this->render('index', array(
+            'eo_id' => $eo['eo_id']
+        ));
     }
 
     public function actionSend()
@@ -28,29 +33,31 @@ class BroadcastController extends Controller
         if(isset($_POST['type_email']) && isset($_POST['type_inbox'])){
             if(isset($_POST['list_member']))
             {
-                if(count($_POST['list_member']) > 0 && count($_POST['list_member']) == 1)
+                $listMembersArr = explode(',', $_POST['list_member']);
+                if(count($listMembersArr) > 0)
                 {
-
-                }elseif(count($_POST['list_member']) > 0 && count($_POST['list_member']) > 1){
-                    $memArr = explode(',', $_POST['list_member']);
-                    for($i = 0; $i < count($memArr); $i++)
+                    $model_inbox = new Inbox();
+                    $input = array();
+                    for($i = 0; $i < count($listMembersArr); $i++)
                     {
-
+                        $model = Member::model()->findByAttributes(array('mem_id' => $listMembersArr[$i]));
+                        $input['ibx_mem_id'] = $listMembersArr[$i];
+                        $input['ibx_sender_id'] = $_POST['eo_id'];
+                        $input['ibx_msg'] = $_POST['message'];
+                        $model_inbox->insertData($input);
+                        Helper::sendEmail('broadcast',$model, 'Broadcast Event');
                     }
                 }
             }
         }elseif(isset($_POST['type_email'])){
             if(isset($_POST['list_member']))
             {
-                if(count($_POST['list_member']) > 0 && count($_POST['list_member']) == 1)
+                $listMembersArr = explode(',', $_POST['list_member']);
+                if(count($listMembersArr) > 0)
                 {
-                    $model = User::model()->findByAttributes(array('mem_id' => $_POST['list_member']));
-                    Helper::sendEmail('broadcast',$model, 'Broadcast Event');
-                }elseif(count($_POST['list_member']) > 0 && count($_POST['list_member']) > 1){
-                    $memArr = explode(',', $_POST['list_member']);
-                    for($i = 0; $i < count($memArr); $i++)
+                    for($i = 0; $i < count(listMembersArr); $i++)
                     {
-                        $model = User::model()->findByAttributes(array('mem_id' => $memArr[$i]));
+                        $model = Member::model()->findByAttributes(array('mem_id' => $listMembersArr[$i]));
                         Helper::sendEmail('broadcast',$model, 'Broadcast Event');
                     }
                 }
@@ -58,14 +65,17 @@ class BroadcastController extends Controller
         }elseif(isset($_POST['type_inbox'])){
             if(isset($_POST['list_member']))
             {
-                if(count($_POST['list_member']) > 0 && count($_POST['list_member']) == 1)
+                $listMembersArr = explode(',', $_POST['list_member']);
+                if(count($listMembersArr) > 0)
                 {
-
-                }elseif(count($_POST['list_member']) > 0 && count($_POST['list_member']) > 1){
-                    $memArr = explode(',', $_POST['list_member']);
-                    for($i = 0; $i < count($memArr); $i++)
+                    $model_inbox = new Inbox();
+                    $input = array();
+                    for($i = 0; $i < count($listMembersArr); $i++)
                     {
-
+                        $input['ibx_mem_id'] = $listMembersArr[$i];
+                        $input['ibx_sender_id'] = $_POST['eo_id'];
+                        $input['ibx_msg'] = $_POST['message'];
+                        $model_inbox->insertData($input);
                     }
                 }
             }

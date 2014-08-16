@@ -141,7 +141,7 @@ class Member extends CActiveRecord
             $intArr = explode(',', $filter['interest']);
             for($x = 0; $x < count($intArr); $x++)
             {
-                $where[] = 'm.mem_reg_id=:interest'.$x;
+                $where[] = 'mi.mint_int_id=:interest'.$x;
                 $attr[':interest'.$x] = $intArr[$x];
             }
         }
@@ -149,11 +149,20 @@ class Member extends CActiveRecord
         $data = Yii::app()->db->createCommand()
             ->from('tbl_member AS m')
             ->leftJoin('tbl_user AS u', 'm.mem_user_id = u.usr_id')
+            ->leftJoin('tbl_mem_int as mi', 'mem_id = mi.mint_mem_id')
             ->where($where, $attr)
         ;
 
+        $result = $data->queryAll();
+        $members = array();
+        foreach($result as $res)
+        {
+            array_push($members, $res['mem_id']);
+        }
+
         return array(
-            'total_target' => count($data->queryAll()),
+            'members_id' => implode(',', $members),
+            'total_target' => count($result),
         );
     }
 }

@@ -32,6 +32,7 @@
 
             <div class="widget-body" style="padding-bottom: 0;">
                 <?php echo CHtml::hiddenField('list_member', '', array('id' => 'list_member')); ?>
+                <?php echo CHtml::hiddenField('eo_id', $eo_id); ?>
                 <div class="control-group">
 <!--                    <label class="control-label">Type</label>-->
                     <div class="controls">
@@ -40,7 +41,7 @@
                             Email
                         </label>
                         <label class="checkbox inline">
-                            <input type="checkbox" class="checkbox" value="sms" checked="checked" />
+                            <input type="checkbox" class="checkbox" value="sms" />
                             SMS
                         </label>
                         <label class="checkbox inline">
@@ -182,7 +183,7 @@
                     range: true,
                     min: 18,
                     max: 80,
-                    values: [ 18, 25 ],
+                    values: [ 18, 27 ],
                     slide: function( event, ui ) {
                         $( ".range-slider #umur" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                         getDataMember($('#tamp-region').val(), $('#gender').val(), $('#tamp-interest').val(), ui.values[ 0 ] + " - " + ui.values[ 1 ]);
@@ -228,6 +229,7 @@
             {
                 $.post(document.location.href, { region: reg, gender: gen, interest: int, umur: age }, function(data){
                     $('#total-group').html(data.total_target);
+                    $('#list_member').val(data.members_id);
                 }, "json");
             }
         });
