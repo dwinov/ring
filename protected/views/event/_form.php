@@ -15,7 +15,7 @@
 
                 <div class="widget widget-2 primary widget-body-white">
                     <div class="widget-head">
-                        <h4 class="heading glyphicons edit"><i></i>Event Organizer details</h4>
+                        <h4 class="heading glyphicons edit"><i></i>Event Details</h4>
                     </div>
 
                     <?php echo (isset($model)) ? Chtml::hiddenField('Event[evt_id]', $model->evt_id) : null; ?>
@@ -144,6 +144,30 @@
                 </div>
             </div>
         </div>
+
+        <div id="ticket-picture">
+            <div class="widget widget-2 primary widget-body-white">
+                <div class="widget-head">
+                    <h4 class="heading glyphicons picture"><i></i>Ticket Picture</h4>
+                </div>
+                <div class="widget-body center">
+                    <div class="fileupload fileupload-new" data-provides="fileupload" data-name="tiketpic">
+
+                        <?php if(!empty($model->evt_photo)){ ?>
+                            <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . $model->evt_photo; ?>" width="202" height="188" /></div>
+                        <?php }else{ ?>
+                            <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . '/images/232323.gif'; ?>" /></div>
+                        <?php } ?>
+
+                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 100%;"></div>
+                        <div>
+                            <span class="btn btn-file btn-inverse btn-icon glyphicons picture"><i></i><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                            <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 <?php echo CHtml::endForm(); ?>
 
@@ -154,6 +178,7 @@
             window.onload = function(){
                 if(ticket != '1'){
                     $('#tiket').hide();
+                    $('#ticket-picture').hide();
                 }
             }
 
@@ -161,8 +186,10 @@
                 if($(this).attr('checked'))
                 {
                     $('#tiket').show();
+                    $('#ticket-picture').show();
                 }else{
                     $('#tiket').hide();
+                    $('#ticket-picture').hide();
                 }
             });
 

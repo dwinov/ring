@@ -19,9 +19,9 @@ class Helper
         return md5($randomString);
     }
 
-    public static function uploadImage($file, $folder)
+    public static function uploadImage($file, $folder, $myimage = 'myimage')
     {
-        $file_image = CUploadedFile::getInstanceByName('myimage');
+        $file_image = CUploadedFile::getInstanceByName($myimage);
 
         $filename = md5($file_image->name);
         $type = explode('.', $file_image->name);

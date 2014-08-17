@@ -186,7 +186,8 @@ class Event extends CActiveRecord
                     if($result == false)
                         return false;
                 }
-
+                $model->evt_photo_event = (count($file) != 0) ? Helper::uploadImage($file, 'event', 'tiketpic') : null;
+                $model->save();
                 return true;
             }else{
                 return true;

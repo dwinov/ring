@@ -33,6 +33,7 @@
             <div class="widget-body" style="padding-bottom: 0;">
                 <?php echo CHtml::hiddenField('list_member', '', array('id' => 'list_member')); ?>
                 <?php echo CHtml::hiddenField('eo_id', $eo_id); ?>
+                <?php echo CHtml::hiddenField('payment', '', array('id' => 'payment')); ?>
                 <div class="control-group">
 <!--                    <label class="control-label">Type</label>-->
                     <div class="controls">
@@ -137,7 +138,7 @@
                         <label>Total Target Group:</label>
                         <div class="right">
                             <div class="input-append">
-                                <label id="total-group">100</label>
+                                <label id="total-group"></label>
                             </div>
                         </div>
                     </li>
@@ -145,7 +146,7 @@
                         <label>Credits For This Broadcast:</label>
                         <div class="right">
                             <div class="input-append">
-                                <label id="credit-pay">100</label>
+                                <label id="credit-pay"></label>
                             </div>
                         </div>
                     </li>
@@ -195,7 +196,7 @@
                     " - " + $( ".range-slider .slider" ).slider( "values", 1 ) );
             }
 
-            $("#gender-both, #gender-male, #gender-female, #interest").change(function() {
+            $("#gender-both, #gender-male, #gender-female").change(function() {
                 if($('#gender-both').attr('checked') == 'checked'){
                     getDataMember($('#tamp-region').val(), $('#gender-both').val(), $('#tamp-interest').val(), $('#umur').val());
                 }else if($('#gender-male').attr('checked') == 'checked'){
@@ -231,6 +232,7 @@
                     $('#total-group').html(data.total_target);
                     $('#list_member').val(data.members_id);
                     $('#credit-pay').html(data.total_target * data.credit_cb);
+                    $('#payment').val(data.total_target * data.credit_cb);
                 }, "json");
             }
         });

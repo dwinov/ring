@@ -16,7 +16,7 @@
 </ul>
 <div class="separator"></div>
 
-<h2 class="glyphicons user"><i></i> Create Event Organizer</h2>
+<h2 class="glyphicons user"><i></i> Create Event</h2>
 <div class="separator"></div>
 
 <div class="row-fluid">
