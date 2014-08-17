@@ -41,7 +41,14 @@ class VenueController extends ParentController
             if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
             {
                 $venue = Venue::model()->findAll();
-                $result = CHtml::listData($venue, 'vn_id', 'vn_name');
+                $result = array();
+                foreach($venue as $vn)
+                {
+                    $tamp = array();
+                    $tamp['vn_id'] = $vn->vn_id;
+                    $tamp['vn_name'] = $vn->vn_name;
+                    array_push($result, $tamp);
+                }
                 $this->sendAjaxResponse($result);
             }else{
                 $result = array('result' => false, 'value' => "Token is expaired");

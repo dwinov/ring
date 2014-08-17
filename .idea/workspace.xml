@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e8e509d-b021-43ea-8313-ae2ae2526bdf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/apis/controllers/DefaultController.php" afterPath="$PROJECT_DIR$/protected/modules/apis/controllers/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/apis/controllers/EoController.php" afterPath="$PROJECT_DIR$/protected/modules/apis/controllers/EoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/apis/controllers/VenueController.php" afterPath="$PROJECT_DIR$/protected/modules/apis/controllers/VenueController.php" />
     </list>
     <ignored path="ring.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,10 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EoController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EoController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/apis/controllers/EoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="13" selection-start="2287" selection-end="2287" vertical-scroll-proportion="0.106687896" vertical-offset="1021" max-vertical-offset="1649">
+            <state line="91" column="14" selection-start="3020" selection-end="3020" vertical-scroll-proportion="-16.961538" vertical-offset="1021" max-vertical-offset="1649">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VenueController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/modules/apis/controllers/VenueController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="36" selection-start="1297" selection-end="1297" vertical-scroll-proportion="0.44267517" vertical-offset="419" max-vertical-offset="1360">
               <folding />
             </state>
           </provider>
@@ -48,7 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/backend/protected/views/interest/_form.php" />
         <option value="$PROJECT_DIR$/backend/protected/views/interest/update.php" />
         <option value="$PROJECT_DIR$/backend/protected/models/Interest.php" />
         <option value="$PROJECT_DIR$/backend/protected/controllers/InterestController.php" />
@@ -99,6 +106,7 @@
         <option value="$PROJECT_DIR$/protected/views/site/index.php" />
         <option value="$PROJECT_DIR$/protected/modules/apis/controllers/DefaultController.php" />
         <option value="$PROJECT_DIR$/protected/modules/apis/controllers/EoController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/apis/controllers/VenueController.php" />
       </list>
     </option>
   </component>
@@ -306,11 +314,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/protected/modules/apis/controllers/EoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="56" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.5318471" vertical-offset="652" max-vertical-offset="1649" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/protected/views/broadcast/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="207" column="62" selection-start="9304" selection-end="9304" vertical-scroll-proportion="0.72357726" vertical-offset="2989" max-vertical-offset="3621" />
@@ -627,7 +630,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/apis/controllers/EoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="13" selection-start="2287" selection-end="2287" vertical-scroll-proportion="0.106687896" vertical-offset="1021" max-vertical-offset="1649">
+        <state line="91" column="14" selection-start="3020" selection-end="3020" vertical-scroll-proportion="-16.961538" vertical-offset="1021" max-vertical-offset="1649">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/apis/controllers/VenueController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="36" selection-start="1297" selection-end="1297" vertical-scroll-proportion="0.44267517" vertical-offset="419" max-vertical-offset="1360">
           <folding />
         </state>
       </provider>
