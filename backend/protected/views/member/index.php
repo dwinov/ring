@@ -8,129 +8,113 @@
 ?>
 
     <ul class="breadcrumb">
-        <li><a href="index.html?lang=en" class="glyphicons home"><i></i> BootAdmin</a></li>
+        <li><a href="<?php echo Yii::app()->createUrl('dashboard/index'); ?>" class="glyphicons home"><i></i> Dashboard</a></li>
         <li class="divider"></li>
-        <li>Add New EO</li>
-    </ul>
-    <div class="separator"></div>
+        <li>Manage Member</li>
+    </ul><br/>
 
-    <h2 class="glyphicons user"><i></i> Create Event Organizer</h2>
-    <div class="separator"></div>
-
-    <div class="row-fluid">
-
-        <?php echo CHtml::beginForm(Yii::app()->createUrl('member/update'), 'post', array()); ?>
-        <div class="span9">
-            <div class="tab-content" style="padding: 0;">
-                <div class="tab-pane active" id="account-details">
-
-                    <div class="widget widget-2 primary widget-body-white">
-                        <div class="widget-head">
-                            <h4 class="heading glyphicons edit"><i></i>Memeber Profile</h4>
-                        </div>
-
-                        <div class="widget-body" style="padding-bottom: 0;">
-                            <div class="row-fluid">
-                                <div class="span6">
-                                    <div class="control-group">
-                                        <label class="control-label">First Name</label>
-                                        <div class="controls">
-                                            <?php echo CHtml::hiddenField('Member[mem_id]', $model->mem_id); ?>
-                                            <?php echo CHtml::textField('Member[mem_first_name]', $model->mem_first_name, array('class' => 'span6')); ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label class="control-label">Last Name</label>
-                                        <div class="controls">
-                                            <?php echo CHtml::textField('Member[mem_last_name]', $model->mem_first_name, array('class' => 'span6')); ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label class="control-label">Mobile Number</label>
-                                        <div class="controls">
-                                            <?php echo CHtml::textField('Member[mem_phone]', $model->mem_phone, array('class' => 'span6')); ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label class="control-label">Email</label>
-                                        <div class="controls">
-                                            <?php echo CHtml::textField('Member[mem_email]', $model->mem_email, array('class' => 'span6')); ?>
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label class="control-label">Gender</label>
-                                        <div class="controls">
-                                            <?php
-                                            $man = ($model->mem_gender == 1) ? true : false;
-                                            $woman = ($model->mem_gender == 0) ? true : false;
-                                            ?>
-                                            <label class="radio-inline">
-                                                <?php echo CHtml::radioButton('Member[mem_gender]', $man, array(
-                                                    'class' => 'radio',
-                                                    'value' => '1',
-                                                )); ?>
-                                                Man
-                                            </label>
-                                            <label class="radio-inline">
-                                                <?php echo CHtml::radioButton('Member[mem_gender]', $woman, array(
-                                                    'class' => 'radio',
-                                                    'value' => '0',
-                                                )); ?>
-                                                Woman
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="separator bottom" />
-                            <div class="control-group">
-                                <label class="control-label">About Me</label>
-                                <div class="controls">
-                                    <?php echo CHtml::textArea('Member[mem_about_me]', $model->mem_about_me,
-                                        array(
-//                                'id' => 'mustHaveId',
-                                            'class' => 'wysihtml5 span12',
-                                            'rows' => '5'
-                                        )); ?>
-                                </div>
-                            </div>
-
-                            <div class="form-actions" style="margin: 0;">
-                                <?php echo CHtml::submitButton('Save Change', array('class' => 'btn btn-primary btn-icon glyphicons ok_2')); ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="heading-buttons">
+        <h2 class="glyphicons group"><i></i> Manage Member</h2>
+        <div class="buttons pull-right">
+            <a href="<?php echo Yii::app()->createUrl('member/create'); ?>" class="btn btn-primary btn-icon glyphicons circle_plus"><i></i> Add New Member</a>
         </div>
-
-        <div class="span3">
-            <div class="widget widget-2 primary widget-body-white">
-                <div class="widget-head">
-                    <h4 class="heading glyphicons picture"><i></i>Profile image</h4>
-                </div>
-                <div class="widget-body center">
-                    <div class="fileupload fileupload-new" data-provides="fileupload" data-name="myimage">
-
-                        <?php if(!empty($model->eo_photo)){ ?>
-                            <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . $model->eo_photo; ?>" width="202" height="188" /></div>
-                        <?php }else{ ?>
-                            <div class="fileupload-new thumbnail"><img src="http://www.placehold.it/202x188/232323" /></div>
-                        <?php } ?>
-
-                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 100%;"></div>
-                        <div>
-                            <span class="btn btn-file btn-inverse btn-icon glyphicons picture"><i></i><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
-                            <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php echo CHtml::endForm(); ?>
-
     </div>
+    <div class="separator"></div>
+
+    <div class="relativeWrap">
+        <div class="widget widget-gray widget-gray-white">
+            <div class="widget-head">
+                <h4 class="heading">List Member</h4>
+            </div>
+            <div class="widget-body">
+                <table id="basic-datatabel" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-primary table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- dialog box -->
+    <div id="dialog" title="Delete Event Organizer" style="display: none;">
+        <p>Are you sure?</p>
+    </div>
+
+<?php $this->beginClip('js-page-end'); ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var $dataTable = $("#basic-datatabel").dataTable({
+                bServerSide: true,
+                sAjaxSource: document.location.href,
+                "sPaginationType": "bootstrap",
+                aoColumns: [
+                    {
+                        mData: "mem_screen_name",
+                        sWidth: "10%",
+                        bSortable: true
+                    },
+                    {
+                        mData: "mem_email",
+                        sWidth: "10%",
+                        sClass: "center",
+                        bSortable: true
+                    },
+                    {
+                        mData: "mem_gender",
+                        sWidth: "10%",
+                        sClass: "center",
+                        bSortable: true,
+                        mRender: function(data, type, all) {
+                            return  (data == 1) ? 'Male' : 'Female';
+                        }
+                    },
+                    {
+                        mData: 'mem_id',
+                        sWidth: "8%",
+                        sClass: "center",
+                        mRender: function(data, type, all) {
+                            var btns = new Array();
+                            btns.push("<a class='btn-action glyphicons pencil btn-success' href='<?php echo Yii::app()->createUrl('member/update'); ?>/id/" + data + "' title='Edit'><i></i></a> ");
+                            btns.push("<a class='btn-action glyphicons remove_2 btn-danger' data-delete href='<?php echo Yii::app()->createUrl('member/delete'); ?>/id/" + data + "' title='Delete'><i></i></a>");
+                            return  btns.join("&nbsp;");
+                        }
+                    }
+                ],
+                fnServerParams: function(aoData) {
+                    aoData.push({name: "date", value: $("#date").val()});
+                    aoData.push({name: "time", value: $("#time").val()});
+                }
+            });
+
+            $dataTable.on('click', 'a[data-delete]', function(e) {
+                var delkodel = $(this);
+                $('#dialog').dialog({
+                    width: 500,
+                    modal: true,
+                    buttons: {
+                        "Delete" : function(){
+                            $.post(delkodel.attr('href'), {_method: 'delete'}, function(r) {
+                                $dataTable.fnReloadAjax();
+                            });
+                            $(this).dialog("close");
+                        },
+                        "Cancel" : function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+                e.preventDefault();
+            });
+
+            $("#date, #time").change(function() {
+                $dataTable.fnReloadAjax();
+            });
+        });
+    </script>
+<?php echo $this->endClip(); ?>

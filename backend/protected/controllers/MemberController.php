@@ -12,12 +12,25 @@ class MemberController extends Controller
 
     public function actionIndex()
     {
+        if(Yii::app()->request->isAjaxRequest)
+        {
+            $model = new Member();
+            $data = $model->getAllData($_GET);
+            echo CJavaScript::jsonEncode($data);
+            Yii::app()->end();
+        }
+
+        $this->render('index');
+    }
+
+    public function actionCreate()
+    {
         $model = Member::model()->find('mem_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
         $eo = Eo::model()->find('eo_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
         $venue = Venue::model()->find('vn_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
         $list_venue = Venue::model()->findAll();
 
-        $this->render('index', array(
+        $this->render('create', array(
             'model' => $model,
             'eo' => $eo,
             'venue' => $venue,
@@ -70,12 +83,18 @@ class MemberController extends Controller
 
     public function actionUpdate()
     {
+        $model = new Member();
+
         if(isset($_POST['Member']))
         {
-            $model = new Member();
-
             if($model->updateMember($_POST))
                 $this->redirect(Yii::app()->createUrl('member/index'));
         }
+
+        $data = $model->getMemberById($_REQUEST['id']);
+
+        $this->render('update', array(
+            'model' => $data,
+        ));
     }
 }

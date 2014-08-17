@@ -105,47 +105,37 @@ class Member extends CActiveRecord
         return ($model->save()) ? true : false;
     }
 
-    public function getAllMember($filter)
+    public function getAllData($filter)
     {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_member')
+        ;
+
         $attr = array();
         $where = array('and');
 
-        $where[] = 'u.usr_type_id=:type_id';
-        $attr[':type_id'] = 4;
+        $allData = count($data->queryAll());
 
-        if(!empty($filter['umur'])){
-            $umurArr = explode(' - ', $filter['umur']);
-            $where[] = "DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), FROM_UNIXTIME(m.mem_birthdate))), '%Y')+0 BETWEEN :start AND :end";
-            $attr[':start'] = $umurArr[0];
-            $attr[':end'] = $umurArr[1];
-        }
-
-        if(isset($filter['gender']) &&  $filter['gender'] != 2){
-            $gender = $filter['gender'];
-            $where[] = 'm.mem_gender=:gender';
-            $attr[':gender'] = $gender;
-        }
-
-        if(isset($filter['region']) && !empty($filter['region']))
-        {
-            $region = $filter['region'];
-            $where[] = '';
-            $attr[':region'] = $region;
-        }
-
-        if(isset($filter['interest']) && !empty($filter['interest']))
-        {
-
+        //search specific record
+        if(!empty($filter['sSearch'])){
+            $search = $filter['sSearch'];
+            $where[] = 'eo_screen_name LIKE :name OR eo_email LIKE :name';
+            $attr[':name'] = "'%$search%'";
         }
 
         $data = Yii::app()->db->createCommand()
-            ->from('tbl_member AS m')
-            ->leftJoin('tbl_user AS u', 'm.mem_user_id = u.usr_id')
+            ->from('tbl_member')
             ->where($where, $attr)
         ;
 
+        $filteredData = count($data->queryAll());
+        $data = $data->offset($filter['iDisplayStart'])->limit($filter['iDisplayLength']);
+
         return array(
-            'total_target' => count($data->queryAll()),
+            "sEcho" => $filter['sEcho'],
+            'aaData' => $data->queryAll(),
+            'iTotalRecords' => $allData,
+            'iTotalDisplayRecords' => $filteredData
         );
     }
 }
