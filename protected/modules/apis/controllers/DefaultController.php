@@ -9,11 +9,14 @@ class DefaultController extends ParentController
         $user = User::model()->find('usr_email=:email', array(':email' => $_POST['username']));
         if($user != null && md5($_POST['password']) == $user->usr_password)
         {
+			$member = new Member();
             $token = Helper::generateToken();
             $user->usr_token = $token;
             $user->save();
-            $result = array('result' => true, 'value' => $token);
-            $this->sendAjaxResponseString($result);
+            $result = $member->getMemberByUserId($user->usr_id);
+			$result['usr_id'] = $user->usr_id;
+			$result['usr_type_id'] = $user->usr_type_id;
+            $this->sendAjaxResponse($result);
         }else{
             $result = array('result' => false, 'value' => "Login Failed");
             $this->sendAjaxResponseString($result);

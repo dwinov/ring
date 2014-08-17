@@ -101,4 +101,12 @@ class Credit extends CActiveRecord
 
         return ($model->save()) ? true : false;
     }
+
+    public function payment($eo_id, $payment)
+    {
+        $model = Credit::model()->findByAttributes(array('crt_eo_id' => $eo_id));
+        $model->crt_credit = $model->crt_credit - $payment;
+
+        return ($model->save()) ? true : false;
+    }
 }

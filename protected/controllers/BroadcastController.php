@@ -56,6 +56,8 @@ class BroadcastController extends Controller
                         $model_inbox->insertData($input);
                         Helper::sendEmail('broadcast',$model, 'Broadcast Event');
                     }
+                    $credit = new Credit();
+                    $result_credit = $credit->payment($_POST['eo_id'], $_POST['payment']);
                 }
             }
         }elseif(isset($_POST['type_email'])){

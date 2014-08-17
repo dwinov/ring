@@ -79,17 +79,17 @@
 
             <div class="widget-body list list-2 fluid js-filters form-inline small">
                 <ul>
-                    <li class="right">
-                        <label class="span4">Region:</label>
-                        <div class="right">
-                            <select multiple class="span8" id="region" name="region" style="height: 60px;">
-                                <?php foreach($region as $reg){ ?>
-                                <option value="<?php echo $reg->reg_id; ?>"><?php echo $reg->reg_name; ?></option>
-                                <?php } ?>
-                                <?php echo CHtml::hiddenField('tamp_region', '', array('id' => 'tamp-region')); ?>
-                            </select>
-                        </div>
-                    </li>
+<!--                    <li class="right">-->
+<!--                        <label class="span4">Region:</label>-->
+<!--                        <div class="right">-->
+<!--                            <select multiple class="span8" id="region" name="region" style="height: 60px;">-->
+<!--                                --><?php //foreach($region as $reg){ ?>
+<!--                                <option value="--><?php //echo $reg->reg_id; ?><!--">--><?php //echo $reg->reg_name; ?><!--</option>-->
+<!--                                --><?php //} ?>
+<!--                                --><?php //echo CHtml::hiddenField('tamp_region', '', array('id' => 'tamp-region')); ?>
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </li>-->
                     <li>
                         <label class="span4">Age:</label>
                         <div class="right">
@@ -102,7 +102,7 @@
                     <li>
                         <div class="right">
                             <label class="radio">
-                                <input type="radio" class="radio" id="gender-both" name="radioInline" value="2" />
+                                <input type="radio" class="radio" id="gender-both" name="radioInline" value="2" checked />
                                 Both
                             </label>
                             <label class="radio">
@@ -115,17 +115,17 @@
                             </label>
                         </div>
                     </li>
-                    <li>
-                        <label class="span4">Interest:</label>
-                        <div class="right">
-                            <select multiple class="span8" id="interest" name="interest" style="height: 60px;">
-                                <?php foreach($interest as $int){ ?>
-                                <option value="<?php echo $int->int_id ?>"><?php echo $int->int_name ?></option>
-                                <?php } ?>
-                                <?php echo CHtml::hiddenField('tamp_interest', '', array('id' => 'tamp-interest')); ?>
-                            </select>
-                        </div>
-                    </li>
+<!--                    <li>-->
+<!--                        <label class="span4">Interest:</label>-->
+<!--                        <div class="right">-->
+<!--                            <select multiple class="span8" id="interest" name="interest" style="height: 60px;">-->
+<!--                                --><?php //foreach($interest as $int){ ?>
+<!--                                <option value="--><?php //echo $int->int_id ?><!--">--><?php //echo $int->int_name ?><!--</option>-->
+<!--                                --><?php //} ?>
+<!--                                --><?php //echo CHtml::hiddenField('tamp_interest', '', array('id' => 'tamp-interest')); ?>
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </li>-->
                     <li>
                         <label>Own Database:</label>
                         <div class="right">
@@ -168,6 +168,7 @@
 <?php $this->beginClip('js-page-end'); ?>
     <script type="text/javascript">
         $(document).ready(function(){
+            getDataMember($('#tamp-region').val(), $('#gender-both').val(), $('#tamp-interest').val(), $('#umur').val());
             function JQSliderCreate()
             {
                 $(this)
@@ -184,7 +185,7 @@
                     range: true,
                     min: 18,
                     max: 80,
-                    values: [ 18, 27 ],
+                    values: [ 18, 80 ],
                     slide: function( event, ui ) {
                         $( ".range-slider #umur" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                         getDataMember($('#tamp-region').val(), $('#gender').val(), $('#tamp-interest').val(), ui.values[ 0 ] + " - " + ui.values[ 1 ]);
@@ -206,25 +207,20 @@
                 }
             });
 
-            $('#region').change(function(){
-                var region = [];
-                $('#region option:selected').each(function(){
-                    region.push($(this).val());
-                });
-                var regStr = region.join(',');
-                $('#tamp-region').val(regStr);
-                getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
-            });
 
-            $('#interest').change(function(){
-                var interest = [];
-                $('#interest option:selected').each(function(){
-                    interest.push($(this).val());
-                });
-                var intStr = interest.join(',');
-                $('#tamp-interest').val(intStr);
-                getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
-            });
+//            $('#region').change(function(){
+//                var region = $(this).val();
+//                var regStr = region.join(',');
+//                $('#tamp-region').val(regStr);
+//                getDataMember(region, $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
+//            });
+
+//            $('#interest').change(function(){
+//                var interest = $(this).val();
+//                var intStr = interest.join(',');
+//                $('#tamp-interest').val(intStr);
+//                getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
+//            });
 
             function getDataMember(reg, gen, int, age)
             {

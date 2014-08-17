@@ -1,0 +1,382 @@
+/* HTML5 Boilerplate  */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; line-height: 1.4; }
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #7d948b; color: #fff; text-shadow: none; }
+
+a { color: #00e; }
+a:visited { color: #7d948b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
+body {
+  background-color: #eeeeee;
+  color: #424242;
+}
+
+header {
+  width: 100%;
+}
+
+.slogan {
+  width: 770px;
+  margin: 0 auto;
+  padding: 25px;
+  border-bottom: 1px solid #D1D1D1;
+  text-align: center;
+}
+
+.share {
+  position: relative;
+  padding: 25px 25px 5px 25px;
+  margin: 0 auto;
+  width: 820px;
+  height: 40px;
+  text-align: center;
+}
+
+.share .facebook, .share .twittor, .share .google-plus {
+  position: absolute;
+  width: 130px;
+  height: 30px;
+  top: 30px;
+  display: inline;
+  padding: 0 10px;
+}
+
+.share .facebook {
+  left: 220px;
+}
+
+.share .twittor {
+  left: 380px;
+}
+
+.share .google-plus {
+  left: 520px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+}
+
+h3 a,
+h3 a:hover,
+h3 a:visited,
+h3 a:focus,
+h3 a:active,
+h3 a:link {
+  color: #424242;
+  text-decoration: none;
+}
+
+.blue {
+  color: #60A7FD;
+}
+
+#main{
+  width: 860px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.polaroid {
+  position: relative;
+  /*visibility: hidden;*/
+  float: left;
+  margin: 20px 0 0 20px;
+  width: 800px;
+  height: 415px;
+  z-index: 0;
+}
+
+.polaroid .image {
+  position: absolute;
+  z-index: 100;
+  padding-bottom: 90px;
+  background-color: white;
+
+  -moz-box-shadow:    0px 2px 7px -2px #999;
+  -webkit-box-shadow: 0px 2px 7px -2px #999;
+  box-shadow:         0px 2px 7px -2px #999;
+
+  -webkit-transition: all 350ms ease-out;
+     -moz-transition: all 350ms ease-out;
+      -ms-transition: all 350ms ease-out;
+       -o-transition: all 350ms ease-out;
+          transition: all 350ms ease-out;
+
+}
+
+.polaroid .image .inner-shadow {
+  position: absolute;
+  pointer-events: none;
+  width: 400px;
+  height: 400px;
+  top: 0;
+  left: 0;
+  -moz-box-shadow:    inset 0 0 1px #000000;
+  -webkit-box-shadow: inset 0 0 1px #000000;
+  box-shadow:         inset 0 0 1px #000000;
+  background-color: transparent;
+  background-image: url('../images/shadow.png');
+  background-repeat: no-repeat;
+  background-position: center 259px;
+}
+
+.polaroid .image .wrapper {
+  overflow: hidden;
+  width: 800px;
+  height: 310px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.polaroid .image .avatar {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 13px;
+  bottom: 60px;
+  border: 4px solid white;
+  overflow: hidden;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  background-repeat: norepeat;
+  background-position: center center;
+  background-size: cover;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+}
+
+.polaroid .image .handle,
+.polaroid .image .handle:hover,
+.polaroid .image .handle:link,
+.polaroid .image .handle:visited,
+.polaroid .image .handle:active,
+.polaroid .image .handle:focus {
+  position: absolute;
+  font-size: 21px;
+  font-weight: bold;
+  width: 320px;
+  height: 15px;
+  left: 100px;
+  bottom: 69px;
+  color: #5477CA;
+  text-decoration: none;
+}
+
+.polaroid .image .time-ago {
+  position: absolute;
+  font-size: 22px;
+  color: #B8B8B8;
+  width: 170px;
+  height: 43px;
+  right: 21px;
+  bottom: 18px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.polaroid .image .caption {
+  position: absolute;
+  font-size: 18px;
+  font-weight: normal;
+  width: 325px;
+  height: 25px;
+  left: 100px;
+  bottom: 35px;
+  overflow: hidden;
+}
+
+.polaroid .image .caption2 {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    width: 325px;
+    height: 25px;
+    left: 100px;
+    bottom: 11px;
+    overflow: hidden;
+}
+
+.polaroid .shadow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.1;
+  z-index: 50;
+  -webkit-transition: all 350ms ease-out;
+     -moz-transition: all 350ms ease-out;
+      -ms-transition: all 350ms ease-out;
+       -o-transition: all 350ms ease-out;
+          transition: all 350ms ease-out;
+}
+
+.polaroid.lifted .image {
+  opacity: 0.5;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.polaroid.lifted.rot1 .image {
+  -webkit-transform: rotateX(-15deg) rotateY(-20deg) rotateZ(-5deg) translate(-10px, 120px) translateZ(140px) scale(1.15);
+  -moz-transform: rotateX(-15deg) rotateY(-20deg) rotateZ(-5deg) translate(-10px, 120px) translateZ(140px) scale(1.15);
+  -o-transform: rotateX(-15deg) rotateY(-20deg) rotateZ(-5deg) translate(-10px, 120px) translateZ(140px) scale(1.15);
+  -ms-transform: rotateX(-15deg) rotateY(-20deg) rotateZ(-5deg) translate(-10px, 120px) translateZ(140px) scale(1.15);
+
+}
+.polaroid.lifted.rot2 .image {
+  -webkit-transform: rotateX(-15deg) rotateY(-10deg) rotateZ(-1deg) translate(-10px, 150px) translateZ(140px) scale(1.15);
+  -moz-transform: rotateX(-15deg) rotateY(-10deg) rotateZ(-1deg) translate(-10px, 150px) translateZ(140px) scale(1.15);
+  -o-transform: rotateX(-15deg) rotateY(-10deg) rotateZ(-1deg) translate(-10px, 150px) translateZ(140px) scale(1.15);
+  -ms-transform: rotateX(-15deg) rotateY(-10deg) rotateZ(-1deg) translate(-10px, 150px) translateZ(140px) scale(1.15);
+}
+.polaroid.lifted.rot3 .image {
+  -webkit-transform: rotateX(-5deg) rotateY(-15deg) rotateZ(-3deg) translate(-10px, 100px) translateZ(140px) scale(1.15);
+  -moz-transform: rotateX(-5deg) rotateY(-15deg) rotateZ(-3deg) translate(-10px, 100px) translateZ(140px) scale(1.15);
+  -o-transform: rotateX(-5deg) rotateY(-15deg) rotateZ(-3deg) translate(-10px, 100px) translateZ(140px) scale(1.15);
+  -ms-transform: rotateX(-5deg) rotateY(-15deg) rotateZ(-3deg) translate(-10px, 100px) translateZ(140px) scale(1.15);
+}
+.polaroid.lifted.rot4 .image {
+  -webkit-transform: rotateX(-15deg) rotateY(-10deg) rotateZ(-5deg) translate(-10px, 140px) translateZ(140px) scale(1.15);
+  -moz-transform: rotateX(-15deg) rotateY(-10deg) rotateZ(-5deg) translate(-10px, 140px) translateZ(140px) scale(1.15);
+  -o-transform: rotateX(-15deg) rotateY(-10deg) rotateZ(-5deg) translate(-10px, 140px) translateZ(140px) scale(1.15);
+  -ms-transform: rotateX(-15deg) rotateY(-10deg) rotateZ(-5deg) translate(-10px, 140px) translateZ(140px) scale(1.15);
+}
+.polaroid.lifted.rot5 .image {
+  -webkit-transform: rotateX(-10deg) rotateY(-15deg) rotateZ(-4deg) translate(-10px, 150px) translateZ(140px) scale(1.15);
+  -moz-transform: rotateX(-10deg) rotateY(-15deg) rotateZ(-4deg) translate(-10px, 150px) translateZ(140px) scale(1.15);
+  -o-transform: rotateX(-10deg) rotateY(-15deg) rotateZ(-4deg) translate(-10px, 150px) translateZ(140px) scale(1.15);
+  -ms-transform: rotateX(-10deg) rotateY(-15deg) rotateZ(-4deg) translate(-10px, 150px) translateZ(140px) scale(1.15);
+}
+
+.polaroid.lifted .shadow {
+  opacity: 0;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translate(0, 100px) scale(1.1);
+}
+
+.reload-waypoint {
+  visibility: hidden;
+  color: black;
+  background-color: blue;
+  width: 100px;
+  height: 20px;
+  float: left;
+}
+
+.loading-indicator {
+  width: 50px;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+}
+
+
+
+@media only screen and (min-width: 35em) {
+
+
+}
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

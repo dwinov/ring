@@ -66,8 +66,20 @@ class EventController extends ParentController
             {
                 $user = User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN']));
                 $eo = Eo::model()->find('eo_user_id=:usr_id', array(':usr_id' => $user->usr_id));
-                $_POST['Event']['evt_owner_id'] = $eo->eo_id;
-                if($this->model->insertData($_POST, $_FILES) == true)
+                $_POST['evt_owner_id'] = $eo->eo_id;
+				$event = array();
+				$event['Event'] = array();
+				$event['Event'] = $_POST;
+				
+				if($event['Event']['evt_ticketing'] == 'true')
+				{
+					$event['Event']['evt_ticketing'] = true;
+				}elseif($event['Event']['evt_ticketing'] == 'false')
+				{
+					$event['Event']['evt_ticketing'] = false;
+				}
+				
+                if($this->model->insertData($event, $_FILES) == true)
                 {
                     $result = array('result' => true, 'value' => Yii::app()->db->getLastInsertId());
                     $this->sendAjaxResponseString($result);

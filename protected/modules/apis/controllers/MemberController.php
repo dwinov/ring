@@ -28,8 +28,8 @@ class MemberController extends ParentController
                     $token = Helper::generateToken();
                     $user->usr_token = $token;
                     $user->save();
-                    $result = array('result' => true, 'value' => $token);
-                    $this->sendAjaxResponseString($result);
+                    $result = array('result' => true, 'value' => $user);
+                    $this->sendAjaxResponse($result);
                 }
                 else
                 {

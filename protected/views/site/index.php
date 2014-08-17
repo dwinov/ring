@@ -45,6 +45,10 @@
             <!-- BEGIN SLIDER CONTAINER -->
             <div id="slider-container">
 
+                <div style="margin-top: -100px; float:right;">
+                    <a class="download-btn logon" href="<?php echo Yii::app()->request->baseUrl; ?>/frontend/signin.html"></a>
+                </div>
+
                 <div class="span6 animated fadeInUp rotateInUpLeft delay2s">
                     <!-- BEGIN IPHONE 4 SLIDER WITH HAND -->
                     <div id="iphone5-handslider">

@@ -89,6 +89,17 @@ class Member extends CActiveRecord
         return $model;
     }
 
+    public function getMemberByUserId($id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_member')
+            ->where('mem_user_id=:user_id', array(':user_id' => $id))
+        ;
+
+        $result = $data->queryRow();
+        return $result;
+    }
+
     public function updateMember($data)
     {
         $model = $this->getMemberById($data['Member']['mem_id']);
@@ -109,58 +120,56 @@ class Member extends CActiveRecord
     {
         $attr = array();
         $where = array('and');
-        $where2 = array('or');
-        $where3 = array('or');
+//        $where2 = array('or');
+//        $where3 = array('or');
 
-        $where[] = 'u.usr_type_id=:type_id';
-        $attr[':type_id'] = 4;
+//        $where[] = 'u.usr_type_id=:type_id';
+//        $attr[':type_id'] = 4;
 
         if(!empty($filter['umur'])){
             $umurArr = explode(' - ', $filter['umur']);
-            $where[] = "DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), FROM_UNIXTIME(m.mem_birthdate))), '%Y')+0 BETWEEN :start AND :end";
+            $where[] = "DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), FROM_UNIXTIME(mem_birthdate))), '%Y')+0 BETWEEN :start AND :end";
             $attr[':start'] = intval($umurArr[0]);
             $attr[':end'] = intval($umurArr[1]);
         }
 
         if(isset($filter['gender']) &&  $filter['gender'] != 2){
             $gender = $filter['gender'];
-            $where[] = 'm.mem_gender=:gender';
+            $where[] = 'mem_gender=:gender';
             $attr[':gender'] = intval($gender);
         }
 
-        if(!empty($filter['region']))
-        {
-            $regArr = explode(',', $filter['region']);
-            $char = 'A';
-            for($i = 0; $i < count($regArr); $i++)
-            {
-                $where2[] = 'm.mem_reg_id=:region_'.$char;
-                $attr[':region_'.$char] = intval($regArr[$i]);
-                $char++;
-            }
-        }
+//        if(!empty($filter['region']))
+//        {
+//            $intArr = explode(',', $filter['region']);
+//            $char = 'A';
+//            for($x = 0; $x < count($intArr); $x++)
+//            {
+//                $where[] = 'mi.mint_int_id=:interest_';
+//                $attr[':interest_'] = $intArr[$x];
+//            }
+//        }
+//
+//        if(!empty($filter['interest']))
+//        {
+//            $intArr = explode(',', $filter['interest']);
+//            $char = 'A';
+//            for($x = 0; $x < count($intArr); $x++)
+//            {
+//                $where[] = 'mi.mint_int_id=:interest_';
+//                $attr[':interest_'] = $intArr[$x];
+//            }
+//        }
 
-        if(!empty($filter['interest']))
-        {
-            $intArr = explode(',', $filter['interest']);
-            $char = 'A';
-            for($x = 0; $x < count($intArr); $x++)
-            {
-                $where3[] = 'mi.mint_int_id=:interest_'.$char;
-                $attr[':interest_'.$char] = intval($intArr[$x]);
-                $char++;
-            }
-        }
-
-        $where[] = $where2;
-        $where[] = $where3;
+//        $where[] = $where2;
+//        $where[] = $where3;
 
         $data = Yii::app()->db->createCommand()
-            ->from('tbl_member AS m')
-            ->join('tbl_user AS u', 'm.mem_user_id = u.usr_id')
-            ->join('tbl_mem_int as mi', 'mem_id = mi.mint_mem_id')
+            ->from('tbl_member')
+//            ->join('tbl_user AS u', 'm.mem_user_id = u.usr_id')
+//            ->join('tbl_mem_int as mi', 'mem_id = mi.mint_mem_id')
             ->where($where, $attr)
-            ->group('m.mem_id');
+//            ->group('mem_id');
         ;
 
         $result = $data->queryAll();

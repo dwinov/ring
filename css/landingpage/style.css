@@ -274,6 +274,12 @@ section {
 .googleplay:hover {
 	background-image: url(../../images/landingpage/googleplay_hover.png);
 }
+.logon {
+    background-image: url(../../images/loginasringer.png);
+}
+.logon:hover {
+    background-image: url(../../images/loginasringer_hover.png);
+}
 .androidmarket {
 	background-image: url(../../images/landingpage/androidmarket.png);
 }

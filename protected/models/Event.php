@@ -177,18 +177,23 @@ class Event extends CActiveRecord
 
         if($model->save())
         {
-            if($input['Event']['evt_ticketing'] == true && count($input['tkt_type']) > 0)
+            if($input['Event']['evt_ticketing'] == true)
             {
-                $ticket = new Ticket();
-                for($x = 0; $x < count($input['tkt_type']); $x++)
+                if(count($input['tkt_type']) > 0)
                 {
-                    $result = $ticket->insertData($input['tkt_type'][$x], $input['tkt_price'][$x], $input['tkt_total'][$x], $model->evt_id);
-                    if($result == false)
-                        return false;
+                    $ticket = new Ticket();
+                    for($x = 0; $x < count($input['tkt_type']); $x++)
+                    {
+                        $result = $ticket->insertData($input['tkt_type'][$x], $input['tkt_price'][$x], $input['tkt_total'][$x], $model->evt_id);
+                        if($result == false)
+                            return false;
+                    }
+                    $model->evt_photo_event = (count($file) != 0) ? Helper::uploadImage($file, 'event', 'tiketpic') : null;
+                    $model->save();
+                    return true;
+                }else{
+                    return true;
                 }
-                $model->evt_photo_event = (count($file) != 0) ? Helper::uploadImage($file, 'event', 'tiketpic') : null;
-                $model->save();
-                return true;
             }else{
                 return true;
             }
