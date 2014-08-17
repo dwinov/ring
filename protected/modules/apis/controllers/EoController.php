@@ -47,9 +47,16 @@ class EoController extends ParentController
     {
         if(isset($_SERVER['HTTP_TOKEN']))
         {
-            if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
+            $user = User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN']));
+            if($user)
             {
-                if($this->model->updateData($_POST, $_FILES) == true)
+                $model_eo = new Eo();
+                $eo = $model_eo->getEoByUserId($user->usr_id);
+                $eoArr = array();
+                $eoArr['Eo'] = array();
+                $eoArr['Eo'] = $_POST;
+                $eoArr['Eo']['eo_id'] = $eo['eo_id'];
+                if($this->model->updateData($eoArr, $_FILES) == true)
                 {
                     $result = array('result' => true, 'value' => "EO has been updated");
                     $this->sendAjaxResponseString($result);
