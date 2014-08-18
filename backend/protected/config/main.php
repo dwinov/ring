@@ -17,7 +17,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
         'application.extensions.*',
-        'application.extensions.yii-mail.*',
+		'application.extensions.yii-mail.*',
 	),
 
 	'modules'=>array(
@@ -43,7 +43,7 @@ return array(
 
 		'urlManager'=>array(
 			'urlFormat'=>'path',
-            'showScriptName' => false,
+//            'showScriptName' => false,
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -51,8 +51,8 @@ return array(
                 '<module:\w+>/<controller:\w+>/<action:\w+>/<id:-?\d+>/<name:.*>'=>'<module>/<controller>/<action>',
 			),
 		),
-
-        'mail' => array(
+		
+		'mail' => array(
             'class' => 'YiiMail',
             'transportType' => 'smtp',
             'transportOptions' =>array(
