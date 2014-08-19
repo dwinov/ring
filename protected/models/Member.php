@@ -100,18 +100,24 @@ class Member extends CActiveRecord
         return $result;
     }
 
-    public function updateMember($data)
+    public function updateMember($data, $file)
     {
         $model = $this->getMemberById($data['Member']['mem_id']);
 
         $model->attributes = $data['Member'];
-        $model->mem_first_name = $data['Member']['mem_first_name'];
-        $model->mem_last_name = $data['Member']['mem_last_name'];
-        $model->mem_screen_name = $data['Member']['mem_first_name'] . " " . $data['Member']['mem_last_name'];
-        $model->mem_email = $data['User']['usr_email'];
-        $model->mem_birthdate = strtotime($data['Member']['mem_birthdate']);
-        $model->mem_gender = $data['Member']['mem_gender'];
-        $model->mem_phone = $data['Member']['mem_phone'];
+        $model->mem_first_name = (isset($data['Member']['mem_first_name'])) ? $data['Member']['mem_first_name'] : $model->mem_first_name;
+        $model->mem_last_name = (isset($data['Member']['mem_last_name'])) ? $data['Member']['mem_last_name'] : $model->mem_last_name;
+        $model->mem_screen_name = (isset($data['Member']['mem_first_name']) && isset($data['Member']['mem_last_name'])) ? $data['Member']['mem_first_name'] . " " . $data['Member']['mem_last_name'] : $model->mem_screen_name;
+//        $model->mem_email = $data['User']['usr_email'];
+        $model->mem_birthdate = (isset($data['Member']['mem_birthdate'])) ? strtotime($data['Member']['mem_birthdate']) : $model->mem_birthdate;
+        $model->mem_gender = (isset($data['Member']['mem_gender'])) ? $data['Member']['mem_gender'] : $model->mem_gender;
+        $model->mem_phone = (isset($data['Member']['mem_phone'])) ? $data['Member']['mem_phone'] : $model->mem_phone;
+        if($model->mem_photo != null)
+        {
+            $model->mem_photo = (count($file) != 0) ? Helper::updateImage('member', $model->mem_photo) : $model->mem_photo;
+        }else{
+            $model->mem_photo = (count($file) != 0) ? Helper::uploadImage($file, 'member') : null;
+        }
 
         return ($model->save()) ? true : false;
     }

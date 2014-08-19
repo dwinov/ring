@@ -103,7 +103,9 @@ class SiteController extends Controller
                         $this->redirect(Yii::app()->createUrl('dashboard/index'));
                         break;
                     case 2:
-                        $this->redirect(Yii::app()->createUrl('member/index'));
+                        $eo = new Eo();
+                        $dataEo = $eo->getEoByUserId(Yii::app()->user->usrid);
+                        $this->redirect(Yii::app()->createUrl('eo/update', array('id' => $dataEo['eo_id'], 'user_id' => Yii::app()->user->usrid)));
                         break;
                     case 3:
                         $this->redirect(Yii::app()->createUrl('venue/index'));

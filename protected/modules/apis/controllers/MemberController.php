@@ -14,46 +14,55 @@ class MemberController extends ParentController
     {
         $member = new Member();
 
-        $user = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
-
-        if(!isset($user))
+        if(!empty($_POST['User']['usr_email']) && !empty($_POST['User']['usr_password']))
         {
-            $user = new User();
-            $user_id = $user->insertUser($_POST['User']);
+            $user = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
 
-            if($user_id != null)
+            if(!isset($user))
             {
-                if($member->insertMember($_POST, $user_id))
-                {
-                    $user = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
+                $user = new User();
+                $user_id = $user->insertUser($_POST['User']);
 
-                    if($user != null && md5($_POST['User']['usr_password']) == $user->usr_password)
+                if($user_id != null)
+                {
+                    if($member->insertMember($_POST, $user_id))
                     {
-                        $token = Helper::generateToken();
-                        $user->usr_token = $token;
-                        $user->save();
-                        $result = array('result' => true, 'value' => $user);
-                        $this->sendAjaxResponse($result);
+                        $user = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
+
+                        if($user != null && md5($_POST['User']['usr_password']) == $user->usr_password)
+                        {
+                            $token = Helper::generateToken();
+                            $user->usr_token = $token;
+                            $user->save();
+                            $result = array();
+                            $result['usr_id'] = $user->usr_id;
+                            $result['usr_type_id'] = $user->usr_type_id;
+                            $result['usr_token'] = $user->usr_token;
+                            $this->sendAjaxResponse($result);
+                        }
+                        else
+                        {
+                            $result = array('result' => false, 'value' => "Failed to Auto Login.");
+                            $this->sendAjaxResponseString($result);
+                        }
                     }
                     else
                     {
-                        $result = array('result' => false, 'value' => "Failed to Auto Login.");
+                        $result = array('result' => false, 'value' => "Failed to save data member.");
                         $this->sendAjaxResponseString($result);
                     }
                 }
                 else
                 {
-                    $result = array('result' => false, 'value' => "Failed to save data member.");
+                    $result = array('result' => false, 'value' => "Failed to save data user.");
                     $this->sendAjaxResponseString($result);
                 }
-            }
-            else
-            {
-                $result = array('result' => false, 'value' => "Failed to save data user.");
+            }else{
+                $result = array('result' => false, 'value' => "Email already exist.");
                 $this->sendAjaxResponseString($result);
             }
         }else{
-            $result = array('result' => false, 'value' => "Email already exist.");
+            $result = array('result' => false, 'value' => "Email and Password cannot be empty.");
             $this->sendAjaxResponseString($result);
         }
     }
@@ -62,14 +71,26 @@ class MemberController extends ParentController
     {
         if(isset($_SERVER['HTTP_TOKEN']))
         {
-            if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
+            $user = User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN']));
+            if($user)
             {
-                $model = new Member();
 
-                if($model->updateMember($_POST))
+                $model = new Member();
+                $member = $model->getMemberByUserId($user->usr_id);
+
+                $data = array();
+                $data['Member'] = array();
+
+                $data['Member']['mem_id'] = $member['mem_id'];
+                $data['Member']['mem_location'] = $_POST['mem_location'];
+                $data['Member']['mem_birthdate'] = $_POST['mem_birthdate'];
+                $data['Member']['mem_gender'] = $_POST['mem_gender'];
+                $data['Member']['mem_phone'] = $_POST['mem_phone'];
+
+                if($model->updateMember($data, $_FILES))
                 {
-                    $result = array('result' => true);
-                    $this->sendAjaxResponse(null, $result);
+                    $result = array('result' => true, 'value' => "profile has been updated.");
+                    $this->sendAjaxResponseString($result);
                 }else{
                     $result = array('result' => false, 'value' => "update data failed");
                     $this->sendAjaxResponseString($result);
