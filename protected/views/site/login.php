@@ -169,32 +169,54 @@
                                     <span class="line"></span>
                                     <div class="box-1 registerbox">
                                         <div class="inner">
-                                            <?php echo CHtml::beginForm(Yii::app()->createUrl('member/register'), 'post', array('class' => 'fts')); ?>
-                                                <?php echo CHtml::dropDownList('User[usr_type_id]', '', array(
-                                                    '' => '- Choose Account Type -',
-                                                    '2' => 'Event Organizer',
-                                                    '3' => 'Venue'
-                                                )); ?>
-                                                <?php echo CHtml::textField('Member[mem_first_name]', '', array('placeholder' => 'First Name')); ?>
-                                                <?php echo CHtml::textField('Member[mem_last_name]', '', array('placeholder' => 'Last Name')); ?>
-                                                <?php echo CHtml::textField('User[usr_email]', '', array('placeholder' => 'Email')); ?>
-                                                <?php echo CHtml::passwordField('User[usr_password]', '', array('placeholder' => 'Password')) ?>
-                                                <?php echo CHtml::passwordField('User[repassword]', '', array('placeholder' => 'Re-type Password')); ?>
-                                                <div class="toggle-button" data-toggleButton-width="220"
-                                                     data-toggleButton-label-enabled="Male"
-                                                     data-toggleButton-label-disabled="Female"
-                                                     data-toggleButton-height="35"
-                                                     data-toggleButton-font-lineHeight="35px">
-                                                    <input type="checkbox" checked="checked" name="Member[mem_gender]" />
-                                                </div>
-                                                <?php echo CHtml::textField('Member[mem_phone]', '', array('placeholder' => 'Phone Number')); ?>
-                                                <?php echo CHtml::textField('Member[mem_birthdate]', '', array('class' => 'datepickerold', 'placeholder' => 'Birthdate')); ?>
-<!--                                                <label class="checkbox">-->
-                                                    <input name="tnc" type="checkbox" id="termcon" class="checkbox" value="1" style="margin:0 -117px 0 -114px !important;" />
-                                                    I AGREE WITH THE TERM AND CONDITIONS
-<!--                                                </label>-->
-                                                <button type="submit" id="btn-register" class="btn btn-icon btn-block glyphicons right edit btn-success" disabled>Register<i></i></button>
+
+                                            <div id="venue">
+
+                                            </div>
+                                            <?php echo CHtml::beginForm(Yii::app()->createUrl('eo/register'), 'post', array('class' => 'fts', 'id' => 'form-register')); ?>
+                                            <select name="User[usr_type_id]" id="type-register">
+                                                <option value="">- Choose Account Type -</option>
+                                                <option value="2">Event Organizer</option>
+                                                <option value="3">Venue</option>
+                                            </select>
+                                            <?php echo CHtml::textField('Eo[eo_name]', '', array('placeholder' => 'Event Organizer Name', 'id' => 'org-name')); ?>
+                                            <?php echo CHtml::textField('User[usr_email]', '', array('placeholder' => 'Email')); ?>
+                                            <?php echo CHtml::passwordField('User[usr_password]', '', array('placeholder' => 'Password')) ?>
+                                            <?php echo CHtml::passwordField('User[repassword]', '', array('placeholder' => 'Re-type Password')); ?>
+                                            <?php echo CHtml::textField('Eo[eo_phone]', '', array('placeholder' => 'Phone Number', 'id' => 'org-phone')); ?>
+                                            <!--                                                <label class="checkbox">-->
+                                            <input name="tnc" type="checkbox" id="termcon" class="checkbox" value="1" style="margin:0 -117px 0 -114px !important;" />
+                                            I AGREE WITH THE TERMS AND CONDITIONS
+                                            <!--                                                </label>-->
+                                            <button type="submit" id="btn-register" class="btn btn-icon btn-block glyphicons right edit btn-success" disabled>Register<i></i></button>
                                             <?php echo CHtml::endForm(); ?>
+
+<!--                                            --><?php //echo CHtml::beginForm(Yii::app()->createUrl('member/register'), 'post', array('class' => 'fts')); ?>
+<!--                                                --><?php //echo CHtml::dropDownList('User[usr_type_id]', '', array(
+//                                                    '' => '- Choose Account Type -',
+//                                                    '2' => 'Event Organizer',
+//                                                    '3' => 'Venue'
+//                                                )); ?>
+<!--                                                --><?php //echo CHtml::textField('Member[mem_first_name]', '', array('placeholder' => 'First Name')); ?>
+<!--                                                --><?php //echo CHtml::textField('Member[mem_last_name]', '', array('placeholder' => 'Last Name')); ?>
+<!--                                                --><?php //echo CHtml::textField('User[usr_email]', '', array('placeholder' => 'Email')); ?>
+<!--                                                --><?php //echo CHtml::passwordField('User[usr_password]', '', array('placeholder' => 'Password')) ?>
+<!--                                                --><?php //echo CHtml::passwordField('User[repassword]', '', array('placeholder' => 'Re-type Password')); ?>
+<!--                                                <div class="toggle-button" data-toggleButton-width="220"-->
+<!--                                                     data-toggleButton-label-enabled="Male"-->
+<!--                                                     data-toggleButton-label-disabled="Female"-->
+<!--                                                     data-toggleButton-height="35"-->
+<!--                                                     data-toggleButton-font-lineHeight="35px">-->
+<!--                                                    <input type="checkbox" checked="checked" name="Member[mem_gender]" />-->
+<!--                                                </div>-->
+<!--                                                --><?php //echo CHtml::textField('Member[mem_phone]', '', array('placeholder' => 'Phone Number')); ?>
+<!--                                                --><?php //echo CHtml::textField('Member[mem_birthdate]', '', array('class' => 'datepickerold', 'placeholder' => 'Birthdate')); ?>
+<!--<!--                                                <label class="checkbox">-->-->
+<!--                                                    <input name="tnc" type="checkbox" id="termcon" class="checkbox" value="1" style="margin:0 -117px 0 -114px !important;" />-->
+<!--                                                    I AGREE WITH THE TERM AND CONDITIONS-->
+<!--<!--                                                </label>-->-->
+<!--                                                <button type="submit" id="btn-register" class="btn btn-icon btn-block glyphicons right edit btn-success" disabled>Register<i></i></button>-->
+<!--                                            --><?php //echo CHtml::endForm(); ?>
                                         </div>
                                     </div>
                                     <div class="btn-login">
@@ -386,6 +408,21 @@
                 $('#btn-register').prop('disabled', false);
             }else{
                 $('#btn-register').prop('disabled', true);
+            }
+        });
+
+        $('#type-register').change(function(){
+            if($(this).val() == 2)
+            {
+                $('#form-register').attr('action', '<?php echo Yii::app()->createUrl('eo/register'); ?>');
+                $('#org-name').attr('name', 'Eo[eo_name]');
+                $('#phone').attr('name', 'Eo[eo_phone]');
+                $('#org-name').attr('placeholder', 'Event Organizer Name');
+            }else{
+                $('#form-register').attr('action', '<?php echo Yii::app()->createUrl('venue/register'); ?>');
+                $('#org-name').attr('name', 'Venue[vn_name]');
+                $('#phone').attr('name', 'Venue[vn_phone]');
+                $('#org-name').attr('placeholder', 'Venue Name');
             }
         });
     });

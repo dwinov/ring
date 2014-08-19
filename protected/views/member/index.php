@@ -14,7 +14,7 @@
     </ul>
     <div class="separator"></div>
 
-    <h2 class="glyphicons user"><i></i> Create Event Organizer</h2>
+    <h2 class="glyphicons user"><i></i> Account</h2>
     <div class="separator"></div>
 
     <div class="row-fluid">
@@ -26,7 +26,7 @@
 
                     <div class="widget widget-2 primary widget-body-white">
                         <div class="widget-head">
-                            <h4 class="heading glyphicons edit"><i></i>Memeber Profile</h4>
+                            <h4 class="heading glyphicons edit"><i></i>Detail Account</h4>
                         </div>
 
                         <div class="widget-body" style="padding-bottom: 0;">
@@ -84,11 +84,34 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="control-group">
+                                        <label class="control-label">Birth of Date</label>
+                                        <div class="controls">
+                                            <?php echo CHtml::textField('Member[mem_birthdate]', $model->mem_birthdate, array('class' => 'datepickerold span6')); ?>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <div class="span6">
+                                    <div class="control-group">
+                                        <label class="control-label">New Password</label>
+                                        <div class="controls">
+                                            <?php echo CHtml::passwordField('User[usr_password]', '', array('class' => 'span6')); ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label">Re-type New Password</label>
+                                        <div class="controls">
+                                            <?php echo CHtml::passwordField('User[usr_password]', '', array('class' => 'span6')); ?>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             <hr class="separator bottom" />
                             <div class="control-group">
-                                <label class="control-label">About Me</label>
+                                <label class="control-label">Description</label>
                                 <div class="controls">
                                     <?php echo CHtml::textArea('Member[mem_about_me]', $model->mem_about_me,
                                         array(
@@ -111,7 +134,7 @@
         <div class="span3">
             <div class="widget widget-2 primary widget-body-white">
                 <div class="widget-head">
-                    <h4 class="heading glyphicons picture"><i></i>Profile image</h4>
+                    <h4 class="heading glyphicons picture"><i></i>Account Image</h4>
                 </div>
                 <div class="widget-body center">
                     <div class="fileupload fileupload-new" data-provides="fileupload" data-name="myimage">

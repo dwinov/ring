@@ -25,7 +25,7 @@ class CreditController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete'),
+                'actions' => array('index','create', 'update', 'delete', 'payment'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 2'
             ),
@@ -71,5 +71,19 @@ class CreditController extends Controller
                 }
             }
         }
+    }
+
+    public function actionPayment()
+    {
+        if(isset($_POST['Credit']))
+        {
+            $total = ($_POST['Credit']['crt_credit'] / 1000) * 100000;
+            $this->render('payment', array(
+                'payment' => $total,
+                'eo_id' => $_POST['Credit']['crt_eo_id']
+            ));
+        }
+
+        $this->redirect(array('credit/index'));
     }
 }

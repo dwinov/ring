@@ -58,8 +58,11 @@ class Venue extends CActiveRecord
         $attr = array();
         $where = array('and');
 
-        $where[] = 'vn_user_id=:user_id';
-        $attr[':user_id'] = Yii::app()->user->usrid;
+        if(Yii::app()->user->roleid == 3)
+        {
+            $where[] = 'vn_user_id=:user_id';
+            $attr[':user_id'] = Yii::app()->user->usrid;
+        }
 
         $data = Yii::app()->db->createCommand()
             ->from('tbl_venue')

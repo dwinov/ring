@@ -138,4 +138,13 @@ class Member extends CActiveRecord
             'iTotalDisplayRecords' => $filteredData
         );
     }
+
+    public function getMemberForGraph()
+    {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_member')
+        ;
+
+
+    }
 }

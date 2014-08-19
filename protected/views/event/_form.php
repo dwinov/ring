@@ -30,7 +30,7 @@
                         <div class="row-fluid">
                             <div class="span6">
                                 <div class="control-group">
-                                    <label class="control-label">Name</label>
+                                    <label class="control-label">Event Name</label>
                                     <div class="controls">
                                         <?php $name = (isset($model)) ? $model->evt_name : ""; ?>
                                         <?php echo CHtml::textField('Event[evt_name]', $name, array('class' => 'span12')); ?>
@@ -41,8 +41,12 @@
                                     <div class="control-group">
                                         <label class="control-label">Venue</label>
                                         <div class="controls">
-                                            <?php $venue = (isset($model)) ? $model->evt_venue_id : ""; ?>
-                                            <?php echo CHtml::dropDownList('Event[evt_venue_id]', $venue, $venue_list) ?>
+<!--                                            --><?php //$venue = (isset($model)) ? $model->evt_venue_id : ""; ?>
+<!--                                            --><?php //echo CHtml::dropDownList('Event[evt_venue_id]', $venue, $venue_list) ?>
+                                            <?php echo CHtml::textField('bastian', '', array('id' => 'venue-autocomplete')); ?>
+                                            <?php echo CHtml::hiddenField('Event[evt_venue_id]', '', array('class' => 'span12', 'id' => 'evt-venue-id')); ?>
+                                            <?php echo CHtml::button('List', array('id' => 'list-venue', 'class' => 'btn btn-icon btn-primary glyphicons circle_ok')); ?>
+
                                         </div>
                                     </div>
                                 <?php }elseif(Yii::app()->user->roleid == 3){ ?>
@@ -69,7 +73,7 @@
                         </div>
                         <hr class="separator bottom" />
                         <div class="control-group">
-                            <label class="control-label">Ticketing</label>
+                            <label class="control-label">Enable ring ticket service</label>
                             <div class="controls">
                                 <?php $ticketing = (isset($model)) ? $model->evt_ticketing : 0; ?>
                                 <?php echo CHtml::checkBox('Event[evt_ticketing]', $ticketing, array('id' => 'ticket_toggle')); ?>
@@ -125,7 +129,7 @@
     <div class="span3">
         <div class="widget widget-2 primary widget-body-white">
             <div class="widget-head">
-                <h4 class="heading glyphicons picture"><i></i>Profile image</h4>
+                <h4 class="heading glyphicons picture"><i></i>Event Banner</h4>
             </div>
             <div class="widget-body center">
                 <div class="fileupload fileupload-new" data-provides="fileupload" data-name="myimage">
@@ -170,42 +174,3 @@
         </div>
     </div>
 <?php echo CHtml::endForm(); ?>
-
-<?php $this->beginClip('js-page-end'); ?>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            var ticket = '<?php echo (isset($model->evt_ticketing)) ? : 0; ?>';
-            window.onload = function(){
-                if(ticket != '1'){
-                    $('#tiket').hide();
-                    $('#ticket-picture').hide();
-                }
-            }
-
-            $('#ticket_toggle').click(function(){
-                if($(this).attr('checked'))
-                {
-                    $('#tiket').show();
-                    $('#ticket-picture').show();
-                }else{
-                    $('#tiket').hide();
-                    $('#ticket-picture').hide();
-                }
-            });
-
-            $('.btn_add').live('click', function(){
-                $(this).parent('.controls').parent('.control-group').clone(true).appendTo($(this).parent('.controls').parent('.control-group').parent('#tiket'));
-                $(this).attr('value', 'Remove');
-                $(this).toggleClass('btn_remove btn_add');
-                $(this).toggleClass('btn-primary btn-success');
-                $('.input-type:last').val("");
-                $('.input-price:last').val("");
-                $('.input-total:last').val("");
-            });
-
-            $('.btn_remove').live('click', function(){
-                $(this).parent('.controls').parent('.control-group').remove();
-            });
-        });
-    </script>
-<?php echo $this->endClip(); ?>

@@ -106,7 +106,7 @@ class SiteController extends Controller
                         $this->redirect(Yii::app()->createUrl('member/index'));
                         break;
                     case 3:
-                        $this->redirect(Yii::app()->createUrl('member/index'));
+                        $this->redirect(Yii::app()->createUrl('venue/index'));
                         break;
                 }
             }

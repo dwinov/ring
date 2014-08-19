@@ -24,17 +24,17 @@
     <div class="relativeWrap">
         <div class="widget widget-gray widget-gray-white">
             <div class="widget-head">
-                <h4 class="heading">List Event</h4>
+                <h4 class="heading">List of Event</h4>
             </div>
             <div class="widget-body">
                 <table id="basic-datatabel" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-primary table-condensed">
                     <thead>
                     <tr>
                         <th>Event</th>
-                        <th>EO</th>
                         <th>Venue</th>
-<!--                        <th>Tiket</th>-->
                         <th>Date</th>
+                        <th>Status</th>
+                        <th>Available Tickets</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -62,26 +62,34 @@
                         bSortable: true
                     },
                     {
-                        mData: "eo_name",
-                        sWidth: "10%",
-                        bSortable: true
-                    },
-                    {
                         mData: "vn_name",
                         sWidth: "10%",
                         bSortable: true
                     },
-//                    {
-//                        mData: "evt_tiket_price",
-//                        sWidth: "10%",
-//                        sClass: "center",
-//                        bSortable: true
-//                    },
                     {
                         mData: "evt_start_date",
                         sWidth: "10%",
                         sClass: "center",
                         bSortable: true
+                    },
+                    {
+                        mData: "evt_start_date",
+                        sWidth: "5%",
+                        sClass: "center",
+                        bSortable: true,
+                        mRender: function(data, type, all){
+                            var dateNow = '<?php echo date('d-m-Y'); ?>';
+                            return (data > dateNow) ? "Comming" : "Passed";
+                        }
+                    },
+                    {
+                        mData: "evt_ticketing",
+                        sWidth: "5%",
+                        sClass: "center",
+                        bSortable: true,
+                        mRender: function(data, type, all){
+                            return (data == 1) ? all.tkt_total : "-";
+                        }
                     },
                     {
                         mData: 'evt_id',

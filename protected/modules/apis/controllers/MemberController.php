@@ -12,43 +12,50 @@ class MemberController extends ParentController
 
     public function actionIndex()
     {
-        $user = new User();
         $member = new Member();
 
-        $user_id = $user->insertUser($_POST['User']);
+        $user = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
 
-        if($user_id != null)
+        if(!isset($user))
         {
-            if($member->insertMember($_POST, $user_id))
-            {
-                $user = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
+            $user = new User();
+            $user_id = $user->insertUser($_POST['User']);
 
-                if($user != null && md5($_POST['User']['usr_password']) == $user->usr_password)
+            if($user_id != null)
+            {
+                if($member->insertMember($_POST, $user_id))
                 {
-                    $token = Helper::generateToken();
-                    $user->usr_token = $token;
-                    $user->save();
-                    $result = array('result' => true, 'value' => $user);
-                    $this->sendAjaxResponse($result);
+                    $user = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
+
+                    if($user != null && md5($_POST['User']['usr_password']) == $user->usr_password)
+                    {
+                        $token = Helper::generateToken();
+                        $user->usr_token = $token;
+                        $user->save();
+                        $result = array('result' => true, 'value' => $user);
+                        $this->sendAjaxResponse($result);
+                    }
+                    else
+                    {
+                        $result = array('result' => false, 'value' => "Failed to Auto Login.");
+                        $this->sendAjaxResponseString($result);
+                    }
                 }
                 else
                 {
-                    $result = array('result' => false, 'value' => "Failed to Auto Login.");
+                    $result = array('result' => false, 'value' => "Failed to save data member.");
                     $this->sendAjaxResponseString($result);
                 }
             }
             else
             {
-                $result = array('result' => false, 'value' => "Failed to save data member.");
+                $result = array('result' => false, 'value' => "Failed to save data user.");
                 $this->sendAjaxResponseString($result);
             }
-        }
-        else
-        {
-            $result = array('result' => false, 'value' => "Failed to save data user.");
+        }else{
+            $result = array('result' => false, 'value' => "Email already exist.");
             $this->sendAjaxResponseString($result);
         }
-
     }
 
     public function actionUpdate()

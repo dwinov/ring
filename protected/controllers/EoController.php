@@ -25,9 +25,14 @@ class EoController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete', 'client', 'uploader', 'delgal', 'detail'),
+                'actions' => array('index','create', 'update', 'delete', 'client', 'uploader', 'delgal', 'detail', 'register'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 2'
+            ),
+            array(
+                'allow',
+                'actions' => array('update', 'register'),
+                'users' => array('*'),
             ),
             array(
                 'deny',
@@ -47,6 +52,67 @@ class EoController extends Controller
         }
 
         $this->render('index');
+    }
+
+    public function actionRegister()
+    {
+        if(isset($_POST['Eo']) && isset($_POST['User']) && $_POST['tnc'] == 1)
+        {
+            $user = new User();
+            $eo = new Eo();
+
+            $usr = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
+            if(!isset($usr->usr_id))
+            {
+                $user_id = $user->insertUser($_POST['User']);
+
+                if($user_id != null)
+                {
+                    $_POST['Eo']['eo_user_id'] = $user_id;
+                    $_POST['Eo']['eo_address'] = '';
+                    $_POST['Eo']['eo_phone'] = '';
+                    $_POST['Eo']['eo_fax'] = '';
+                    $_POST['Eo']['eo_email'] = $_POST['User']['usr_email'];
+                    $_POST['Eo']['eo_website'] = '';
+                    $_POST['Eo']['eo_description'] = '';
+                    if($eo->insertData($_POST, $_FILES))
+                    {
+                        $neweoid = Yii::app()->db->getLastInsertId();
+                        $login = new LoginForm();
+
+                        $login->username = $_POST['User']['usr_email'];
+                        $login->password = $_POST['User']['usr_password'];
+
+                        if($login->validate($login->attributes) && $login->login())
+                        {
+                            $model_user = User::model()->findByPk($user_id);
+                            $dataEo = $eo->getEoById($neweoid);
+                            Helper::sendEmail('register', $model_user, "Registration");
+                            $this->redirect(Yii::app()->createUrl('eo/update', array('id' => $dataEo->eo_id, 'user_id' => Yii::app()->user->usrid)));
+                        }
+                        else
+                        {
+                            $this->redirect(Yii::app()->createUrl('site/login'));
+                        }
+                    }
+                    else
+                    {
+                        $this->redirect(Yii::app()->createUrl('site/login'));
+                    }
+                }
+                else
+                {
+                    $this->redirect(Yii::app()->createUrl('site/login'));
+                }
+            }else{
+                $this->redirect(Yii::app()->createUrl('site/login'));
+            }
+        }
+        else
+        {
+            $this->redirect(Yii::app()->createUrl('site/login'));
+        }
+        $this->redirect(Yii::app()->createUrl('site/login'));
     }
 
     public function actionCreate()

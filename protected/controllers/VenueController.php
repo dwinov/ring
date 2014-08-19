@@ -27,14 +27,13 @@ class VenueController extends Controller
                 'allow',
                 'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal', 'detail'),
                 'users' => array('@'),
-                'expression' => 'Yii::app()->user->roleid == 3'
+                'expression' => 'Yii::app()->user->roleid == 3 || Yii::app()->user->roleid == 2'
             ),
-//            array(
-//                'allow',
-//                'actions' => array('index', 'detail'),
-//                'users' => array('@'),
-//                'expression' => 'Yii::app()->user->roleid == 2'
-//            ),
+            array(
+                'allow',
+                'actions' => array('register'),
+                'users' => array('*'),
+            ),
             array(
                 'deny',
                 'users' => array('*')
@@ -54,6 +53,65 @@ class VenueController extends Controller
         }
 
         $this->render('index');
+    }
+
+    public function actionRegister()
+    {
+        if(isset($_POST['Eo']) && isset($_POST['User']) && $_POST['tnc'] == 1)
+        {
+            $user = new User();
+            $venue = new Venue();
+
+            $usr = User::model()->find('usr_email=:email', array(':email' => $_POST['User']['usr_email']));
+            if(!isset($usr->usr_id))
+            {
+                $user_id = $user->insertUser($_POST['User']);
+
+                if($user_id != null)
+                {
+                    $_POST['Venue']['vn_user_id'] = $user_id;
+                    $_POST['Venue']['vn_address'] = '';
+                    $_POST['Venue']['vn_phone'] = '';
+                    $_POST['Venue']['vn_fax'] = '';
+                    $_POST['Venue']['vn_email'] = $_POST['User']['usr_email'];
+                    $_POST['Venue']['vn_website'] = '';
+                    $_POST['Venue']['vn_description'] = '';
+                    $_POST['Venue']['vn_longitude'] = null;
+                    $_POST['Venue']['vn_latitude'] = null;
+                    if($venue->insertData($_POST, $_FILES))
+                    {
+                        $login = new LoginForm();
+
+                        $login->username = $_POST['User']['usr_email'];
+                        $login->password = $_POST['User']['usr_password'];
+
+                        if($login->validate($login->attributes) && $login->login())
+                        {
+                            $model_user = User::model()->findByPk($user_id);
+                            Helper::sendEmail('register', $model_user, "Registration");
+                            $this->redirect(Yii::app()->createUrl('venue/index'));
+                        }
+                        else
+                        {
+                            $this->redirect(Yii::app()->createUrl('site/login'));
+                        }
+                    }
+                    else
+                    {
+                        $this->redirect(Yii::app()->createUrl('site/login'));
+                    }
+                }
+                else
+                {
+                    $this->redirect(Yii::app()->createUrl('site/login'));
+                }
+            }
+        }
+        else
+        {
+            $this->redirect(Yii::app()->createUrl('site/login'));
+        }
+        $this->redirect(Yii::app()->createUrl('site/login'));
     }
 
     public function actionCreate()

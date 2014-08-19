@@ -56,10 +56,20 @@ class Event extends CActiveRecord
     public function getAllData($filter)
     {
         $data = Yii::app()->db->createCommand()
-            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+            ->select(
+                'e.evt_id,
+                e.evt_name,
+                eo.eo_name,
+                v.vn_name,
+                FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date,
+                e.evt_ticketing,
+                SUM(t.tkt_total) as tkt_total
+                ')
             ->from('tbl_event e')
             ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
             ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+            ->leftJoin('tbl_ticket t', 'e.evt_id = t.tkt_evt_id')
+            ->group('e.evt_id,e.evt_name,eo.eo_name,v.vn_name,evt_start_date,e.evt_ticketing');
         ;
 
         $attr = array();
@@ -93,11 +103,21 @@ class Event extends CActiveRecord
         }
 
         $data = Yii::app()->db->createCommand()
-            ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
+            ->select(
+                'e.evt_id,
+                e.evt_name,
+                eo.eo_name,
+                v.vn_name,
+                FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date,
+                e.evt_ticketing,
+                SUM(t.tkt_total) as tkt_total
+                ')
             ->from('tbl_event e')
             ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
             ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+            ->leftJoin('tbl_ticket t', 'e.evt_id = t.tkt_evt_id')
             ->where($where, $attr)
+            ->group('e.evt_id,e.evt_name,eo.eo_name,v.vn_name,evt_start_date,e.evt_ticketing')
         ;
 
         $filteredData = count($data->queryAll());

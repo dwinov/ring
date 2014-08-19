@@ -19,6 +19,6 @@
 
 <div class="row-fluid">
 
-    <?php echo $this->renderPartial('_form', array('action' => Yii::app()->createUrl('member/create'))); ?>
+    <?php echo $this->renderPartial('_form', array('action' => Yii::app()->createUrl('member/create'), 'interest' => $interest)); ?>
 
 </div>

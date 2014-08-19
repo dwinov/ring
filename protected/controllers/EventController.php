@@ -79,8 +79,14 @@ class EventController extends Controller
 
         $venue = Venue::model()->findAll();
 
+        $autoVenue = array();
+        foreach($venue as $vn)
+        {
+            array_push($autoVenue, $vn->vn_id . '|' . $vn->vn_name . ' (' . $vn->vn_address . ')');
+        }
+
         $this->render('create', array(
-            'venue_list' => CHtml::listData($venue, 'vn_id', 'vn_name'),
+            'venue_list' => $autoVenue,
             'owner_id' => $owner_id
         ));
     }

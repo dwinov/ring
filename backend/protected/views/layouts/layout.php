@@ -320,6 +320,7 @@
 <!-- Load plupload and all it's runtimes and finally the jQuery queue widget -->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/plupload/js/plupload.full.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/highcharts.js"></script>
 
 <script>
     //Load the Visualization API and the piechart package.

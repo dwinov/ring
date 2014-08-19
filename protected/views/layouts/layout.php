@@ -101,11 +101,7 @@
         <div class="positionWrapper">
             <span class="line"></span>
             <div class="profile">
-                <?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/HisHerImage.jpg', 'Profile', array('class' => 'avatar')); ?>
-                <span class="info hidden-phone">
-                    <strong>Adrian Demian</strong>
-                    <em>Content Manager</em>
-                </span>
+                <?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/logologin.png', 'Logo', array('width' => 90)); ?>
             </div>
             <ul class="topnav hidden-phone">
                 <li>
@@ -119,24 +115,23 @@
 <div class="row-fluid rrow main">
 <div class="span12 main col" role="main">
 <div class="row-fluid rrow">
-<div class="span2 col main-left hide hidden-phone menu-large">
+<div class="span2 col main-left hide hidden-phone menu-large menu-small">
     <div class="rrow scroll-y-left">
         <div class="iScrollWrapper">
             <ul class="navigasi">
                 <li class="glyphicons home"><a href="<?php echo Yii::app()->createUrl('dashboard/index'); ?>"><i></i><span>Dashboard</span></a></li>
-                <li class="glyphicons user"><a href="<?php echo Yii::app()->createUrl('member/index'); ?>"><i></i><span>Profile</span></a></li>
-                <li class="glyphicons user"><a href="<?php echo Yii::app()->createUrl('credit/index'); ?>"><i></i><span>Credit</span></a></li>
                 <?php if(Yii::app()->user->roleid == 2){ ?>
                     <?php
                     $model = new Eo();
                     $eo_menu = $model->getEoByUserId(Yii::app()->user->usrid);
                     ?>
                     <?php if($eo_menu['eo_id'] != null){ ?>
-                        <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/update', array('id' => $eo_menu['eo_id'], 'user_id' => Yii::app()->user->usrid)); ?>"><i></i><span>Event Organizer</span></a></li>
+                        <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/update', array('id' => $eo_menu['eo_id'], 'user_id' => Yii::app()->user->usrid)); ?>"><i></i><span>Account</span></a></li>
                     <?php }else{ ?>
-                        <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/create'); ?>"><i></i><span>Event Organizer</span></a></li>
+                        <li class="glyphicons group"><a href="<?php echo Yii::app()->createUrl('eo/create'); ?>"><i></i><span>Account</span></a></li>
                     <?php } ?>
                 <?php } ?>
+                <li class="glyphicons user"><a href="<?php echo Yii::app()->createUrl('credit/index'); ?>"><i></i><span>Credits</span></a></li>
                 <?php if(Yii::app()->user->roleid == 3){ ?>
                 <li class="glyphicons globe_af"><a href="<?php echo Yii::app()->createUrl('venue/index'); ?>"><i></i><span>Venue</span></a></li>
                 <?php } ?>
@@ -166,18 +161,18 @@
 </div>
 
 <!-- Sticky Footer -->
-<div id="footer" class="hide">
-    <div class="wrap">
-        <ul>
-            <li class="active"><span data-toggle="menu-position" data-menu-position="left-menu" class="glyphicons circle_arrow_left" title=""><i></i></span></li>
-            <li><span data-toggle="menu-position" data-menu-position="right-menu" class="glyphicons circle_arrow_right" title=""><i></i></span></li>
-            <li><span data-toggle="menu-position" data-menu-position="top-menu" class="glyphicons circle_arrow_top" title=""><i></i></span></li>
-            <li class="divider"></li>
-            <li class="active"><span data-toggle="menu-size" data-menu-size="0" class="glyphicons show_big_thumbnails text" title=""><i></i><span class="hidden-phone">Large menus</span></span></li>
-            <li><span data-toggle="menu-size" data-menu-size="1" class="glyphicons show_thumbnails text" title=""><i></i><span class="hidden-phone">Small menus</span></span></li>
-        </ul>
-    </div>
-</div>
+<!--<div id="footer" class="hide">-->
+<!--    <div class="wrap">-->
+<!--        <ul>-->
+<!--            <li class="active"><span data-toggle="menu-position" data-menu-position="left-menu" class="glyphicons circle_arrow_left" title=""><i></i></span></li>-->
+<!--            <li><span data-toggle="menu-position" data-menu-position="right-menu" class="glyphicons circle_arrow_right" title=""><i></i></span></li>-->
+<!--            <li><span data-toggle="menu-position" data-menu-position="top-menu" class="glyphicons circle_arrow_top" title=""><i></i></span></li>-->
+<!--            <li class="divider"></li>-->
+<!--            <li><span data-toggle="menu-size" data-menu-size="0" class="glyphicons show_big_thumbnails text" title=""><i></i><span class="hidden-phone">Large menus</span></span></li>-->
+<!--            <li class="active"><span data-toggle="menu-size" data-menu-size="1" class="glyphicons show_thumbnails text" title=""><i></i><span class="hidden-phone">Small menus</span></span></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
 
 </div>
 
@@ -320,6 +315,8 @@
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
 <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/gmaps.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.mockjax.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js" type="text/javascript"></script>
 
 <!-- Custom Onload Script -->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/load.js"></script>

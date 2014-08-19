@@ -282,16 +282,16 @@ $(function()
 	/*
 	 * Toggle menu size: Footer navbar
 	 */
-	$('#footer [data-toggle="menu-size"]').on('click', function(e)
-	{
-		e.preventDefault();
-		var s = $(this).attr('data-menu-size');
-		
-		menuToggleSizeHelper(s);
-	})
-	.parent().removeClass('active')
-	.find('[data-menu-size="'+menuSize+'"]')
-	.parent().addClass('active');
+//	$('#footer [data-toggle="menu-size"]').on('click', function(e)
+//	{
+//		e.preventDefault();
+//		var s = $(this).attr('data-menu-size');
+//
+//		menuToggleSizeHelper(s);
+//	})
+//	.parent().removeClass('active')
+//	.find('[data-menu-size="'+menuSize+'"]')
+//	.parent().addClass('active');
 	
 	/*
 	 * Toggle menu size: Themer options

@@ -78,8 +78,36 @@
                                         </label>
                                     </div>
                                 </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">Password</label>
+                                    <div class="controls">
+                                        <?php echo CHtml::passwordField('User[usr_password]', '', array('class' => 'span12')); ?>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">Re-password</label>
+                                    <div class="controls">
+                                        <?php echo CHtml::passwordField('User[usr_repassword]', '', array('class' => 'span12')); ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <hr class="separator bottom" />
+                        <div class="control-group">
+                            <label class="control-label">Interest</label>
+                            <div class="controls">
+                                <?php foreach($interest as $int){ ?>
+                                <label class="checkbox inline">
+                                    <input name="interest[]" type="checkbox" class="checkbox" value="<?php echo $int->int_id; ?>" />
+                                    <?php echo $int->int_name; ?>
+                                </label>
+                                <?php } ?>
+                            </div>
+                        </div>
+
                         <hr class="separator bottom" />
                         <div class="control-group">
                             <label class="control-label">About Me</label>

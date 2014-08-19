@@ -25,16 +25,34 @@ class MemberController extends Controller
 
     public function actionCreate()
     {
+        if(isset($_POST['Member']))
+        {
+            $model = new Member();
+            $user = new User();
+
+            $_POST['User']['usr_email'] = $_POST['Member']['mem_email'];
+            $_POST['User']['usr_type_id'] = 4;
+
+//            echo "<pre>";
+//            print_r($_POST);
+//            echo "</pre>";
+//            exit;
+
+//            if($user->insertUser())
+        }
+
         $model = Member::model()->find('mem_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
         $eo = Eo::model()->find('eo_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
         $venue = Venue::model()->find('vn_user_id=:user_id', array(':user_id' => Yii::app()->user->usrid));
         $list_venue = Venue::model()->findAll();
+        $interest = Interest::model()->findAll();
 
         $this->render('create', array(
             'model' => $model,
             'eo' => $eo,
             'venue' => $venue,
-            'list_venue' => CHtml::listData($list_venue, 'vn_id', 'vn_name')
+            'list_venue' => CHtml::listData($list_venue, 'vn_id', 'vn_name'),
+            'interest' => $interest
         ));
     }
 

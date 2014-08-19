@@ -38,6 +38,8 @@ class DashboardController extends Controller
 
     public function actionIndex()
     {
+        $model_member = new Member();
+        $model_event = new Event();
         $this->render('index');
     }
 }
