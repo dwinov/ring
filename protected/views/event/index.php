@@ -35,6 +35,7 @@
                         <th>Date</th>
                         <th>Status</th>
                         <th>Available Tickets</th>
+                        <th>Tickets Sold</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -58,17 +59,17 @@
                 aoColumns: [
                     {
                         mData: "evt_name",
-                        sWidth: "10%",
+                        sWidth: "5%",
                         bSortable: true
                     },
                     {
                         mData: "vn_name",
-                        sWidth: "10%",
+                        sWidth: "5%",
                         bSortable: true
                     },
                     {
                         mData: "evt_start_date",
-                        sWidth: "10%",
+                        sWidth: "5%",
                         sClass: "center",
                         bSortable: true
                     },
@@ -92,6 +93,20 @@
                         }
                     },
                     {
+                        mData: "tkt_sold",
+                        sWidth: "5%",
+                        sClass: "center",
+                        bSortable: true,
+                        mRender: function(data, type, all){
+                            if(all.tkt_sold != 'null' || all.tkt_sold != 0)
+                            {
+                                return "-";
+                            }else{
+                                return all.tkt_sold;
+                            }
+                        }
+                    },
+                    {
                         mData: 'evt_id',
                         sWidth: "8%",
                         sClass: "center",
@@ -100,7 +115,10 @@
                             btns.push("<a class='btn-action glyphicons book_open btn-info' href='<?php echo Yii::app()->createUrl('event/detail'); ?>/id/" + all.evt_id + "' title='Detail'><i></i></a> ");
                             btns.push("<a class='btn-action glyphicons picture btn-warning' href='<?php echo Yii::app()->createUrl('event/uploader'); ?>/id/" + all.evt_id + "' title='Gallery Pictures'><i></i></a> ");
                             btns.push("<a class='btn-action glyphicons pencil btn-success' href='<?php echo Yii::app()->createUrl('event/update'); ?>/id/" + all.evt_id + "' title='Edit'><i></i></a> ");
-                            btns.push("<a class='btn-action glyphicons remove_2 btn-danger' data-delete href='<?php echo Yii::app()->createUrl('event/delete'); ?>/id/" + all.evt_id + "' title='Delete'><i></i></a>");
+                            if(all.tkt_sold == 'null' || all.tkt_sold == 0)
+                            {
+                                btns.push("<a class='btn-action glyphicons remove_2 btn-danger' data-delete href='<?php echo Yii::app()->createUrl('event/delete'); ?>/id/" + all.evt_id + "' title='Delete'><i></i></a>");
+                            }
                             return  btns.join("&nbsp;");
 
                         }

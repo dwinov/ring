@@ -315,8 +315,6 @@
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
 <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/gmaps.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.mockjax.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js" type="text/javascript"></script>
 
 <!-- Custom Onload Script -->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/load.js"></script>

@@ -25,7 +25,7 @@ class VenueController extends Controller
         return array(
             array(
                 'allow',
-                'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal', 'detail'),
+                'actions' => array('index','create', 'update', 'delete', 'uploader', 'delgal', 'detail', 'autocomplete'),
                 'users' => array('@'),
                 'expression' => 'Yii::app()->user->roleid == 3 || Yii::app()->user->roleid == 2'
             ),
@@ -212,5 +212,16 @@ class VenueController extends Controller
             'glr_venue' => $glr,
         ));
 
+    }
+
+    public function actionAutocomplete()
+    {
+        if(Yii::app()->request->isAjaxRequest)
+        {
+            $model = new Venue();
+            $data = $model->autocompleteVenue();
+            echo CJavaScript::jsonEncode($data);
+            Yii::app()->end();
+        }
     }
 }

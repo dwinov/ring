@@ -52,6 +52,12 @@ class EventController extends Controller
 
     public function actionCreate()
     {
+        if(Yii::app()->request->isAjaxRequest)
+        {
+            echo "shit";exit;
+            Yii::app()->end();
+        }
+
         if(isset($_POST['Event']))
         {
             $model = new Event();
@@ -77,16 +83,10 @@ class EventController extends Controller
             $owner_id = $data_venue['vn_id'];
         }
 
-        $venue = Venue::model()->findAll();
-
-        $autoVenue = array();
-        foreach($venue as $vn)
-        {
-            array_push($autoVenue, $vn->vn_id . '|' . $vn->vn_name . ' (' . $vn->vn_address . ')');
-        }
+        $listVenue = CHtml::listData(Venue::model()->findAll(), 'vn_id', 'vn_name');
 
         $this->render('create', array(
-            'venue_list' => $autoVenue,
+            'venue_list' => (object)$listVenue,
             'owner_id' => $owner_id
         ));
     }

@@ -168,4 +168,15 @@ class Venue extends CActiveRecord
 
         return ($model->save()) ? true : false;
     }
+
+    public function autocompleteVenue()
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('vn_id, vn_name')
+            ->from('tbl_venue')
+//            ->where(array('like', 'vn_name', "%" . $filter . "%"))
+        ;
+
+        return $data->queryAll();
+    }
 }

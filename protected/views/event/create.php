@@ -44,13 +44,32 @@
 <?php $this->beginClip('js-page-end'); ?>
 <script type="text/javascript">
     $(document).ready(function(){
-        console.log(venueList);
         var ticket = '<?php echo (isset($model->evt_ticketing)) ? : 0; ?>';
         window.onload = function(){
+            var dataArray = {};
             if(ticket != '1'){
                 $('#tiket').hide();
                 $('#ticket-picture').hide();
             }
+
+            var myData = [];
+            $.get('<?php echo Yii::app()->createUrl('venue/autocomplete'); ?>', function(data){
+                for(var i = 0; i < data.length; i++)
+                {
+                    myData.push(data[i].vn_name);
+                    dataArray[data[i].vn_id] = data[i].vn_name;
+                }
+            }, "json");
+
+            $("#venue-autocomplete").autocomplete({
+                source: myData,
+                select: function( event, ui ) {
+                    var foundKeys = Object.keys(dataArray).filter(function(key) {
+                        return dataArray[key] == ui.item.value;
+                    });
+                    $('#evt-venue-id').val(foundKeys[0]);
+                }
+            });
         }
 
         $('#ticket_toggle').click(function(){
@@ -120,28 +139,6 @@
             $('#venue-autocomplete').val(valueArr[1]);
             $('#evt-venue-id').val(valueArr[0]);
             dialog.dialog( "close" );
-//            $('#dialog').dialog({
-//                width: 500,
-//                modal: true,
-//                buttons: {
-//                    "Delete" : function(){
-//                        $.post(delkodel.attr('href'), {_method: 'delete'}, function(r) {
-//                            $dataTable.fnReloadAjax();
-//                        });
-//                        $(this).dialog("close");
-//                    },
-//                    "Cancel" : function() {
-//                        $(this).dialog("close");
-//                    }
-//                }
-//            });
-//            e.preventDefault();
-        });
-
-        var venueList = <?php echo json_encode($venue_list); ?>;
-
-        $( "#venue-autocomplete" ).autocomplete({
-            source: venueList
         });
 
         dialog = $( "#dialog-form" ).dialog({
@@ -149,10 +146,6 @@
             height: 600,
             width: 800,
             modal: true
-//            close: function() {
-//                form[ 0 ].reset();
-//                allFields.removeClass( "ui-state-error" );
-//            }
         });
     });
 </script>

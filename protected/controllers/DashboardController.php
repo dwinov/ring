@@ -27,7 +27,7 @@ class DashboardController extends Controller
                 'allow',
                 'actions' => array('index'),
                 'users' => array('@'),
-                'expression' => 'Yii::app()->user->roleid == 1'
+                'expression' => 'Yii::app()->user->roleid == 1 | Yii::app()->user->roleid == 2 | Yii::app()->user->roleid == 3'
             ),
             array(
                 'deny',

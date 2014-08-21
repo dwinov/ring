@@ -41,12 +41,10 @@
                                     <div class="control-group">
                                         <label class="control-label">Venue</label>
                                         <div class="controls">
-<!--                                            --><?php //$venue = (isset($model)) ? $model->evt_venue_id : ""; ?>
-<!--                                            --><?php //echo CHtml::dropDownList('Event[evt_venue_id]', $venue, $venue_list) ?>
+                                            <?php $venue = (isset($model)) ? $model->evt_venue_id : ""; ?>
                                             <?php echo CHtml::textField('bastian', '', array('id' => 'venue-autocomplete')); ?>
-                                            <?php echo CHtml::hiddenField('Event[evt_venue_id]', '', array('class' => 'span12', 'id' => 'evt-venue-id')); ?>
+                                            <?php echo CHtml::hiddenField('Event[evt_venue_id]', $venue, array('class' => 'span12', 'id' => 'evt-venue-id')); ?>
                                             <?php echo CHtml::button('List', array('id' => 'list-venue', 'class' => 'btn btn-icon btn-primary glyphicons circle_ok')); ?>
-
                                         </div>
                                     </div>
                                 <?php }elseif(Yii::app()->user->roleid == 3){ ?>

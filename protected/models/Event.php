@@ -63,7 +63,8 @@ class Event extends CActiveRecord
                 v.vn_name,
                 FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date,
                 e.evt_ticketing,
-                SUM(t.tkt_total) as tkt_total
+                SUM(t.tkt_total) as tkt_total,
+                t.tkt_sold
                 ')
             ->from('tbl_event e')
             ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
@@ -110,7 +111,8 @@ class Event extends CActiveRecord
                 v.vn_name,
                 FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date,
                 e.evt_ticketing,
-                SUM(t.tkt_total) as tkt_total
+                SUM(t.tkt_total) as tkt_total,
+                t.tkt_sold
                 ')
             ->from('tbl_event e')
             ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
