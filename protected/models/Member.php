@@ -193,4 +193,14 @@ class Member extends CActiveRecord
             'credit_cb' => $cb->cb_value
         );
     }
+
+    public function getFriends($id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_member')
+            ->where('mem_user_id!=:usr_id', array(':usr_id' => $id))
+        ;
+
+        return $data->queryAll();
+    }
 }
