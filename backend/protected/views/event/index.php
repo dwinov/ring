@@ -7,12 +7,6 @@
  */
 ?>
 
-    <ul class="breadcrumb">
-        <li><a href="<?php echo Yii::app()->createUrl('dashboard/index'); ?>" class="glyphicons home"><i></i> Dashboard</a></li>
-        <li class="divider"></li>
-        <li>Event</li>
-    </ul><br/>
-
     <div class="heading-buttons">
         <h2 class="glyphicons sort"><i></i> Event</h2>
         <div class="buttons pull-right">

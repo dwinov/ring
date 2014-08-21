@@ -37,35 +37,14 @@
                         <div class="row-fluid">
                             <div class="span9">
                                 <div class="control-group">
-                                    <label class="control-label">Packages</label>
+                                    <label class="control-label">Packages of Credist</label>
                                     <div class="controls">
-                                        <label class="checkbox inline">
-                                            <input type="radio" class="radio credits" name="radioInline" value="1000" />
-                                            1000
-                                        </label>
-                                        <label class="checkbox inline">
-                                            <input type="radio" class="radio credits" name="radioInline" value="5000" />
-                                            5000
-                                        </label>
-                                        <label class="checkbox inline">
-                                            <input type="radio" class="radio credits" name="radioInline" value="10000" />
-                                            10000
-                                        </label>
-                                        <label class="checkbox inline">
-                                            <input type="radio" class="radio credits" name="radioInline" value="20000" />
-                                            20000
-                                        </label>
-                                        <label class="checkbox inline">
-                                            <input type="radio" class="radio credits" name="radioInline" value="25000" />
-                                            25000
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="control-group">
-                                    <label class="control-label">Credits</label>
-                                    <div class="controls">
-                                        <?php echo CHtml::textField('Credit[crt_credit]', '', array('class' => 'span6', 'id' => 'crt-credit')); ?>
+                                        <?php echo CHtml::button('1000', array('class' => 'packages', 'id' => '1000')); ?>
+                                        <?php echo CHtml::button('5000', array('class' => 'packages', 'id' => '5000')); ?>
+                                        <?php echo CHtml::button('10000', array('class' => 'packages', 'id' => '10000')); ?>
+                                        <?php echo CHtml::button('25000', array('class' => 'packages', 'id' => '25000')); ?>
+                                        <?php echo CHtml::button('50000', array('class' => 'packages', 'id' => '50000')); ?>
+                                        <?php echo CHtml::hiddenField('Credit[crt_credit]', '', array('class' => 'span6', 'id' => 'crt-credit')); ?>
                                     </div>
                                 </div>
                             </div>
@@ -92,8 +71,18 @@
 <?php $this->beginClip('js-page-end'); ?>
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.credits').click(function(){
-                $('#crt-credit').val($(this).val());
+            $('.packages').click(function(){
+                $('#crt-credit').val($(this).attr('id'));
+
+                $('.packages').each(function(i, obj){
+                    if($(this).attr('disabled') == 'disabled')
+                    {
+                        $(this).attr('disabled', false);
+                    }
+                });
+
+                $('.packages:disabled').attr('desabled', false);
+                $(this).attr('disabled', 'disabled');
             });
         });
     </script>

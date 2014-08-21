@@ -25,7 +25,7 @@ class EventController extends ParentController
         {
             if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
             {
-                $result = $this->model->getAllEvent();
+                $result = $this->model->getAllEventForMember();
                 $this->sendAjaxResponse($result);
             }else{
                 $result = array('result' => false, 'value' => "Token is expaired");

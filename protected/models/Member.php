@@ -77,6 +77,7 @@ class Member extends CActiveRecord
         $model->mem_birthdate = strtotime($data['Member']['mem_birthdate']);
         $model->mem_gender = $data['Member']['mem_gender'];
         $model->mem_phone = $data['Member']['mem_phone'];
+        $model->mem_create_at = strtotime(date('d-m-Y H:i'));
 
         return ($model->save()) ? true : false;
     }
@@ -126,57 +127,54 @@ class Member extends CActiveRecord
     {
         $attr = array();
         $where = array('and');
-//        $where2 = array('or');
+        $where2 = array('or');
 //        $where3 = array('or');
-
-//        $where[] = 'u.usr_type_id=:type_id';
-//        $attr[':type_id'] = 4;
 
         if(!empty($filter['umur'])){
             $umurArr = explode(' - ', $filter['umur']);
-            $where[] = "DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), FROM_UNIXTIME(mem_birthdate))), '%Y')+0 BETWEEN :start AND :end";
+            $where[] = "DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), FROM_UNIXTIME(m.mem_birthdate))), '%Y')+0 BETWEEN :start AND :end";
             $attr[':start'] = intval($umurArr[0]);
             $attr[':end'] = intval($umurArr[1]);
-        }
-
-        if(isset($filter['gender']) &&  $filter['gender'] != 2){
-            $gender = $filter['gender'];
-            $where[] = 'mem_gender=:gender';
-            $attr[':gender'] = intval($gender);
         }
 
 //        if(!empty($filter['region']))
 //        {
 //            $intArr = explode(',', $filter['region']);
-//            $char = 'A';
-//            for($x = 0; $x < count($intArr); $x++)
-//            {
-//                $where[] = 'mi.mint_int_id=:interest_';
-//                $attr[':interest_'] = $intArr[$x];
-//            }
+//            $where[] = array('in', 'm.mem_reg_id', $intArr);
 //        }
-//
+
+        if(isset($filter['gender'])){
+            if($filter['gender'] == 1 || $filter['gender'] == 2)
+            {
+                $gender = $filter['gender'];
+                $where[] = 'mem_gender=:gender';
+                $attr[':gender'] = intval($gender);
+            }else{
+                $where[] = 'mem_gender IS NOT NULL';
+            }
+        }
+
 //        if(!empty($filter['interest']))
 //        {
 //            $intArr = explode(',', $filter['interest']);
-//            $char = 'A';
-//            for($x = 0; $x < count($intArr); $x++)
-//            {
-//                $where[] = 'mi.mint_int_id=:interest_';
-//                $attr[':interest_'] = $intArr[$x];
-//            }
+//            $where[] = array('in', 'm.mem_reg_id', $intArr);
 //        }
 
 //        $where[] = $where2;
 //        $where[] = $where3;
 
         $data = Yii::app()->db->createCommand()
-            ->from('tbl_member')
+            ->from('tbl_member m')
 //            ->join('tbl_user AS u', 'm.mem_user_id = u.usr_id')
-//            ->join('tbl_mem_int as mi', 'mem_id = mi.mint_mem_id')
+            ->join('tbl_mem_int mi', 'm.mem_id = mi.mint_mem_id')
             ->where($where, $attr)
-//            ->group('mem_id');
+            ->group('mem_id');
         ;
+
+//        echo "<pre>";
+//        print_r($data->query());
+//        echo "</pre>";
+//        exit;
 
         $result = $data->queryAll();
 

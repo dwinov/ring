@@ -119,6 +119,101 @@ class Helper
         }
     }
 
+    public static function compareMonth($monthArr)
+    {
+        $newArr = array();
+        for($i = 0; $i < count($monthArr); $i++)
+        {
+            switch($monthArr[$i])
+            {
+                case 'Jan':
+                    array_push($newArr, 1);
+                    break;
+                case 'Feb':
+                    array_push($newArr, 2);
+                    break;
+                case 'Mar':
+                    array_push($newArr, 3);
+                    break;
+                case 'Apr':
+                    array_push($newArr, 4);
+                    break;
+                case 'Mei':
+                    array_push($newArr, 5);
+                    break;
+                case 'Jun':
+                    array_push($newArr, 6);
+                    break;
+                case 'Jul':
+                    array_push($newArr, 7);
+                    break;
+                case 'Aug':
+                    array_push($newArr, 8);
+                    break;
+                case 'Sep':
+                    array_push($newArr, 9);
+                    break;
+                case 'Okt':
+                    array_push($newArr, 10);
+                    break;
+                case 'Nov':
+                    array_push($newArr, 11);
+                    break;
+                case 'Dec':
+                    array_push($newArr, 12);
+                    break;
+            }
+        }
+
+        sort($newArr);
+
+        $result = array();
+        for($i = 0; $i < count($newArr); $i++)
+        {
+            switch($newArr[$i])
+            {
+                case 1:
+                    array_push($result, 'Jan');
+                    break;
+                case 2:
+                    array_push($result, 'Feb');
+                    break;
+                case 3:
+                    array_push($result, 'Mar');
+                    break;
+                case 4:
+                    array_push($result, 'Apr');
+                    break;
+                case 5:
+                    array_push($result, 'Mei');
+                    break;
+                case 6:
+                    array_push($result, 'Jun');
+                    break;
+                case 7:
+                    array_push($result, 'Jul');
+                    break;
+                case 8:
+                    array_push($result, 'Aug');
+                    break;
+                case 9:
+                    array_push($result, 'Sep');
+                    break;
+                case 10:
+                    array_push($result, 'Okt');
+                    break;
+                case 11:
+                    array_push($result, 'Nov');
+                    break;
+                case 12:
+                    array_push($result, 'Dec');
+                    break;
+            }
+        }
+
+        return $result;
+    }
+
     public static function decodeImage()
     {
 

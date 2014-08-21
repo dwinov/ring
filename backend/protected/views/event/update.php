@@ -7,15 +7,6 @@
  */
 ?>
 
-<ul class="breadcrumb">
-    <li><a href="index.html?lang=en" class="glyphicons home"><i></i> Dashboard</a></li>
-    <li class="divider"></li>
-    <li>Event</li>
-    <li class="divider"></li>
-    <li>Edit Event</li>
-</ul>
-<div class="separator"></div>
-
 <h2 class="glyphicons user"><i></i> Edit Event</h2>
 <div class="separator"></div>
 

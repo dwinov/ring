@@ -306,4 +306,20 @@ class Event extends CActiveRecord
             'iTotalDisplayRecords' => $filteredData
         );
     }
+
+    public function getEventsForGraph()
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('
+            FROM_UNIXTIME(evt_start_date, "%m") as int_month,
+            FROM_UNIXTIME(evt_start_date, "%b") as evt_month,
+            COUNT(evt_id) as total')
+            ->from('tbl_event')
+            ->where('FROM_UNIXTIME(evt_start_date, "%b") IS NOT NULL')
+            ->group('evt_month')
+            ->order('int_month ASC')
+        ;
+
+        return $data->queryAll();
+    }
 }

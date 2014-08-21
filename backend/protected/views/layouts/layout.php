@@ -119,7 +119,7 @@
 <div class="row-fluid rrow main">
 <div class="span12 main col" role="main">
 <div class="row-fluid rrow">
-<div class="span2 col main-left hide hidden-phone menu-large">
+<div class="span2 col main-left hide hidden-phone menu-large menu-small">
     <div class="rrow scroll-y-left">
         <div class="iScrollWrapper">
             <ul class="navigasi">
@@ -156,18 +156,18 @@
 </div>
 
 <!-- Sticky Footer -->
-<div id="footer" class="hide">
-    <div class="wrap">
-        <ul>
-            <li class="active"><span data-toggle="menu-position" data-menu-position="left-menu" class="glyphicons circle_arrow_left" title=""><i></i></span></li>
-            <li><span data-toggle="menu-position" data-menu-position="right-menu" class="glyphicons circle_arrow_right" title=""><i></i></span></li>
-            <li><span data-toggle="menu-position" data-menu-position="top-menu" class="glyphicons circle_arrow_top" title=""><i></i></span></li>
-            <li class="divider"></li>
-            <li class="active"><span data-toggle="menu-size" data-menu-size="0" class="glyphicons show_big_thumbnails text" title=""><i></i><span class="hidden-phone">Large menus</span></span></li>
-            <li><span data-toggle="menu-size" data-menu-size="1" class="glyphicons show_thumbnails text" title=""><i></i><span class="hidden-phone">Small menus</span></span></li>
-        </ul>
-    </div>
-</div>
+<!--<div id="footer" class="hide">-->
+<!--    <div class="wrap">-->
+<!--        <ul>-->
+<!--            <li class="active"><span data-toggle="menu-position" data-menu-position="left-menu" class="glyphicons circle_arrow_left" title=""><i></i></span></li>-->
+<!--            <li><span data-toggle="menu-position" data-menu-position="right-menu" class="glyphicons circle_arrow_right" title=""><i></i></span></li>-->
+<!--            <li><span data-toggle="menu-position" data-menu-position="top-menu" class="glyphicons circle_arrow_top" title=""><i></i></span></li>-->
+<!--            <li class="divider"></li>-->
+<!--            <li><span data-toggle="menu-size" data-menu-size="0" class="glyphicons show_big_thumbnails text" title=""><i></i><span class="hidden-phone">Large menus</span></span></li>-->
+<!--            <li class="active"><span data-toggle="menu-size" data-menu-size="1" class="glyphicons show_thumbnails text" title=""><i></i><span class="hidden-phone">Small menus</span></span></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
 
 </div>
 

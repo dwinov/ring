@@ -152,21 +152,60 @@ class Event extends CActiveRecord
             $data = Yii::app()->db->createCommand()
                 ->select('e.evt_id,
                         e.evt_name,
-                        v.vn_name,
                         FROM_UNIXTIME(e.evt_start_date, "%a") as evt_day,
                         FROM_UNIXTIME(e.evt_start_date, "%d") as evt_date,
                         FROM_UNIXTIME(e.evt_start_date, "%b") as evt_month,
                         FROM_UNIXTIME(e.evt_start_date, "%Y") as evt_year,
                         FROM_UNIXTIME(e.evt_start_date, "%H:%i") as evt_hour,
                         e.evt_description,
-                        e.evt_photo')
+                        e.evt_photo,
+                        eo.eo_name,
+                        eo.eo_photo,
+                        v.vn_name,
+                        v.vn_address')
                 ->from('tbl_event e')
+                ->join('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
                 ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
                 ->where('evt_owner_id=:eo_id', array(':eo_id' => $eo->eo_id))
             ;
         }
 
         $result = $data->queryAll();
+
+        return $result;
+    }
+
+    public function getAllEventForMember()
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('e.evt_id,
+                        e.evt_name,
+                        FROM_UNIXTIME(e.evt_start_date, "%d") as evt_date,
+                        FROM_UNIXTIME(e.evt_start_date, "%a") as evt_day,
+                        FROM_UNIXTIME(e.evt_start_date, "%b") as evt_month,
+                        FROM_UNIXTIME(e.evt_start_date, "%Y") as evt_year,
+                        FROM_UNIXTIME(e.evt_start_date, "%H:%i") as evt_hour,
+                        e.evt_description,
+                        e.evt_photo,
+                        eo.eo_name,
+                        eo.eo_photo,
+                        v.vn_name,
+                        v.vn_address')
+            ->from('tbl_event e')
+            ->join('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
+            ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+            ->order('e.evt_start_date DESC')
+        ;
+
+        $result = $data->queryAll();
+
+        $model_gallery = new GalleryEvent();
+        foreach($result as $key => $rest)
+        {
+            $gallery = $model_gallery->getAllData($rest['evt_id']);
+            $result[$key]['evt_gallery'] = $gallery;
+        }
+
         return $result;
     }
 
