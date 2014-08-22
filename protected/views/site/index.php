@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <!-- Title -->
-    <title>Ring - Event App Landing Page.</title>
+    <title>Ring - Never Miss Events.</title>
     <!--  Meta  -->
     <meta name="description" content="Ring - An App Landing Page">
     <meta name="author" content="Manx Designs">
@@ -93,7 +93,7 @@
 
                         <h2>Check out the perfect Event App you'll fall in love with.</h2>
 
-                        <p>Lorem ipsum dolor sit amet, adipiscing elit. Maecenas neque diam, luctus at laoreet in, auctor ut tellus. Etiam enim lacus, ornare et tempor et, rhoncus sem. </p>
+                        <p>Ring continiously updates you when and where your favorite events will take place, who of your friends will be there and offers you the best available ticket price.</p>
 
                         <a class="download-btn googleplay" href="#"></a>
                         <a class="download-btn applestore" href="#"></a>
@@ -126,8 +126,8 @@
 
                     <!-- BEGIN SERVICE CONTENT -->
                     <div class="rnr-service-box-content">
-                        <h3 class="rnr-service-box-title">Event Update Regularly</h3>
-                        <p>Nullam vitae sollicitudin eros. Cras varius vehicula velit, ac congue quam dictum sed. Proin mattis lacus ac sapien vestibulum rutrum.</p>
+                        <h3 class="rnr-service-box-title">Keep Track On Your Events</h3>
+                        <p>Based on your preferences, location and your friends activities you will be automatically informed so you will never miss out again!</p>
                     </div>
                     <!-- END SERVICE CONTENT -->
                 </div>
@@ -149,7 +149,7 @@
                     <!-- BEGIN SERVICE CONTENT -->
                     <div class="rnr-service-box-content">
                         <h3 class="rnr-service-box-title">Easy To Use</h3>
-                        <p>Nullam vitae sollicitudin eros. Cras varius vehicula velit, ac congue quam dictum sed. Proin mattis lacus ac sapien vestibulum rutrum.</p>
+                        <p>Ring develops her platform with high focus on usability. So its easy to navigate, easy to use and featured with many user benefits. Have a great experience!</p>
                     </div>
                     <!-- END SERVICE CONTENT -->
                 </div>
@@ -171,8 +171,8 @@
 
                     <!-- BEGIN SERVICE CONTENT -->
                     <div class="rnr-service-box-content">
-                        <h3 class="rnr-service-box-title">Secure Data </h3>
-                        <p>Nullam vitae sollicitudin eros. Cras varius vehicula velit, ac congue quam dictum sed. Proin mattis lacus ac sapien vestibulum rutrum.</p>
+                        <h3 class="rnr-service-box-title">Special Promotions</h3>
+                        <p>Often Ringers will be privileged with discounts, special offers, upgrades, access to limited available tickets and gain Ringcoins to buy tickets.</p>
                     </div>
                     <!-- END SERVICE CONTENT -->
                 </div>
@@ -216,8 +216,8 @@
 
                         <!-- BEGIN SERVICE BOX TYPE LEFT CONTENT -->
                         <div class="rnr-service-box-content">
-                            <h3 class="rnr-service-box-title">Find Your Friend in your Event</h3>
-                            <p>Nullam vitae sollicitudin eros. Cras varius vehicula velit, ac congue quam dictum sed. </p>
+                            <h3 class="rnr-service-box-title">See Which Event Your Friend attEnd</h3>
+                            <p>When a friend indicates by RSVP or buys a ticket for an event you will be notified. </p>
                         </div>
                         <!-- END SERVICE BOX TYPE LEFT CONTENT -->
                     </div>
@@ -235,8 +235,8 @@
 
                         <!-- BEGIN SERVICE BOX TYPE LEFT CONTENT -->
                         <div class="rnr-service-box-content">
-                            <h3 class="rnr-service-box-title">Send Message Directly to your Friend</h3>
-                            <p>Morbi commodo interdum enim, nec mollis arcu scelerisque a. Suspendisse arcu augue. </p>
+                            <h3 class="rnr-service-box-title">Chat direct with other Ringers</h3>
+                            <p>A full featured chat module allows you to chat with other ringers.</p>
                         </div>
                         <!-- END SERVICE BOX TYPE LEFT CONTENT -->
                     </div>
@@ -254,7 +254,7 @@
                         <!-- BEGIN SERVICE BOX TYPE LEFT CONTENT -->
                         <div class="rnr-service-box-content">
                             <h3 class="rnr-service-box-title">Easy to Buy Ticket</h3>
-                            <p>Phasellus ut vulputate erat. Morbi interdum enim. Suspendisse arcu augue, aliquam in venenatis. </p>
+                            <p>You can buy a ticket online instantly and even give it away again to another ringer. </p>
                         </div>
                         <!-- END SERVICE BOX TYPE LEFT CONTENT -->
                     </div>
@@ -268,8 +268,8 @@
                             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/landingpage/icons/flat-icons/9.png" alt="Build"></div>
 
                         <div class="rnr-service-box-content">
-                            <h3 class="rnr-service-box-title">Best Help and Support</h3>
-                            <p>Phasellus ut vulputate erat. Morbi commodo interdum enim, nec mollis arcu. </p>
+                            <h3 class="rnr-service-box-title">Secure Data</h3>
+                            <p>Your personal data is and online ticket information are kept 100% safe. </p>
                         </div>
                         <!-- END SERVICE BOX TYPE LEFT CONTENT -->
                     </div>
