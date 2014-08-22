@@ -349,6 +349,7 @@
 
             $(".navigasi a").each(function () {
                 var href = $(this).attr('href');
+                console.log(href);
                 if(path.substring(0, href.length) === href){
                     $(this).closest('li').addClass('active');
                 }

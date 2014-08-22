@@ -105,7 +105,7 @@ class MemberController extends ParentController
         }
     }
 
-    public function actionFriends()
+    public function actionFind()
     {
         if(isset($_SERVER['HTTP_TOKEN']))
         {
@@ -113,6 +113,29 @@ class MemberController extends ParentController
             if($user)
             {
                 $model = new Member();
+                $result = $model->getFriends($user->usr_id);
+                $this->sendAjaxResponse($result);
+            }else{
+                $result = array('result' => false, 'value' => "Token is expaired");
+                $this->sendAjaxResponseString($result);
+            }
+        }else{
+            $result = array('result' => false, 'value' => "Token is lost");
+            $this->sendAjaxResponseString($result);
+        }
+    }
+
+    public function actionInvite()
+    {
+        if(isset($_SERVER['HTTP_TOKEN']))
+        {
+            $user = User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN']));
+            if($user)
+            {
+                $model = new Member();
+
+                $mem_id = $model->getMemberByUserId($user->usr_id);
+
                 $result = $model->getFriends($user->usr_id);
                 $this->sendAjaxResponse($result);
             }else{
