@@ -7,13 +7,6 @@
  */
 ?>
 
-    <ul class="breadcrumb">
-        <li><a href="index.html?lang=en" class="glyphicons home"><i></i> BootAdmin</a></li>
-        <li class="divider"></li>
-        <li>Add New EO</li>
-    </ul>
-    <div class="separator"></div>
-
     <h2 class="glyphicons user"><i></i> Account</h2>
     <div class="separator"></div>
 

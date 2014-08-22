@@ -18,8 +18,8 @@
     Please click this link to reset your password.
 </div><br />
 <?php $url = Yii::app()->createUrl('site/resetpassword',array('v'=>$_POST['validation_key'])); ?>
-<a href='http://localhost/ring/site/resetPassword/?v=<?php echo $_POST['validation_key']; ?>'>
-    http://localhost/ring/site/resetPassword/?v=<?php echo $_POST['validation_key']; ?>
+<a href='http://ringme2.com/index.php/site/resetPassword/?v=<?php echo $_POST['validation_key']; ?>'>
+    http://ringme2.com/index.php/site/resetPassword/?v=<?php echo $_POST['validation_key']; ?>
 </a>
 <div>
 </div>

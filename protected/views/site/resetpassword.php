@@ -155,12 +155,12 @@
                                             <hr class="separator bottom" style="margin-bottom: 10px;" />
                                             <div class="input-prepend input-full">
                                                 <span class="add-on glyphicons user"><i></i></span>
-                                                <?php echo CHtml::hiddenField('validation_key', $model->usr_validation_key, array('placeholder' => 'New Password')) ?>
-                                                <?php echo CHtml::passwordField('password_baru', '', array('placeholder' => 'Email')) ?>
+                                                <?php echo CHtml::hiddenField('validation_key', $model->usr_validation_key); ?>
+                                                <?php echo CHtml::passwordField('password_baru', '', array('placeholder' => 'New Password')); ?>
                                             </div>
                                             <div class="input-prepend input-full">
                                                 <span class="add-on glyphicons user"><i></i></span>
-                                                <?php echo CHtml::passwordField('password_baru_retype', '', array('placeholder' => 'Retype New Password')) ?>
+                                                <?php echo CHtml::passwordField('password_baru_retype', '', array('placeholder' => 'Retype New Password')); ?>
                                             </div>
                                             <?php echo CHtml::submitButton('Submit',array('class'=>'btn btn-icon btn-block glyphicons right flash btn-primary')); ?>
                                         </fieldset>

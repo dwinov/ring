@@ -6,7 +6,6 @@
  * Time: 1:10 AM
  */
 ?>
-
     <ul class="breadcrumb">
         <li><a href="index.html?lang=en" class="glyphicons home"><i></i> BootAdmin</a></li>
         <li class="divider"></li>

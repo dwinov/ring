@@ -7,15 +7,6 @@
  */
 ?>
 
-<ul class="breadcrumb">
-    <li><a href="index.html?lang=en" class="glyphicons home"><i></i> BootAdmin</a></li>
-    <li class="divider"></li>
-    <li>Online Shop</li>
-    <li class="divider"></li>
-    <li>Products</li>
-</ul>
-<div class="separator"></div>
-
 <div class="heading-buttons">
     <h2 class="glyphicons message_out"><i></i> Broadcast</h2>
 </div>

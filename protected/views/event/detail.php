@@ -7,15 +7,6 @@
  */
 ?>
 
-<ul class="breadcrumb">
-    <li><a href="index.html?lang=en" class="glyphicons home"><i></i> BootAdmin</a></li>
-    <li class="divider"></li>
-    <li>Forms</li>
-    <li class="divider"></li>
-    <li>Demo Forms</li>
-</ul>
-<div class="separator"></div>
-
 <h2 class="glyphicons group"><i></i> Event Detail</h2>
 <div class="separator"></div>
 
@@ -119,7 +110,14 @@
                         </div>
                         <div class="widget-body" style="padding-bottom: 0;">
                             <div class="row-fluid">
-                                <div class="span6">
+
+                                <div class="span3">
+                                    <div class="control-group" style="float: inherit;">
+                                        <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . $eo->eo_photo; ?>" width="202" height="188" /></div>
+                                    </div>
+                                </div>
+
+                                <div class="span9">
                                     <div class="control-group">
                                         <label class="control-label">Name</label>
                                         <div class="controls">
@@ -188,7 +186,14 @@
                         </div>
                         <div class="widget-body" style="padding-bottom: 0;">
                             <div class="row-fluid">
-                                <div class="span6">
+
+                                <div class="span3">
+                                    <div class="control-group" style="float: inherit;">
+                                        <div class="fileupload-new thumbnail"><img src="<?php echo Yii::app()->request->baseUrl . $venue->vn_photo; ?>" width="202" height="188" /></div>
+                                    </div>
+                                </div>
+
+                                <div class="span9">
                                     <div class="control-group">
                                         <label class="control-label">Name</label>
                                         <div class="controls">
@@ -284,19 +289,19 @@
             </div>
             <div class="widget-body list list-2">
                 <ul>
-                    <li class="active"><a class="glyphicons user" href="#account-details" data-toggle="tab"><i></i>Event Details</a></li>
-                    <li><a class="glyphicons settings" href="#account-settings" data-toggle="tab"><i></i>Event Gallery Pictures</a></li>
+                    <li class="active"><a class="glyphicons calendar" href="#account-details" data-toggle="tab"><i></i>Event Details</a></li>
+                    <li><a class="glyphicons picture" href="#account-settings" data-toggle="tab"><i></i>Event Gallery Pictures</a></li>
                     <?php if(Yii::app()->user->roleid == 2){ ?>
-                    <li><a class="glyphicons settings" href="#eo" data-toggle="tab"><i></i>Event Organizer</a></li>
+                    <li><a class="glyphicons group" href="#eo" data-toggle="tab"><i></i>Event Organizer</a></li>
                     <?php } ?>
-                    <li><a class="glyphicons settings" href="#venue" data-toggle="tab"><i></i>Venue</a></li>
-                    <li><a class="glyphicons settings" href="#other" data-toggle="tab"><i></i>Other Events</a></li>
+                    <li><a class="glyphicons globe_af" href="#venue" data-toggle="tab"><i></i>Venue</a></li>
+                    <li><a class="glyphicons table" href="#other" data-toggle="tab"><i></i>Other Events This Date</a></li>
                 </ul>
             </div>
         </div>
         <div class="widget widget-2 primary widget-body-white">
             <div class="widget-head">
-                <h4 class="heading glyphicons picture"><i></i>Profile image</h4>
+                <h4 class="heading glyphicons picture"><i></i>Event Banner</h4>
             </div>
             <div class="widget-body center">
                 <div class="fileupload fileupload-new" data-provides="fileupload">

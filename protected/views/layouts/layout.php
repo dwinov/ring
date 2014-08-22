@@ -137,6 +137,7 @@
                 <?php } ?>
                 <li class="glyphicons calendar"><a href="<?php echo Yii::app()->createUrl('event/index'); ?>"><i></i><span>Event</span></a></li>
                 <li class="glyphicons message_out"><a href="<?php echo Yii::app()->createUrl('broadcast/index'); ?>"><i></i><span>Broadcast</span></a></li>
+                <li class="glyphicons circle_question_mark"><a href="#"><i></i><span>Info/How To</span></a></li>
             </ul>
         </div>
         <span class="navarrow hide">

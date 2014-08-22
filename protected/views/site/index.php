@@ -370,7 +370,7 @@
 <!--                            <input type="text" class="input-field" id="newsletter-name" name="newsletter-name" value="Enter your name">-->
 <!--                            <input type="text" class="input-field" id="newsletter-email" name="newsletter-email" value="Enter your email">-->
                     <div>
-                        <a href="<?php echo Yii::app()->createUrl('site/login'); ?>" id="button-newsletter" class="button">Login for Businnes Owners</a>
+                        <a href="<?php echo Yii::app()->createUrl('site/login'); ?>" id="button-newsletter" class="button">Login for Bussines Owner</a>
                         </br>
                         <a href="<?php echo Yii::app()->createUrl('site/login', array('register' => true)); ?>" id="button-newsletter">Already have an account?</a>
                     </div>
