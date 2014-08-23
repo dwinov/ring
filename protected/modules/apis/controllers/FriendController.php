@@ -74,8 +74,13 @@ class FriendController extends ParentController
                 $model_member = new Member();
                 $member = $model_member->getMemberByUserId($user->usr_id);
                 $status = ($_POST['status_id'] == 1) ? "accept" : "decline";
-                $this->model->updateData($member->mem_id, $_POST['friends_id'], $status);
-                $result = array('result' => false, 'value' => "Failed to infited Friends, please try again.");
+
+                $friendArr = explode(',', $_POST['friends_id']);
+                for($i = 0; $i < count($friendArr); $i++)
+                {
+                    $this->model->updateData($member['mem_id'], $friendArr[$i], $status);
+                }
+                $result = array('result' => true, 'value' => "Success.");
                 $this->sendAjaxResponseString($result);
             }else{
                 $result = array('result' => false, 'value' => "Token is expaired");

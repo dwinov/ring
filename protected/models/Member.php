@@ -196,9 +196,38 @@ class Member extends CActiveRecord
 
     public function getFriends($id)
     {
+        $friend = Friend::model()->findAllByAttributes(array('fr_own_id' => $id, 'fr_accept' => 1));
+
+        $memberArr = array();
+        foreach($friend as $fr)
+        {
+            array_push($memberArr, $fr['fr_friend_id']);
+        }
+
+        array_push($memberArr, $id);
+
         $data = Yii::app()->db->createCommand()
             ->from('tbl_member')
-            ->where('mem_user_id!=:usr_id', array(':usr_id' => $id))
+            ->where(array('not in', 'mem_id', $memberArr))
+        ;
+
+        return $data->queryAll();
+    }
+
+    public function getRinger($id)
+    {
+        $friend = Friend::model()->findAllByAttributes(array('fr_own_id' => $id, 'fr_accept' => 1));
+
+        $memberArr = array();
+        foreach($friend as $fr)
+        {
+            array_push($memberArr, $fr->fr_friend_id);
+        }
+
+        $data = Yii::app()->db->createCommand()
+            ->from('tbl_member m')
+            ->join('tbl_friend f', 'm.mem_id = f.fr_friend_id')
+            ->where(array('in', 'mem_id', $memberArr))
         ;
 
         return $data->queryAll();

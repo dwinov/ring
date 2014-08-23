@@ -113,7 +113,29 @@ class MemberController extends ParentController
             if($user)
             {
                 $model = new Member();
-                $result = $model->getFriends($user->usr_id);
+                $data_mem = $model->getMemberByUserId($user->usr_id);
+                $result = $model->getFriends($data_mem['mem_id']);
+                $this->sendAjaxResponse($result);
+            }else{
+                $result = array('result' => false, 'value' => "Token is expaired");
+                $this->sendAjaxResponseString($result);
+            }
+        }else{
+            $result = array('result' => false, 'value' => "Token is lost");
+            $this->sendAjaxResponseString($result);
+        }
+    }
+
+    public function actionRinger()
+    {
+        if(isset($_SERVER['HTTP_TOKEN']))
+        {
+            $user = User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN']));
+            if($user)
+            {
+                $model = new Member();
+                $data_mem = $model->getMemberByUserId($user->usr_id);
+                $result = $model->getRinger($data_mem['mem_id']);
                 $this->sendAjaxResponse($result);
             }else{
                 $result = array('result' => false, 'value' => "Token is expaired");

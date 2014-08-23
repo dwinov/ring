@@ -78,7 +78,7 @@ class Friend extends CActiveRecord
 
     public function updateData($own_id, $friend, $status = 'accept')
     {
-        $model = $this->getFriendById($friend);
+        $model = $this->getFriendById($friend, $own_id);
 
         if($status == 'accept')
         {
@@ -109,20 +109,19 @@ class Friend extends CActiveRecord
                 m.mem_id,
                 m.mem_photo,
                 m.mem_screen_name,
-                FROM_UNIXTIME(m.mem_create_at, "%d-%m-%Y") as mem_create_at,
-                CASE WHEN ()')
+                FROM_UNIXTIME(m.mem_create_at, "%d-%m-%Y") as mem_create_at')
             ->from('tbl_friend f')
             ->join('tbl_member m', 'f.fr_own_id = m.mem_id')
-            ->where('f.fr_friend_id=:mem_id', array(':mem_id' => $id))
+            ->where('f.fr_friend_id=:mem_id AND f.fr_pending=1', array(':mem_id' => $id))
         ;
 
         $result = $data->queryAll();
         return $result;
     }
 
-    public function getFriendById($id)
+    public function getFriendById($id, $friend)
     {
-        $model = Friend::model()->find('fr_own_id=:own_id', $id);
+        $model = Friend::model()->find('fr_own_id=:own_id AND fr_friend_id=:friend', array(':own_id' => $id, ':friend' => $friend));
         if($model === null)
             throw new CHttpException(404,'The requested page does not exist!.');
         return $model;
