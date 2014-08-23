@@ -92,6 +92,7 @@ class Interest extends CActiveRecord
         $model = new Interest;
         $model->attributes = $input['Interest'];
         $model->int_name = $input['Interest']['int_name'];
+        $model->int_create_at = strtotime(date('d-m-Y H:i:s'));
 
         return ($model->save()) ? true : false;
     }

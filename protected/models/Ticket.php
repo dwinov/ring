@@ -72,6 +72,7 @@ class Ticket extends CActiveRecord
         $model->tkt_type = $type;
         $model->tkt_price = $price;
         $model->tkt_total = $total;
+        $model->tkt_create_at = strtotime(date('d-m-Y H:i:s'));
 
         return ($model->save()) ? true : false;
     }

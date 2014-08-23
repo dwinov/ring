@@ -134,6 +134,7 @@ class Eo extends CActiveRecord
         $model->eo_email = $input['Eo']['eo_email'];
         $model->eo_website = $input['Eo']['eo_website'];
         $model->eo_description = $input['Eo']['eo_description'];
+        $model->eo_create_at = strtotime(date('d-m-Y H:i:s'));
         $model->eo_photo = (count($file) != 0) ? Helper::uploadImage($file, 'eo') : null;
 
         return ($model->save()) ? true : false;

@@ -69,6 +69,7 @@ class GalleryVenue extends CActiveRecord
         $model->glr_vn_owner_id = $id;
         $model->glr_vn_name = Helper::uploadImage($file, 'gallery_venue');
         $model->glr_vn_date = strtotime(date("d-m-Y H:i:s"));
+        $model->glr_vn_create_at = strtotime(date('d-m-Y H:i:s'));
 
         return ($model->save()) ? true : false;
     }

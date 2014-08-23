@@ -69,6 +69,7 @@ class CreditBroadcast extends CActiveRecord
         $model = new CreditBroadcast;
 
         $model->cb_value = $input['Cb']['cb_value'];
+        $model->cb_create_at = strtotime(date('d-m-Y H:i:s'));
 
         return ($model->save()) ? true : false;
     }

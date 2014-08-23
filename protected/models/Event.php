@@ -234,6 +234,7 @@ class Event extends CActiveRecord
         $model->evt_end_date = strtotime($input['Event']['evt_end_date']);
         $model->evt_ticketing = $input['Event']['evt_ticketing'];
         $model->evt_description = $input['Event']['evt_description'];
+        $model->evt_create_at = strtotime(date('d-m-Y H:i:s'));
         $model->evt_photo = (count($file) != 0) ? Helper::uploadImage($file, 'event') : null;
 
         if($model->save())

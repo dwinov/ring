@@ -92,6 +92,7 @@ class Region extends CActiveRecord
         $model = new Region;
         $model->attributes = $input['Region'];
         $model->reg_name = $input['Region']['reg_name'];
+        $model->reg_create_at = strtotime(date('d-m-Y H:i:s'));
 
         return ($model->save()) ? true : false;
     }

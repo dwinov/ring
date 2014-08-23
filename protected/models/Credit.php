@@ -73,6 +73,7 @@ class Credit extends CActiveRecord
         $model->crt_eo_id = $input['Credit']['crt_eo_id'];
         $model->crt_credit = $input['Credit']['crt_credit'];
         $model->crt_date = strtotime(date('d-m-Y H:i:s'));
+        $model->crt_create_at = strtotime(date('d-m-Y H:i:s'));
 
         $logArr['eo_id'] = $input['Credit']['crt_eo_id'];
         $logArr['credit'] = $input['Credit']['crt_credit'];

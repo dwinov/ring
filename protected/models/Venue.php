@@ -146,6 +146,7 @@ class Venue extends CActiveRecord
         $model->vn_description = $input['Venue']['vn_description'];
         $model->vn_longitude = $input['Venue']['vn_longitude'];
         $model->vn_latitude = $input['Venue']['vn_latitude'];
+        $model->vn_create_at = strtotime(date('d-m-Y H:i:s'));
         $model->vn_photo = (count($file) != 0) ? Helper::uploadImage($file, 'venue') : null;
 
         return ($model->save()) ? true : false;

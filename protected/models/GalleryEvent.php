@@ -69,6 +69,7 @@ class GalleryEvent extends CActiveRecord
         $model->glr_evt_owner_id = $id;
         $model->glr_evt_name = Helper::uploadImage($file, 'gallery_event');
         $model->glr_evt_date = strtotime(date("d-m-Y H:i:s"));
+        $model->glr_evt_create_at = strtotime(date('d-m-Y H:i:s'));
 
         return ($model->save()) ? true : false;
     }

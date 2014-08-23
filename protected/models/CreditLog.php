@@ -72,6 +72,7 @@ class CreditLog extends CActiveRecord
         $model->clog_credit = $input['credit'];
         $model->clog_date = strtotime(date('d-m-Y H:i:s'));
         $model->clog_status = $input['status'];
+        $model->clog_create_at = strtotime(date('d-m-Y H:i:s'));
 
         return ($model->save()) ? true : false;
     }

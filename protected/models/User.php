@@ -78,6 +78,7 @@ class User extends CActiveRecord
         $model->usr_username = $data['usr_email'];
         $model->usr_email = $data['usr_email'];
         $model->usr_type_id = $data['usr_type_id'];
+        $model->usr_created_date = strtotime(date('d-m-Y H:i:s'));
 
         return ($model->save()) ? $model->usr_id : null;
     }

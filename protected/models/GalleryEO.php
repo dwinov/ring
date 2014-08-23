@@ -69,6 +69,7 @@ class GalleryEO extends CActiveRecord
         $model->glr_owner_id = $id;
         $model->glr_name = Helper::uploadImage($file, 'gallery_eo');
         $model->glr_date = strtotime(date("d-m-Y H:i:s"));
+        $model->glr_create_at = strtotime(date('d-m-Y H:i:s'));
 
         return ($model->save()) ? true : false;
     }
