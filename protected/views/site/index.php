@@ -216,7 +216,7 @@
 
                         <!-- BEGIN SERVICE BOX TYPE LEFT CONTENT -->
                         <div class="rnr-service-box-content">
-                            <h3 class="rnr-service-box-title">See Which Event Your Friend attEnd</h3>
+                            <h3 class="rnr-service-box-title">See Which Event Your Friend attend</h3>
                             <p>When a friend indicates by RSVP or buys a ticket for an event you will be notified. </p>
                         </div>
                         <!-- END SERVICE BOX TYPE LEFT CONTENT -->
@@ -370,7 +370,7 @@
 <!--                            <input type="text" class="input-field" id="newsletter-name" name="newsletter-name" value="Enter your name">-->
 <!--                            <input type="text" class="input-field" id="newsletter-email" name="newsletter-email" value="Enter your email">-->
                     <div>
-                        <a href="<?php echo Yii::app()->createUrl('site/login'); ?>" id="button-newsletter" class="button">Login for Bussines Owner</a>
+                        <a href="<?php echo Yii::app()->createUrl('site/login'); ?>" id="button-newsletter" class="button">Login for Business Owner</a>
                         </br>
                         <a href="<?php echo Yii::app()->createUrl('site/login', array('register' => true)); ?>" id="button-newsletter">Already have an account?</a>
                     </div>

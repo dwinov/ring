@@ -374,4 +374,43 @@ class Event extends CActiveRecord
             'iTotalDisplayRecords' => $filteredData
         );
     }
+
+    public function getEventsForGraph()
+    {
+        if(Yii::app()->user->roleid == 2)
+        {
+            $eo = new Eo();
+            $data_eo = $eo->getEoByUserId(Yii::app()->user->usrid);
+            $data = Yii::app()->db->createCommand()
+                ->select('
+            FROM_UNIXTIME(evt_start_date, "%m") as int_month,
+            FROM_UNIXTIME(evt_start_date, "%b") as evt_month,
+            COUNT(evt_id) as total')
+                ->from('tbl_event')
+                ->where('FROM_UNIXTIME(evt_start_date, "%b") IS NOT NULL')
+                ->andWhere('evt_owner_id=:owner', array(':owner' => $data_eo['eo_id']))
+                ->andWhere('evt_role_id=:role', array(':role' => Yii::app()->user->roleid))
+                ->group('evt_month')
+                ->order('int_month ASC')
+            ;
+        }elseif(Yii::app()->user->roleid == 3)
+        {
+            $venue = new Venue();
+            $data_venue = $venue->getVenueByUserId(Yii::app()->user->usrid);
+            $data = Yii::app()->db->createCommand()
+                ->select('
+            FROM_UNIXTIME(evt_start_date, "%m") as int_month,
+            FROM_UNIXTIME(evt_start_date, "%b") as evt_month,
+            COUNT(evt_id) as total')
+                ->from('tbl_event')
+                ->where('FROM_UNIXTIME(evt_start_date, "%b") IS NOT NULL')
+                ->andWhere('evt_owner_id=:owner', array(':owner' => $data_venue['vn_id']))
+                ->andWhere('evt_role_id=:role', array(':role' => Yii::app()->user->roleid))
+                ->group('evt_month')
+                ->order('int_month ASC')
+            ;
+        }
+
+        return $data->queryAll();
+    }
 }

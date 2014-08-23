@@ -232,4 +232,20 @@ class Member extends CActiveRecord
 
         return $data->queryAll();
     }
+
+    public function getMemberForGraph()
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('
+            FROM_UNIXTIME(mem_create_at, "%m") as int_month,
+            FROM_UNIXTIME(mem_create_at, "%b") as mem_month,
+            COUNT(mem_id) as total')
+            ->from('tbl_member')
+            ->where('FROM_UNIXTIME(mem_create_at, "%b") IS NOT NULL')
+            ->group('mem_month')
+            ->order('int_month ASC')
+        ;
+
+        return $data->queryAll();
+    }
 }
