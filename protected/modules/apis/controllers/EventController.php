@@ -70,6 +70,9 @@ class EventController extends ParentController
 				$event = array();
 				$event['Event'] = array();
 				$event['Event'] = $_POST;
+                $event['tkt_type'] = explode(',',$_POST['tkt_type']);
+                $event['tkt_price'] = explode(',',$_POST['tkt_price']);
+                $event['tkt_total'] = explode(',',$_POST['tkt_total']);
 				
 				if($event['Event']['evt_ticketing'] == 'true')
 				{

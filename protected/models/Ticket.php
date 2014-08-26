@@ -76,4 +76,17 @@ class Ticket extends CActiveRecord
 
         return ($model->save()) ? true : false;
     }
+
+    public function BuyTickets($input)
+    {
+        $tktlog = new TicketLog();
+        $data = Ticket::model()->find('tkt_id=:tkt_id AND tkt_evt_id=:evt_id', array(':tkt_id' => $input['tkt_id'], ':evt_id' => $input['evt_id']));
+
+        $data->tkt_sold = $input['tkt_qty'];
+        $data->tkt_total = $data->tkt_total - intval($input['tkt_qty']);
+
+        $data->save();
+
+        return ($tktlog->insertData($input)) ? true : false;
+    }
 }

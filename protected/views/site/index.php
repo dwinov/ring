@@ -93,7 +93,7 @@
 
                         <h2>Check out the perfect Event App you'll fall in love with.</h2>
 
-                        <p>Ring continiously updates you when and where your favorite events will take place, who of your friends will be there and offers you the best available ticket price.</p>
+                        <p>Ring continuously updated you about when and where your favorite events will take place, who of your friends will be there and offers you the best available ticket price.</p>
 
                         <a class="download-btn googleplay" href="#"></a>
                         <a class="download-btn applestore" href="#"></a>
@@ -216,7 +216,7 @@
 
                         <!-- BEGIN SERVICE BOX TYPE LEFT CONTENT -->
                         <div class="rnr-service-box-content">
-                            <h3 class="rnr-service-box-title">See Which Event Your Friend attend</h3>
+                            <h3 class="rnr-service-box-title">See Which Events Your Friends Are Attending</h3>
                             <p>When a friend indicates by RSVP or buys a ticket for an event you will be notified. </p>
                         </div>
                         <!-- END SERVICE BOX TYPE LEFT CONTENT -->
@@ -235,7 +235,7 @@
 
                         <!-- BEGIN SERVICE BOX TYPE LEFT CONTENT -->
                         <div class="rnr-service-box-content">
-                            <h3 class="rnr-service-box-title">Chat direct with other Ringers</h3>
+                            <h3 class="rnr-service-box-title">Chat Direct With Other Ringers</h3>
                             <p>A full featured chat module allows you to chat with other ringers.</p>
                         </div>
                         <!-- END SERVICE BOX TYPE LEFT CONTENT -->
@@ -253,7 +253,7 @@
 
                         <!-- BEGIN SERVICE BOX TYPE LEFT CONTENT -->
                         <div class="rnr-service-box-content">
-                            <h3 class="rnr-service-box-title">Easy to Buy Ticket</h3>
+                            <h3 class="rnr-service-box-title">Easy To Buy Ticket</h3>
                             <p>You can buy a ticket online instantly and even give it away again to another ringer. </p>
                         </div>
                         <!-- END SERVICE BOX TYPE LEFT CONTENT -->
@@ -346,9 +346,9 @@
                         <div id="tweet">
                             <ul class="tweet_list">
                                 <li class="tweet_first_tweet_odd">
-					<span class="Tweet_text">
-					" Cool App I ever Seen "
-					</span>
+<!--					<span class="Tweet_text">-->
+<!--					" Cool App I ever Seen "-->
+<!--					</span>-->
                                 </li>
                             </ul>
                         </div>

@@ -187,6 +187,7 @@ class Event extends CActiveRecord
                         FROM_UNIXTIME(e.evt_start_date, "%H:%i") as evt_hour,
                         e.evt_description,
                         e.evt_photo,
+                        e.evt_ticketing,
                         eo.eo_name,
                         eo.eo_photo,
                         v.vn_name,
