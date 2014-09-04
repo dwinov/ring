@@ -34,10 +34,10 @@
             <div class="image">
                 <!--div class="inner-shadow"></div-->
                 <a href="evendetail.html" target="_blank">
-                    <div class="wrapper" style="background-image:url(<?php echo Yii::app()->request->baseUrl . $evt['evt_photo']; ?>)"></div>
+                    <div class="wrapper" style="background-image:url(<?php echo 'http://ringme2.com' . $evt['evt_photo']; ?>)"></div>
                 </a>
                 <a href="#" target="_blank">
-                    <div class="avatar" style="background-image:url(<?php echo Yii::app()->request->baseUrl . $evt['eo_photo']; ?>)"></div>
+                    <div class="avatar" style="background-image:url(<?php echo 'http://ringme2.com' . $evt['eo_photo']; ?>)"></div>
                 </a>
                 <div class="time-ago"><?php echo $evt['evt_date'] . ' ' . $evt['evt_month'] . ' ' . $evt['evt_year']; ?></div>
                 <a class="handle" href="#" target="_blank"><?php echo $evt['evt_name']; ?></a>
