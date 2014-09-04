@@ -55,10 +55,29 @@ class Event extends CActiveRecord
 
     public function getEventById($id)
     {
-        $model = Event::model()->findByPk($id);
-        if($model === null)
-            throw new CHttpException(404,'The requested page does not exist!.');
-        return $model;
+        $data = Yii::app()->db->createCommand()
+            ->select('e.evt_id,
+                        e.evt_name,
+                        FROM_UNIXTIME(e.evt_start_date, "%a") as evt_day,
+                        FROM_UNIXTIME(e.evt_start_date, "%d") as evt_date,
+                        FROM_UNIXTIME(e.evt_start_date, "%b") as evt_month,
+                        FROM_UNIXTIME(e.evt_start_date, "%Y") as evt_year,
+                        FROM_UNIXTIME(e.evt_start_date, "%H:%i") as evt_hour,
+                        e.evt_description,
+                        e.evt_photo,
+                        eo.eo_name,
+                        eo.eo_photo,
+                        v.vn_name,
+                        v.vn_address')
+            ->from('tbl_event e')
+            ->join('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
+            ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+            ->where('e.evt_id=:evt_id', array(':evt_id' => $id))
+        ;
+
+        $result = $data->queryRow();
+
+        return $result;
     }
 
     public function getAllEvent()
@@ -122,101 +141,6 @@ class Event extends CActiveRecord
         return $result;
     }
 
-    public function getEventByIdAPI($id)
-    {
-        $data = Yii::app()->db->createCommand()
-            ->from('tbl_event')
-            ->where('evt_id=:id', array(':id' => $id))
-        ;
-
-        $result = $data->queryRow();
-        $result['evt_date'] = date('d-m-Y', $result['evt_start_date']);
-
-        return $result;
-    }
-
-    public function insertData($input, $file)
-    {
-        $model = new Event;
-        $model->attributes = $input['Event'];
-        $model->evt_name = $input['Event']['evt_name'];
-        $model->evt_owner_id = $input['Event']['evt_owner_id'];
-        $model->evt_role_id = $input['Event']['evt_role_id'];
-        $model->evt_venue_id = $input['Event']['evt_venue_id'];
-        $model->evt_start_date = strtotime($input['Event']['evt_start_date']);
-        $model->evt_end_date = strtotime($input['Event']['evt_end_date']);
-        $model->evt_ticketing = $input['Event']['evt_ticketing'];
-        $model->evt_description = $input['Event']['evt_description'];
-        $model->evt_create_at = strtotime(date('d-m-Y H:i:s'));
-        $model->evt_photo = (count($file) != 0) ? Helper::uploadImage($file, 'event') : null;
-
-        if($model->save())
-        {
-            if($input['Event']['evt_ticketing'] == true)
-            {
-                if(count($input['tkt_type']) > 0)
-                {
-                    $ticket = new Ticket();
-                    for($x = 0; $x < count($input['tkt_type']); $x++)
-                    {
-                        $result = $ticket->insertData($input['tkt_type'][$x], $input['tkt_price'][$x], $input['tkt_total'][$x], $model->evt_id);
-                        if($result == false)
-                            return false;
-                    }
-                    $model->evt_photo_event = (count($file) != 0) ? Helper::uploadImage($file, 'event', 'tiketpic') : null;
-                    $model->save();
-                    return true;
-                }else{
-                    return true;
-                }
-            }else{
-                return true;
-            }
-        }else{
-            return false;
-        }
-    }
-
-    public function updateData($input, $file)
-    {
-        $model = $this->getEventById($input['Event']['evt_id']);
-
-        $model->evt_name = $input['Event']['evt_name'];
-        $model->evt_venue_id = $input['Event']['evt_venue_id'];
-        $model->evt_role_id = $input['Event']['evt_role_id'];
-        $model->evt_start_date = strtotime($input['Event']['evt_start_date']);
-        $model->evt_end_date = strtotime($input['Event']['evt_end_date']);
-        $model->evt_ticketing = $input['Event']['evt_ticketing'];
-        $model->evt_description = $input['Event']['evt_description'];
-        $model->evt_photo = (count($file) != 0) ? Helper::updateImage('event', $model->evt_photo) : $model->evt_photo;
-
-        if($model->save())
-        {
-            if($input['Event']['evt_ticketing'] == true && count($input['tkt_type']) > 0)
-            {
-                $ticket = new Ticket();
-                Ticket::model()->deleteAll('tkt_evt_id=:evt_id', array(':evt_id' => $input['Event']['evt_id']));
-                for($x = 0; $x < count($input['tkt_type']); $x++)
-                {
-                    if($input['tkt_type'][$x] != null || $input['tkt_type'][$x] != '')
-                    {
-                        $result = $ticket->insertData($input['tkt_type'][$x], $input['tkt_price'][$x], $input['tkt_total'][$x], $model->evt_id);
-                        if($result == false)
-                            return false;
-                    }
-                }
-
-                return true;
-            }else{
-                return true;
-            }
-        }else{
-            return false;
-        }
-
-//        return ($model->save()) ? true : false;
-    }
-
     public function getEventsByEo($eo_id)
     {
         $data = Yii::app()->db->createCommand()
@@ -233,97 +157,30 @@ class Event extends CActiveRecord
         return $data->queryAll();
     }
 
-    public function getOtherEvents($filter)
+    public function getOtherEvents($id)
     {
-        if($filter['end'] == null || empty($filter['end']) || $filter['end'] == '')
-        {
-            $data = Yii::app()->db->createCommand()
-                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
-                ->from('tbl_event e')
-                ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
-                ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
-                ->where('FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")=:start', array(':start' => date("d-m-Y", $filter['start'])))
-            ;
-        }else{
-            $data = Yii::app()->db->createCommand()
-                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
-                ->from('tbl_event e')
-                ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
-                ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
-                ->where('FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")>=:start AND FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")<=:end',
-                    array(':start' => date("d-m-Y", $filter['start']), ':end' => date("d-m-Y", $filter['end'])))
-            ;
-        }
+        $data = Yii::app()->db->createCommand()
+            ->select('e.evt_id,
+                        e.evt_name,
+                        FROM_UNIXTIME(e.evt_start_date, "%a") as evt_day,
+                        FROM_UNIXTIME(e.evt_start_date, "%d") as evt_date,
+                        FROM_UNIXTIME(e.evt_start_date, "%b") as evt_month,
+                        FROM_UNIXTIME(e.evt_start_date, "%Y") as evt_year,
+                        FROM_UNIXTIME(e.evt_start_date, "%H:%i") as evt_hour,
+                        e.evt_description,
+                        e.evt_photo,
+                        eo.eo_name,
+                        eo.eo_photo,
+                        v.vn_name,
+                        v.vn_address')
+            ->from('tbl_event e')
+            ->join('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
+            ->join('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+            ->where('e.evt_id!=:evt_id', array(':evt_id' => $id))
+        ;
 
-        $allData = count($data->queryAll());
+        $result = $data->queryAll();
 
-        if($filter['end'] == null || empty($filter['end']) || $filter['end'] == '')
-        {
-            $data = Yii::app()->db->createCommand()
-                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
-                ->from('tbl_event e')
-                ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
-                ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
-                ->where('FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")=:start', array(':start' => date("d-m-Y", $filter['start'])))
-            ;
-        }else{
-            $data = Yii::app()->db->createCommand()
-                ->select('e.evt_id, e.evt_name, eo.eo_name, v.vn_name, FROM_UNIXTIME(e.evt_start_date, "%d-%m-%Y") as evt_start_date')
-                ->from('tbl_event e')
-                ->leftJoin('tbl_eo eo', 'e.evt_owner_id = eo.eo_id')
-                ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
-                ->where('FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")>=:start AND FROM_UNIXTIME(e.evt_start_date, "%d-%b-%Y")<=:end',
-                    array(':start' => date("d-m-Y", $filter['start']), ':end' => date("d-m-Y", $filter['end'])))
-            ;
-        }
-
-        $filteredData = count($data->queryAll());
-        $data = $data->offset($filter['iDisplayStart'])->limit($filter['iDisplayLength']);
-
-        return array(
-            "sEcho" => $filter['sEcho'],
-            'aaData' => $data->queryAll(),
-            'iTotalRecords' => $allData,
-            'iTotalDisplayRecords' => $filteredData
-        );
-    }
-
-    public function getEventsForGraph()
-    {
-        if(Yii::app()->user->roleid == 2)
-        {
-            $eo = new Eo();
-            $data_eo = $eo->getEoByUserId(Yii::app()->user->usrid);
-            $data = Yii::app()->db->createCommand()
-                ->select('
-            FROM_UNIXTIME(evt_start_date, "%m") as int_month,
-            FROM_UNIXTIME(evt_start_date, "%b") as evt_month,
-            COUNT(evt_id) as total')
-                ->from('tbl_event')
-                ->where('FROM_UNIXTIME(evt_start_date, "%b") IS NOT NULL')
-                ->andWhere('evt_owner_id=:owner', array(':owner' => $data_eo['eo_id']))
-                ->andWhere('evt_role_id=:role', array(':role' => Yii::app()->user->roleid))
-                ->group('evt_month')
-                ->order('int_month ASC')
-            ;
-        }elseif(Yii::app()->user->roleid == 3)
-        {
-            $venue = new Venue();
-            $data_venue = $venue->getVenueByUserId(Yii::app()->user->usrid);
-            $data = Yii::app()->db->createCommand()
-                ->select('
-            FROM_UNIXTIME(evt_start_date, "%m") as int_month,
-            FROM_UNIXTIME(evt_start_date, "%b") as evt_month,
-            COUNT(evt_id) as total')
-                ->from('tbl_event')
-                ->where('FROM_UNIXTIME(evt_start_date, "%b") IS NOT NULL')
-                ->andWhere('evt_owner_id=:owner', array(':owner' => $data_venue['vn_id']))
-                ->andWhere('evt_role_id=:role', array(':role' => Yii::app()->user->roleid))
-                ->group('evt_month')
-                ->order('int_month ASC')
-            ;
-        }
-
-        return $data->queryAll();
+        return $result;
     }
 }

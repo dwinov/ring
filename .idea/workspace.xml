@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e8e509d-b021-43ea-8313-ae2ae2526bdf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/protected/controllers/EventController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/protected/views/event/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/protected/models/Event.php" afterPath="$PROJECT_DIR$/frontend/protected/models/Event.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/protected/runtime/application.log" afterPath="$PROJECT_DIR$/frontend/protected/runtime/application.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/protected/views/site/index.php" afterPath="$PROJECT_DIR$/frontend/protected/views/site/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -27,14 +30,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/protected/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="99" selection-start="1666" selection-end="1666" vertical-scroll-proportion="0.24878049" vertical-offset="510" max-vertical-offset="1360">
+            <state line="35" column="107" selection-start="1333" selection-end="1415" vertical-scroll-proportion="-11.884615" vertical-offset="286" max-vertical-offset="1360">
               <folding>
                 <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
-                <marker date="1409840415707" expanded="true" signature="1565:1673" placeholder="..." />
+                <element signature="n#style#0;n#div#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
+                <marker date="1409861303514" expanded="true" signature="1618:1727" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/protected/controllers/EventController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="29" selection-start="1538" selection-end="1538" vertical-scroll-proportion="-19.576923" vertical-offset="494" max-vertical-offset="1394">
+              <folding>
+                <element signature="e#6#85#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/protected/views/event/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="89" column="42" selection-start="5453" selection-end="5453" vertical-scroll-proportion="0.6682927" vertical-offset="1102" max-vertical-offset="2023">
+              <folding>
+                <element signature="e#6#85#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Event.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/protected/models/Event.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="176" column="60" selection-start="6294" selection-end="6294" vertical-scroll-proportion="-15.230769" vertical-offset="2511" max-vertical-offset="3162">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -42,7 +77,7 @@
       <file leaf-file-name="SiteController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/protected/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="5" selection-start="1471" selection-end="1471" vertical-scroll-proportion="-7.8461537" vertical-offset="765" max-vertical-offset="4539">
+            <state line="61" column="37" selection-start="1586" selection-end="1586" vertical-scroll-proportion="-2.7307692" vertical-offset="966" max-vertical-offset="4539">
               <folding />
             </state>
           </provider>
@@ -61,9 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/backend/protected/views/venue/update.php" />
-        <option value="$PROJECT_DIR$/backend/protected/views/venue/uploader.php" />
-        <option value="$PROJECT_DIR$/protected/views/event/detail.php" />
         <option value="$PROJECT_DIR$/protected/views/broadcast/index.php" />
         <option value="$PROJECT_DIR$/protected/views/credit/index.php" />
         <option value="$PROJECT_DIR$/protected/views/credit/payment.php" />
@@ -112,6 +144,9 @@
         <option value="$PROJECT_DIR$/protected/models/Ticket.php" />
         <option value="$PROJECT_DIR$/frontend/protected/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/frontend/protected/views/site/index.php" />
+        <option value="$PROJECT_DIR$/frontend/protected/models/Event.php" />
+        <option value="$PROJECT_DIR$/frontend/protected/controllers/EventController.php" />
+        <option value="$PROJECT_DIR$/frontend/protected/views/event/index.php" />
       </list>
     </option>
   </component>
@@ -148,7 +183,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -265,12 +299,61 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="event" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,11 +419,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -360,31 +443,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/views/member/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4" selection-start="94" selection-end="94" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="2584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/venue/create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="289" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/venue/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="92" selection-end="92" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="2448" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/venue/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2091" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/venue/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="289" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/venue/uploader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="4" selection-start="94" selection-end="94" vertical-scroll-proportion="0.08292683" vertical-offset="0" max-vertical-offset="2312" />
@@ -605,19 +663,59 @@
         <state line="133" column="5" selection-start="3528" selection-end="3528" vertical-scroll-proportion="-0.13821138" vertical-offset="2261" max-vertical-offset="3060" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/eo/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="654">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/eo/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="63" selection-start="157" selection-end="192" vertical-scroll-proportion="-0.33170733" vertical-offset="255" max-vertical-offset="1955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/protected/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="5" selection-start="1471" selection-end="1471" vertical-scroll-proportion="-7.8461537" vertical-offset="765" max-vertical-offset="4539">
+        <state line="61" column="37" selection-start="1586" selection-end="1586" vertical-scroll-proportion="-2.7307692" vertical-offset="966" max-vertical-offset="4539">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/protected/models/Event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="60" selection-start="6294" selection-end="6294" vertical-scroll-proportion="-15.230769" vertical-offset="2511" max-vertical-offset="3162">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/protected/controllers/EventController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="29" selection-start="1538" selection-end="1538" vertical-scroll-proportion="-19.576923" vertical-offset="494" max-vertical-offset="1394">
+          <folding>
+            <element signature="e#6#85#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/protected/views/site/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="99" selection-start="1666" selection-end="1666" vertical-scroll-proportion="0.24878049" vertical-offset="510" max-vertical-offset="1360">
+        <state line="35" column="107" selection-start="1333" selection-end="1415" vertical-scroll-proportion="-11.884615" vertical-offset="286" max-vertical-offset="1360">
           <folding>
             <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
-            <marker date="1409840415707" expanded="true" signature="1565:1673" placeholder="..." />
+            <element signature="n#style#0;n#div#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#section#0;n#!!top" expanded="true" />
+            <marker date="1409861303514" expanded="true" signature="1618:1727" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/protected/views/event/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="42" selection-start="5453" selection-end="5453" vertical-scroll-proportion="0.6682927" vertical-offset="1102" max-vertical-offset="2023">
+          <folding>
+            <element signature="e#6#85#0" expanded="true" />
           </folding>
         </state>
       </provider>
