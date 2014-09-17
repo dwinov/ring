@@ -169,4 +169,25 @@ class MemberController extends ParentController
             $this->sendAjaxResponseString($result);
         }
     }
+
+    public function actionCheckin()
+    {
+        if(isset($_SERVER['HTTP_TOKEN']))
+        {
+            $user = User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN']));
+            if($user)
+            {
+                $model = new Checkin();
+                $model_member = new Member();
+                $member = $model_member->getMemberByUserId($user->usr_id);
+                $model->insertData($member['mem_id'], $_POST['evt_id']);
+            }else{
+                $result = array('result' => false, 'value' => "Token is expaired");
+                $this->sendAjaxResponseString($result);
+            }
+        }else{
+            $result = array('result' => false, 'value' => "Token is lost");
+            $this->sendAjaxResponseString($result);
+        }
+    }
 }

@@ -33,11 +33,18 @@ class DefaultController extends ParentController
             $token = Helper::generateToken();
             $user->usr_token = $token;
             $user->save();
-            $result = $member->getMemberByUserId($user->usr_id);
+            $mem = $member->getMemberByUserId($user->usr_id);
+            $result = array();
             $result['usr_id'] = $user->usr_id;
             $result['usr_type_id'] = $user->usr_type_id;
             $result['usr_token'] = $user->usr_token;
-            $result['mem_birthdate'] = date('d-m-Y', $result['mem_birthdate']);
+            $result['mem_gender'] = $mem['mem_gender'];
+            $result['mem_photo'] = $mem['mem_photo'];
+            $result['mem_phone'] = $mem['mem_phone'];
+            $result['mem_location'] = $mem['mem_location'];
+            $result['mem_screen_name'] = $mem['mem_screen_name'];
+            $result['mem_about_me'] = ($mem['mem_about_me'] != null) ? $mem['mem_about_me'] : 'Hi, my name is '.$mem['mem_screen_name'];
+            $result['mem_birthdate'] = date('d-m-Y', $mem['mem_birthdate']);
             $this->sendAjaxResponse($result);
         }else{
             $result = array('result' => false, 'value' => "Login Failed");
