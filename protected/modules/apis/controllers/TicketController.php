@@ -67,6 +67,23 @@ class TicketController extends ParentController
 
     public function actionList()
     {
-
+        if(isset($_SERVER['HTTP_TOKEN']))
+        {
+            $user = User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN']));
+            if($user)
+            {
+                $model = new Ticket();
+                $member = new Member();
+                $mem = $member->getMemberByUserId($user->usr_id);
+                $result = $model->getTicketByMemberId($mem['mem_id']);
+                $this->sendAjaxResponse($result);
+            }else{
+                $result = array('result' => false, 'value' => "Token is expaired");
+                $this->sendAjaxResponseString($result);
+            }
+        }else{
+            $result = array('result' => false, 'value' => "Token is lost");
+            $this->sendAjaxResponseString($result);
+        }
     }
 }

@@ -89,4 +89,16 @@ class Ticket extends CActiveRecord
 
         return ($tktlog->insertData($input)) ? true : false;
     }
+
+    public function getTicketByMemberId($mem_id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('e.evt_id, e.evt_name')
+            ->from('tbl_ticket_log tl')
+            ->leftJoin('tbl_event e', 'tl.tl_evt_id = e.evt_id')
+            ->where('tl.tl_mem_id=:mem_id', array(':mem_id' => $mem_id))
+        ;
+
+        return $data->queryAll();
+    }
 }
