@@ -430,7 +430,7 @@ class Event extends CActiveRecord
         return $result;
     }
 
-    public function getCountEventByVenueId($vn_id)
+    public function getEventByVenueId($vn_id, $count = false)
     {
         $data = Yii::app()->db->createCommand()
             ->select('evt_id')
@@ -438,8 +438,8 @@ class Event extends CActiveRecord
             ->where('evt_venue_id=:vn_id', array(':vn_id' => $vn_id))
         ;
 
-        $result = $data->queryAll();
+        $result = ($count == false) ? $data->queryAll() : count($data->queryAll());
 
-        return count($result);
+        return $result;
     }
 }

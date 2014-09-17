@@ -27,7 +27,7 @@ class VenueController extends ParentController
 
                 foreach($result as $key => $rest)
                 {
-                    $result[$key]['number_of_events'] = $event->getCountEventByVenueId($rest['vn_id']);
+                    $result[$key]['number_of_events'] = $event->getEventByVenueId($rest['vn_id'], true);
                 }
 
                 $this->sendAjaxResponse($result);
@@ -73,7 +73,9 @@ class VenueController extends ParentController
         {
             if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
             {
-                $result = $this->model->getEventByIdAPI($_POST['vn_id']);
+                $event = new Event();
+                $result = $this->model->getVenueByIdMobile($_GET['vn_id']);
+                $result['list_events'] = $event->getEventByVenueId($_GET['vn_id']);
                 $this->sendAjaxResponse($result);
             }else{
                 $result = array('result' => false, 'value' => "Token is expaired");
