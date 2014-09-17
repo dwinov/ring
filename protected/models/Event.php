@@ -414,4 +414,19 @@ class Event extends CActiveRecord
 
         return $data->queryAll();
     }
+
+    public function getLongLat($evt_id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('
+                v.vn_longitude,
+                v.vn_latitude')
+            ->from('tbl_event e')
+            ->leftJoin('tbl_venue v', 'e.evt_venue_id = v.vn_id')
+            ->where('e.evt_id=:evt_id', array(':evt_id' => $evt_id))
+        ;
+
+        $result = $data->queryRow();
+        return $result;
+    }
 }

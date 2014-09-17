@@ -126,4 +126,19 @@ class Friend extends CActiveRecord
             throw new CHttpException(404,'The requested page does not exist!.');
         return $model;
     }
+
+    public function getAllMyFriend($id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('
+                fr_id,
+                fr_own_id,
+                fr_friend_id')
+            ->from('tbl_friend')
+            ->where('fr_own_id=:mem_id', array(':mem_id' => $id))
+        ;
+
+        $result = $data->queryAll();
+        return $result;
+    }
 }

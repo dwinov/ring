@@ -104,9 +104,30 @@ class EventController extends ParentController
     {
         if(isset($_SERVER['HTTP_TOKEN']))
         {
-            if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
+            $user = User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN']));
+            if($user)
             {
-                $result = $this->model->getEventByIdAPI($_POST['evt_id']);
+                $model_friend = new Friend();
+                $model_member = new Member();
+                $model_checkin = new Checkin();
+                $model_event = new Event();
+                $event_id = $_GET['evt_id'];
+
+                $member = $model_member->getMemberByUserId($user->usr_id);
+                $allFriends = $model_friend->getAllMyFriend($member['mem_id']);
+                $longlat = $model_event->getLongLat($event_id);
+
+                $friends = array();
+                foreach($allFriends as $af)
+                {
+                    array_push($friends, $model_checkin->getFriendCheckinInEvt($af['fr_friend_id'], $event_id));
+                }
+
+                $result = $this->model->getEventByIdAPI($event_id);
+                $result['list_friends'] = $friends;
+                $result['longitude'] = $longlat['vn_longitude'];
+                $result['latitude'] = $longlat['vn_latitude'];
+
                 $this->sendAjaxResponse($result);
             }else{
                 $result = array('result' => false, 'value' => "Token is expaired");

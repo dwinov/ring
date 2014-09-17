@@ -63,4 +63,19 @@ class Checkin extends CActiveRecord
 
         return ($model->save()) ? true : false;
     }
+
+    public function getFriendCheckinInEvt($id, $evt_id)
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('
+                m.mem_id,
+                m.mem_screen_name')
+            ->from('tbl_checkin c')
+            ->leftJoin('tbl_member m', 'c.cin_mem_id = m.mem_id')
+            ->where('c.cin_mem_id=:mem_id AND c.cin_evt_id=:evt_id', array(':mem_id' => $id, ':evt_id' => $evt_id))
+        ;
+
+        $result = $data->queryRow();
+        return $result;
+    }
 }
