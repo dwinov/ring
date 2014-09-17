@@ -22,7 +22,14 @@ class VenueController extends ParentController
         {
             if(User::model()->find('usr_token=:token', array(':token' => $_SERVER['HTTP_TOKEN'])))
             {
-                $result = $this->model->getAllVenue();
+                $event = new Event();
+                $result = $this->model->getAllVenueMobile();
+
+                foreach($result as $key => $rest)
+                {
+                    $result[$key]['number_of_events'] = $event->getCountEventByVenueId($rest['vn_id']);
+                }
+
                 $this->sendAjaxResponse($result);
             }else{
                 $result = array('result' => false, 'value' => "Token is expaired");

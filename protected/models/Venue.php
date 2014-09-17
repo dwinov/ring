@@ -110,6 +110,17 @@ class Venue extends CActiveRecord
         return $result;
     }
 
+    public function getAllVenueMobile()
+    {
+        $data = Yii::app()->db->createCommand()
+            ->select('vn_id, vn_name, vn_address')
+            ->from('tbl_venue')
+        ;
+
+        $result = $data->queryAll();
+        return $result;
+    }
+
     public function getEventByIdAPI($id)
     {
         $data = Yii::app()->db->createCommand()
