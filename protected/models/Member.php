@@ -126,55 +126,40 @@ class Member extends CActiveRecord
     public function getAllMember($filter)
     {
         $attr = array();
-        $where = array('and');
-        $where2 = array('or');
-//        $where3 = array('or');
+        array_push($attr, 'and');
 
         if(!empty($filter['umur'])){
             $umurArr = explode(' - ', $filter['umur']);
-            $where[] = "DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), FROM_UNIXTIME(m.mem_birthdate))), '%Y')+0 BETWEEN :start AND :end";
-            $attr[':start'] = intval($umurArr[0]);
-            $attr[':end'] = intval($umurArr[1]);
+            array_push($attr, "DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), FROM_UNIXTIME(m.mem_birthdate))), '%Y')+0 BETWEEN " . intval($umurArr[0]) . " AND " . intval($umurArr[1]) . "");
         }
 
-//        if(!empty($filter['region']))
-//        {
-//            $intArr = explode(',', $filter['region']);
-//            $where[] = array('in', 'm.mem_reg_id', $intArr);
-//        }
+        if(!empty($filter['region']))
+        {
+            array_push($attr, 'm.mem_reg_id IN (' . $filter['region'] . ')');
+        }
 
         if(isset($filter['gender'])){
-            if($filter['gender'] == 1 || $filter['gender'] == 2)
+            if($filter['gender'] != 2)
             {
                 $gender = $filter['gender'];
-                $where[] = 'mem_gender=:gender';
-                $attr[':gender'] = intval($gender);
+                array_push($attr, 'mem_gender = ' . intval($gender));
             }else{
-                $where[] = 'mem_gender IS NOT NULL';
+                array_push($attr, 'mem_gender IS NOT NULL');
             }
         }
 
-//        if(!empty($filter['interest']))
-//        {
-//            $intArr = explode(',', $filter['interest']);
-//            $where[] = array('in', 'm.mem_reg_id', $intArr);
-//        }
-
-//        $where[] = $where2;
-//        $where[] = $where3;
+        if(!empty($filter['interest']))
+        {
+            array_push($attr, 'm.mem_reg_id IN (' . $filter['interest'] . ')');
+        }
 
         $data = Yii::app()->db->createCommand()
             ->from('tbl_member m')
-//            ->join('tbl_user AS u', 'm.mem_user_id = u.usr_id')
+            ->join('tbl_user AS u', 'm.mem_user_id = u.usr_id')
             ->join('tbl_mem_int mi', 'm.mem_id = mi.mint_mem_id')
-            ->where($where, $attr)
+            ->where($attr)
             ->group('mem_id');
         ;
-
-//        echo "<pre>";
-//        print_r($data->query());
-//        echo "</pre>";
-//        exit;
 
         $result = $data->queryAll();
 

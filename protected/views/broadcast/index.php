@@ -70,17 +70,17 @@
 
             <div class="widget-body list list-2 fluid js-filters form-inline small">
                 <ul>
-<!--                    <li class="right">-->
-<!--                        <label class="span4">Region:</label>-->
-<!--                        <div class="right">-->
-<!--                            <select multiple class="span8" id="region" name="region" style="height: 60px;">-->
-<!--                                --><?php //foreach($region as $reg){ ?>
-<!--                                <option value="--><?php //echo $reg->reg_id; ?><!--" selected="selected">--><?php //echo $reg->reg_name; ?><!--</option>-->
-<!--                                --><?php //} ?>
-<!--                                --><?php //echo CHtml::hiddenField('tamp_region', '', array('id' => 'tamp-region')); ?>
-<!--                            </select>-->
-<!--                        </div>-->
-<!--                    </li>-->
+                    <li class="right">
+                        <label class="span4">Region:</label>
+                        <div class="right">
+                            <select multiple class="span8" id="region" name="region" style="height: 60px;">
+                                <?php foreach($region as $reg){ ?>
+                                <option value="<?php echo $reg->reg_id; ?>" selected="selected"><?php echo $reg->reg_name; ?></option>
+                                <?php } ?>
+                                <?php echo CHtml::hiddenField('tamp_region', '', array('id' => 'tamp-region')); ?>
+                            </select>
+                        </div>
+                    </li>
                     <li>
                         <label class="span4">Age:</label>
                         <div class="right">
@@ -106,25 +106,25 @@
                             </label>
                         </div>
                     </li>
-<!--                    <li>-->
-<!--                        <label class="span4">Interest:</label>-->
-<!--                        <div class="right">-->
-<!--                            <select multiple class="span8" id="interest" name="interest" style="height: 60px;">-->
-<!--                                --><?php //foreach($interest as $int){ ?>
-<!--                                <option value="--><?php //echo $int->int_id ?><!--" selected="selected">--><?php //echo $int->int_name ?><!--</option>-->
-<!--                                --><?php //} ?>
-<!--                                --><?php //echo CHtml::hiddenField('tamp_interest', '', array('id' => 'tamp-interest')); ?>
-<!--                            </select>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <label>Own Database:</label>-->
-<!--                        <div class="right">-->
-<!--                            <div class="input-append">-->
-<!--                                <input type="checkbox">-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </li>-->
+                    <li>
+                        <label class="span4">Interest:</label>
+                        <div class="right">
+                            <select multiple class="span8" id="interest" name="interest" style="height: 60px;">
+                                <?php foreach($interest as $int){ ?>
+                                <option value="<?php echo $int->int_id ?>" selected="selected"><?php echo $int->int_name ?></option>
+                                <?php } ?>
+                                <?php echo CHtml::hiddenField('tamp_interest', '', array('id' => 'tamp-interest')); ?>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <label>Own Database:</label>
+                        <div class="right">
+                            <div class="input-append">
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                    </li>
                     <li>
                         <label>Total Target Group:</label>
                         <div class="right">
@@ -160,21 +160,21 @@
     <script type="text/javascript">
         $(document).ready(function(){
             window.onload = function(){
-//                var foo = new Array();
-//                var bar = new Array();
-//                $('#region :selected').each(function(i, selected){
-//                    foo.push($(this).val());
-//                });
-//
-//                $('#interest :selected').each(function(i, selected){
-//                    bar.push($(this).val());
-//                });
-//
-//                var first_regStr = foo.join(',');
-//                $('#tamp-region').val(first_regStr);
-//
-//                var first_intStr = bar.join(',');
-//                $('#tamp-interest').val(first_intStr);
+                var foo = new Array();
+                var bar = new Array();
+                $('#region :selected').each(function(i, selected){
+                    foo.push($(this).val());
+                });
+
+                $('#interest :selected').each(function(i, selected){
+                    bar.push($(this).val());
+                });
+
+                var first_regStr = foo.join(',');
+                $('#tamp-region').val(first_regStr);
+
+                var first_intStr = bar.join(',');
+                $('#tamp-interest').val(first_intStr);
 
                 getDataMember($('#tamp-region').val(), $('#gender-both').val(), $('#tamp-interest').val(), $('#umur').val());
             };
@@ -218,25 +218,25 @@
             });
 
 
-//            $('#region').change(function(){
-//                var region = $(this).val();
-//                if(region != 'null')
-//                {
-//                    var regStr = region.join(',');
-//                    $('#tamp-region').val(regStr);
-//                    getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
-//                }
-//            });
-//
-//            $('#interest').change(function(){
-//                var interest = $(this).val();
-//                if(interest != null)
-//                {
-//                    var intStr = interest.join(',');
-//                    $('#tamp-interest').val(intStr);
-//                    getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
-//                }
-//            });
+            $('#region').change(function(){
+                var region = $(this).val();
+                if(region != 'null')
+                {
+                    var regStr = region.join(',');
+                    $('#tamp-region').val(regStr);
+                    getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
+                }
+            });
+
+            $('#interest').change(function(){
+                var interest = $(this).val();
+                if(interest != null)
+                {
+                    var intStr = interest.join(',');
+                    $('#tamp-interest').val(intStr);
+                    getDataMember($('#tamp-region').val(), $('#gender-female').val(), $('#tamp-interest').val(), $('#umur').val());
+                }
+            });
 
             function getDataMember(reg, gen, int, age)
             {
